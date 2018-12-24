@@ -1,0 +1,3 @@
+I got my dad a used Amazon Fire HDX 8.9 (2014) a few weeks ago. He loves it and to my surprise it actually has a cellular radio in it. The seller didn't mention this. I was trying to figure out what network it works on and I contacted Amazon to find out. They told me it's an unlocked GSM model. Though I'm not sure how to verify this. I can find the IMEI number, but I don't know what that tells me.
+
+Would a FreedomPop SIM card or something work with this? 

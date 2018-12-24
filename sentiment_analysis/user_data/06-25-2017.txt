@@ -1,0 +1,3 @@
+I don't understand how the synthetic oil plants work. In the research tree the tooltips suggest that each level produces the exact same amount of oil and rubber (+7 and +4). Is that true?
+
+Also, how do you upgrade oil plants you've already built. 

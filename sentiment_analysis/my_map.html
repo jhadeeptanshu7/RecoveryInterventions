@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_2e9c37a8bc204a72a677d1d78bb96387 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_2e9c37a8bc204a72a677d1d78bb96387" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_2e9c37a8bc204a72a677d1d78bb96387 = L.map(
+        'map_2e9c37a8bc204a72a677d1d78bb96387', {
+        center: [0, 0],
+        zoom: 1,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_7f8a165225ce4be79ca0543495eb7a74 = L.tileLayer(
+        'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
+        {
+        "attribution": null, 
+        "detectRetina": false, 
+        "maxNativeZoom": 18, 
+        "maxZoom": 18, 
+        "minZoom": 0, 
+        "noWrap": false, 
+        "opacity": 1, 
+        "subdomains": "abc", 
+        "tms": false
+}).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+    
+        var marker_1869a801062547dabcb7374f0100370a = L.marker(
+            [37.775, 37.775],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_45a9f9ebeca240e3b76bd4a2bd90b696 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1869a801062547dabcb7374f0100370a.setIcon(icon_45a9f9ebeca240e3b76bd4a2bd90b696);
+            
+    
+            var popup_693b878c53ae4125a862d02558070cb5 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_d30f803fab044922b7126205d059da98 = $(`<div id="html_d30f803fab044922b7126205d059da98" style="width: 100.0%; height: 100.0%;">San Francisco sentiment score =1.8 drug_terms: {'weed': 5} recovery_terms: {'weed': 5}</div>`)[0];
+                popup_693b878c53ae4125a862d02558070cb5.setContent(html_d30f803fab044922b7126205d059da98);
+            
+
+            marker_1869a801062547dabcb7374f0100370a.bindPopup(popup_693b878c53ae4125a862d02558070cb5)
+            ;
+
+            
+        
+    
+        var marker_f305a66808e74341a678546da1092a27 = L.marker(
+            [37.3394444, 37.3394444],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_dfbc06dbfde44fedaaaaf2ab14f4c3ea = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f305a66808e74341a678546da1092a27.setIcon(icon_dfbc06dbfde44fedaaaaf2ab14f4c3ea);
+            
+    
+            var popup_83c01ee9492443e3a123a9aa04b6cff6 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_c262f08f2f9a4a22a7d2fcbf5da2f020 = $(`<div id="html_c262f08f2f9a4a22a7d2fcbf5da2f020" style="width: 100.0%; height: 100.0%;">San Jose sentiment score =1.8 drug_terms: {'weed': 1} recovery_terms: {'weed': 1}</div>`)[0];
+                popup_83c01ee9492443e3a123a9aa04b6cff6.setContent(html_c262f08f2f9a4a22a7d2fcbf5da2f020);
+            
+
+            marker_f305a66808e74341a678546da1092a27.bindPopup(popup_83c01ee9492443e3a123a9aa04b6cff6)
+            ;
+
+            
+        
+    
+        var marker_ec9c0d5f76e045199a1133a22454f877 = L.marker(
+            [32.7152778, 32.7152778],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_f3629fb1998343578bb632d971da1e4d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ec9c0d5f76e045199a1133a22454f877.setIcon(icon_f3629fb1998343578bb632d971da1e4d);
+            
+    
+            var popup_254064c58ac14898a626b7eec1e23c21 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_9fbef5b539114f85aa1e5fa6a12f2def = $(`<div id="html_9fbef5b539114f85aa1e5fa6a12f2def" style="width: 100.0%; height: 100.0%;">San Diego sentiment score =1.8 drug_terms: {'weed': 1} recovery_terms: {'weed': 1}</div>`)[0];
+                popup_254064c58ac14898a626b7eec1e23c21.setContent(html_9fbef5b539114f85aa1e5fa6a12f2def);
+            
+
+            marker_ec9c0d5f76e045199a1133a22454f877.bindPopup(popup_254064c58ac14898a626b7eec1e23c21)
+            ;
+
+            
+        
+    
+        var marker_213dce80a5444958ad2ff08ab30e001b = L.marker(
+            [40.1963889, -77.5801389],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_bde9e5a7371f48949c09efdf079a2b6f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_213dce80a5444958ad2ff08ab30e001b.setIcon(icon_bde9e5a7371f48949c09efdf079a2b6f);
+            
+    
+            var popup_3974f89eedec4919af8208c6c1924104 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_7188acb8276045f8a06d21772318181a = $(`<div id="html_7188acb8276045f8a06d21772318181a" style="width: 100.0%; height: 100.0%;">Pennsylvania sentiment score =0.093023255814 drug_terms: {'h': 2, 'black': 6, 'l': 2} recovery_terms: {}</div>`)[0];
+                popup_3974f89eedec4919af8208c6c1924104.setContent(html_7188acb8276045f8a06d21772318181a);
+            
+
+            marker_213dce80a5444958ad2ff08ab30e001b.bindPopup(popup_3974f89eedec4919af8208c6c1924104)
+            ;
+
+            
+        
+    
+        var marker_287f64dfc445479a862b3d8c985ba375 = L.marker(
+            [35.797763885, -116.688847215],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_c95ce9a03ee140b19b7ffc7addd28fef = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_287f64dfc445479a862b3d8c985ba375.setIcon(icon_c95ce9a03ee140b19b7ffc7addd28fef);
+            
+    
+            var popup_185b9f6fdb9c4cae83d1381e8a94c479 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_c61b86a61da94a88a8fc8e4f0d0e02ad = $(`<div id="html_c61b86a61da94a88a8fc8e4f0d0e02ad" style="width: 100.0%; height: 100.0%;">California sentiment score =1.8 drug_terms: {'weed': 5} recovery_terms: {'weed': 5}</div>`)[0];
+                popup_185b9f6fdb9c4cae83d1381e8a94c479.setContent(html_c61b86a61da94a88a8fc8e4f0d0e02ad);
+            
+
+            marker_287f64dfc445479a862b3d8c985ba375.bindPopup(popup_185b9f6fdb9c4cae83d1381e8a94c479)
+            ;
+
+            
+        
+    
+        var marker_69e9e5e85006458286daea40056da70c = L.marker(
+            [27.70314815, -81.4409259],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_8d57fb479e994e7586fe9cbe395c3526 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_69e9e5e85006458286daea40056da70c.setIcon(icon_8d57fb479e994e7586fe9cbe395c3526);
+            
+    
+            var popup_2ff578293b62425e88ce356b29e94070 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_098795e7c5704d67ba576907c177f18b = $(`<div id="html_098795e7c5704d67ba576907c177f18b" style="width: 100.0%; height: 100.0%;">Florida sentiment score =-0.024747773244 drug_terms: {'tobacco': 9, 'opiates': 2, 'white': 9, 'heroin': 9, 'mitragynine': 8, 'tylenol': 9, 'meth': 2, 'kratom': 200, 'aspirin': 9} recovery_terms: {'anxiety': 9, 'pain': 11, 'groups': 2, 'insomnia': 9, 'opiates': 2, 'diarrhea': 8, 'fatigue': 8, 'effects': 9, 'clean': 1, 'addiction': 10, 'ptsd': 11, 'depression': 15}</div>`)[0];
+                popup_2ff578293b62425e88ce356b29e94070.setContent(html_098795e7c5704d67ba576907c177f18b);
+            
+
+            marker_69e9e5e85006458286daea40056da70c.bindPopup(popup_2ff578293b62425e88ce356b29e94070)
+            ;
+
+            
+        
+    
+        var marker_9c56a1335ea147728d6afb9c0453a080 = L.marker(
+            [21.3069444, -157.8583333],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_b11c8e6450c341f78ef96656d401bbe2 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9c56a1335ea147728d6afb9c0453a080.setIcon(icon_b11c8e6450c341f78ef96656d401bbe2);
+            
+    
+            var popup_8030ea0d7e344643b5a85730760d67d3 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_f7396c1451174c9eb3122f8bfa340f53 = $(`<div id="html_f7396c1451174c9eb3122f8bfa340f53" style="width: 100.0%; height: 100.0%;">Hawaii sentiment score =0.916666666667 drug_terms: {} recovery_terms: {}</div>`)[0];
+                popup_8030ea0d7e344643b5a85730760d67d3.setContent(html_f7396c1451174c9eb3122f8bfa340f53);
+            
+
+            marker_9c56a1335ea147728d6afb9c0453a080.bindPopup(popup_8030ea0d7e344643b5a85730760d67d3)
+            ;
+
+            
+        
+    
+        var marker_4fd84f8f054b41c8b3c33c7d79231815 = L.marker(
+            [60.0, -95.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_2417258973d0421ca2adfc621e530e74 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_4fd84f8f054b41c8b3c33c7d79231815.setIcon(icon_2417258973d0421ca2adfc621e530e74);
+            
+    
+            var popup_0d8864c2ce874612bf8c9f8866781748 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_4c669dce8dcb4fa08c00c958a8276f6b = $(`<div id="html_4c669dce8dcb4fa08c00c958a8276f6b" style="width: 100.0%; height: 100.0%;">Canada sentiment score =-0.12227299592 drug_terms: {'tobacco': 9, 'opiates': 2, 'white': 9, 'heroin': 9, 'mitragynine': 8, 'tylenol': 9, 'meth': 2, 'kratom': 201, 'aspirin': 9} recovery_terms: {'anxiety': 9, 'pain': 11, 'groups': 2, 'insomnia': 9, 'opiates': 2, 'diarrhea': 8, 'fatigue': 8, 'effects': 9, 'clean': 1, 'addiction': 10, 'ptsd': 11, 'depression': 15}</div>`)[0];
+                popup_0d8864c2ce874612bf8c9f8866781748.setContent(html_4c669dce8dcb4fa08c00c958a8276f6b);
+            
+
+            marker_4fd84f8f054b41c8b3c33c7d79231815.bindPopup(popup_0d8864c2ce874612bf8c9f8866781748)
+            ;
+
+            
+        
+    
+        var marker_8e06d3dcaa6d46f69fff8b2d5c19146c = L.marker(
+            [42.8333, 12.8333],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_bf6f8736bcd440fc94eb077e26dc7ae5 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'grey',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8e06d3dcaa6d46f69fff8b2d5c19146c.setIcon(icon_bf6f8736bcd440fc94eb077e26dc7ae5);
+            
+    
+            var popup_06fc2f8af9694bb6be334cf78ab41bcd = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_800ac01bf22844918a723127542abf32 = $(`<div id="html_800ac01bf22844918a723127542abf32" style="width: 100.0%; height: 100.0%;">Italy sentiment score =0.0 drug_terms: {'north': 1, 'lines': 1} recovery_terms: {}</div>`)[0];
+                popup_06fc2f8af9694bb6be334cf78ab41bcd.setContent(html_800ac01bf22844918a723127542abf32);
+            
+
+            marker_8e06d3dcaa6d46f69fff8b2d5c19146c.bindPopup(popup_06fc2f8af9694bb6be334cf78ab41bcd)
+            ;
+
+            
+        
+    
+        var marker_26d473b5bb5f45818a5a07619650bab5 = L.marker(
+            [9.0, -80.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_6d914bb540c7471a965b703a2d40c9b7 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_26d473b5bb5f45818a5a07619650bab5.setIcon(icon_6d914bb540c7471a965b703a2d40c9b7);
+            
+    
+            var popup_9795af87be0d4d1da7a27ffcf10dab0c = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_120b87e692f745ddae5f84455ae23aa5 = $(`<div id="html_120b87e692f745ddae5f84455ae23aa5" style="width: 100.0%; height: 100.0%;">Panama sentiment score =0.5 drug_terms: {} recovery_terms: {}</div>`)[0];
+                popup_9795af87be0d4d1da7a27ffcf10dab0c.setContent(html_120b87e692f745ddae5f84455ae23aa5);
+            
+
+            marker_26d473b5bb5f45818a5a07619650bab5.bindPopup(popup_9795af87be0d4d1da7a27ffcf10dab0c)
+            ;
+
+            
+        
+    
+        var marker_2c73171e97204f408159ae07f81d1a9b = L.marker(
+            [64.0, 26.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_fb0d5997f4be4a1a904f95bf0c0d7238 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2c73171e97204f408159ae07f81d1a9b.setIcon(icon_fb0d5997f4be4a1a904f95bf0c0d7238);
+            
+    
+            var popup_f8461c3dac0c4da58fec1cd51cdcea66 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_0cf24e3db05e453caedd0d8bea9a9500 = $(`<div id="html_0cf24e3db05e453caedd0d8bea9a9500" style="width: 100.0%; height: 100.0%;">Finland sentiment score =-0.153846153846 drug_terms: {} recovery_terms: {}</div>`)[0];
+                popup_f8461c3dac0c4da58fec1cd51cdcea66.setContent(html_0cf24e3db05e453caedd0d8bea9a9500);
+            
+
+            marker_2c73171e97204f408159ae07f81d1a9b.bindPopup(popup_f8461c3dac0c4da58fec1cd51cdcea66)
+            ;
+
+            
+        
+    
+        var marker_56cf5f3424df4e13a52f566a52b90e46 = L.marker(
+            [38.0, -97.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_c4f5fc770d87480993389f13dbad61d5 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_56cf5f3424df4e13a52f566a52b90e46.setIcon(icon_c4f5fc770d87480993389f13dbad61d5);
+            
+    
+            var popup_e7717a6c56664492a69ff406d7c0e0d4 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_49dc0969273a4f89a782dc48f89bec8b = $(`<div id="html_49dc0969273a4f89a782dc48f89bec8b" style="width: 100.0%; height: 100.0%;">United States sentiment score =1.8 drug_terms: {'weed': 5} recovery_terms: {'weed': 5}</div>`)[0];
+                popup_e7717a6c56664492a69ff406d7c0e0d4.setContent(html_49dc0969273a4f89a782dc48f89bec8b);
+            
+
+            marker_56cf5f3424df4e13a52f566a52b90e46.bindPopup(popup_e7717a6c56664492a69ff406d7c0e0d4)
+            ;
+
+            
+        
+    
+        var marker_952d3f6d3b3c474ea2b1d5f38b5228f3 = L.marker(
+            [51.0, 9.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_fe48968b75ea44aba768c91e88b37461 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_952d3f6d3b3c474ea2b1d5f38b5228f3.setIcon(icon_fe48968b75ea44aba768c91e88b37461);
+            
+    
+            var popup_99be3f9fc2c341fc836c976e0e921990 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_e663216bcc054a91b2112becb0bb1665 = $(`<div id="html_e663216bcc054a91b2112becb0bb1665" style="width: 100.0%; height: 100.0%;">Germany sentiment score =-0.265316329082 drug_terms: {'north': 1, 'sub': 2, 'subs': 4} recovery_terms: {'life': 2, 'subs': 4, 'groups': 1}</div>`)[0];
+                popup_99be3f9fc2c341fc836c976e0e921990.setContent(html_e663216bcc054a91b2112becb0bb1665);
+            
+
+            marker_952d3f6d3b3c474ea2b1d5f38b5228f3.bindPopup(popup_99be3f9fc2c341fc836c976e0e921990)
+            ;
+
+            
+        
+    
+        var marker_e72e9b76007b459faa31aee36fe89c1d = L.marker(
+            [-30.0, -71.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_50cf808a323642fdb7ce80b855ea2b7e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e72e9b76007b459faa31aee36fe89c1d.setIcon(icon_50cf808a323642fdb7ce80b855ea2b7e);
+            
+    
+            var popup_27506a28650749dc8b61dc31738c64b5 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_7ac4c23e33c84ddcb98cac34152b48ea = $(`<div id="html_7ac4c23e33c84ddcb98cac34152b48ea" style="width: 100.0%; height: 100.0%;">Chile sentiment score =1.05555555556 drug_terms: {} recovery_terms: {}</div>`)[0];
+                popup_27506a28650749dc8b61dc31738c64b5.setContent(html_7ac4c23e33c84ddcb98cac34152b48ea);
+            
+
+            marker_e72e9b76007b459faa31aee36fe89c1d.bindPopup(popup_27506a28650749dc8b61dc31738c64b5)
+            ;
+
+            
+        
+    
+        var marker_4350aa75f3e74cb2bf1459f61532d331 = L.marker(
+            [36.0, 138.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_2cc85790a09c42709a1d2d764614a9c3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_4350aa75f3e74cb2bf1459f61532d331.setIcon(icon_2cc85790a09c42709a1d2d764614a9c3);
+            
+    
+            var popup_07ae7746666f4f44970ff72eb3da892f = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_beb0398421c34715a9f9bf0a9abe0956 = $(`<div id="html_beb0398421c34715a9f9bf0a9abe0956" style="width: 100.0%; height: 100.0%;">Japan sentiment score =0.52303030303 drug_terms: {} recovery_terms: {'pain': 2, 'groups': 1}</div>`)[0];
+                popup_07ae7746666f4f44970ff72eb3da892f.setContent(html_beb0398421c34715a9f9bf0a9abe0956);
+            
+
+            marker_4350aa75f3e74cb2bf1459f61532d331.bindPopup(popup_07ae7746666f4f44970ff72eb3da892f)
+            ;
+
+            
+        
+    
+        var marker_00d6fd14dc4e4a00ac9020841cd1e4de = L.marker(
+            [60.0, 100.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_2e9c37a8bc204a72a677d1d78bb96387);
+        
+    
+
+                var icon_db8c3c902baa458db9f3d12d34d95f64 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_00d6fd14dc4e4a00ac9020841cd1e4de.setIcon(icon_db8c3c902baa458db9f3d12d34d95f64);
+            
+    
+            var popup_093f3a5343ea4e429b468b23e74836e9 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_5bb5881ada934bd48fce62c323c9331c = $(`<div id="html_5bb5881ada934bd48fce62c323c9331c" style="width: 100.0%; height: 100.0%;">Russia sentiment score =0.8 drug_terms: {} recovery_terms: {'life': 1}</div>`)[0];
+                popup_093f3a5343ea4e429b468b23e74836e9.setContent(html_5bb5881ada934bd48fce62c323c9331c);
+            
+
+            marker_00d6fd14dc4e4a00ac9020841cd1e4de.bindPopup(popup_093f3a5343ea4e429b468b23e74836e9)
+            ;
+
+            
+        
+</script>

@@ -1,0 +1,1 @@
+Is there a way to uninstall just the Mail app, but not the Calendar app with it? I am trying to optimize my system to peak performance. I don't use the Mail app and would like to trash it. However, it seems to be connected to the Calendar app which is something I do use a lot. 

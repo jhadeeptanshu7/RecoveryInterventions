@@ -1,0 +1,5 @@
+So if the enemy has aircraft in the air and has air superiority (51%?) then all of your Divisions in the region take a huge movement speed penalty when moving. 
+
+However, that doesn't make sense to me because aircraft do not attack Divisions that are merely moving. They can only attack Divisions that are in combat. So your Divisions are getting a huge speed penalty just because there are enemy aircraft in the air.
+
+Am I missing something or is this just illogical?

@@ -111,13 +111,18 @@ def classification(project):
             no_url_post = re.sub(r'http\S+', '', p)
             single_user_post = single_user_post+ " " + no_url_post
         user_posts_cumulative.append(single_user_post)
+
+    #classifier pickle
     post_vect = joblib.load('min_df_4_posts_vect.pkl')
     bow_posts = post_vect.transform(user_posts_cumulative)
     posts_matrix = bow_posts.toarray()
     print bow_posts.shape
 
+    #classifier pickle
     posts_psa_dic = joblib.load('ate_posts_increased_rates_of_transfer.pkl')
     sorted_posts_dic = sorted(posts_psa_dic, key=posts_psa_dic.get, reverse=True)
+
+    #classifier pickle
     decreased_posts_psa_dic = joblib.load('ate_posts_decreased_rates_of_transfer.pkl')
     decreased_sorted_posts_dic = sorted(decreased_posts_psa_dic, key=decreased_posts_psa_dic.get)
 
@@ -144,6 +149,8 @@ def classification(project):
         matrix.append(new_row)
 
     matrix = np.array(matrix)
+
+    #classifier pickle
     sclf = joblib.load('sclf.pkl')
 
     y_pred = sclf.predict(matrix)

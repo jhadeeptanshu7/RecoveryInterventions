@@ -1,3 +1,4 @@
 .DS_Store
 *.pyc
 .idea/
+sentiment_analysis/worldcitiespop.txt

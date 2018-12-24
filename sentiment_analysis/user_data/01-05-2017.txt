@@ -1,0 +1,7 @@
+I just got a new Thrustmaster T. Flight Stick X. I tried using it with the GOG game Wings of Prey. However, two things are problematic. First, there is a huge deadzone around the joystick. From some brief investigation this appears to be because of the crappy drivers not the hardware itself.
+
+Second, the throttle does not move smoothly. It moves in increments so instead of going from 0% power to 1% power to 2% power etc, it goes from 0% power to 10% power to 22% power etc. It just seems to lack the granularity I need. 
+
+I got this stick because it was a good price, well reviewed, and had twist, adjustable tension, and a throttle detent which are three things I really wanted. However, the two problems I mentioned kind of ruin it for me. 
+
+Can someone tell me if the new Thrustmaster T 16000M FCS stick has these problems as well?
