@@ -1,0 +1,174 @@
+from optparse import OptionParser
+
+from Classification import Project
+from sklearn.feature_extraction.text import CountVectorizer, ENGLISH_STOP_WORDS
+import os
+import pymongo
+import propensity_score_matching
+import train_classifier_classification
+import train_system_level_visualization
+import train_user_level_visualization
+from Classification import OUTPUT_FOLDER
+
+client = pymongo.MongoClient()
+db = client.Recovery
+
+def creating_user_post_and_recovery_matrix(project):
+    collection = db['drug_users']
+    cursor = collection.find({"project_id":project.id}, no_cursor_timeout=True)
+
+    recovery=[]
+    all_redditors=[]
+    user_posts_cumulative = []
+
+
+    for i in cursor:
+        redditor = i["user"]
+        all_redditors.append(redditor)
+        user_recovery = i['recovery']
+        posts = i['posts']
+        single_user_posts = " "
+        for p in posts:
+            single_user_posts = single_user_posts + ' ' + p
+
+        user_posts_cumulative.append(single_user_posts)
+        recovery.append(user_recovery)
+
+    stopwords_vect = CountVectorizer(min_df=5, stop_words="english",ngram_range=(1,2)).fit(user_posts_cumulative)
+    X_stopwords = stopwords_vect.transform(user_posts_cumulative)
+    print X_stopwords.shape
+    print "vocabulary length ", len(stopwords_vect.vocabulary_)
+    return [all_redditors, stopwords_vect, X_stopwords, recovery]
+
+
+
+
+def insert_data_mongodb(folder, project):
+
+    collection = db['drug_users']
+
+    for dir in os.listdir(folder):
+        if dir[0] == ".":
+            continue
+
+        for sub_dir in os.listdir(folder+"/"+dir):
+            if sub_dir[0]==".":
+                continue
+            user_dic = {}
+            user_dic["project_id"] = project.id
+            user_dic["user"] = sub_dir
+            sub_folder_path = folder+"/"+dir+"/"+sub_dir
+            posts = []
+            for text_file in os.listdir(sub_folder_path):
+                # print text_file
+                text_file_path = sub_folder_path + "/" + text_file
+                if text_file.endswith(".txt"):
+                    # print text_file
+                    file_object = open(text_file_path, "r")
+                    post_content = file_object.read()
+                    posts.append(post_content)
+            user_dic["posts"] = posts
+            if dir =='recovery':
+                user_dic['recovery']=1
+            if dir =='non_recovery':
+                user_dic['recovery']=0
+            collection.insert_one(user_dic)
+
+def sorting_terms_by_ate(project):
+    project_id = project.id
+    collection = db["psm_terms"]
+    cursor = collection.find({"project_id":project_id}, no_cursor_timeout=True)
+
+    ate_increased_rates_of_transfer = {}
+    ate_decreased_rates_of_transfer = {}
+
+    for i in cursor:
+        term = i["term"]
+        ate =  i["ate"]
+        zscore = i["zscore"]
+
+        if str(zscore) == 'inf':
+            continue
+        if str(zscore) =='-inf':
+            continue
+        if ate >0:
+            ate_increased_rates_of_transfer[term] = ate
+        if ate <0:
+            ate_decreased_rates_of_transfer[term] = ate
+    return [ate_increased_rates_of_transfer,ate_decreased_rates_of_transfer]
+
+def create_visualization_folders(project):
+    folder_path_1 = os.path.dirname(__file__) + '/visualizations/'  + project.id + '/system_level'
+    folder_path_2 = os.path.dirname(__file__) + '/visualizations/'  + project.id + '/user_level'
+    if not os.path.isdir(folder_path_1):
+        os.makedirs(folder_path_1)
+
+    if not os.path.isdir(folder_path_2):
+        os.makedirs(folder_path_2)
+
+    collection = db['drug_users']
+    cursor = collection.find({"project_id":project.id},no_cursor_timeout=True)
+    for i in cursor:
+        user = i["user"]
+        recovery =i["recovery"]
+        if recovery==1:
+            folder_path = os.path.dirname(__file__) + '/visualizations/' + project.id + '/user_level/recovery_users/' + user
+            if not os.path.isdir(folder_path):
+                os.makedirs(folder_path)
+        if recovery==0:
+            folder_path = os.path.dirname(__file__) + '/visualizations/' + project.id + '/user_level/non_recovery_users/' + user
+            if not os.path.isdir(folder_path):
+                os.makedirs(folder_path)
+
+
+
+
+def system_level_visualization(project):
+    train_system_level_visualization.recovery_lda_and_word_cloud(project)
+    train_system_level_visualization.non_recovery_lda_and_word_cloud(project)
+
+def user_level_visualization(project):
+    train_user_level_visualization.user_visualization(project)
+
+
+def run(folder, project):
+    # print folder
+    # print project.id
+    # print os.listdir(folder)
+    folder = OUTPUT_FOLDER + "/" + folder
+    insert_data_mongodb(folder,project)
+    psa_features = creating_user_post_and_recovery_matrix(project)
+    #stopwords_vect, X_stopwords, recovery
+    propensity_score_matching.run_psm(psa_features[1],psa_features[2],psa_features[3],project)
+    increased_decreased_ate = sorting_terms_by_ate(project)
+    train_classifier_classification.run_classification(project,increased_decreased_ate,psa_features)
+    create_visualization_folders(project)
+    system_level_visualization(project)
+    user_level_visualization(project)
+
+
+def main():
+    parser = OptionParser()
+    parser.add_option('-f', '--folder', dest='folder', help="Folder name", type=str)
+    parser.add_option('-p', '--project', dest='project', help="Project id", type=str)
+    parser.add_option('-u', '--user', dest='user', help="User name", type=str)
+    parser.add_option('-t', '--job_type', dest='job_type', help="Job type", type=str)
+
+    (options, args) = parser.parse_args()
+    print options.folder
+    print options.project
+    print options.user
+    run(options.folder, Project(options.project, options.folder, options.user, options.job_type))
+
+
+
+
+#
+# def main():
+#     folder = "/Users/jhadeeptanshu/RecoveryInterventions/train_uploads/"
+#     project = Project("5bfa2995473c8923db51e0b2", folder, "5bf8c2da473c89cfb14d63d2")
+#     run(folder, project)
+
+
+if __name__ == "__main__":
+    main()
