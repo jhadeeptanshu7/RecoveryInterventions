@@ -22,67 +22,29 @@
           <li class="nav-item active">
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/train">Train Classifier</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
                href="#" id="navbarDropdownMenuLink"
                data-toggle="dropdown"
                aria-haspopup="true"
                aria-expanded="false">
-              Classification
+              Run Classifier
             </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="/train">Train your own classifier</a></li>
-                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">
-                      Use existing classifier</a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="/run_single">Single</a></li>
-                      <li><a class="dropdown-item" href="/run_batch">Batch</a></li>
-                    </ul>
-                  </li>
+                  <li><a class="dropdown-item" href="/train">Single user</a></li>
+                  <li><a class="dropdown-item" href="/train">Batch</a></li>
               </ul>
-{#            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">#}
-{#              <a class="dropdown-item" href="/train">Train your own classifier</a>#}
-{#              <a class="dropdown-item" href="/run">Use existing classifier</a>#}
-{#                <a tabindex="-1" href="#" class="dropdown-item">More options</a>#}
-{#                <ul class="dropdown-menu">#}
-{#                  <li>Blah</li>#}
-{#                </ul>#}
-              <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-{#            </div>#}
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="/project">Export Results</a>
+            <a class="nav-link" href="/">Results</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="/">Tutorial</a>
+          </li>
         </ul>
-{#          {% if not login %}#}
-{#          <ul class="navbar-nav ml-auto">#}
-{#              <li class="nav-item nav-link">#}
-{#                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#signupModal">#}
-{#                      <span class="fas fa-user-plus"></span> Sign Up#}
-{#                  </button>#}
-{#              </li>#}
-{#              <li class="nav-item nav-link">#}
-{#                  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#loginModal">#}
-{#                      <span class="fas fa-sign-in-alt"></span> Login#}
-{#                  </button>#}
-{#              </li>#}
-{#            </ul>#}
-{#          {% else %}#}
-{#            <ul class="navbar-nav ml-auto">#}
-{#                <li class="nav-item nav-link">Hi, {{ name }}</li>#}
-{#                <li class="nav-item nav-link">#}
-{#                   <a href = "/logout">#}
-{#                  <button type="button" class="btn btn-info btn-sm">#}
-{#                      <span class="fas fa-sign-out-alt"></span> Logout#}
-{#                  </button>#}
-{#                   </a>#}
-{#              </li>#}
-{#            </ul>#}
-{##}
-{#      {% endif %}#}
-
       </div>
     </nav>
 
