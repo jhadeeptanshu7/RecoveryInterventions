@@ -1,1 +1,0 @@
-Does anyone else think it might be neat to have a "reserve" option for frontlines and fallback lines etc. Where you could designate certain units to be held behind the lines as a mobile reserve force.

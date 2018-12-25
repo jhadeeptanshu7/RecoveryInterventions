@@ -1,1 +1,0 @@
-I'm seriously annoyed with the Fallback line drawer. It doesn't seem to work correctly when you have to make tight curves. I see no way to fix it except doing everything manually. 

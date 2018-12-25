@@ -2,6 +2,8 @@ import datetime
 import logging
 import zipfile
 import os
+
+import sys
 from sklearn.externals import joblib
 import pymongo
 import re
@@ -18,6 +20,8 @@ VISUALIZATION_FOLDER = os.path.dirname(__file__) + '/visualizations/'
 logging.basicConfig(filename='classification.log', level=logging.DEBUG)
 OUTPUT_FOLDER = os.path.dirname(__file__) + '/output'
 UPLOAD_FOLDER = os.path.dirname(__file__) + '/run_uploads/'
+
+sys.path.append(os.path.dirname(__file__) + "/sentiment_analysis/")
 
 client = pymongo.MongoClient()
 db = client.Recovery
@@ -168,8 +172,10 @@ def run_trained_classification(folder, project):
         os.makedirs(VISUALIZATION_FOLDER + "/" + project.id + "/system_level")
     folder = OUTPUT_FOLDER + "/" + folder
     print(folder)
+
     insert_data_mongodb(folder, project)
-    #gets all_redditors, y_pred
+
+    # gets all_redditors, y_pred
     classification_results = classification(project)
     visualizations.recovery_non_recovery_donut([sum(classification_results[1]),
                                                 len(classification_results[1])-sum(classification_results[1])],
@@ -177,6 +183,12 @@ def run_trained_classification(folder, project):
     visualizations.recovery_lda_and_word_cloud(project)
     visualizations.non_recovery_lda_and_word_cloud(project)
     user_level_visualization.user_visualization(project)
+
+
+def run_trained_classification_single(input_folder, output_folder):
+    # sentiment_analysis.main(input_folder, output_folder)
+    os.system("cd /Users/jhadeeptanshu/RecoveryInterventions/sentiment_analysis && python sentiment_analysis.py -i %s -o %s"
+              %(input_folder, output_folder))
 
 
 def train_classification(folder, project):
@@ -203,4 +215,8 @@ if __name__ == "__main__":
     # from TestModels import Project
     # doWork("aj_ds", Project("5bfa2995473c8923db51e0b2", "aj_ds.zip", "5bf8c2da473c89cfb14d63d2"))
     # fileHandler("5bfa126b473c8916fdd955b6")
-    main()
+
+    # main()
+    input_folder = "/Users/jhadeeptanshu/RecoveryInterventions/run_uploads/user_data"
+    output_folder = "/Users/jhadeeptanshu/RecoveryInterventions/visualizations/1/"
+    run_trained_classification_single(input_folder, output_folder)

@@ -1,1 +1,0 @@
-This is very odd. I cannot for the life of me get the Google keyboard (Gboard) to make sounds when you tap it. The default keyboard (Android Keyboard AOSP) will make sounds, but not the Gboard. Has anyone else had this problem? It's really quite annoying.

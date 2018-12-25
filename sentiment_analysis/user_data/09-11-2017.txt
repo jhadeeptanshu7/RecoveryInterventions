@@ -1,7 +1,0 @@
-I was reading this very interesting and in [depth thread](https://forum.paradoxplaza.com/forum/index.php?threads/combat-mechanics.664959/) about the combat tactics of CK2. It's from 2013 so I don't know how accurate it still is though. I've put at least 1000 hours into CK2 and I had no idea about any of this combat stuff. It's actually very interesting which makes it a real shame that game basically doesn't tell you anything about it.
-
-I think the game should tell you what your unit stats are so you have a better understanding of their different roles. It could also summarize it in a rock paper scissors kind of way. It should provide more information about what tactics will be available based on your flank composition and your current flank leader. So you can organize your army in a way to maximize its effectiveness. During combat it should tell you if your current tactic is normal, good, bad, or cultural (really good). 
-
-Also, tactics are so cool that I think there should be more tactics introduced. And based on that thread it seems that some of the Retinues are not very useful due to them being light infantry which is a weak unit in general and doesn't benefit from any tactics very much. So maybe some Retinues should be changed. Also, I think I read that the Byzantine cultural tactic doesn't take advantage of their Retinue horse archers. 
-
-Finally, you should be able to see what upgrades your Retinues and Levies have as a result of the buildings in their Holdings. 

@@ -1,1 +1,0 @@
-I need a bot that post the videos from a specific youtube channel to a subreddit I just created. I'm trying to get the videos from "The Kleb" channel to post automatically to /r/thekleb. I've tried using that channel bot thing, but it hasn't worked. 

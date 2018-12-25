@@ -1,3 +1,5 @@
+from optparse import OptionParser
+
 import afinn_sentiment_scores
 import folium
 from bokeh.io import output_notebook, show
@@ -33,17 +35,20 @@ import en_core_web_sm
 nlp = en_core_web_sm.load()
 from pprint import pprint
 from collections import defaultdict
+import sys
+
+sys.path.append(os.path.dirname(__file__))
 
 
 
 def create_post_dic(folder):
     post_dic ={}
-    for text_file in os.listdir("user_data"):
+    for text_file in os.listdir(folder):
         if text_file[0]==".":
                 continue
         if text_file.endswith(".txt"):
             key = text_file.split(".")[0]
-            text_file_path = "user_data" + "/" + text_file
+            text_file_path = folder + "/" + text_file
             file_object = open(text_file_path, "r")
             post_content = file_object.read()
             post_dic[key] = post_content
@@ -74,8 +79,8 @@ def sentiment_score_of_each_post(post_dic):
             post_sentiment_score_dic[p] = 0
     return post_sentiment_score_dic
 
-def sentiment_line_plot(sentiment_data_frame):
 
+def sentiment_line_plot(sentiment_data_frame, output_folder):
 
     source = ColumnDataSource(sentiment_data_frame)
 
@@ -108,7 +113,7 @@ def sentiment_line_plot(sentiment_data_frame):
 
     p.add_tools(hover)
 
-    output_file("sentiment_analysis.html")
+    output_file(output_folder+"sentiment_analysis.html")
     save(p)
 
 def converting_data_to_pandas_df(sentiment_score,post_dic):
@@ -159,7 +164,8 @@ def converting_data_to_pandas_df(sentiment_score,post_dic):
 def geolocation_based_sentiment_analysis(post_dic):
     pass
 
-def user_posts_topic_modeling(post_dic,n):
+
+def user_posts_topic_modeling(post_dic, n, output_folder):
     user_posts_cumulative =[]
     for p in post_dic:
         no_url_post = re.sub(r'http\S+', '', post_dic[p])
@@ -173,10 +179,10 @@ def user_posts_topic_modeling(post_dic,n):
     # mglearn.tools.print_topics(topics=range(10),feature_names=feature_names,sorting=sorting,topics_per_chunk=5,n_words=10)
     topics = pyLDAvis.sklearn.prepare(lda,X,vect,mds='mmds')
 
-    pyLDAvis.save_html(topics,'document_topics.html')
+    pyLDAvis.save_html(topics, output_folder + 'document_topics.html')
 
 
-def drug_bar_chart(post_dic):
+def drug_bar_chart(post_dic, output_folder):
     exactMatch = joblib.load("drugs_exactMatch.pkl")
     drug_count_dic = {}
     for p in post_dic:
@@ -204,10 +210,11 @@ def drug_bar_chart(post_dic):
     p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
 
-    output_file("drug_bar_chart.html")
+    output_file(output_folder + "drug_bar_chart.html")
     save(p)
 
-def stacked_drug_bar_chart(post_dic):
+
+def stacked_drug_bar_chart(post_dic, output_folder):
     exactMatch = joblib.load("drugs_exactMatch.pkl")
     drug_count_dic = {}
     for p in post_dic:
@@ -265,11 +272,11 @@ def stacked_drug_bar_chart(post_dic):
     p.legend.location = "top_center"
     p.legend.orientation = "horizontal"
     p.xaxis.major_label_orientation = 1
-    output_file("stacked_drug_bar_chart.html")
+    output_file(output_folder + "stacked_drug_bar_chart.html")
     save(p)
 
 
-def stacked_recovery_bar_chart(post_dic):
+def stacked_recovery_bar_chart(post_dic, output_folder):
     exactMatch = joblib.load("recovery_exactMatch.pkl")
     drug_count_dic = {}
     for p in post_dic:
@@ -327,7 +334,7 @@ def stacked_recovery_bar_chart(post_dic):
     p.legend.location = "top_center"
     p.legend.orientation = "horizontal"
     p.xaxis.major_label_orientation = 1
-    output_file("stacked_recovery_bar_chart.html")
+    output_file(output_folder + "stacked_recovery_bar_chart.html")
     save(p)
 
 
@@ -364,7 +371,8 @@ def creating_drug_pandas_df(post_dic):
     df.sort_values('date',inplace=True)
     return df
 
-def temporal_drug_use(drugs_data_frame):
+
+def temporal_drug_use(drugs_data_frame, output_folder):
 
     # output_file("temporal_drug_count.html")
 
@@ -391,7 +399,7 @@ def temporal_drug_use(drugs_data_frame):
 
     p.add_tools(hover)
 
-    output_file("temporal_drug_count.html")
+    output_file(output_folder + "temporal_drug_count.html")
 
     save(p)
 
@@ -399,7 +407,8 @@ def temporal_drug_use(drugs_data_frame):
 def geolocation_based_drug_use_analysis(post_dic):
     pass
 
-def recovery_bar_chart(post_dic):
+
+def recovery_bar_chart(post_dic, output_folder):
     exactMatch = joblib.load("recovery_exactMatch.pkl")
     drug_count_dic = {}
     for p in post_dic:
@@ -427,7 +436,7 @@ def recovery_bar_chart(post_dic):
     p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
 
-    output_file("recovery_bar_chart.html")
+    output_file(output_folder + "recovery_bar_chart.html")
     save(p)
 
 def recovery_terms_and_no_of_drug_terms_in_a_post(post):
@@ -461,7 +470,8 @@ def creating_recovery_pandas_df(post_dic):
     df.sort_values('date',inplace=True)
     return df
 
-def temporal_recovery_use(recovery_data_frame):
+
+def temporal_recovery_use(recovery_data_frame, output_folder):
     source = ColumnDataSource(recovery_data_frame)
 
     p = figure(x_axis_type="datetime",plot_width=1000, plot_height=400, title = "Temporal Recovery Term Use")
@@ -485,15 +495,17 @@ def temporal_recovery_use(recovery_data_frame):
 
     p.add_tools(hover)
 
-    output_file("temporal_recovery_count.html")
+    output_file(output_folder + "temporal_recovery_count.html")
 
     save(p)
+
 
 def geolocation_based_recovery_use_analysis(post_dic):
     pass
 
-def no_of_positive_negative_neutral_posts(sentiment_data_frame):
-    output_file("no_of_positive_negative_neutral_posts.html")
+
+def no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder):
+    output_file(output_folder + "no_of_positive_negative_neutral_posts.html")
     sentiment_scores = sentiment_data_frame["sentiment_score"].tolist()
     no_of_positive_posts = sum(ss > 0 for ss in sentiment_scores)
     no_of_negative_posts = sum(ss < 0 for ss in sentiment_scores)
@@ -601,10 +613,6 @@ def no_of_positive_negative_neutral_posts(sentiment_data_frame):
     non_recovery_users_p.axis.axis_label=None
     non_recovery_users_p.axis.visible=False
     non_recovery_users_p.grid.grid_line_color = None
-
-
-
-
 
     save(gridplot([[p,all_users_p],[recovery_users_p,non_recovery_users_p,None]]))
 
@@ -742,12 +750,6 @@ def location_sentiment_score(country_post_dic, state_post_dic, city_post_dic):
         city_sentiment_scores_dic[city] = [len(unique_posts),city_sentiment_score]
 
     return country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic
-
-
-
-
-
-
 
 
 def single_post_drug_terms(post):
@@ -901,7 +903,7 @@ def state_lat_long(state, country, country_short_name,lat_long_city_df,loc_df):
 
 
 
-def map_visualization(location_matrix):
+def map_visualization(location_matrix, output_folder):
     # loc_df = pd.DataFrame(location_matrix)
     # ['location','sentiment_score','drug_terms','recovery_terms','lat','long']
     loc_df = pd.DataFrame.from_records(location_matrix,columns=['location','sentiment_score','drug_terms','recovery_terms','lat','long'])
@@ -920,11 +922,11 @@ def map_visualization(location_matrix):
         folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
                       + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
 
-    folium_map.save("my_map.html")
+    folium_map.save(output_folder + "my_map.html")
 
 
 
-def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentiment_values, location_drug_recovery_values):
+def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentiment_values, location_drug_recovery_values, output_folder):
 
 
     countries_count = defaultdict(int)
@@ -1117,41 +1119,37 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
         row.append(country_location_dic[country][0])
         row.append(country_location_dic[country][1])
         location_matrix.append(row)
-    map_visualization(location_matrix)
+    map_visualization(location_matrix, output_folder)
 
 
-
-
-
-
-def main():
-    post_dic = create_post_dic("user_data")
+def main(folder, output_folder):
+    post_dic = create_post_dic(folder)
 
     #SENTIMENT ANALYSIS VISUALIZATION
 
     sentiment_score_dic = sentiment_score_of_each_post(post_dic)
     sentiment_data_frame = converting_data_to_pandas_df(sentiment_score_dic,post_dic)
-    sentiment_line_plot(sentiment_data_frame)
-    no_of_positive_negative_neutral_posts(sentiment_data_frame)
+    sentiment_line_plot(sentiment_data_frame, output_folder)
+    no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder)
     geolocation_based_sentiment_analysis(post_dic)
 
     # TOPIC MODELING VISUALIZATION
 
     n=10
-    user_posts_topic_modeling(post_dic,n)
+    user_posts_topic_modeling(post_dic,n, output_folder)
 
     # DRUG TERM VISUALIZATION
 
-    stacked_drug_bar_chart(post_dic)
+    stacked_drug_bar_chart(post_dic, output_folder)
     drugs_data_frame = creating_drug_pandas_df(post_dic)
-    temporal_drug_use(drugs_data_frame)
+    temporal_drug_use(drugs_data_frame, output_folder)
 
     # RECOVERY TERM VISUALIZATION
 
-    recovery_bar_chart(post_dic)
+    recovery_bar_chart(post_dic, output_folder)
     recovery_data_frame = creating_recovery_pandas_df(post_dic)
-    temporal_recovery_use(recovery_data_frame)
-    stacked_recovery_bar_chart(post_dic)
+    temporal_recovery_use(recovery_data_frame, output_folder)
+    stacked_recovery_bar_chart(post_dic, output_folder)
 
 
     # Geolocation Visualization
@@ -1161,11 +1159,21 @@ def main():
     country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic = location_drug_recovery_terms(country_post_dic,state_post_dic,city_post_dic)
     location_sentiment_values = [country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic]
     location_drug_recovery_values = [country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic]
-    plot_geo_data(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_recovery_values)
+    plot_geo_data(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_recovery_values, output_folder)
 
 
+def run():
+    parser = OptionParser()
+    parser.add_option('-i', '--input', dest='input_folder', help="input folder", type=str)
+    parser.add_option('-o', '--output', dest='output_folder', help="output folder", type=str)
 
+    (options, args) = parser.parse_args()
+    main(options.input_folder, options.output_folder)
 
 
 if __name__ == "__main__":
-    main()
+    # folder = "/Users/jhadeeptanshu/RecoveryInterventions/run_uploads/user_data"
+    # output_folder = "../visualizations/1/"
+    # main(folder, output_folder)
+
+    run()

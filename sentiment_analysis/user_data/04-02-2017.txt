@@ -1,1 +1,0 @@
-I remember a while ago that Lifx lights were supposed to work with the Google Now app/commands and Cortana on Windows 10. Then they stopped working at some point I think. Do they work again?

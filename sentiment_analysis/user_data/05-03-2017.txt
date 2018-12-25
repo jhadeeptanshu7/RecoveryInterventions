@@ -1,3 +1,0 @@
-The very old Beach Head games just released on Steam. I bought them all for my dad because he used to play them. However, they won't work on his Windows 10 64 bit all-in-one computer. It seems like nothing has been done to make them compatible with modern computers. 
-
-When I try to run them I get a launch error and then my screen goes black. I've tried the different compatibility modes and lower resolution and nothing has worked. What should I do?
