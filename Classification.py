@@ -28,11 +28,10 @@ db = client.Recovery
 
 
 class Project:
-    def __init__(self, project_id, filename, job_type, user_email):
+    def __init__(self, project_id, filename, job_type):
         self.id = str(project_id)
         self.filename = filename
         self.job_type = job_type
-        self.user_email = user_email
 
 
 def fileHandler(project_id):
@@ -42,7 +41,7 @@ def fileHandler(project_id):
     if not project:
         return
 
-    project = Project(project['_id'], project['file'], project['job_type'], project['user_email'])
+    project = Project(project['_id'], project['file'], project['job_type'])
     file = project.filename
 
     logging.info(str(datetime.datetime.now()) + ': ' + file)
@@ -54,16 +53,16 @@ def fileHandler(project_id):
 
     if project.job_type == "CLASSIFY":
         print "CLASSIFY"
-        os.system("python /Users/jhadeeptanshu/RecoveryInterventions/Classification.py -f " + str(extracted[0]) + " -p " + str(project.id) + " -u " + project.user_email + " -t " + project.job_type)
+        os.system("python /Users/jhadeeptanshu/RecoveryInterventions/Classification.py -f " + str(extracted[0]) + " -p " + str(project.id) + " -t " + project.job_type)
     elif project.job_type == "TRAIN":
         print "TRAIN"
-        os.system("python /Users/jhadeeptanshu/RecoveryInterventions/TrainClassifier.py -f " + str(extracted[0]) + " -p " + str(project.id) + " -u " + project.user_email + " -t " + project.job_type)
+        os.system("python /Users/jhadeeptanshu/RecoveryInterventions/TrainClassifier.py -f " + str(extracted[0]) + " -p " + str(project.id) + " -t " + project.job_type)
 
     db['projects'].find_one_and_update({"project_id": project_id},
                                  {"$set": {"job_status": "1"}})
     # user = db.users.find_one({'_id': ObjectId(project.user_email)})
 
-    send_email(project.user_email, BODY % ("User", project.id))
+    # send_email(project.user_email, BODY % ("User", project.id))
 
 
 def unzip_folder(input_file):
@@ -172,25 +171,39 @@ def classification(project):
     return [all_redditors,y_pred]
 
 
-def run_trained_classification(folder, project):
-    if not os.path.exists(VISUALIZATION_FOLDER + "/" + project.id + "/system_level"):
-        os.makedirs(VISUALIZATION_FOLDER + "/" + project.id + "/system_level")
+def run_batch_classification(folder, project):
+    # if not os.path.exists(VISUALIZATION_FOLDER + "/" + project.id + "/system_level"):
+    #     os.makedirs(VISUALIZATION_FOLDER + "/" + project.id + "/system_level")
     folder = OUTPUT_FOLDER + "/" + folder
-    print(folder)
 
     insert_data_mongodb(folder, project)
 
     # gets all_redditors, y_pred
     classification_results = classification(project)
-    visualizations.recovery_non_recovery_donut([sum(classification_results[1]),
-                                                len(classification_results[1])-sum(classification_results[1])],
-                                                project)
-    visualizations.recovery_lda_and_word_cloud(project)
-    visualizations.non_recovery_lda_and_word_cloud(project)
-    user_level_visualization.user_visualization(project)
+    # visualizations.recovery_non_recovery_donut([sum(classification_results[1]),
+    #                                             len(classification_results[1])-sum(classification_results[1])],
+    #                                             project)
+    # visualizations.recovery_lda_and_word_cloud(project)
+    # visualizations.non_recovery_lda_and_word_cloud(project)
+    # user_level_visualization.user_visualization(project)
+
+    base_input_folder = folder + "/"
+    base_output_folder = VISUALIZATION_FOLDER + str(project.id) + "/"
+
+    for user_folder in os.listdir(folder):
+        if user_folder[0] == ".":
+            continue
+
+        input_folder = base_input_folder + user_folder
+        output_folder = base_output_folder + user_folder + "/"
+
+        if not os.path.exists(output_folder):
+            os.makedirs(output_folder)
+
+        run_single_classification(input_folder, output_folder)
 
 
-def run_trained_classification_single(input_folder, output_folder):
+def run_single_classification(input_folder, output_folder):
     # sentiment_analysis.main(input_folder, output_folder)
     os.system("cd /Users/jhadeeptanshu/RecoveryInterventions/sentiment_analysis && python sentiment_analysis.py -i %s -o %s"
               %(input_folder, output_folder))
@@ -204,14 +217,10 @@ def main():
     parser = OptionParser()
     parser.add_option('-f', '--folder', dest='folder', help="Folder name", type=str)
     parser.add_option('-p', '--project', dest='project', help="Project id", type=str)
-    parser.add_option('-u', '--user', dest='user_email', help="User email", type=str)
     parser.add_option('-t', '--job_type', dest='job_type', help="Job type", type=str)
 
     (options, args) = parser.parse_args()
-    print options.folder
-    print options.project
-    print options.user_email
-    run_trained_classification(options.folder, Project(options.project, options.folder, options.job_type, options.user_email))
+    run_batch_classification(options.folder, Project(options.project, options.folder, options.job_type))
 
 
 if __name__ == "__main__":

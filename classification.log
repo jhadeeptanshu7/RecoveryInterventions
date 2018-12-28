@@ -2306,3 +2306,80 @@ INFO:rq.worker:Result is kept for 5000 seconds
 INFO:root:2018-12-27 17:24:37.652707: train_uploads.zip
 INFO:rq.worker:default: Job OK (548d76ba-da99-47da-9cc9-7140d0cccd18)
 INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 18:40:56.557161: batch.zip
+INFO:rq.worker:default: Job OK (716e5a1f-1ec6-45bc-bf77-6d9d1849744d)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 18:41:49.852482: batch.zip
+INFO:rq.worker:default: Job OK (dbe9018f-f26b-4795-92fa-8882821e6b72)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 18:43:19.480936: batch.zip
+INFO:rq.worker:default: Job OK (72aa9c41-09b7-4e2a-9235-6f01f4d905d3)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 18:56:12.043111: batch.zip
+INFO:root:2018-12-27 19:04:08.542588: small_batch.zip
+INFO:rq.worker:default: Job OK (4b517652-97c8-4bb8-b253-4429b0921db7)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 19:11:26.368775: temp_batch.zip
+INFO:rq.worker:default: Job OK (a781daf2-a336-46d2-bbc9-c149aa9ddd03)
+INFO:rq.worker:Result is kept for 5000 seconds
+ERROR:rq.worker:TypeError: __init__() takes exactly 5 arguments (4 given)
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 44, in fileHandler
+    project = Project(project['_id'], project['file'], project['job_type'])
+TypeError: __init__() takes exactly 5 arguments (4 given)
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 44, in fileHandler
+    project = Project(project['_id'], project['file'], project['job_type'])
+TypeError: __init__() takes exactly 5 arguments (4 given)
+WARNING:rq.worker:Moving job to u'failed' queue
+ERROR:rq.worker:TypeError: __init__() takes exactly 5 arguments (4 given)
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 44, in fileHandler
+    project = Project(project['_id'], project['file'], project['job_type'])
+TypeError: __init__() takes exactly 5 arguments (4 given)
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 44, in fileHandler
+    project = Project(project['_id'], project['file'], project['job_type'])
+TypeError: __init__() takes exactly 5 arguments (4 given)
+WARNING:rq.worker:Moving job to u'failed' queue
+INFO:root:2018-12-27 19:23:00.253243: temp_batch.zip
+INFO:rq.worker:default: Job OK (e95eb236-53f4-4544-bc48-262abec841d8)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (eb8be32d-82ca-4b73-b482-b50845c5020e)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 19:23:41.438947: temp_batch.zip
+INFO:rq.worker:default: Job OK (07b8fe74-b1f3-4e0f-9a56-21d8091b53bf)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 19:27:05.309840: temp_batch.zip
+INFO:rq.worker:default: Job OK (be5249ca-01ef-446b-853b-96dbd6396994)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 19:29:25.161231: temp_batch.zip
+INFO:rq.worker:default: Job OK (4ffccabb-e145-48f9-bb9f-3c5c2a6435d5)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 19:51:28.274348: 19:51:14.986492.zip
+INFO:rq.worker:default: Job OK (7bf6bedf-74b8-44d8-a5d3-98186ff67646)
+INFO:rq.worker:Result is kept for 5000 seconds

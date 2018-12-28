@@ -2,6 +2,7 @@ import os
 import shutil
 import zipfile
 
+import datetime
 from flask import Flask,flash, render_template, request, redirect, url_for, send_from_directory, make_response, send_file
 from werkzeug.utils import secure_filename
 from flask_login import LoginManager, login_user, UserMixin, current_user, login_required, logout_user
@@ -9,8 +10,9 @@ from flask_mongoengine import MongoEngine
 from rq import Queue
 from worker import conn
 import logging
-from Classification import fileHandler, unzip_folder, run_trained_classification_single, OUTPUT_FOLDER
+from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER
 from Helpers import zipdir
+
 
 CLASSIFY = 'CLASSIFY'
 TRAIN = 'TRAIN'
@@ -47,7 +49,6 @@ class Project(db.Document):
     job_id = db.StringField()
     job_type = db.StringField()
     job_status = db.StringField()
-    user_email = db.StringField()
 
 
 @app.route('/')
@@ -106,29 +107,29 @@ def upload():
                       "Was {os.path.getsize(save_path)} but we" +
                       " expected {request.form['dztotalfilesize']} ")
             return make_response(('Size mismatch', 500))
-        else:
 
-            print ('File {file.filename} has been uploaded successfully')
     else:
         print('Chunk {current_chunk + 1} of {total_chunks} ' + 'for file {file.filename} complete')
 
-    return make_response(("Chunk upload successful", 200))
+    new_name = str(datetime.datetime.now().time()) + ".zip"
+    renamed_path = os.path.join(app.config['UPLOAD_FOLDER'], new_name)
+    os.rename(save_path, renamed_path)
+    return make_response((new_name, 200))
 
 
-@app.route('/run', methods=['POST'])
+@app.route('/run_batch', methods=['POST'])
 def classifier_job():
-    project_name = request.form.get("project_name")
     # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
     filename = request.form.get("filename")
 
-    project = Project(filename, '-1', CLASSIFY, "-1", "N/A").save()
+    project = Project(filename, '-1', CLASSIFY, "-1").save()
 
     job = q.enqueue_call(func=fileHandler, args=(project.id,), result_ttl=5000, timeout=300000)
     job_id = str(job.get_id())
 
     Project.objects(id=project.id).update_one(set__job_id=job_id)
 
-    return render_template("run_pretrained_classification.html",
+    return render_template("run_pretrained_batch.html",
                            submission_successful=True,
                            project_id=project.id,
                            job_id=job_id)
@@ -136,11 +137,10 @@ def classifier_job():
 
 @app.route('/train', methods=['POST'])
 def train_classifier_job():
-    project_name = request.form.get("project_name")
     # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
     filename = request.form.get("filename")
 
-    project = Project(filename, '-1', TRAIN, "-1", "N/A").save()
+    project = Project(filename, '-1', TRAIN, "-1").save()
 
     job = q.enqueue_call(func=fileHandler, args=(project.id,), result_ttl=5000)
     job_id = str(job.get_id())
@@ -281,7 +281,7 @@ def uploaded_file(filename):
 def run_single_user_classifier():
     # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
     filename = request.form.get("filename")
-    project = Project(filename, "-1", CLASSIFY, "-1", "N/A").save()
+    project = Project(filename, "-1", CLASSIFY, "-1").save()
 
     input_folder = OUTPUT_FOLDER + "/" + unzip_folder(UPLOAD_FOLDER + "/" + filename)
     output_folder = VISUALIZATION_FOLDER + str(project['id']) + "/"
@@ -289,7 +289,7 @@ def run_single_user_classifier():
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    run_trained_classification_single(input_folder, output_folder)
+    run_single_classification(input_folder, output_folder)
 
     return render_template("run_pretrained_single.html", project_id=project.id)
 

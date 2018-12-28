@@ -41,7 +41,7 @@
             init: function () {
             this.on("complete", function (file) {
               if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-                  document.getElementById('filename').value = file.name;
+                  document.getElementById('filename').value = file.xhr.responseText;
                   document.getElementById("submit_project").disabled = false;
               }
             });

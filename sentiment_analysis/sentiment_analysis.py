@@ -1151,6 +1151,7 @@ def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sent
 
 def main(folder, output_folder):
     post_dic = create_post_dic(folder)
+    print post_dic
 
     #SENTIMENT ANALYSIS VISUALIZATION
 

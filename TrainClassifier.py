@@ -165,14 +165,13 @@ def main():
     parser = OptionParser()
     parser.add_option('-f', '--folder', dest='folder', help="Folder name", type=str)
     parser.add_option('-p', '--project', dest='project', help="Project id", type=str)
-    parser.add_option('-u', '--user', dest='user', help="User name", type=str)
     parser.add_option('-t', '--job_type', dest='job_type', help="Job type", type=str)
 
     (options, args) = parser.parse_args()
     print options.folder
     print options.project
     print options.user
-    run(options.folder, Project(options.project, options.folder, options.user, options.job_type))
+    run(options.folder, Project(options.project, options.folder, options.job_type))
 
 
 # Project(options.project, options.folder, options.job_type, options.user_email)

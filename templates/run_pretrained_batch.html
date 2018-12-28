@@ -30,12 +30,6 @@
 
     <div class="container">
         <form method="post" class="form">
-            <div class="form-group">
-                <label for="project">Project Alias</label>
-                <input type="text" class="form-control" name="project_name" id="project"
-                       placeholder="Enter Project name"
-                       required>
-            </div>
             <input type="hidden" name="filename" id="filename">
             <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
         </form>
@@ -53,7 +47,7 @@
             init: function () {
             this.on("complete", function (file) {
               if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-                  document.getElementById('filename').value = file.name;
+                  document.getElementById('filename').value = file.xhr.responseText;
                   document.getElementById("submit_project").disabled = false;
               }
             });
