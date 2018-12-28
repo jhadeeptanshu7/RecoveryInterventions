@@ -28,11 +28,11 @@ db = client.Recovery
 
 
 class Project:
-    def __init__(self, project_id, filename, user_id, job_type):
+    def __init__(self, project_id, filename, job_type, user_email):
         self.id = str(project_id)
         self.filename = filename
-        self.user_id = user_id
         self.job_type = job_type
+        self.user_email = user_email
 
 
 def fileHandler(project_id):
@@ -42,7 +42,7 @@ def fileHandler(project_id):
     if not project:
         return
 
-    project = Project(project['_id'], project['file'], project['user_id'], project['job_type'])
+    project = Project(project['_id'], project['file'], project['job_type'], project['user_email'])
     file = project.filename
 
     logging.info(str(datetime.datetime.now()) + ': ' + file)
@@ -54,20 +54,25 @@ def fileHandler(project_id):
 
     if project.job_type == "CLASSIFY":
         print "CLASSIFY"
-        os.system("python /Users/jhadeeptanshu/RecoveryInterventions/Classification.py -f " + str(extracted[0]) + " -p " + str(project.id) + " -u " + project.user_id + " -t " + project.job_type)
+        os.system("python /Users/jhadeeptanshu/RecoveryInterventions/Classification.py -f " + str(extracted[0]) + " -p " + str(project.id) + " -u " + project.user_email + " -t " + project.job_type)
     elif project.job_type == "TRAIN":
         print "TRAIN"
-        os.system("python /Users/jhadeeptanshu/RecoveryInterventions/TrainClassifier.py -f " + str(extracted[0]) + " -p " + str(project.id) + " -u " + project.user_id + " -t " + project.job_type)
+        os.system("python /Users/jhadeeptanshu/RecoveryInterventions/TrainClassifier.py -f " + str(extracted[0]) + " -p " + str(project.id) + " -u " + project.user_email + " -t " + project.job_type)
 
     db['projects'].find_one_and_update({"project_id": project_id},
                                  {"$set": {"job_status": "1"}})
-    user = db.users.find_one({'_id': ObjectId(project.user_id)})
-    if not user:
-        return
+    # user = db.users.find_one({'_id': ObjectId(project.user_email)})
+
+    send_email(project.user_email, BODY % ("User", project.id))
 
 
-    send_email(user["email"], BODY % (user["name"], project.id))
+def unzip_folder(input_file):
+    zip_ref = zipfile.ZipFile(input_file, 'r')
+    extracted = zip_ref.namelist()
+    zip_ref.extractall(OUTPUT_FOLDER)
+    zip_ref.close()
 
+    return extracted[0]
 
 
 
@@ -116,17 +121,17 @@ def classification(project):
             single_user_post = single_user_post+ " " + no_url_post
         user_posts_cumulative.append(single_user_post)
 
-    #classifier pickle
+    #post vectorizer  pickle
     post_vect = joblib.load('min_df_4_posts_vect.pkl')
     bow_posts = post_vect.transform(user_posts_cumulative)
     posts_matrix = bow_posts.toarray()
     print bow_posts.shape
 
-    #classifier pickle
+    # +ve ate score pickle
     posts_psa_dic = joblib.load('ate_posts_increased_rates_of_transfer.pkl')
     sorted_posts_dic = sorted(posts_psa_dic, key=posts_psa_dic.get, reverse=True)
 
-    #classifier pickle
+    # -ve ate score pickle
     decreased_posts_psa_dic = joblib.load('ate_posts_decreased_rates_of_transfer.pkl')
     decreased_sorted_posts_dic = sorted(decreased_posts_psa_dic, key=decreased_posts_psa_dic.get)
 
@@ -199,14 +204,14 @@ def main():
     parser = OptionParser()
     parser.add_option('-f', '--folder', dest='folder', help="Folder name", type=str)
     parser.add_option('-p', '--project', dest='project', help="Project id", type=str)
-    parser.add_option('-u', '--user', dest='user', help="User name", type=str)
+    parser.add_option('-u', '--user', dest='user_email', help="User email", type=str)
     parser.add_option('-t', '--job_type', dest='job_type', help="Job type", type=str)
 
     (options, args) = parser.parse_args()
     print options.folder
     print options.project
-    print options.user
-    run_trained_classification(options.folder, Project(options.project, options.folder, options.user, options.job_type))
+    print options.user_email
+    run_trained_classification(options.folder, Project(options.project, options.folder, options.job_type, options.user_email))
 
 
 if __name__ == "__main__":
@@ -216,7 +221,7 @@ if __name__ == "__main__":
     # doWork("aj_ds", Project("5bfa2995473c8923db51e0b2", "aj_ds.zip", "5bf8c2da473c89cfb14d63d2"))
     # fileHandler("5bfa126b473c8916fdd955b6")
 
-    # main()
-    input_folder = "/Users/jhadeeptanshu/RecoveryInterventions/run_uploads/user_data"
-    output_folder = "/Users/jhadeeptanshu/RecoveryInterventions/visualizations/1/"
-    run_trained_classification_single(input_folder, output_folder)
+    main()
+    # input_folder = "/Users/jhadeeptanshu/RecoveryInterventions/run_uploads/user_data"
+    # output_folder = "/Users/jhadeeptanshu/RecoveryInterventions/visualizations/1/"
+    # run_trained_classification_single(input_folder, output_folder)

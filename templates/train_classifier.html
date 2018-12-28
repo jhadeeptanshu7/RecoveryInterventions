@@ -16,13 +16,7 @@
 
 
 {% block content %}
-{#<form action="" method="post" enctype="multipart/form-data">#}
-{#  <div class="form-group">#}
-{#    <label for="exampleFormControlFile1">Example file input</label>#}
-{#    <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">#}
-{#    <button type="submit" class="btn btn-primary">Upload</button>#}
-{#  </div>#}
-{#</form>#}
+
 
     <form method="POST" action='/uploadfile' class="dropzone dz-clickable"
       id="dropper" enctype="multipart/form-data">
@@ -30,12 +24,6 @@
 
     <div class="container">
         <form method="post" class="form">
-            <div class="form-group">
-                <label for="project">Project Alias</label>
-                <input type="text" class="form-control" name="project_name" id="project"
-                       placeholder="Enter Project name"
-                       required>
-            </div>
             <input type="hidden" name="filename" id="filename">
             <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
         </form>
@@ -74,8 +62,10 @@
               <h4 class="modal-title">Project</h4>
             </div>
             <div class="modal-body">
-              <p>Your project id: {{ project_id }}</p>
-              <p>Your job id: {{ job_id }}</p>
+              <p>Project submitted successfully.</p>
+              <p>Project id: {{ project_id }}</p>
+              <p>Please keep a note of your Project ID as it will be required to download the result.\n
+                  Results are available on Results page</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

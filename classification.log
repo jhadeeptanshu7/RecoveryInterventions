@@ -2269,3 +2269,40 @@ INFO:matplotlib.backends._backend_tk:Could not load matplotlib icon: can't use "
 INFO:matplotlib.backends._backend_tk:Could not load matplotlib icon: can't use "pyimage109" as iconphoto: not a photo image
 INFO:rq.worker:default: Job OK (5f849c19-aff5-4f0e-9db0-cf9db99a69cc)
 INFO:rq.worker:Result is kept for 5000 seconds
+ERROR:rq.worker:KeyError: 'user_id'
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 45, in fileHandler
+    project = Project(project['_id'], project['file'], project['user_id'], project['job_type'])
+KeyError: 'user_id'
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 45, in fileHandler
+    project = Project(project['_id'], project['file'], project['user_id'], project['job_type'])
+KeyError: 'user_id'
+WARNING:rq.worker:Moving job to u'failed' queue
+INFO:root:2018-12-25 17:17:22.587771: train_uploads.zip
+DEBUG:matplotlib.font_manager:findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans (u'/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000
+INFO:rq.worker:default: Job OK (531c9227-fe2e-4ac3-8041-7b5136d9459f)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-25 17:35:21.769831: train_uploads.zip
+DEBUG:matplotlib.font_manager:findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans (u'/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000
+INFO:rq.worker:default: Job OK (347485c9-0702-48c2-954f-420f2c4e2d4c)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-25 17:44:03.007993: train_uploads.zip
+DEBUG:matplotlib.font_manager:findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans (u'/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000
+INFO:rq.worker:default: Job OK (a154086b-1c24-4f34-932b-062aa3c76781)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 17:24:37.652707: train_uploads.zip
+INFO:rq.worker:default: Job OK (548d76ba-da99-47da-9cc9-7140d0cccd18)
+INFO:rq.worker:Result is kept for 5000 seconds

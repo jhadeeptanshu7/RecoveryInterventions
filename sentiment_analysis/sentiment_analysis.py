@@ -36,6 +36,8 @@ nlp = en_core_web_sm.load()
 from pprint import pprint
 from collections import defaultdict
 import sys
+from geopy.geocoders import Nominatim
+geolocator = Nominatim(user_agent="project-geolocation-1")
 
 sys.path.append(os.path.dirname(__file__))
 
@@ -713,9 +715,11 @@ def location_sentiment_score(country_post_dic, state_post_dic, city_post_dic):
         unique_posts = list(set(country_posts))
 
         country_sentiment_score = 0
+
         for up in unique_posts:
             country_sentiment_score += single_post_sentiment_score(up)
-        country_sentiment_scores_dic[country] = [len(unique_posts),country_sentiment_score]
+
+        country_sentiment_scores_dic[country] = float(country_sentiment_score)/float(len(unique_posts))
 
 
     state_sentiment_scores_dic = {}
@@ -731,7 +735,7 @@ def location_sentiment_score(country_post_dic, state_post_dic, city_post_dic):
         for up in unique_posts:
             state_sentiment_score += single_post_sentiment_score(up)
 
-        state_sentiment_scores_dic[state] = [len(unique_posts),state_sentiment_score]
+        state_sentiment_scores_dic[state] = float(state_sentiment_score)/float(len(unique_posts))
 
 
 
@@ -747,7 +751,7 @@ def location_sentiment_score(country_post_dic, state_post_dic, city_post_dic):
         for up in unique_posts:
             city_sentiment_score += single_post_sentiment_score(up)
 
-        city_sentiment_scores_dic[city] = [len(unique_posts),city_sentiment_score]
+        city_sentiment_scores_dic[city] = float(city_sentiment_score)/float(len(unique_posts))
 
     return country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic
 
@@ -1121,6 +1125,29 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
         location_matrix.append(row)
     map_visualization(location_matrix, output_folder)
 
+def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,output_folder):
+    print country_post_dic
+    print state_post_dic
+    print city_post_dic
+    print location_sentiment_values
+    print location_drug_values
+    print location_recovery_values
+
+    locations = country_post_dic.keys() + state_post_dic.keys() + city_post_dic.keys()
+    location_matrix=[]
+    for l in locations:
+        lat_long = geolocator.geocode(l,exactly_one=True)
+        if lat_long ==None:
+            continue
+        row=[]
+        row.append(l)
+        row.append(location_sentiment_values[l])
+        row.append(location_drug_values[l])
+        row.append(location_recovery_values[l])
+        row.append(lat_long.latitude)
+        row.append(lat_long.longitude)
+        location_matrix.append(row)
+    map_visualization(location_matrix,output_folder)
 
 def main(folder, output_folder):
     post_dic = create_post_dic(folder)
@@ -1158,9 +1185,14 @@ def main(folder, output_folder):
     country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic = location_sentiment_score(country_post_dic,state_post_dic,city_post_dic)
     country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic = location_drug_recovery_terms(country_post_dic,state_post_dic,city_post_dic)
     location_sentiment_values = [country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic]
+    location_sentiment_values = dict(country_sentiment_scores_dic,**state_sentiment_scores_dic)
+    location_sentiment_values = dict(location_sentiment_values,**city_sentiment_scores_dic)
     location_drug_recovery_values = [country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic]
-    plot_geo_data(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_recovery_values, output_folder)
-
+    location_drug_values = dict(country_drug_terms_dic,**state_drug_terms_dic)
+    location_drug_values = dict(location_drug_values,**city_drug_terms_dic)
+    location_recovery_values = dict(country_recovery_terms_dic,**state_recovery_terms_dic)
+    location_recovery_values = dict(location_recovery_values,**city_recovery_terms_dic)
+    plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,output_folder)
 
 def run():
     parser = OptionParser()

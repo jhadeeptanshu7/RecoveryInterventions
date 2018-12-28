@@ -12,6 +12,7 @@ from sklearn.metrics import accuracy_score,confusion_matrix, classification_repo
 from scipy import stats
 from sklearn.metrics import f1_score
 import statistics as s
+import operator
 
 
 def harmonic_mean(auc,f1):
@@ -19,6 +20,13 @@ def harmonic_mean(auc,f1):
     denominator = auc + float(f1)
     hm = float(numerator)/float(denominator)
     return hm
+
+# stopwords_vect
+# posts_psa_dic
+# decreased_posts_psa_dic
+#n
+#sclf
+
 def best_classification_features(ate_scores,psa_features):
     all_redditors= psa_features[0] #name of the redditors
     stopwords_vect = psa_features[1]
@@ -46,6 +54,7 @@ def best_classification_features(ate_scores,psa_features):
     print top_n
     posts_matrix = bow_posts.toarray()
     max_score_dic = {}
+    max_score_classifier  = {}
     max_score = 0
     for n in top_n:
         print n
@@ -104,10 +113,19 @@ def best_classification_features(ate_scores,psa_features):
         score = harmonic_mean(auc,f1)
         if score >= max_score:
             max_score_dic[n] = score
-            max_score=score
+            max_score = score
+            max_score_classifier[n] = sclf
         print "****************************"
     print max_score_dic
-    print True
+    n = max(max_score_dic.iteritems(), key=operator.itemgetter(1))[0]
+    print max_score_classifier[n]
+    pickle_dic = {}
+    pickle_dic['n'] = n
+    pickle_dic['classifier'] = max_score_classifier[n]
+    pickle_dic['positive_ate'] = posts_psa_dic
+    pickle_dic['negative_ate'] = decreased_posts_psa_dic
+    pickle_dic['post_vectorizer'] = stopwords_vect
+    return pickle_dic
 
 
 
@@ -116,4 +134,5 @@ def run_classification(project, ate_scores, psa_features):
     project_id = project.id
     ate_scores = ate_scores
     psa_features = psa_features
-    best_classification_features(ate_scores,psa_features)
+    pickle_dic = best_classification_features(ate_scores,psa_features)
+    return pickle_dic

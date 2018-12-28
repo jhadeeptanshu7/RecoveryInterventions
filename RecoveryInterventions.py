@@ -1,4 +1,5 @@
 import os
+import shutil
 import zipfile
 
 from flask import Flask,flash, render_template, request, redirect, url_for, send_from_directory, make_response, send_file
@@ -8,7 +9,7 @@ from flask_mongoengine import MongoEngine
 from rq import Queue
 from worker import conn
 import logging
-from Classification import fileHandler
+from Classification import fileHandler, unzip_folder, run_trained_classification_single, OUTPUT_FOLDER
 from Helpers import zipdir
 
 CLASSIFY = 'CLASSIFY'
@@ -41,11 +42,12 @@ class DrugUser(db.Document):
 
 class Project(db.Document):
     meta = {'collection': 'projects'}
-    name = db.StringField()
+    # name = db.StringField()
     file = db.StringField()
     job_id = db.StringField()
     job_type = db.StringField()
     job_status = db.StringField()
+    user_email = db.StringField()
 
 
 @app.route('/')
@@ -108,8 +110,7 @@ def upload():
 
             print ('File {file.filename} has been uploaded successfully')
     else:
-        print('Chunk {current_chunk + 1} of {total_chunks} ' +
-                  'for file {file.filename} complete')
+        print('Chunk {current_chunk + 1} of {total_chunks} ' + 'for file {file.filename} complete')
 
     return make_response(("Chunk upload successful", 200))
 
@@ -119,9 +120,8 @@ def classifier_job():
     project_name = request.form.get("project_name")
     # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
     filename = request.form.get("filename")
-    user_id = current_user.id
 
-    project = Project(project_name, filename, str(user_id), '-1', CLASSIFY, "-1").save()
+    project = Project(filename, '-1', CLASSIFY, "-1", "N/A").save()
 
     job = q.enqueue_call(func=fileHandler, args=(project.id,), result_ttl=5000, timeout=300000)
     job_id = str(job.get_id())
@@ -139,9 +139,8 @@ def train_classifier_job():
     project_name = request.form.get("project_name")
     # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
     filename = request.form.get("filename")
-    user_id = current_user.id
 
-    project = Project(project_name, filename, str(user_id), '-1', TRAIN).save()
+    project = Project(filename, '-1', TRAIN, "-1", "N/A").save()
 
     job = q.enqueue_call(func=fileHandler, args=(project.id,), result_ttl=5000)
     job_id = str(job.get_id())
@@ -201,13 +200,30 @@ def getUsrImg(project_id, user_name, recovery, filename):
 
 @app.route('/download/<project_id>')
 def get_zip_file(project_id):
-    fp = project_id + ".zip"
-    if not os.path.isfile(VISUALIZATION_FOLDER + fp):
-        zipf = zipfile.ZipFile(VISUALIZATION_FOLDER + fp, 'w', zipfile.ZIP_DEFLATED)
-        zipdir(VISUALIZATION_FOLDER + project_id, zipf)
-        zipf.close()
-    return send_from_directory(VISUALIZATION_FOLDER, fp)
+    if not os.path.exists(VISUALIZATION_FOLDER + project_id + ".zip"):
+        shutil.make_archive(VISUALIZATION_FOLDER + project_id, 'zip', VISUALIZATION_FOLDER + project_id)
 
+    return send_from_directory(VISUALIZATION_FOLDER, project_id + ".zip")
+
+
+@app.route('/results')
+def get_results():
+    return render_template('download.html')
+
+
+@app.route('/results', methods=['POST'])
+def post_results():
+    project_id = request.form.get("project_id")
+    if not project_id:
+        return render_template('download.html')
+
+    elif not os.path.exists(VISUALIZATION_FOLDER + project_id):
+        return render_template('download.html', project_id=project_id)
+
+    elif not os.path.exists(VISUALIZATION_FOLDER + project_id + ".zip"):
+        shutil.make_archive(VISUALIZATION_FOLDER + project_id, 'zip', VISUALIZATION_FOLDER + project_id)
+
+    return send_from_directory(VISUALIZATION_FOLDER, project_id + ".zip")
 
 # @app.route('/run', methods=['POST'])
 # def upload():
@@ -259,6 +275,34 @@ def get_zip_file(project_id):
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
+
+
+@app.route('/run_single', methods=['POST'])
+def run_single_user_classifier():
+    # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
+    filename = request.form.get("filename")
+    project = Project(filename, "-1", CLASSIFY, "-1", "N/A").save()
+
+    input_folder = OUTPUT_FOLDER + "/" + unzip_folder(UPLOAD_FOLDER + "/" + filename)
+    output_folder = VISUALIZATION_FOLDER + str(project['id']) + "/"
+
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    run_trained_classification_single(input_folder, output_folder)
+
+    return render_template("run_pretrained_single.html", project_id=project.id)
+
+
+@app.route('/visualizations/<project>/<filename>')
+def visualization_file(project, filename):
+    return send_from_directory(VISUALIZATION_FOLDER + project, filename)
+
+
+@app.route('/download')
+def download_project():
+    return render_template("download.html")
+
 
 if __name__ == '__main__':
     app.run(threaded=True, debug=True)

@@ -8,7 +8,9 @@ import propensity_score_matching
 import train_classifier_classification
 import train_system_level_visualization
 import train_user_level_visualization
-from Classification import OUTPUT_FOLDER
+from Classification import OUTPUT_FOLDER, VISUALIZATION_FOLDER
+import pickle
+
 
 client = pymongo.MongoClient()
 db = client.Recovery
@@ -131,6 +133,14 @@ def user_level_visualization(project):
     train_user_level_visualization.user_visualization(project)
 
 
+def create_output_files(output_dict, output_folder):
+    if not os.path.exists(output_folder):
+        os.mkdir(output_folder)
+
+    for key in output_dict.keys():
+        pickle.dump(output_dict[key], open(output_folder + key, 'wb'))
+
+
 def run(folder, project):
     # print folder
     # print project.id
@@ -138,13 +148,17 @@ def run(folder, project):
     folder = OUTPUT_FOLDER + "/" + folder
     insert_data_mongodb(folder,project)
     psa_features = creating_user_post_and_recovery_matrix(project)
-    #stopwords_vect, X_stopwords, recovery
+    #psa_features[1] = stopwords_vect, psa_features[2] = X_stopwords, psa_features[3] = recovery
     propensity_score_matching.run_psm(psa_features[1],psa_features[2],psa_features[3],project)
     increased_decreased_ate = sorting_terms_by_ate(project)
-    train_classifier_classification.run_classification(project,increased_decreased_ate,psa_features)
-    create_visualization_folders(project)
-    system_level_visualization(project)
-    user_level_visualization(project)
+    output_dict = train_classifier_classification.run_classification(project,increased_decreased_ate,psa_features)
+
+    output_folder = VISUALIZATION_FOLDER + project.id + "/"
+    create_output_files(output_dict, output_folder)
+
+    # create_visualization_folders(project)
+    # system_level_visualization(project)
+    # user_level_visualization(project)
 
 
 def main():
@@ -161,12 +175,12 @@ def main():
     run(options.folder, Project(options.project, options.folder, options.user, options.job_type))
 
 
-
+# Project(options.project, options.folder, options.job_type, options.user_email)
 
 #
 # def main():
-#     folder = "/Users/jhadeeptanshu/RecoveryInterventions/train_uploads/"
-#     project = Project("5bfa2995473c8923db51e0b2", folder, "5bf8c2da473c89cfb14d63d2")
+#     folder = "train_uploads/"
+#     project = Project("5bfa2995473c8923db51e0b2", folder,"TRAIN","NA")
 #     run(folder, project)
 
 

@@ -11,34 +11,192 @@
     <script type="application/javascript"
      src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.js">
     </script>
+    <style>
+        body {font-family: Arial;}
+
+        /* Style the tab */
+        .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+            margin: 2px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: inherit;
+          float: left;
+          outline: none;
+          cursor: pointer;
+{#          padding: 14px 16px;#}
+            padding: 10px 10px;
+          transition: 0.3s;
+{#          font-size: 17px;#}
+          border: 1px solid black;
+          font-size: small;
+            margin: 1px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+
+    </style>
+    <script src="../static/helper.js"></script>
+    <script>
+
+        // Get the element with id="defaultOpen" and click on it
+        $( document ).ready(function() {
+            document.getElementById("defaultOpen").click();
+            {% if project_id %}
+                document.getElementById("tabs-bar").style.display = "block";
+                document.getElementById("visualization").style.display = "block";
+            {% endif %}
+        });
+    </script>
 
 {% endblock head %}
 
 
 {% block content %}
-{#<form action="" method="post" enctype="multipart/form-data">#}
-{#  <div class="form-group">#}
-{#    <label for="exampleFormControlFile1">Example file input</label>#}
-{#    <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">#}
-{#    <button type="submit" class="btn btn-primary">Upload</button>#}
-{#  </div>#}
-{#</form>#}
+    <div class="container-fluid" style="padding: 2px;">
 
-    <form method="POST" action='/uploadfile' class="dropzone dz-clickable"
-      id="dropper" enctype="multipart/form-data">
-    </form>
+        <div class="row">
+        <div class="col-sm-6" >
+            <div class="container-fluid" style="border: 1px solid black;">
+                <p align="center">Start new project</p>
+                <div class="row">
+                    <div class="col-sm-6" >
+                        <label for="dropper">Upload user data zip file:</label>
+                        <form method="POST" action='/uploadfile' class="dropzone dz-clickable"
+                            id="dropper" enctype="multipart/form-data">
+                        </form>
 
-    <div class="container">
-        <form method="post" class="form">
-            <div class="form-group">
-                <label for="project">Project Alias</label>
-                <input type="text" class="form-control" name="project_name" id="project"
-                       placeholder="Enter Project name"
-                       required>
+
+                    </div>
+                    <div class="col-sm-6" >
+                        <label for="dropper">Upload your classifier zip file (optional):</label>
+                        <form method="POST" class="dropzone dz-clickable"
+                            id="dropper" enctype="multipart/form-data">
+                        </form>
+
+
+                    </div>
+                    <div class="col-sm-12" style="text-align: center;" >
+                        <form method="post" class="form">
+                                <input type="hidden" name="filename" id="filename">
+                                <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <input type="hidden" name="filename" id="filename">
-            <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
-        </form>
+        </div>
+        <div class="col-sm-6" style="border: 1px solid black;">
+            <p align="center"> How this works text </p>
+        </div>
+      </div>
+        <div class="row" id="tabs-bar" style="border: 1px solid black; padding: 1px; display: none;">
+            <div class="tab container-fluid">
+                <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'document-topics')">Document Topics</button>
+                <button class="tablinks" onclick="openCity(event, 'geo-location')">Geo-location</button>
+                <button class="tablinks" onclick="openCity(event, 'sentiment-summary')">Sentiment Summary</button>
+                <button class="tablinks" onclick="openCity(event, 'recovery-bar-chart')">Recovery Bar Chart</button>
+                <button class="tablinks" onclick="openCity(event, 'sentiment-analysis')">Sentiment Analysis</button>
+                <button class="tablinks" onclick="openCity(event, 'drug-bar-chart')">Drug Bar Chart</button>
+                <button class="tablinks" onclick="openCity(event, 'stacked-recovery-bar-chart')">Stacked Recovery Bar Chart</button>
+                <button class="tablinks" onclick="openCity(event, 'temporal-drug-count')">Temporal Drug Count</button>
+                <button class="tablinks" onclick="openCity(event, 'temporal-recovery-count')">Temporal Recovery Count</button>
+            </div>
+        </div>
+        <div class="row container-fluid" id="visualization" style="display: none;">
+            <div id="document-topics" class="tabcontent container-fluid">
+                <iframe src="/visualizations/{{ project_id }}/document_topics.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+            </div>
+
+            <div id="geo-location" class="tabcontent container-fluid">
+              <iframe src="/visualizations/{{ project_id }}/my_map.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+
+            </div>
+
+            <div id="sentiment-summary" class="tabcontent container-fluid">
+              <iframe src="/visualizations/{{ project_id }}/no_of_positive_negative_neutral_posts.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+
+            </div>
+
+            <div id="recovery-bar-chart" class="tabcontent container-fluid">
+              <iframe src="/visualizations/{{ project_id }}/recovery_bar_chart.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+
+            </div>
+
+            <div id="sentiment-analysis" class="tabcontent container-fluid">
+              <iframe src="/visualizations/{{ project_id }}/sentiment_analysis.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+
+            </div>
+
+            <div id="drug-bar-chart" class="tabcontent container-fluid">
+              <iframe src="/visualizations/{{ project_id }}/stacked_drug_bar_chart.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+
+            </div>
+
+            <div id="stacked-recovery-bar-chart" class="tabcontent container-fluid">
+              <iframe src="/visualizations/{{ project_id }}/stacked_recovery_bar_chart.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+
+            </div>
+
+            <div id="temporal-drug-count" class="tabcontent container-fluid">
+              <iframe src="/visualizations/{{ project_id }}/temporal_drug_count.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+
+            </div>
+
+            <div id="temporal-recovery-count" class="tabcontent container-fluid">
+              <iframe src="/visualizations/{{ project_id }}/temporal_recovery_count.html" style="width:100%;
+                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+                    Your browser doesn't support iframes
+                </iframe>
+
+            </div>
+
+
+        </div>
+
     </div>
 
     <script type="application/javascript">
@@ -46,7 +204,7 @@
             paramName: 'file',
             chunking: true,
             forceChunking: true,
-            url: '/uploadsinglefile',
+            url: '/uploadfile',
             maxFilesize: 5000, // megabytes
             chunkSize: 100000000, // bytes
             maxFiles: 1,
