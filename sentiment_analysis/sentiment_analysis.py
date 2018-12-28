@@ -115,7 +115,7 @@ def sentiment_line_plot(sentiment_data_frame, output_folder):
 
     p.add_tools(hover)
 
-    output_file(output_folder+"sentiment_analysis.html")
+    output_file(os.path.join(output_folder,"sentiment_analysis.html"))
     save(p)
 
 def converting_data_to_pandas_df(sentiment_score,post_dic):
@@ -181,7 +181,7 @@ def user_posts_topic_modeling(post_dic, n, output_folder):
     # mglearn.tools.print_topics(topics=range(10),feature_names=feature_names,sorting=sorting,topics_per_chunk=5,n_words=10)
     topics = pyLDAvis.sklearn.prepare(lda,X,vect,mds='mmds')
 
-    pyLDAvis.save_html(topics, output_folder + 'document_topics.html')
+    pyLDAvis.save_html(topics, os.path.join(output_folder, 'document_topics.html'))
 
 
 def drug_bar_chart(post_dic, output_folder):
@@ -212,7 +212,7 @@ def drug_bar_chart(post_dic, output_folder):
     p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
 
-    output_file(output_folder + "drug_bar_chart.html")
+    output_file(os.path.join(output_folder, "drug_bar_chart.html"))
     save(p)
 
 
@@ -274,7 +274,7 @@ def stacked_drug_bar_chart(post_dic, output_folder):
     p.legend.location = "top_center"
     p.legend.orientation = "horizontal"
     p.xaxis.major_label_orientation = 1
-    output_file(output_folder + "stacked_drug_bar_chart.html")
+    output_file(os.path.join(output_folder, "stacked_drug_bar_chart.html"))
     save(p)
 
 
@@ -336,7 +336,7 @@ def stacked_recovery_bar_chart(post_dic, output_folder):
     p.legend.location = "top_center"
     p.legend.orientation = "horizontal"
     p.xaxis.major_label_orientation = 1
-    output_file(output_folder + "stacked_recovery_bar_chart.html")
+    output_file(os.path.join(output_folder, "stacked_recovery_bar_chart.html"))
     save(p)
 
 
@@ -401,7 +401,7 @@ def temporal_drug_use(drugs_data_frame, output_folder):
 
     p.add_tools(hover)
 
-    output_file(output_folder + "temporal_drug_count.html")
+    output_file(os.path.join(output_folder, "temporal_drug_count.html"))
 
     save(p)
 
@@ -438,7 +438,7 @@ def recovery_bar_chart(post_dic, output_folder):
     p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
 
-    output_file(output_folder + "recovery_bar_chart.html")
+    output_file(os.path.join(output_folder, "recovery_bar_chart.html"))
     save(p)
 
 def recovery_terms_and_no_of_drug_terms_in_a_post(post):
@@ -497,7 +497,7 @@ def temporal_recovery_use(recovery_data_frame, output_folder):
 
     p.add_tools(hover)
 
-    output_file(output_folder + "temporal_recovery_count.html")
+    output_file(os.path.join(output_folder, "temporal_recovery_count.html"))
 
     save(p)
 
@@ -507,7 +507,7 @@ def geolocation_based_recovery_use_analysis(post_dic):
 
 
 def no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder):
-    output_file(output_folder + "no_of_positive_negative_neutral_posts.html")
+    output_file(os.path.join(output_folder, "no_of_positive_negative_neutral_posts.html"))
     sentiment_scores = sentiment_data_frame["sentiment_score"].tolist()
     no_of_positive_posts = sum(ss > 0 for ss in sentiment_scores)
     no_of_negative_posts = sum(ss < 0 for ss in sentiment_scores)
@@ -926,7 +926,7 @@ def map_visualization(location_matrix, output_folder):
         folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
                       + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
 
-    folium_map.save(output_folder + "my_map.html")
+    folium_map.save(os.path.join(output_folder, "my_map.html"))
 
 
 
@@ -1149,7 +1149,9 @@ def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sent
         location_matrix.append(row)
     map_visualization(location_matrix,output_folder)
 
-def main(folder, output_folder):
+
+def main(folder, output_folder, classifier_folder):
+    print classifier_folder
     post_dic = create_post_dic(folder)
     print post_dic
 
@@ -1195,13 +1197,19 @@ def main(folder, output_folder):
     location_recovery_values = dict(location_recovery_values,**city_recovery_terms_dic)
     plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,output_folder)
 
+
 def run():
     parser = OptionParser()
     parser.add_option('-i', '--input', dest='input_folder', help="input folder", type=str)
     parser.add_option('-o', '--output', dest='output_folder', help="output folder", type=str)
+    parser.add_option('-c', '--classifier', dest='classifier', help="classifier folder", type=str)
 
     (options, args) = parser.parse_args()
-    main(options.input_folder, options.output_folder)
+    classifier_folder = ""
+    if options.classifier and options.classifier != "na":
+        classifier_folder = options.classifier
+
+    main(options.input_folder, options.output_folder, classifier_folder)
 
 
 if __name__ == "__main__":

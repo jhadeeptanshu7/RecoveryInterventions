@@ -2383,3 +2383,183 @@ INFO:rq.worker:Result is kept for 5000 seconds
 INFO:root:2018-12-27 19:51:28.274348: 19:51:14.986492.zip
 INFO:rq.worker:default: Job OK (7bf6bedf-74b8-44d8-a5d3-98186ff67646)
 INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 21:42:45.054571: 21:42:41.479575.zip
+INFO:rq.worker:default: Job OK (3d9be6f2-fadf-42d8-9d8b-94292d432b74)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 21:44:14.886278: 21:44:11.184142.zip
+INFO:rq.worker:default: Job OK (5459613b-1c27-46c1-b702-fc5df99236d9)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 21:49:02.023034: 21:48:57.832047.zip
+INFO:root:2018-12-27 21:52:01.620062: 21:51:24.222397.zip
+INFO:root:2018-12-27 21:54:18.017665: 21:54:14.326433.zip
+INFO:rq.worker:default: Job OK (417fc215-35f3-404f-9890-189f08a08493)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 21:56:43.272673: 21:56:38.107606.zip
+INFO:rq.worker:default: Job OK (c404e5df-97fa-4a2c-973e-0ce34f815d6f)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 21:58:41.476235: 21:58:35.998896.zip
+INFO:rq.worker:default: Job OK (33352c26-466b-4a12-85c2-48b8f28f50c2)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:01:35.544314: 22:01:31.829490.zip
+INFO:rq.worker:default: Job OK (5b02f627-9c29-4cc1-8fac-0cd67f79bc66)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:02:06.240544: 22:01:59.119686.zip
+INFO:rq.worker:default: Job OK (279e60f4-3feb-4943-b503-733c37a04ab6)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:20:05.715911: 22:20:01.918496.zip
+INFO:rq.worker:default: Job OK (8ccdec85-3b0a-4e6f-af65-0e41df159e8a)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:21:32.008056: 22:21:28.040235.zip
+INFO:rq.worker:default: Job OK (4c2abb70-342f-43c9-8886-4b2cbec4080b)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:22:33.111927: 22:22:29.682038.zip
+ERROR:rq.worker:TypeError: coercing to Unicode: need string or buffer, ObjectId found
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 64, in fileHandler
+    os.system("python TrainClassifier.py -f " + input_folder + " -p " + project_id + " -t " + project.job_type)
+TypeError: coercing to Unicode: need string or buffer, ObjectId found
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 64, in fileHandler
+    os.system("python TrainClassifier.py -f " + input_folder + " -p " + project_id + " -t " + project.job_type)
+TypeError: coercing to Unicode: need string or buffer, ObjectId found
+WARNING:rq.worker:Moving job to u'failed' queue
+INFO:root:2018-12-27 22:23:07.999965: 22:23:04.751703.zip
+INFO:rq.worker:default: Job OK (011e0dd3-fb5a-427f-9583-93469187ed47)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:24:13.114552: 22:24:05.699427.zip
+INFO:root:2018-12-27 22:25:38.808281: 22:25:33.514688.zip
+INFO:rq.worker:default: Job OK (c92ec7b9-ec64-4a03-80f8-f1e1c09cb0a1)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:26:36.897241: 22:26:30.943125.zip
+INFO:root:2018-12-27 22:29:06.616547: 22:29:03.113453.zip
+INFO:rq.worker:default: Job OK (fa1718b2-1af3-4aa1-b463-a0dd0c01b366)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:29:30.977587: 22:29:20.298507.zip
+INFO:rq.worker:default: Job OK (88c95403-958b-4adb-a4ab-af99426f85bf)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:root:2018-12-27 22:31:46.726191: 22:30:00.377583.zip
+INFO:rq.worker:default: Job OK (95be7d52-0e0b-4e69-a350-1ddef67460a2)
+INFO:rq.worker:Result is kept for 5000 seconds
+ERROR:rq.worker:KeyError: 'classifier'
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 46, in fileHandler
+    project = Project(project['_id'], project['file'], project['job_type'], project['classifier'])
+KeyError: 'classifier'
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 46, in fileHandler
+    project = Project(project['_id'], project['file'], project['job_type'], project['classifier'])
+KeyError: 'classifier'
+WARNING:rq.worker:Moving job to u'failed' queue
+INFO:root:2018-12-28 10:46:47.449942: 10:46:42.482031.zip
+INFO:rq.worker:default: Job OK (f2bba773-0931-43fe-97b4-9c259ea4b7b5)
+INFO:rq.worker:Result is kept for 5000 seconds
+ERROR:rq.worker:AttributeError: type object 'file' has no attribute 'startswith'
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 53, in fileHandler
+    input_folder = os.path.join(OUTPUT_FOLDER, file).replace(".zip", "")
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/posixpath.py", line 68, in join
+    if b.startswith('/'):
+AttributeError: type object 'file' has no attribute 'startswith'
+Traceback (most recent call last):
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/worker.py", line 793, in perform_job
+    rv = job.perform()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 599, in perform
+    self._result = self._execute()
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/site-packages/rq/job.py", line 605, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/jhadeeptanshu/RecoveryInterventions/Classification.py", line 53, in fileHandler
+    input_folder = os.path.join(OUTPUT_FOLDER, file).replace(".zip", "")
+  File "/Users/jhadeeptanshu/anaconda/lib/python2.7/posixpath.py", line 68, in join
+    if b.startswith('/'):
+AttributeError: type object 'file' has no attribute 'startswith'
+WARNING:rq.worker:Moving job to u'failed' queue
+INFO:rq.worker:default: Job OK (7ca18382-8850-428f-b5bc-f81d254e2505)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (527691ac-89d3-4968-968a-dd76112429a5)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (97790fd3-6f45-4138-872f-9462c00f6ebb)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (c254973e-69c1-41dc-8147-977c953a623b)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (5fc620cc-9727-473c-8c16-0dd3ec28fe4a)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (ba837c08-0b54-4959-90c0-edae54abdb64)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (91b1c049-966d-4ab7-87f1-50819fadb815)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (e46b5080-5ed3-4be3-9408-346a85e4f864)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (186d29fd-be9d-41f2-bce6-3ffcda22e318)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (20481729-8e3f-463a-bf8b-0f199281721a)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (28a0681d-3ee5-4ce9-a883-2d2d0e41094f)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (71e84335-4b47-4f0a-a3be-d62577f8d2e2)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (17ad1b61-9559-48d2-a711-a466af23e285)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (614ccba0-a0fe-44fe-8869-ab9488bd6a2d)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (a070c007-ade9-44b5-b67c-364ce70ec424)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (16512449-9107-4340-8ecc-0bf01c720a8d)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (c7e172ac-a238-4f34-ad84-f7d9b594e7de)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (34d40c19-af7b-4af8-a3d7-e67cc7dd8df0)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (75e74ea5-cda3-4650-b748-e440cc32c80b)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (1d3ddb59-7475-480c-be2c-f58924fa5a03)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (cc9506c0-26fa-4be7-acd0-65dfd3bfba98)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (128b1de2-9bf1-438b-81ea-1e38d6366d13)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (246d9e8b-bd61-41d0-8ea6-1269bac70635)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (6d91e81d-ead8-4652-b214-5977ab3dcf63)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (44d2b94c-25c2-4640-95a4-168684a0180e)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (25003925-771a-40c4-b518-6aec98266907)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (ef653a72-faac-43b8-b2fe-1ca4b26dd17b)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (c91e09dd-9f49-46fd-b956-46cbae61197d)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (feab634f-7f15-400b-b57c-ef0ce919730b)
+INFO:rq.worker:Result is kept for 5000 seconds
+INFO:rq.worker:default: Job OK (a99de9f7-559f-422c-93c1-becd6e941c05)
+INFO:rq.worker:Result is kept for 5000 seconds

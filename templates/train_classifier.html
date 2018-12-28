@@ -18,7 +18,7 @@
 {% block content %}
 
 
-    <form method="POST" action='/uploadfile' class="dropzone dz-clickable"
+    <form method="POST" action='/upload-data' class="dropzone dz-clickable"
       id="dropper" enctype="multipart/form-data">
     </form>
 
@@ -34,7 +34,7 @@
             paramName: 'file',
             chunking: true,
             forceChunking: true,
-            url: '/uploadfile',
+            url: '/upload-data',
             maxFilesize: 5000, // megabytes
             chunkSize: 100000000, // bytes
             maxFiles: 1,
@@ -59,13 +59,12 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Project</h4>
             </div>
             <div class="modal-body">
               <p>Project submitted successfully.</p>
               <p>Project id: {{ project_id }}</p>
-              <p>Please keep a note of your Project ID as it will be required to download the result.\n
-                  Results are available on Results page</p>
+              <p>Please keep a note of your Project ID as it will be required to download the result.</p>
+              <p>Results will be available in Results tab</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

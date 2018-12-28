@@ -83,17 +83,17 @@
                 <p align="center">Start new project</p>
                 <div class="row">
                     <div class="col-sm-6" >
-                        <label for="dropper">Upload user data zip file:</label>
-                        <form method="POST" action='/uploadfile' class="dropzone dz-clickable"
-                            id="dropper" enctype="multipart/form-data">
+                        <label for="data">Upload user data zip file:</label>
+                        <form method="POST" action='/upload-data' class="dropzone dz-clickable"
+                            id="data" enctype="multipart/form-data">
                         </form>
 
 
                     </div>
                     <div class="col-sm-6" >
-                        <label for="dropper">Upload your classifier zip file (optional):</label>
-                        <form method="POST" class="dropzone dz-clickable"
-                            id="dropper" enctype="multipart/form-data">
+                        <label for="classifier">Upload your classifier zip file (optional):</label>
+                        <form method="POST" class="dropzone dz-clickable" action="/upload-classifier"
+                            id="classifier" enctype="multipart/form-data">
                         </form>
 
 
@@ -101,6 +101,7 @@
                     <div class="col-sm-12" style="text-align: center;" >
                         <form method="post" class="form">
                                 <input type="hidden" name="filename" id="filename">
+                                <input type="hidden" name="classifierName" id="classifierName">
                                 <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
                         </form>
                     </div>
@@ -203,11 +204,11 @@
     </div>
 
     <script type="application/javascript">
-        Dropzone.options.dropper = {
+        Dropzone.options.data = {
             paramName: 'file',
             chunking: true,
             forceChunking: true,
-            url: '/uploadfile',
+            url: '/upload-data',
             maxFilesize: 5000, // megabytes
             chunkSize: 100000000, // bytes
             maxFiles: 1,
@@ -219,7 +220,24 @@
               }
             });
           }
-        }
+        };
+
+        Dropzone.options.classifier = {
+            paramName: 'file',
+            chunking: true,
+            forceChunking: true,
+            url: '/upload-classifier',
+            maxFilesize: 5000, // megabytes
+            chunkSize: 100000000, // bytes
+            maxFiles: 1,
+            init: function () {
+            this.on("complete", function (file) {
+              if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                  document.getElementById('classifierName').value = file.xhr.responseText;
+              }
+            });
+          }
+        };
 
     </script>
 

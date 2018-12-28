@@ -10,6 +10,7 @@ import train_system_level_visualization
 import train_user_level_visualization
 from Classification import OUTPUT_FOLDER, VISUALIZATION_FOLDER
 import pickle
+from sklearn.externals import joblib
 
 
 client = pymongo.MongoClient()
@@ -138,14 +139,13 @@ def create_output_files(output_dict, output_folder):
         os.mkdir(output_folder)
 
     for key in output_dict.keys():
-        pickle.dump(output_dict[key], open(output_folder + key, 'wb'))
+        joblib.dump(output_dict[key], os.path.join(output_folder, key + ".pkl"))
 
 
 def run(folder, project):
     # print folder
     # print project.id
     # print os.listdir(folder)
-    folder = OUTPUT_FOLDER + "/" + folder
     insert_data_mongodb(folder,project)
     psa_features = creating_user_post_and_recovery_matrix(project)
     #psa_features[1] = stopwords_vect, psa_features[2] = X_stopwords, psa_features[3] = recovery
@@ -153,7 +153,7 @@ def run(folder, project):
     increased_decreased_ate = sorting_terms_by_ate(project)
     output_dict = train_classifier_classification.run_classification(project,increased_decreased_ate,psa_features)
 
-    output_folder = VISUALIZATION_FOLDER + project.id + "/"
+    output_folder = os.path.join(VISUALIZATION_FOLDER, project.id)
     create_output_files(output_dict, output_folder)
 
     # create_visualization_folders(project)
@@ -170,8 +170,7 @@ def main():
     (options, args) = parser.parse_args()
     print options.folder
     print options.project
-    print options.user
-    run(options.folder, Project(options.project, options.folder, options.job_type))
+    run(options.folder, Project(options.project, options.folder, options.job_type, ""))
 
 
 # Project(options.project, options.folder, options.job_type, options.user_email)
