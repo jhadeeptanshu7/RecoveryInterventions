@@ -1,20 +1,15 @@
-import datetime
 import logging
-import shutil
 import zipfile
 import os
 
 import sys
 from sklearn.externals import joblib
-import pymongo
 import re
 import numpy as np
-import visualizations
-import user_level_visualization
 import pymongo
 from bson.objectid import ObjectId
 from optparse import OptionParser
-from Helpers import send_email, BODY
+
 
 
 VISUALIZATION_FOLDER = os.path.join(os.path.dirname(__file__), 'visualizations')
