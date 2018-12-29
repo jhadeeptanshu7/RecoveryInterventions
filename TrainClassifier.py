@@ -6,8 +6,6 @@ import os
 import pymongo
 import propensity_score_matching
 import train_classifier_classification
-import train_system_level_visualization
-import train_user_level_visualization
 from Classification import OUTPUT_FOLDER, VISUALIZATION_FOLDER
 import pickle
 from sklearn.externals import joblib
@@ -125,13 +123,13 @@ def create_visualization_folders(project):
 
 
 
-
-def system_level_visualization(project):
-    train_system_level_visualization.recovery_lda_and_word_cloud(project)
-    train_system_level_visualization.non_recovery_lda_and_word_cloud(project)
-
-def user_level_visualization(project):
-    train_user_level_visualization.user_visualization(project)
+#
+# def system_level_visualization(project):
+#     train_system_level_visualization.recovery_lda_and_word_cloud(project)
+#     train_system_level_visualization.non_recovery_lda_and_word_cloud(project)
+#
+# def user_level_visualization(project):
+#     train_user_level_visualization.user_visualization(project)
 
 
 def create_output_files(output_dict, output_folder):
