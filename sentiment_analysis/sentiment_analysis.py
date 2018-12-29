@@ -1,5 +1,5 @@
 from optparse import OptionParser
-
+from time import sleep
 import afinn_sentiment_scores
 import folium
 from bokeh.io import output_notebook, show
@@ -37,6 +37,7 @@ from pprint import pprint
 from collections import defaultdict
 import sys
 from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut
 geolocator = Nominatim(user_agent="project-geolocation-1")
 
 sys.path.append(os.path.dirname(__file__))
@@ -657,7 +658,7 @@ def find_location_terms_in_text(post_dic):
         valid_ner = ['GPE']
         for X in doc.ents:
             if X.label_ in valid_ner:
-                loc = str(X.text)
+                loc = str(X.text.encode("utf-8"))
                 try:
                     if loc in list_of_countires:
                         country_post_dic[loc].append({p : post_dic[p]})
@@ -708,7 +709,7 @@ def location_sentiment_score(country_post_dic, state_post_dic, city_post_dic):
 
     country_sentiment_scores_dic = {}
     for country in country_post_dic:
-        print country
+        # print country
         country_posts = []
         for post in country_post_dic[country]:
             country_posts.append(post.values()[0])
@@ -724,7 +725,7 @@ def location_sentiment_score(country_post_dic, state_post_dic, city_post_dic):
 
     state_sentiment_scores_dic = {}
     for state in state_post_dic:
-        print state
+        # print state
         state_posts = []
         for post in state_post_dic[state]:
             # print post
@@ -741,7 +742,7 @@ def location_sentiment_score(country_post_dic, state_post_dic, city_post_dic):
 
     city_sentiment_scores_dic = {}
     for city in city_post_dic:
-        print city
+        # print city
         city_posts = []
         for post in city_post_dic[city]:
             city_posts.append(post.values()[0])
@@ -790,7 +791,7 @@ def location_drug_recovery_terms(country_post_dic,state_post_dic, city_post_dic)
     country_drug_terms_dic = {}
     country_recovery_terms_dic={}
     for country in country_post_dic:
-        print country
+        # print country
         country_posts = []
         for post in country_post_dic[country]:
             country_posts.append(post.values()[0])
@@ -823,7 +824,7 @@ def location_drug_recovery_terms(country_post_dic,state_post_dic, city_post_dic)
     state_drug_terms_dic = {}
     state_recovery_terms_dic = {}
     for state in state_post_dic:
-        print state
+        # print state
         state_posts = []
         for post in state_post_dic[state]:
             state_posts.append(post.values()[0])
@@ -887,9 +888,9 @@ def location_drug_recovery_terms(country_post_dic,state_post_dic, city_post_dic)
 
 
 def state_lat_long(state, country, country_short_name,lat_long_city_df,loc_df):
-    print lat_long_city_df.shape
+    # print lat_long_city_df.shape
     lat_long_city_df = lat_long_city_df[lat_long_city_df['Population']>200000]
-    print lat_long_city_df.shape
+    # print lat_long_city_df.shape
     cities =  loc_df.loc[(loc_df['country'] == country) & (loc_df['subcountry']==state)]['name'].unique().tolist()
     latitudes =[]
     longitudes =[]
@@ -901,8 +902,8 @@ def state_lat_long(state, country, country_short_name,lat_long_city_df,loc_df):
             latitudes.append(lat.loc[lat['Population'].idxmax()]['Latitude'])
             longitudes.append(long.loc[long['Population'].idxmax()]['Longitude'])
 
-    print latitudes
-    print longitudes
+    # print latitudes
+    # print longitudes
     return [np.mean(latitudes),np.mean(longitudes) ]
 
 
@@ -911,13 +912,13 @@ def map_visualization(location_matrix, output_folder):
     # loc_df = pd.DataFrame(location_matrix)
     # ['location','sentiment_score','drug_terms','recovery_terms','lat','long']
     loc_df = pd.DataFrame.from_records(location_matrix,columns=['location','sentiment_score','drug_terms','recovery_terms','lat','long'])
-    loc_df.loc[ (loc_df.sentiment_score < 0), 'color'] = 'red'
-    loc_df.loc[ (loc_df.sentiment_score > 0),'color'] = 'green'
+    # loc_df.loc[ (loc_df.sentiment_score < 0), 'color'] = 'red'
+    # loc_df.loc[ (loc_df.sentiment_score > 0),'color'] = 'green'
 
     folium_map = folium.Map(tiles="CartoDB dark_matter")
 
     for row in loc_df.values.tolist():
-        print row
+        # print row
         color = 'grey'
         if row[1]>0:
             color='green'
@@ -926,7 +927,27 @@ def map_visualization(location_matrix, output_folder):
         folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
                       + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
 
-    folium_map.save(os.path.join(output_folder, "my_map.html"))
+    folium_map.save("my_map.html")
+    #
+    # # loc_df = pd.DataFrame(location_matrix)
+    # # ['location','sentiment_score','drug_terms','recovery_terms','lat','long']
+    # loc_df = pd.DataFrame.from_records(location_matrix,columns=['location','sentiment_score','drug_terms','recovery_terms','lat','long'])
+    # loc_df.loc[ (loc_df.sentiment_score < 0), 'color'] = 'red'
+    # loc_df.loc[ (loc_df.sentiment_score > 0),'color'] = 'green'
+    #
+    # folium_map = folium.Map(tiles="CartoDB dark_matter")
+    #
+    # for row in loc_df.values.tolist():
+    #     print row
+    #     color = 'grey'
+    #     if row[1]>0:
+    #         color='green'
+    #     elif row[1]<0:
+    #         color='red'
+    #     folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
+    #                   + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
+    #
+    # folium_map.save(os.path.join(output_folder, "my_map.html"))
 
 
 
@@ -973,26 +994,26 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
             country_list.append(cs)
             country_list_count.append(countries_count[cs])
         idx = np.argsort(country_list_count)[::-1]
-        print country_list[idx[0]]
-        print country_names_df.head()
+        # print country_list[idx[0]]
+        # print country_names_df.head()
         country_short_name = country_names_df.loc[country_names_df['country'] == country_list[idx[0]]]['short_country'].tolist()[0].lower()
-        print country_short_name
+        # print country_short_name
         city_row = lat_long_city_df.loc[(lat_long_city_df['City'] == c.lower()) & (lat_long_city_df['Country'] == country_short_name) ]
         city_row = city_row.loc[city_row['Population'].idxmax()]
-        print city_row
+        # print city_row
         city_lat_long[c] = [city_row['Latitude'],city_row['Latitude']]
         city_state = loc_df.loc[(loc_df['name']==c) & (loc_df['country']==country_list[idx[0]])]['subcountry'].unique().tolist()[0]
         city_state_dic[c] = city_state
         city_country_dic[c] = country_list[idx[0]]
 
-    print city_lat_long
-    print city_state_dic
-    print city_country_dic
+    # print city_lat_long
+    # print city_state_dic
+    # print city_country_dic
 
     #STATE
-    print len(states), states
+    # print len(states), states
     states = list(set(states).union(city_state_dic.values()))
-    print len(states), states
+    # print len(states), states
     state_location_dic = {}
     for s in states:
         state_countries = loc_df.loc[loc_df['subcountry'] == s]['country'].unique().tolist()
@@ -1002,13 +1023,13 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
             country_list.append(cs)
             country_list_count.append(countries_count[cs])
         idx = np.argsort(country_list_count)[::-1]
-        print country_list[idx[0]]
-        print country_names_df.head()
+        # print country_list[idx[0]]
+        # print country_names_df.head()
         country_short_name = country_names_df.loc[country_names_df['country'] == country_list[idx[0]]]['short_country'].tolist()[0].lower()
-        print country_short_name
+        # print country_short_name
         state_coordinates = state_lat_long(s,country_list[idx[0]],country_short_name, lat_long_city_df,loc_df)
         state_location_dic[s]= state_coordinates
-    print state_location_dic
+    # print state_location_dic
 
 
 
@@ -1018,14 +1039,14 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
     countries = list(set(countries).union(city_country_dic.values()))
     country_location_dic = {}
     for c in countries:
-        print c
+        # print c
         country_short_name = country_names_df.loc[country_names_df['country'] == c]['short_country'].tolist()[0]
-        print country_short_name
+        # print country_short_name
         lat = country_position_df.loc[country_position_df['country']==country_short_name]['Latitude'].tolist()[0]
         long = country_position_df.loc[country_position_df['country']==country_short_name]['Longitude'].tolist()[0]
         country_location_dic[c]= [lat, long]
 
-    print country_location_dic
+    # print country_location_dic
 
     #creating loc dataframe
 
@@ -1040,13 +1061,13 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
     city_drug_terms = location_drug_recovery_values[4]
     city_recovery_terms = location_drug_recovery_values[5]
 
-    print country_sentiment_scores_dic
-    print country_recovery_terms
-    print country_drug_terms
+    # print country_sentiment_scores_dic
+    # print country_recovery_terms
+    # print country_drug_terms
 
     location_matrix=[]
     for city in city_sentiment_scores_dic:
-        print city
+        # print city
         row =[]
         row.append(city)
         row.append(float(city_sentiment_scores_dic[city][1])/float(city_sentiment_scores_dic[city][0]))
@@ -1103,7 +1124,7 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
             state_recovery_terms[city_state_dic[city]] = city_recovery_terms[city]
 
     for state in state_sentiment_scores_dic:
-        print state
+        # print state
         row =[]
         row.append(state)
         row.append(float(state_sentiment_scores_dic[state][1])/float(state_sentiment_scores_dic[state][0]))
@@ -1114,7 +1135,7 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
         location_matrix.append(row)
 
     for country in country_sentiment_scores_dic:
-        print country
+        # print country
         row =[]
         row.append(country)
         row.append(float(country_sentiment_scores_dic[country][1])/float(country_sentiment_scores_dic[country][0]))
@@ -1126,34 +1147,40 @@ def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentime
     map_visualization(location_matrix, output_folder)
 
 def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,output_folder):
-    print country_post_dic
-    print state_post_dic
-    print city_post_dic
-    print location_sentiment_values
-    print location_drug_values
-    print location_recovery_values
+    # print country_post_dic
+    # print state_post_dic
+    # print city_post_dic
+    # print location_sentiment_values
+    # print location_drug_values
+    # print location_recovery_values
 
     locations = country_post_dic.keys() + state_post_dic.keys() + city_post_dic.keys()
     location_matrix=[]
     for l in locations:
-        lat_long = geolocator.geocode(l,exactly_one=True)
-        if lat_long ==None:
-            continue
-        row=[]
-        row.append(l)
-        row.append(location_sentiment_values[l])
-        row.append(location_drug_values[l])
-        row.append(location_recovery_values[l])
-        row.append(lat_long.latitude)
-        row.append(lat_long.longitude)
-        location_matrix.append(row)
+        try:
+            lat_long = geolocator.geocode(l,exactly_one=True)
+            if lat_long ==None:
+                continue
+            row=[]
+            row.append(l)
+            row.append(location_sentiment_values[l])
+            row.append(location_drug_values[l])
+            row.append(location_recovery_values[l])
+            row.append(lat_long.latitude)
+            row.append(lat_long.longitude)
+            location_matrix.append(row)
+        except GeocoderTimedOut as e:
+            print e.message
+            print "sleeping"
+            sleep(900)
+
     map_visualization(location_matrix,output_folder)
 
 
 def main(folder, output_folder, classifier_folder):
-    print classifier_folder
+    # print classifier_folder
     post_dic = create_post_dic(folder)
-    print post_dic
+    # print post_dic
 
     #SENTIMENT ANALYSIS VISUALIZATION
 

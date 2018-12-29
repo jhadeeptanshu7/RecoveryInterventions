@@ -192,6 +192,7 @@ def run_batch_classification(folder, project):
 
     # gets all_redditors, y_pred
     classification_results = classification(project, project.classifier)
+
     # visualizations.recovery_non_recovery_donut([sum(classification_results[1]),
     #                                             len(classification_results[1])-sum(classification_results[1])],
     #                                             project)
@@ -205,7 +206,8 @@ def run_batch_classification(folder, project):
     if not os.path.exists(base_output_folder):
         os.mkdir(base_output_folder)
 
-    for user_folder in os.listdir(folder):
+    for c,user_folder in enumerate(os.listdir(folder)):
+        print c, "****************************************"
         if user_folder[0] == ".":
             continue
 
