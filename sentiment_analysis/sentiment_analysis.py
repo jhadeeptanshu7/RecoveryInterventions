@@ -927,7 +927,7 @@ def map_visualization(location_matrix, output_folder):
         folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
                       + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
 
-    folium_map.save("my_map.html")
+    folium_map.save(os.path.join(output_folder, "my_map.html"))
     #
     # # loc_df = pd.DataFrame(location_matrix)
     # # ['location','sentiment_score','drug_terms','recovery_terms','lat','long']
