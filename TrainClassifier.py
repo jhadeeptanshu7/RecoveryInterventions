@@ -1,20 +1,18 @@
 from optparse import OptionParser
 
 from Classification import Project
-from sklearn.feature_extraction.text import CountVectorizer, ENGLISH_STOP_WORDS
+from sklearn.feature_extraction.text import CountVectorizer
 import os
 import pymongo
 import propensity_score_matching
 import train_classifier_classification
-from Classification import OUTPUT_FOLDER, VISUALIZATION_FOLDER
-import pickle
+from Classification import VISUALIZATION_FOLDER
 from sklearn.externals import joblib
 
 
-client = pymongo.MongoClient()
-db = client.Recovery
-
 def creating_user_post_and_recovery_matrix(project):
+    client = pymongo.MongoClient()
+    db = client.Recovery
     collection = db['drug_users']
     cursor = collection.find({"project_id":project.id}, no_cursor_timeout=True)
 
@@ -42,10 +40,10 @@ def creating_user_post_and_recovery_matrix(project):
     return [all_redditors, stopwords_vect, X_stopwords, recovery]
 
 
-
-
 def insert_data_mongodb(folder, project):
 
+    client = pymongo.MongoClient()
+    db = client.Recovery
     collection = db['drug_users']
 
     for dir in os.listdir(folder):
@@ -77,6 +75,8 @@ def insert_data_mongodb(folder, project):
 
 def sorting_terms_by_ate(project):
     project_id = project.id
+    client = pymongo.MongoClient()
+    db = client.Recovery
     collection = db["psm_terms"]
     cursor = collection.find({"project_id":project_id}, no_cursor_timeout=True)
 
@@ -98,6 +98,7 @@ def sorting_terms_by_ate(project):
             ate_decreased_rates_of_transfer[term] = ate
     return [ate_increased_rates_of_transfer,ate_decreased_rates_of_transfer]
 
+
 def create_visualization_folders(project):
     folder_path_1 = os.path.dirname(__file__) + '/visualizations/'  + project.id + '/system_level'
     folder_path_2 = os.path.dirname(__file__) + '/visualizations/'  + project.id + '/user_level'
@@ -106,7 +107,8 @@ def create_visualization_folders(project):
 
     if not os.path.isdir(folder_path_2):
         os.makedirs(folder_path_2)
-
+    client = pymongo.MongoClient()
+    db = client.Recovery
     collection = db['drug_users']
     cursor = collection.find({"project_id":project.id},no_cursor_timeout=True)
     for i in cursor:
@@ -120,16 +122,6 @@ def create_visualization_folders(project):
             folder_path = os.path.dirname(__file__) + '/visualizations/' + project.id + '/user_level/non_recovery_users/' + user
             if not os.path.isdir(folder_path):
                 os.makedirs(folder_path)
-
-
-
-#
-# def system_level_visualization(project):
-#     train_system_level_visualization.recovery_lda_and_word_cloud(project)
-#     train_system_level_visualization.non_recovery_lda_and_word_cloud(project)
-#
-# def user_level_visualization(project):
-#     train_user_level_visualization.user_visualization(project)
 
 
 def create_output_files(output_dict, output_folder):

@@ -11,34 +11,35 @@
     <script type="application/javascript"
      src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.js">
     </script>
-
 {% endblock head %}
 
 
 {% block content %}
 
-    <div class="container-fluid" style="padding: 2px;">
+    <div class="container-fluid" style="padding: 2px; margin-top: 5%">
         <div class="row">
-            <div class="container-fluid" style="border: 1px solid black;">
-                <p align="center">Start new project</p>
+            <div class="col-sm-2" ></div>
+            <div class="col-sm-8" >
+                <div class="jumbotron" align="center" style="border: 1px solid black;">
+                <h1 class="display-3">Run Batch</h1>
+                <hr class="my-2">
                 <div class="row">
                     <div class="col-sm-6" >
                         <label for="data">Upload user data zip file:</label>
                         <form method="POST" action='/upload-data' class="dropzone dz-clickable"
-                            id="data" enctype="multipart/form-data">
+                            id="data" enctype="multipart/form-data" style="width: 400px">
                         </form>
-
 
                     </div>
                     <div class="col-sm-6" >
                         <label for="classifier">Upload your classifier zip file (optional):</label>
                         <form method="POST" class="dropzone dz-clickable" action="/upload-classifier"
-                            id="classifier" enctype="multipart/form-data">
+                            id="classifier" enctype="multipart/form-data" style="width: 400px">
                         </form>
-
-
+                        
                     </div>
-                    <div class="col-sm-12" style="text-align: center;" >
+
+                    <div class="col-sm-12" style="text-align: center; margin-top: 2%;" >
                         <form method="post" class="form">
                                 <input type="hidden" name="filename" id="filename">
                                 <input type="hidden" name="classifierName" id="classifierName">
@@ -47,6 +48,9 @@
                     </div>
                 </div>
             </div>
+            </div>
+
+            <div class="col-sm-2" ></div>
         </div>
     </div>
 

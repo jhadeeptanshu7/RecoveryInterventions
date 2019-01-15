@@ -1,26 +1,16 @@
 import reddit_forum_categories
 recovery_subreddits = reddit_forum_categories.recovery_subreddits
 drug_subreddits = reddit_forum_categories.drug_subreddits
-from sklearn.feature_extraction.text import CountVectorizer, ENGLISH_STOP_WORDS
 import pymongo
 import nltk.stem
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from scipy import stats
-import statsmodels
 from statsmodels.stats.weightstats import ztest
-from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 english_stemmer = nltk.stem.PorterStemmer()
-import re
 import multiprocessing
 import time
-from sklearn.externals import joblib
-
-client = pymongo.MongoClient()
-db = client.Recovery
-collection = db.psm_terms
 
 
 def Match(groups, propensity, caliper):
@@ -78,6 +68,11 @@ def mp_psm(params, key):
     v = key
     term = v
     position = stopwords_vect.vocabulary_[v]
+
+    client = pymongo.MongoClient()
+    db = client.Recovery
+    collection = db.psm_terms
+
     try:
         X = X_stopwords[:,[i for i in range(len(stopwords_vect.vocabulary_)) if i != position]]
         Y = X_stopwords[:,position]

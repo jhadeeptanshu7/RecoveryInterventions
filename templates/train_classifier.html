@@ -16,17 +16,28 @@
 
 
 {% block content %}
+    <div class="container-fluid" style="margin-top: 5%">
+        <div class="row">
+        <div class="col-sm-3" ></div>
+        <div class="col-sm-6" >
+            <div class="jumbotron" align="center" style="border: 1px solid black;">
+                <h1 class="display-3">Train Classifier</h1>
+                <hr class="my-2">
+                <p class="lead">Refer <a href="/">Tutorial</a>  for details of upload format</p>
 
 
-    <form method="POST" action='/upload-data' class="dropzone dz-clickable"
-      id="dropper" enctype="multipart/form-data">
-    </form>
+                <form method="POST" action='/upload-data' class="dropzone dz-clickable"
+                  id="dropper" enctype="multipart/form-data" style="width: 400px">
+                </form>
 
-    <div class="container">
-        <form method="post" class="form">
-            <input type="hidden" name="filename" id="filename">
-            <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
-        </form>
+                <form method="post" class="form">
+                    <input type="hidden" name="filename" id="filename">
+                    <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3" ></div>
+        </div>
     </div>
 
     <script type="application/javascript">

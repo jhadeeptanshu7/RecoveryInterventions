@@ -9,9 +9,7 @@ from sklearn.svm import LinearSVC
 from mlxtend.classifier import StackingClassifier
 from sklearn import metrics
 from sklearn.metrics import accuracy_score,confusion_matrix, classification_report
-from scipy import stats
 from sklearn.metrics import f1_score
-import statistics as s
 import operator
 
 

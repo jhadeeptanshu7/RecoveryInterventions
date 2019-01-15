@@ -2,19 +2,15 @@ from optparse import OptionParser
 from time import sleep
 import afinn_sentiment_scores
 import folium
-from bokeh.io import output_notebook, show
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
 import stopwords
 import re
 import pyLDAvis
 import pyLDAvis.sklearn
-from wordcloud import WordCloud
 import os
 from sklearn.externals import joblib
-import squarify
 from bokeh.plotting import figure, output_file, save
 from bokeh.models import ColumnDataSource
 from bokeh.models.tools import HoverTool
@@ -22,18 +18,11 @@ import pandas as pd
 from bokeh.models.annotations import Span
 from numpy import pi
 from bokeh.transform import cumsum
-from bokeh.layouts import row
 from bokeh.layouts import gridplot
-from bokeh.models import FactorRange
-from bokeh.transform import factor_cmap
 from bokeh.transform import dodge
 from bokeh.core.properties import value
-import spacy
-from spacy import displacy
-from collections import Counter
 import en_core_web_sm
 nlp = en_core_web_sm.load()
-from pprint import pprint
 from collections import defaultdict
 import sys
 from geopy.geocoders import Nominatim

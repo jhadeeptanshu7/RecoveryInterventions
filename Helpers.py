@@ -1,6 +1,5 @@
 import os
 import smtplib
-import zipfile
 
 FROM =  "recoveryinterventions123@gmail.com"
 SUBJECT = "RecoveryIntervention Project Done"

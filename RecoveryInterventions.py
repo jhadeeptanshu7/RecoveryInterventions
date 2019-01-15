@@ -161,6 +161,11 @@ def get_results():
     return render_template('download.html')
 
 
+@app.route('/results/<project>')
+def get_visualization(project):
+    return render_template("visualization.html", project_id=project)
+
+
 @app.route('/results', methods=['POST'])
 def post_results():
     project_id = request.form.get("project_id")
