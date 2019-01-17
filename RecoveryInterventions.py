@@ -6,6 +6,8 @@ import zipfile
 
 from flask import Flask, render_template, request, send_from_directory, make_response
 from flask_mongoengine import MongoEngine
+from flask_assets import Environment, Bundle
+
 from rq import Queue
 from worker import conn
 from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER
@@ -22,13 +24,21 @@ UPLOAD_FOLDER = os.path.dirname(__file__) + '/run_uploads'
 
 app = Flask(__name__)
 
+assets     = Environment(app)
+assets.url = app.static_url_path
+scss       = Bundle('index.scss', filters='pyscss', output='all.css')
+
 app.config['MONGODB_SETTINGS'] = {
     'host': 'mongodb://localhost:27017/Recovery'
 }
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'deeptanshu'
 
+
+
 db = MongoEngine(app)
+
+
 
 
 class DrugUser(db.Document):

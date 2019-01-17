@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/">
-        <img src="/static/sfsu.jpeg" width="241px" height="63px" class="d-inline-block align-top"/>
+        <img src="/static/logo.png" width="241px" height="63px" class="d-inline-block align-top"/>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/train">Train Classifier</a>
@@ -48,73 +48,29 @@
       </div>
     </nav>
 
+    <footer class="footer bg-dark" style="padding: 10px; height: auto">
+      <div class="container-fluid" >
+          <div class="row">
+              <div class="col-sm-3">
+                  <a href="/">Citation</a>
+              </div>
+              <div class="col-sm-3">
+                  <a href="/">Contact</a>
+              </div>
+              <div class="col-sm-6">
+                  <span style="color:white">Project under</span>
+                  <a class="col-sm-6" href="http://tintin.sfsu.edu/index.html" target="_blank">
+                      Biocomputing and Media Research Lab
+                  </a>
+                  <a class="col-sm-6" href="https://sfsu.edu" target="_blank">
+                      <img src="/static/sfsu.jpeg" width="241px" height="63px" class="d-inline-block"/>
+                  </a>
+              </div>
 
-{#  <div id="signupModal" class="modal fade" role="dialog">#}
-{#      <div class="modal-dialog">#}
-{##}
-{#        <!-- Modal content-->#}
-{#        <div class="modal-content">#}
-{#          <div class="modal-header">#}
-{#            <button type="button" class="close" data-dismiss="modal">&times;</button>#}
-{#            <h4 class="modal-title">Sign up</h4>#}
-{#          </div>#}
-{#          <div class="modal-body">#}
-{#              <form action="signup" method="post">#}
-{#                  <div class="form-group">#}
-{#                    <label for="exampleName">Name</label>#}
-{#                    <input type="text" class="form-control" name="name" id="exampleName" placeholder="Enter Name">#}
-{#                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
-{#                  </div>#}
-{#                  <div class="form-group">#}
-{#                    <label for="exampleInputEmail1">Email address</label>#}
-{#                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">#}
-{#                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
-{#                  </div>#}
-{#                  <div class="form-group">#}
-{#                    <label for="exampleInputPassword1">Password</label>#}
-{#                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">#}
-{#                  </div>#}
-{#                  <button type="submit" class="btn btn-primary">Sign up</button>#}
-{#            </form>#}
-{#          </div>#}
-{#          <div class="modal-footer">#}
-{#            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
-{#          </div>#}
-{#        </div>#}
-{##}
-{#      </div>#}
-{#  </div>#}
-{##}
-{#    <div id="loginModal" class="modal fade" role="dialog">#}
-{#      <div class="modal-dialog">#}
-{##}
-{#        <!-- Modal content-->#}
-{#        <div class="modal-content">#}
-{#          <div class="modal-header">#}
-{#            <button type="button" class="close" data-dismiss="modal">&times;</button>#}
-{#            <h4 class="modal-title">Login</h4>#}
-{#          </div>#}
-{#          <div class="modal-body">#}
-{#              <form method="post" action="login">#}
-{#                  <div class="form-group">#}
-{#                    <label for="exampleInputEmail1">Email address</label>#}
-{#                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">#}
-{#                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
-{#                  </div>#}
-{#                  <div class="form-group">#}
-{#                    <label for="exampleInputPassword1">Password</label>#}
-{#                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">#}
-{#                  </div>#}
-{#                  <button type="submit" class="btn btn-primary">Submit</button>#}
-{#            </form>#}
-{#          </div>#}
-{#          <div class="modal-footer">#}
-{#            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
-{#          </div>#}
-{#        </div>#}
-{##}
-{#      </div>#}
-{#  </div>#}
+          </div>
+
+      </div>
+    </footer>
     <script>
         $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
           if (!$(this).next().hasClass('show')) {
@@ -134,12 +90,5 @@
     </script>
   {% block content %}
   {% endblock %}
-
-{#  {% if not login %}#}
-{#       <script type="application/javascript">#}
-{#            $('#loginModal').modal('show');#}
-{#       </script>#}
-{#  {% endif %}#}
-
   </body>
 </html>
