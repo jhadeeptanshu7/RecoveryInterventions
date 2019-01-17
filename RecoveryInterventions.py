@@ -280,5 +280,15 @@ def upload_classifier():
     return make_response((new_name, 200))
 
 
+@app.route('/contact')
+def get_contact():
+    return render_template('contact.html')
+
+
+@app.route('/citation')
+def get_citation():
+    return render_template('citation.html')
+
+
 if __name__ == '__main__':
     app.run(threaded=True, debug=True)
