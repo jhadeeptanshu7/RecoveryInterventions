@@ -23,7 +23,7 @@
         <button class="tablinks" onclick="openCity(event, 'recovery-bar-chart')">Recovery Bar Chart</button>
         <button class="tablinks" onclick="openCity(event, 'sentiment-analysis')">Sentiment Analysis</button>
         <button class="tablinks" onclick="openCity(event, 'drug-bar-chart')">Drug Bar Chart</button>
-        <button class="tablinks" onclick="openCity(event, 'stacked-recovery-bar-chart')">Stacked Recovery Bar Chart</button>
+{#        <button class="tablinks" onclick="openCity(event, 'stacked-recovery-bar-chart')">Stacked Recovery Bar Chart</button>#}
         <button class="tablinks" onclick="openCity(event, 'temporal-drug-count')">Temporal Drug Count</button>
         <button class="tablinks" onclick="openCity(event, 'temporal-recovery-count')">Temporal Recovery Count</button>
     </div>
@@ -69,20 +69,20 @@
             </div>
 
             <div id="drug-bar-chart" class="tabcontent container-fluid">
-              <iframe src="/visualizations/{{ project_id }}/stacked_drug_bar_chart.html" style="width:100%;
+              <iframe src="/visualizations/{{ project_id }}/drug_bar_chart.html" style="width:100%;
                 height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
                     Your browser doesn't support iframes
                 </iframe>
 
             </div>
 
-            <div id="stacked-recovery-bar-chart" class="tabcontent container-fluid">
-              <iframe src="/visualizations/{{ project_id }}/stacked_recovery_bar_chart.html" style="width:100%;
-                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
-                    Your browser doesn't support iframes
-                </iframe>
-
-            </div>
+{#            <div id="stacked-recovery-bar-chart" class="tabcontent container-fluid">#}
+{#              <iframe src="/visualizations/{{ project_id }}/stacked_recovery_bar_chart.html" style="width:100%;#}
+{#                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">#}
+{#                    Your browser doesn't support iframes#}
+{#                </iframe>#}
+{##}
+{#            </div>#}
 
             <div id="temporal-drug-count" class="tabcontent container-fluid">
               <iframe src="/visualizations/{{ project_id }}/temporal_drug_count.html" style="width:100%;

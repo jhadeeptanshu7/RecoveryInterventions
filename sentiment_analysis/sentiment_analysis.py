@@ -496,7 +496,7 @@ def geolocation_based_recovery_use_analysis(post_dic):
     pass
 
 
-def no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder):
+def no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder, user_name):
     output_file(os.path.join(output_folder, "no_of_positive_negative_neutral_posts.html"))
     sentiment_scores = sentiment_data_frame["sentiment_score"].tolist()
     no_of_positive_posts = sum(ss > 0 for ss in sentiment_scores)
@@ -514,8 +514,8 @@ def no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder):
     data['angle'] = data['value']/data['value'].sum() * 2*pi
     data['color'] = ['red','grey','green']
 
-
-    p = figure(plot_height=350, title="User Name                   Average Sentiment Score = " + str(float(sum(sentiment_scores)/float(len(sentiment_scores)))), toolbar_location=None,
+    #ajinkya
+    p = figure(plot_height=350, title= user_name + "                   Average Sentiment Score = " + str(round(float(sum(sentiment_scores)/float(len(sentiment_scores))),2)), toolbar_location=None,
                tools="hover", tooltips="@sentiment: @value", x_range=(-0.5, 1.0))
 
     p.wedge(x=0, y=1, radius=0.4,
@@ -543,7 +543,7 @@ def no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder):
     all_users_data['angle'] = all_users_data['value']/all_users_data['value'].sum() * 2*pi
     all_users_data['color'] = ['red','grey','green']
 
-    all_users_p = figure(plot_height=350, title="All Users                   Average Sentiment Score = " + str(average_user_sentiment_score), toolbar_location=None,
+    all_users_p = figure(plot_height=350, title="All Users                   Average Sentiment Score = " + str(round(average_user_sentiment_score,2)), toolbar_location=None,
                tools="hover", tooltips="@country: @value", x_range=(-0.5, 1.0))
 
     all_users_p.wedge(x=0, y=1, radius=0.4,
@@ -569,7 +569,7 @@ def no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder):
     recovery_users_data['angle'] = recovery_users_data['value']/recovery_users_data['value'].sum() * 2*pi
     recovery_users_data['color'] = ['red','grey','green']
 
-    recovery_users_p = figure(plot_height=350, title="Recovery Users                   Average Sentiment Score = " + str(recovery_average_user_sentiment_score), toolbar_location=None,
+    recovery_users_p = figure(plot_height=350, title="Recovery Users                   Average Sentiment Score = " + str(round(recovery_average_user_sentiment_score,2)), toolbar_location=None,
                tools="hover", tooltips="@country: @value", x_range=(-0.5, 1.0))
 
     recovery_users_p.wedge(x=0, y=1, radius=0.4,
@@ -595,7 +595,7 @@ def no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder):
     non_recovery_users_data['angle'] = non_recovery_users_data['value']/non_recovery_users_data['value'].sum() * 2*pi
     non_recovery_users_data['color'] = ['red','grey','green']
 
-    non_recovery_users_p = figure(plot_height=350, title="Non Recovery Users                   Average Sentiment Score = " + str(non_recovery_average_user_sentiment_score), toolbar_location=None,
+    non_recovery_users_p = figure(plot_height=350, title="Non Recovery Users                   Average Sentiment Score = " + str(round(non_recovery_average_user_sentiment_score,2)), toolbar_location=None,
                tools="hover", tooltips="@country: @value", x_range=(-0.5, 1.0))
 
     non_recovery_users_p.wedge(x=0, y=1, radius=0.4,
@@ -900,11 +900,27 @@ def state_lat_long(state, country, country_short_name,lat_long_city_df,loc_df):
 def map_visualization(location_matrix, output_folder):
     # loc_df = pd.DataFrame(location_matrix)
     # ['location','sentiment_score','drug_terms','recovery_terms','lat','long']
+    loc_df_1 = joblib.load("loc_df.pkl")
+    folium_map = folium.Map(tiles="CartoDB dark_matter")
+
+    for row in loc_df_1.values.tolist():
+        # print row
+        color = 'grey'
+        if row[1]>0:
+            color='green'
+        elif row[1]<0:
+            color='red'
+        # folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
+        #               + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
+        folium.CircleMarker(fill=True,location=[row[4], row[5]], color=color, radius= float(len((dict(row[2]))))/float(2)     ).add_to(folium_map)
+
+
+
     loc_df = pd.DataFrame.from_records(location_matrix,columns=['location','sentiment_score','drug_terms','recovery_terms','lat','long'])
     # loc_df.loc[ (loc_df.sentiment_score < 0), 'color'] = 'red'
     # loc_df.loc[ (loc_df.sentiment_score > 0),'color'] = 'green'
 
-    folium_map = folium.Map(tiles="CartoDB dark_matter")
+    # folium_map = folium.Map(tiles="CartoDB dark_matter")
 
     for row in loc_df.values.tolist():
         # print row
@@ -1167,16 +1183,15 @@ def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sent
 
 
 def main(folder, output_folder, classifier_folder):
-    # print classifier_folder
     post_dic = create_post_dic(folder)
-    # print post_dic
+    user_name = folder.split(os.path.sep)[-1]
 
     #SENTIMENT ANALYSIS VISUALIZATION
 
     sentiment_score_dic = sentiment_score_of_each_post(post_dic)
     sentiment_data_frame = converting_data_to_pandas_df(sentiment_score_dic,post_dic)
     sentiment_line_plot(sentiment_data_frame, output_folder)
-    no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder)
+    no_of_positive_negative_neutral_posts(sentiment_data_frame, output_folder, user_name)
     geolocation_based_sentiment_analysis(post_dic)
 
     # TOPIC MODELING VISUALIZATION
@@ -1186,7 +1201,8 @@ def main(folder, output_folder, classifier_folder):
 
     # DRUG TERM VISUALIZATION
 
-    stacked_drug_bar_chart(post_dic, output_folder)
+    # stacked_drug_bar_chart(post_dic, output_folder)
+    drug_bar_chart(post_dic, output_folder)
     drugs_data_frame = creating_drug_pandas_df(post_dic)
     temporal_drug_use(drugs_data_frame, output_folder)
 
@@ -1195,7 +1211,7 @@ def main(folder, output_folder, classifier_folder):
     recovery_bar_chart(post_dic, output_folder)
     recovery_data_frame = creating_recovery_pandas_df(post_dic)
     temporal_recovery_use(recovery_data_frame, output_folder)
-    stacked_recovery_bar_chart(post_dic, output_folder)
+    # stacked_recovery_bar_chart(post_dic, output_folder)
 
 
     # Geolocation Visualization
