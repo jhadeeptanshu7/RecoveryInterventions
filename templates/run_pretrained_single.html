@@ -141,54 +141,61 @@
             <div class="col-sm-2" ></div>
             <div class="col-sm-8">
                 <div class="jumbotron" align="center" style="border: 1px solid black;">
-                    <h1 class="display-3">Run Single User</h1>
-                    <hr class="my-2">
-                    <div class="row">
+                    <div class="container-fluid">
+                        <h1 class="display-3">Run Single User</h1>
+                        <hr class="my-2">
+                        <div class="row">
 
-                        <div class="col-sm-6" >
-                            <label for="data">Upload user data zip file:</label>
-                            <form method="POST" action='/upload-data' class="dropzone dz-clickable"
-                                id="data" enctype="multipart/form-data">
-                            </form>
+                            <div class="col-sm-6" >
+                                <label for="data">Upload user data zip file:</label>
+                                <form method="POST" action='/upload-data' class="dropzone dz-clickable"
+                                    id="data" enctype="multipart/form-data">
+                                </form>
 
 
+                            </div>
+                            <div class="col-sm-6" >
+                                <label for="classifier">Upload your classifier zip file (optional):</label>
+                                <form method="POST" class="dropzone dz-clickable" action="/upload-classifier"
+                                    id="classifier" enctype="multipart/form-data">
+                                </form>
+
+
+                            </div>
                         </div>
-                        <div class="col-sm-6" >
-                            <label for="classifier">Upload your classifier zip file (optional):</label>
-                            <form method="POST" class="dropzone dz-clickable" action="/upload-classifier"
-                                id="classifier" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-sm-12" style="text-align: center;" >
+                            <form method="post" class="form" id="submitForm">
+                                    <input type="hidden" name="filename" id="filename">
+                                    <input type="hidden" name="classifierName" id="classifierName">
+                                    <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
                             </form>
+                            <script>
+                                $("#submitForm").submit(function() {
+                                    document.getElementById("loader").style.display = "block";
+                                });
 
-
+                            </script>
+                        </div>
+                        </div>
+                        <div class="row" >
+                        <div class="col-sm-2" ></div>
+                        <div class="col-sm-5"  >
+                            <div id="loader" style="display: none"></div>
+                            {% if project_id %}
+                                <p id="result">Your result will be at this <a href="/results/{{ project_id }}">link</a></p>
+                            {% endif %}
+                        </div>
+                        <div class="col-sm-5" ></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12" style="text-align: center;" >
-                        <form method="post" class="form" id="submitForm">
-                                <input type="hidden" name="filename" id="filename">
-                                <input type="hidden" name="classifierName" id="classifierName">
-                                <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
-                        </form>
-                        <script>
-                            $("#submitForm").submit(function() {
-                                document.getElementById("loader").style.display = "block";
-                            });
+{#                    <div class="container-fluid">#}
+{#                        <div id="loader"></div>#}
+{#                    <div>#}
 
-                        </script>
-                    </div>
-                    </div>
-                    <div class="row" >
-                    <div class="col-sm-2" ></div>
-                    <div class="col-sm-5"  >
-                        <div id="loader" style="display: none"></div>
-                        {% if project_id %}
-                            <p id="result">Your result will be at this <a href="/results/{{ project_id }}">link</a></p>
-                        {% endif %}
-                    </div>
 
-                    <div class="col-sm-5" ></div>
-                    </div>
                 </div>
+
             </div>
             <div class="col-sm-2" ></div>
         </div>

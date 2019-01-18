@@ -290,5 +290,9 @@ def get_citation():
     return render_template('citation.html')
 
 
+@app.route('/tutorial')
+def get_tutorial():
+    return render_template('tutorial.html')
+
 if __name__ == '__main__':
     app.run(threaded=True, debug=True)
