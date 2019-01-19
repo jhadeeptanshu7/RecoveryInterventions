@@ -10,7 +10,7 @@ from flask_assets import Environment, Bundle
 
 from rq import Queue
 from worker import conn
-from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER
+from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER, get_classification_result
 
 
 CLASSIFY = 'CLASSIFY'
@@ -34,11 +34,7 @@ app.config['MONGODB_SETTINGS'] = {
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'deeptanshu'
 
-
-
 db = MongoEngine(app)
-
-
 
 
 class DrugUser(db.Document):
@@ -173,7 +169,10 @@ def get_results():
 
 @app.route('/results/<project>')
 def get_visualization(project):
-    return render_template("visualization.html", project_id=project)
+    recovery_intervention_file = os.path.join(VISUALIZATION_FOLDER, project)
+
+    return render_template("visualization.html", project_id=project,
+                           recovery_intervention=get_classification_result(recovery_intervention_file))
 
 
 @app.route('/results', methods=['POST'])

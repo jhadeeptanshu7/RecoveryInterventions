@@ -9,7 +9,7 @@
     {% block head %}
     {% endblock %}
   </head>
-  <body style="padding-bottom: 40px">
+  <body style="padding-bottom: 80px">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/">
         <img src="/static/logo.png" width="241px" height="63px" class="d-inline-block align-top"/>
@@ -70,26 +70,22 @@
   {% endblock %}
 
   <footer class="footer bg-dark" style="padding: 10px; height: auto">
-      <div class="container-fluid" >
-          <div class="row">
-              <div class="col-sm-3">
+              <div style="float: left; margin: 5px">
                   <a href="/citation">Citation</a>
               </div>
-              <div class="col-sm-3">
+              <div style="float: left; margin: 5px">
                   <a href="/contact">Contact</a>
               </div>
-              <div class="col-sm-6">
-                  <span style="color:white">Project under</span>
-                  <a class="col-sm-6" href="http://tintin.sfsu.edu/index.html" target="_blank">
+              <div style="float: right;">
+                  <span class="col-sm-3" style="color:white">Project under</span>
+                  <a class="col-sm-5" href="http://tintin.sfsu.edu/index.html" target="_blank">
                       Biocomputing and Media Research Lab
                   </a>
-                  <a class="col-sm-6" href="https://sfsu.edu" target="_blank">
+                  <a class="col-sm-4" href="https://sfsu.edu" target="_blank">
                       <img src="/static/sfsu.jpeg" width="241px" height="63px" class="d-inline-block"/>
                   </a>
               </div>
-          </div>
 
-      </div>
     </footer>
  </body>
 </html>

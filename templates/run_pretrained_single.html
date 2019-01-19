@@ -132,6 +132,7 @@
     </style>
     <script src="../static/helper.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
 {% endblock head %}
 
 
@@ -140,7 +141,7 @@
         <div class="row">
             <div class="col-sm-2" ></div>
             <div class="col-sm-8">
-                <div class="jumbotron" align="center" style="border: 1px solid black;">
+                <div class="jumbotron" id="mainForm" align="center" style="border: 1px solid black;">
                     <div class="container-fluid">
                         <h1 class="display-3">Run Single User</h1>
                         <hr class="my-2">
@@ -172,28 +173,29 @@
                             </form>
                             <script>
                                 $("#submitForm").submit(function() {
-                                    document.getElementById("loader").style.display = "block";
+                                    $.blockUI({ css: {
+                                        border: 'none',
+                                        padding: '15px',
+                                        backgroundColor: '#000',
+                                        '-webkit-border-radius': '10px',
+                                        '-moz-border-radius': '10px',
+                                        opacity: .5,
+                                        color: '#fff'
+                                    }});
                                 });
 
                             </script>
                         </div>
                         </div>
-                        <div class="row" >
-                        <div class="col-sm-2" ></div>
-                        <div class="col-sm-5"  >
-                            <div id="loader" style="display: none"></div>
+                        <div class="row" style="align-content: center; float: left; margin-left: 35%">
+                            <div  style="align-content: center; font-size: 20px;">
                             {% if project_id %}
-                                <p id="result">Your result will be at this <a href="/results/{{ project_id }}">link</a></p>
+                                <p style="border: 1px solid black;border-radius: 20px;padding: 5px;" id="result">
+                                    <a href="/results/{{ project_id }}">Click here to view the results</a></p>
                             {% endif %}
-                        </div>
-                        <div class="col-sm-5" ></div>
+                            </div>
                         </div>
                     </div>
-{#                    <div class="container-fluid">#}
-{#                        <div id="loader"></div>#}
-{#                    <div>#}
-
-
                 </div>
 
             </div>

@@ -15,6 +15,11 @@
     <div class="container-fluid" align="center" style="padding: 2px">
 
     {% if project_id %}
+        {% if recovery_intervention[1] == '1' %}
+            <p style="font-size: x-large">{{ recovery_intervention[0] }} is open to a drug addiction recovery intervention.</p>
+        {% else %}
+            <p style="font-size: x-large">{{ recovery_intervention[0] }} is not open to a drug addiction recovery intervention.</p>
+        {% endif %}
         <div class="row" id="tabs-bar" style="border: 1px solid black; padding: 1px;">
     <div class="tab container-fluid">
         <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'document-topics')">Document Topics</button>

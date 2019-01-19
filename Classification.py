@@ -197,6 +197,8 @@ def run_batch_classification(folder, project):
     base_input_folder = folder
     base_output_folder = os.path.join(VISUALIZATION_FOLDER, str(project.id))
 
+    write_classification_result_file(classification_results, base_output_folder)
+
     if not os.path.exists(base_output_folder):
         os.mkdir(base_output_folder)
 
@@ -228,7 +230,6 @@ def run_sentiment_analysis(input_folder, output_folder, project):
 
     # classification_results = classification(project, project.classifier)
 
-
     os.system("cd %s && python sentiment_analysis.py -i %s -o %s -c %s" %
               (sentiment_analysis_folder, input_folder, output_folder, project.classifier))
 
@@ -236,6 +237,9 @@ def run_sentiment_analysis(input_folder, output_folder, project):
 def run_single_classification(input_folder, output_folder, project):
     insert_data_mongodb(input_folder, project)
     classification_results = classification(project, project.classifier)
+
+    write_classification_result_file(classification_results, output_folder)
+
     for user_folder in os.listdir(input_folder):
         if user_folder[0] != ".":
             input_folder = os.path.join(input_folder, user_folder)
@@ -243,6 +247,20 @@ def run_single_classification(input_folder, output_folder, project):
 
     run_sentiment_analysis(input_folder, output_folder, project)
 
+
+def write_classification_result_file(classification_result, output_folder):
+    with open(os.path.join(output_folder, 'recovery_intervention_result.txt'), 'a') as fp:
+        for i in range(len(classification_result[0])):
+            fp.write(str(classification_result[0][i]) + " " + str(classification_result[1][i]) + "\n")
+            fp.flush()
+
+
+def get_classification_result(input_file):
+
+    with open(os.path.join(input_file, "recovery_intervention_result.txt")) as fp:
+        return fp.readline().strip().split(" ")
+
+    return []
 
 
 def main():
