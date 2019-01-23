@@ -197,10 +197,10 @@ def run_batch_classification(folder, project):
     base_input_folder = folder
     base_output_folder = os.path.join(VISUALIZATION_FOLDER, str(project.id))
 
-    write_classification_result_file(classification_results, base_output_folder)
-
     if not os.path.exists(base_output_folder):
         os.mkdir(base_output_folder)
+
+    write_classification_result_file(classification_results, base_output_folder)
 
     for c,user_folder in enumerate(os.listdir(folder)):
         print c, "****************************************"
