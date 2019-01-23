@@ -4,13 +4,13 @@ import shutil
 import datetime
 import zipfile
 
-from flask import Flask, render_template, request, send_from_directory, make_response
+from flask import Flask, render_template, request, send_from_directory, make_response, redirect, url_for
 from flask_mongoengine import MongoEngine
 from flask_assets import Environment, Bundle
 
 from rq import Queue
 from worker import conn
-from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER, get_classification_result
+from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER, get_classification_result, modify_number_of_topics_helper
 
 
 CLASSIFY = 'CLASSIFY'
@@ -117,7 +117,6 @@ def classifier_job():
 
         classifier_folder = os.path.join(OUTPUT_FOLDER, classifier_name).replace(".zip", "")
 
-
     project = Project(filename, '-1', CLASSIFY, "-1", classifier_folder).save()
 
     job = q.enqueue_call(func=fileHandler, args=(project.id,), result_ttl=5000, timeout=300000)
@@ -192,7 +191,7 @@ def post_results():
 
 @app.route('/visualizations/<project>/<filename>')
 def visualization_file(project, filename):
-    return send_from_directory(VISUALIZATION_FOLDER + project, filename)
+    return send_from_directory(VISUALIZATION_FOLDER + project, filename, cache_timeout=0)
 
 
 @app.route('/upload-data', methods=['POST'])
@@ -292,6 +291,18 @@ def get_citation():
 @app.route('/tutorial')
 def get_tutorial():
     return render_template('tutorial.html')
+
+
+@app.route('/results/<project>', methods=['POST'])
+def modify_number_of_topics(project):
+    number_of_topics = int(request.form.get('numberOfTopic'))
+    if number_of_topics > 0:
+        modify_number_of_topics_helper(project, number_of_topics)
+
+    recovery_intervention_file = os.path.join(VISUALIZATION_FOLDER, project)
+    return render_template("visualization.html", project_id=project,
+                           recovery_intervention=get_classification_result(recovery_intervention_file))
+
 
 if __name__ == '__main__':
     app.run(threaded=True, debug=True)

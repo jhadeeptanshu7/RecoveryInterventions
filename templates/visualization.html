@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 {% block head %}
     <script src="../static/helper.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
     <script>
          $( document ).ready(function() {
                 document.getElementById("defaultOpen").click();
@@ -9,6 +11,17 @@
 
             });
     </script>
+
+    <style>
+         /* Style the tab content */
+        .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+
+    </style>
 {% endblock head %}
 
 {% block content %}
@@ -21,18 +34,17 @@
             <p style="font-size: x-large">{{ recovery_intervention[0] }} is not open to a drug addiction recovery intervention.</p>
         {% endif %}
         <div class="row" id="tabs-bar" style="border: 1px solid black; padding: 1px;">
-    <div class="tab container-fluid">
-        <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'document-topics')">Document Topics</button>
-        <button class="tablinks" onclick="openCity(event, 'geo-location')">Geo-location</button>
-        <button class="tablinks" onclick="openCity(event, 'sentiment-summary')">Sentiment Summary</button>
-        <button class="tablinks" onclick="openCity(event, 'recovery-bar-chart')">Recovery Bar Chart</button>
-        <button class="tablinks" onclick="openCity(event, 'sentiment-analysis')">Sentiment Analysis</button>
-        <button class="tablinks" onclick="openCity(event, 'drug-bar-chart')">Drug Bar Chart</button>
-{#        <button class="tablinks" onclick="openCity(event, 'stacked-recovery-bar-chart')">Stacked Recovery Bar Chart</button>#}
-        <button class="tablinks" onclick="openCity(event, 'temporal-drug-count')">Temporal Drug Count</button>
-        <button class="tablinks" onclick="openCity(event, 'temporal-recovery-count')">Temporal Recovery Count</button>
-    </div>
-    </div>
+        <div class="tab container-fluid">
+            <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'document-topics')">Document Topics</button>
+            <button class="tablinks" onclick="openTab(event, 'geo-location')">Geo-location</button>
+            <button class="tablinks" onclick="openTab(event, 'sentiment-summary')">Sentiment Summary</button>
+            <button class="tablinks" onclick="openTab(event, 'recovery-bar-chart')">Recovery Bar Chart</button>
+            <button class="tablinks" onclick="openTab(event, 'sentiment-analysis')">Sentiment Analysis</button>
+            <button class="tablinks" onclick="openTab(event, 'drug-bar-chart')">Drug Bar Chart</button>
+            <button class="tablinks" onclick="openTab(event, 'temporal-drug-count')">Temporal Drug Count</button>
+            <button class="tablinks" onclick="openTab(event, 'temporal-recovery-count')">Temporal Recovery Count</button>
+        </div>
+        </div>
         <div class="row container-fluid" id="visualization">
             <div id="document-topics" class="tabcontent container-fluid">
                 <iframe src="/visualizations/{{ project_id }}/document_topics.html" style="width:100%;
@@ -81,13 +93,6 @@
 
             </div>
 
-{#            <div id="stacked-recovery-bar-chart" class="tabcontent container-fluid">#}
-{#              <iframe src="/visualizations/{{ project_id }}/stacked_recovery_bar_chart.html" style="width:100%;#}
-{#                height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">#}
-{#                    Your browser doesn't support iframes#}
-{#                </iframe>#}
-{##}
-{#            </div>#}
 
             <div id="temporal-drug-count" class="tabcontent container-fluid">
               <iframe src="/visualizations/{{ project_id }}/temporal_drug_count.html" style="width:100%;
@@ -106,7 +111,34 @@
             </div>
 
 
-</div>
+        </div>
+        <div class="row container-fluid" id="numberOfTopicForm" style="display: none">
+            <form method="post" id="topicNumber" >
+              <div class="form-group">
+                <label for="numberOfTopic">Modify number of topics:</label>
+                <input type="number" class="form-control" id="numberOfTopic" name="numberOfTopic" placeholder="Number of topics">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+
+            <script>
+                $("#topicNumber").submit(function() {
+                    $.blockUI({ css: {
+                        border: 'none',
+                        padding: '15px',
+                        backgroundColor: '#000',
+                        '-webkit-border-radius': '10px',
+                        '-moz-border-radius': '10px',
+                        opacity: .5,
+                        color: '#fff'
+                    }});
+                });
+
+            </script>
+
+        </div>
     {% endif %}
 
 

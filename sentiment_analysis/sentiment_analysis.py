@@ -1182,6 +1182,12 @@ def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sent
     map_visualization(location_matrix,output_folder)
 
 
+def modify_number_of_topics(input_folder, output_folder, n):
+    print 'Number of topics', n
+    post_dic = create_post_dic(input_folder)
+    user_posts_topic_modeling(post_dic, n, output_folder)
+
+
 def main(folder, output_folder, classifier_folder):
     post_dic = create_post_dic(folder)
     user_name = folder.split(os.path.sep)[-1]
@@ -1235,8 +1241,14 @@ def run():
     parser.add_option('-i', '--input', dest='input_folder', help="input folder", type=str)
     parser.add_option('-o', '--output', dest='output_folder', help="output folder", type=str)
     parser.add_option('-c', '--classifier', dest='classifier', help="classifier folder", type=str)
+    parser.add_option('-n', '--topics', dest='number_of_topics', help="Number of Topics", type=int)
 
     (options, args) = parser.parse_args()
+
+    if options.number_of_topics != -1:
+        modify_number_of_topics(options.input_folder, options.output_folder, options.number_of_topics)
+        return
+
     classifier_folder = ""
     if options.classifier and options.classifier != "na":
         classifier_folder = options.classifier

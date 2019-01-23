@@ -230,8 +230,8 @@ def run_sentiment_analysis(input_folder, output_folder, project):
 
     # classification_results = classification(project, project.classifier)
 
-    os.system("cd %s && python sentiment_analysis.py -i %s -o %s -c %s" %
-              (sentiment_analysis_folder, input_folder, output_folder, project.classifier))
+    os.system("cd %s && python sentiment_analysis.py -i %s -o %s -c %s, -n %d" %
+              (sentiment_analysis_folder, input_folder, output_folder, project.classifier, -1))
 
 
 def run_single_classification(input_folder, output_folder, project):
@@ -260,7 +260,20 @@ def get_classification_result(input_file):
     with open(os.path.join(input_file, "recovery_intervention_result.txt")) as fp:
         return fp.readline().strip().split(" ")
 
-    return []
+
+def modify_number_of_topics_helper(project_id, n):
+    sentiment_analysis_folder = os.path.join(os.path.dirname(__file__), "sentiment_analysis")
+    project = db.projects.find_one({'_id': ObjectId(project_id)})
+    output_folder = os.path.join(VISUALIZATION_FOLDER, str(project['_id']))
+
+    input_folder = os.path.join(OUTPUT_FOLDER,  project['file'].replace(".zip", ""))
+    for user_folder in os.listdir(input_folder):
+        if user_folder[0] != ".":
+            input_folder = os.path.join(input_folder, user_folder)
+            break
+
+    os.system("cd %s && python sentiment_analysis.py -i %s -o %s -n %d" %
+              (sentiment_analysis_folder, input_folder, output_folder, n))
 
 
 def main():
