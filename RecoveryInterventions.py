@@ -82,7 +82,7 @@ def run_single_user_classifier():
     input_folder = os.path.join(OUTPUT_FOLDER, file_name).replace(".zip", "")
     os.rename(os.path.join(OUTPUT_FOLDER, unzipped_folder_name), input_folder)
 
-    output_folder = VISUALIZATION_FOLDER + str(project['id']) + "/"
+    output_folder = os.path.join(VISUALIZATION_FOLDER, str(project['id']))
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
