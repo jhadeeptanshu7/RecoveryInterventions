@@ -42,8 +42,10 @@ def creating_user_post_and_recovery_matrix(project):
 
 def insert_data_mongodb(folder, project):
 
-    client = pymongo.MongoClient()
-    db = client.Recovery
+#     client = pymongo.MongoClient()
+#     db = client.Recovery
+
+    db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
     collection = db['drug_users']
 
     for dir in os.listdir(folder):
