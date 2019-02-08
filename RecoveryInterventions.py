@@ -150,7 +150,7 @@ def train_classifier_job():
 @app.route('/download/<project_id>')
 def get_zip_file(project_id):
     if not os.path.exists(os.path.join(VISUALIZATION_FOLDER, project_id) + ".zip"):
-        shutil.make_archive(os.path.join(VISUALIZATION_FOLDER, project_id), 'zip', VISUALIZATION_FOLDER + project_id)
+        shutil.make_archive(os.path.join(VISUALIZATION_FOLDER, project_id), 'zip', os.path.join(VISUALIZATION_FOLDER, project_id))
 
     return send_from_directory(VISUALIZATION_FOLDER, project_id + ".zip")
 
@@ -174,11 +174,11 @@ def post_results():
     if not project_id:
         return render_template('download.html')
 
-    elif not os.path.exists(VISUALIZATION_FOLDER + project_id):
+    elif not os.path.exists(os.path.join(VISUALIZATION_FOLDER, project_id)):
         return render_template('download.html', project_id=project_id)
 
-    elif not os.path.exists(VISUALIZATION_FOLDER + project_id + ".zip"):
-        shutil.make_archive(VISUALIZATION_FOLDER + project_id, 'zip', VISUALIZATION_FOLDER + project_id)
+    elif not os.path.exists(os.path.join(VISUALIZATION_FOLDER, project_id) + ".zip"):
+        shutil.make_archive(os.path.join(VISUALIZATION_FOLDER, project_id), 'zip', os.path.join(VISUALIZATION_FOLDER + project_id))
 
     return send_from_directory(VISUALIZATION_FOLDER, project_id + ".zip")
 
