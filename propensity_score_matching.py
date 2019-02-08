@@ -68,9 +68,11 @@ def mp_psm(params, key):
     v = key
     term = v
     position = stopwords_vect.vocabulary_[v]
-
-    client = pymongo.MongoClient()
-    db = client.Recovery
+    
+    client = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256")
+#     client = pymongo.MongoClient()
+#     db = client.Recovery
+    db = client.recoveryi
     collection = db.psm_terms
 
     try:
