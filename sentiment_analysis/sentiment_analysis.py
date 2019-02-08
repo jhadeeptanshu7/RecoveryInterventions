@@ -1222,18 +1222,18 @@ def main(folder, output_folder, classifier_folder):
 
     # Geolocation Visualization
     # entity_extraction(post_dic)
-    country_post_dic,state_post_dic, city_post_dic = find_location_terms_in_text(post_dic)
-    country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic = location_sentiment_score(country_post_dic,state_post_dic,city_post_dic)
-    country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic = location_drug_recovery_terms(country_post_dic,state_post_dic,city_post_dic)
-    location_sentiment_values = [country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic]
-    location_sentiment_values = dict(country_sentiment_scores_dic,**state_sentiment_scores_dic)
-    location_sentiment_values = dict(location_sentiment_values,**city_sentiment_scores_dic)
-    location_drug_recovery_values = [country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic]
-    location_drug_values = dict(country_drug_terms_dic,**state_drug_terms_dic)
-    location_drug_values = dict(location_drug_values,**city_drug_terms_dic)
-    location_recovery_values = dict(country_recovery_terms_dic,**state_recovery_terms_dic)
-    location_recovery_values = dict(location_recovery_values,**city_recovery_terms_dic)
-    plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,output_folder)
+#     country_post_dic,state_post_dic, city_post_dic = find_location_terms_in_text(post_dic)
+#     country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic = location_sentiment_score(country_post_dic,state_post_dic,city_post_dic)
+#     country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic = location_drug_recovery_terms(country_post_dic,state_post_dic,city_post_dic)
+#     location_sentiment_values = [country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic]
+#     location_sentiment_values = dict(country_sentiment_scores_dic,**state_sentiment_scores_dic)
+#     location_sentiment_values = dict(location_sentiment_values,**city_sentiment_scores_dic)
+#     location_drug_recovery_values = [country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic]
+#     location_drug_values = dict(country_drug_terms_dic,**state_drug_terms_dic)
+#     location_drug_values = dict(location_drug_values,**city_drug_terms_dic)
+#     location_recovery_values = dict(country_recovery_terms_dic,**state_recovery_terms_dic)
+#     location_recovery_values = dict(location_recovery_values,**city_recovery_terms_dic)
+#     plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,output_folder)
 
 
 def run():
