@@ -6,7 +6,6 @@ import zipfile
 
 from flask import Flask, render_template, request, send_from_directory, make_response, redirect, url_for
 from flask_mongoengine import MongoEngine
-from flask_assets import Environment, Bundle
 
 from rq import Queue
 from worker import conn
@@ -17,20 +16,15 @@ CLASSIFY = 'CLASSIFY'
 TRAIN = 'TRAIN'
 q = Queue(connection=conn, default_timeout=300000)
 
-VISUALIZATION_FOLDER = os.path.dirname(__file__) + '/visualizations/'
-
-UPLOAD_FOLDER = os.path.dirname(__file__) + '/run_uploads'
-# ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','m'])
-
 app = Flask(__name__)
 
-assets     = Environment(app)
-assets.url = app.static_url_path
-scss       = Bundle('index.scss', filters='pyscss', output='all.css')
+VISUALIZATION_FOLDER = os.path.join(app.root_path, 'visualizations')
+UPLOAD_FOLDER = os.path.join( app.root_path, 'run_uploads')
 
-app.config['MONGODB_SETTINGS'] = {
-    'host': 'mongodb://localhost:27017/Recovery'
-}
+app.config['MONGODB_SETTINGS'] = {'host':"mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256"}
+# app.config['MONGODB_SETTINGS'] = {
+#     'host': 'mongodb://localhost:27017/Recovery'
+# }
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'deeptanshu'
 
