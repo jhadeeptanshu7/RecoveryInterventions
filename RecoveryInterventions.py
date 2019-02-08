@@ -149,8 +149,8 @@ def train_classifier_job():
 
 @app.route('/download/<project_id>')
 def get_zip_file(project_id):
-    if not os.path.exists(VISUALIZATION_FOLDER + project_id + ".zip"):
-        shutil.make_archive(VISUALIZATION_FOLDER + project_id, 'zip', VISUALIZATION_FOLDER + project_id)
+    if not os.path.exists(os.path.join(VISUALIZATION_FOLDER, project_id) + ".zip"):
+        shutil.make_archive(os.path.join(VISUALIZATION_FOLDER, project_id), 'zip', VISUALIZATION_FOLDER + project_id)
 
     return send_from_directory(VISUALIZATION_FOLDER, project_id + ".zip")
 
@@ -185,7 +185,7 @@ def post_results():
 
 @app.route('/visualizations/<project>/<filename>')
 def visualization_file(project, filename):
-    return send_from_directory(VISUALIZATION_FOLDER + project, filename, cache_timeout=0)
+    return send_from_directory(os.path.join(VISUALIZATION_FOLDER, project), filename, cache_timeout=0)
 
 
 @app.route('/upload-data', methods=['POST'])
