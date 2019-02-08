@@ -633,9 +633,9 @@ def find_location_terms_in_text(post_dic):
     list_of_countires = loc_df['country'].unique().tolist()
     list_of_states = loc_df['subcountry'].unique().tolist()
 
-    lat_long_city_df = pd.read_csv('worldcitiespop.txt', sep=",")
-    country_names_df = pd.read_csv('countrynames.csv')
-    country_position_df = pd.read_csv('countrypositions.csv')
+#     lat_long_city_df = pd.read_csv('worldcitiespop.txt', sep=",")
+#     country_names_df = pd.read_csv('countrynames.csv')
+#     country_position_df = pd.read_csv('countrypositions.csv')
 
     country_post_dic = defaultdict(list)
     state_post_dic = defaultdict(list)
