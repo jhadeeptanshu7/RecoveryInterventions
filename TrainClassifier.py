@@ -12,8 +12,9 @@ from sklearn.externals import joblib
 
 def creating_user_post_and_recovery_matrix(project):
 #     client = pymongo.MongoClient()
-    client = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256")
-    db = client.Recovery
+#     db = client.Recovery
+    db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
+    
     collection = db['drug_users']
     cursor = collection.find({"project_id":project.id}, no_cursor_timeout=True)
 
@@ -79,8 +80,9 @@ def insert_data_mongodb(folder, project):
 def sorting_terms_by_ate(project):
     project_id = project.id
 #     client = pymongo.MongoClient()
-    client = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256")
-    db = client.Recovery
+#     db = client.Recovery
+    db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
+
     collection = db["psm_terms"]
     cursor = collection.find({"project_id":project_id}, no_cursor_timeout=True)
 
@@ -111,8 +113,10 @@ def create_visualization_folders(project):
 
     if not os.path.isdir(folder_path_2):
         os.makedirs(folder_path_2)
-    client = pymongo.MongoClient()
-    db = client.Recovery
+#     client = pymongo.MongoClient()
+#     db = client.Recovery
+    db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
+    
     collection = db['drug_users']
     cursor = collection.find({"project_id":project.id},no_cursor_timeout=True)
     for i in cursor:
