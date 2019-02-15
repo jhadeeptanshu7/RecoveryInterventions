@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 english_stemmer = nltk.stem.PorterStemmer()
 import multiprocessing
 import time
+from Classification import get_db
 
 
 def Match(groups, propensity, caliper):
@@ -69,10 +70,7 @@ def mp_psm(params, key):
     term = v
     position = stopwords_vect.vocabulary_[v]
     
-    client = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256")
-#     client = pymongo.MongoClient()
-#     db = client.Recovery
-    db = client.recoveryi
+    db = get_db()
     collection = db.psm_terms
 
     try:
