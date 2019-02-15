@@ -8,7 +8,7 @@ import numpy as np
 import pymongo
 from bson.objectid import ObjectId
 from optparse import OptionParser
-from TrainClassifier import get_db
+from flask import current_app
 
 
 VISUALIZATION_FOLDER = os.path.join(os.path.dirname(__file__), 'visualizations')
@@ -17,6 +17,15 @@ OUTPUT_FOLDER = os.path.join(os.path.dirname(__file__), 'output')
 UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), '/run_uploads/')
 
 sys.path.append(os.path.dirname(__file__) + "/sentiment_analysis/")
+
+
+def get_db():
+    client = pymongo.MongoClient(current_app.config["MONGODB_SETTINGS"]["host"])
+    if current_app.environment == "PROD":
+        db = client.recoveryi
+    else:
+        db = client.Recovery
+    return db
 
 
 class Project:

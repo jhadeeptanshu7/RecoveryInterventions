@@ -1,23 +1,12 @@
 from optparse import OptionParser
 
-from Classification import Project
 from sklearn.feature_extraction.text import CountVectorizer
 import os
 import pymongo
 import propensity_score_matching
 import train_classifier_classification
-from Classification import VISUALIZATION_FOLDER
+from Classification import VISUALIZATION_FOLDER, get_db, Project
 from sklearn.externals import joblib
-from flask import current_app
-
-
-def get_db():
-    client = pymongo.MongoClient(current_app.config["MONGODB_SETTINGS"]["host"])
-    if current_app.environment == "PROD":
-        db = client.recoveryi
-    else:
-        db = client.Recovery
-    return db
 
 
 def creating_user_post_and_recovery_matrix(project):
