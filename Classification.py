@@ -8,18 +8,15 @@ import numpy as np
 import pymongo
 from bson.objectid import ObjectId
 from optparse import OptionParser
+from TrainClassifier import get_db
 
 
 VISUALIZATION_FOLDER = os.path.join(os.path.dirname(__file__), 'visualizations')
 logging.basicConfig(filename='classification.log', level=logging.DEBUG)
-OUTPUT_FOLDER = os.path.dirname(__file__) + '/output'
-UPLOAD_FOLDER = os.path.dirname(__file__) + '/run_uploads/'
+OUTPUT_FOLDER = os.path.join(os.path.dirname(__file__), 'output')
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), '/run_uploads/')
 
 sys.path.append(os.path.dirname(__file__) + "/sentiment_analysis/")
-
-client = pymongo.MongoClient()
-# client = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256")
-db = client.Recovery
 
 
 class Project:
@@ -32,9 +29,7 @@ class Project:
 
 def fileHandler(project_id):
 
-    client = pymongo.MongoClient()
-    db = client.Recovery
-    # db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
+    db = get_db()
     project = db.projects.find_one({'_id': ObjectId(project_id)})
 
     if not project:
@@ -75,9 +70,7 @@ def unzip_folder(input_file):
 
 
 def insert_data_mongodb(folder, project):
-    # db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
-    client = pymongo.MongoClient()
-    db = client.Recovery
+    db = get_db()
 
     collection = db['drug_users']
 
@@ -103,9 +96,7 @@ def insert_data_mongodb(folder, project):
 
 
 def classification(project, classifier_folder):
-    # db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
-    client = pymongo.MongoClient()
-    db = client.Recovery
+    db = get_db()
     #post vectorizer  pickle
     post_vectorizer_pickle = os.path.join(os.path.dirname(__file__), 'min_df_4_posts_vect.pkl')
     # +ve ate score pickle
@@ -123,8 +114,6 @@ def classification(project, classifier_folder):
         n = joblib.load(os.path.join(classifier_folder, 'n.pkl'))
         sclf_pickle = os.path.join(classifier_folder, "classifier.pkl")
 
-    # client = pymongo.MongoClient()
-    # db = client.Recovery
     collection = db['drug_users']
     cursor = collection.find({"project_id": project.id},no_cursor_timeout=True)
     all_redditors=[] #name of the redditors
@@ -184,7 +173,6 @@ def classification(project, classifier_folder):
         user_dic = collection.find_one({"user":user, "project_id": project.id})
         user_dic["recovery"] = y_pred[c]
         collection.save(user_dic)
-    client.close()
     return [all_redditors,y_pred]
 
 
@@ -272,6 +260,7 @@ def get_classification_result(input_file):
 
 def modify_number_of_topics_helper(project_id, n):
     sentiment_analysis_folder = os.path.join(os.path.dirname(__file__), "sentiment_analysis")
+    db = get_db()
     project = db.projects.find_one({'_id': ObjectId(project_id)})
     output_folder = os.path.join(VISUALIZATION_FOLDER, str(project['_id']))
 
