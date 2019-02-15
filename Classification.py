@@ -8,7 +8,6 @@ import numpy as np
 import pymongo
 from bson.objectid import ObjectId
 from optparse import OptionParser
-from flask import current_app
 
 
 VISUALIZATION_FOLDER = os.path.join(os.path.dirname(__file__), 'visualizations')
@@ -18,12 +17,16 @@ UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), '/run_uploads/')
 
 sys.path.append(os.path.dirname(__file__) + "/sentiment_analysis/")
 
+environment = "DEV"
+# environment = "PROD"
+
 
 def get_db():
-    client = pymongo.MongoClient(current_app.config["MONGODB_SETTINGS"]["host"])
-    if current_app.environment == "PROD":
+    if environment == "DEV":
+        client = pymongo.MongoClient('mongodb://localhost:27017/Recovery')
         db = client.recoveryi
     else:
+        client = pymongo.MongoClient('mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256')
         db = client.Recovery
     return db
 
