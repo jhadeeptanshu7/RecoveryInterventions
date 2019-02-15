@@ -12,8 +12,8 @@ from optparse import OptionParser
 
 VISUALIZATION_FOLDER = os.path.join(os.path.dirname(__file__), 'visualizations')
 logging.basicConfig(filename='classification.log', level=logging.DEBUG)
-OUTPUT_FOLDER = os.path.join(os.path.dirname(__file__), 'output')
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), '/run_uploads/')
+OUTPUT_FOLDER = os.path.dirname(__file__) + 'output'
+UPLOAD_FOLDER = os.path.dirname(__file__) + '/run_uploads/'
 
 sys.path.append(os.path.dirname(__file__) + "/sentiment_analysis/")
 
