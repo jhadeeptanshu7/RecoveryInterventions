@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="41569b83-9a93-48d5-b4f9-5d172ee4ead3"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="16719">
+          {"f9d447e9-d7e3-4c0c-87b8-028bb803452b":{"roots":{"references":[{"attributes":{},"id":"16660","type":"Selection"},{"attributes":{},"id":"16661","type":"UnionRenderers"},{"attributes":{},"id":"16640","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"16635","type":"PanTool"},{"id":"16636","type":"WheelZoomTool"},{"id":"16637","type":"BoxZoomTool"},{"id":"16638","type":"SaveTool"},{"id":"16639","type":"ResetTool"},{"id":"16640","type":"HelpTool"}]},"id":"16641","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"16643","type":"BoxAnnotation"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"16616","subtype":"Figure","type":"Plot"},"ticker":{"id":"16627","type":"CategoricalTicker"}},"id":"16629","type":"Grid"},{"attributes":{"axis_label":"Drug","formatter":{"id":"16657","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"16616","subtype":"Figure","type":"Plot"},"ticker":{"id":"16627","type":"CategoricalTicker"}},"id":"16626","type":"CategoricalAxis"},{"attributes":{},"id":"16627","type":"CategoricalTicker"},{"attributes":{},"id":"16624","type":"LinearScale"},{"attributes":{},"id":"16622","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"16620","type":"DataRange1d"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"16659","type":"BasicTickFormatter"},"plot":{"id":"16616","subtype":"Figure","type":"Plot"},"ticker":{"id":"16631","type":"BasicTicker"}},"id":"16630","type":"LinearAxis"},{"attributes":{},"id":"16659","type":"BasicTickFormatter"},{"attributes":{},"id":"16657","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"16650","type":"ColumnDataSource"}},"id":"16654","type":"CDSView"},{"attributes":{"data_source":{"id":"16650","type":"ColumnDataSource"},"glyph":{"id":"16651","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"16652","type":"VBar"},"selection_glyph":null,"view":{"id":"16654","type":"CDSView"}},"id":"16653","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"16652","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"16651","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[202,197,185,153,149,139,133,131,130,126,126,123,115,112,107,105,97,95,92,89,87,87,85,83,75,73,72,71,65,64,64,61,61,60,59,59,58,58,56,56,55,54,54,53,51,50,50,49,48,47,47,45,45,44,44,43,43,40,39,39,39,39,37,37,36,36,34,34,34,33,33,32,31,31,31,30,29,29,29,28,28,27,27,27,26,25,24,23,23,22,22,22,22,21,21,20,20,20,19,19,19,19,19,18,18,18,18,18,17,17,17,17,16,16,16,16,16,16,16,16,16,16,15,15,15,15,15,14,14,14,13,13,13,13,13,13,13,13,13,12,12,12,12,12,12,12,12,12,12,12,12,11,11,11,11,11,11,11,11,11,11,11,10,10,10,10,9,9,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["black","white","sub","fire","e","weed","lines","glass","speed","hits","north","bowl","oil","ice","l","trees","blow","pot","marijuana","h","k","bars","acid","j","bud","tobacco","crack","heroin","subs","cigarettes","lsd","snow","purple","opiates","fish","cannabis","cheese","doc","strain","meth","thc","coke","grass","dope","xanax","nicotine","bowls","kratom","seed","shrooms","blunt","ms","adderall","cocaine","benzos","mdma","strains","rocket","gt","joints","banana","dmt","wax","cbd","mary","80s","molly","spice","crystal","hash","420","dopamine","morphine","crown","og","buds","edibles","dank","pg","dabs","liberty","stems","haze","cigs","nexus","dxm","cope","tar","hydrocodone","stamp","benzo","ssri","melatonin","oxy","suboxone","methadone","jane","crystals","mph","pots","ecstasy","fentanyl","lucy","md","serotonin","kush","indica","klonopin","phenibut","cola","d3","ketamine","oxycodone","smack","theanine","tramadol","gabapentin","blunts","lithium","vyvanse","pea","amphetamine","sodium","avb","ski","pst","valium","naloxone","xr","acetaminophen","blaze","addy","narcan","harley","kief","magnesium","tincture","bongs","tesla","powders","ala","brownie","etizolam","seroquel","salvia","salts","clonazepam","fent","codeine","zoloft","shards","psilocybin","perc","alkaloids","var","tylenol","lope","kava","coca","ambien","clam","vicodin","benzodiazepines","choline","bho","piracetam","modafinil","alprazolam","opana","borneo","gaba","percs","noopept","benadryl","dilaudid","potassium","zinc","sulfate","tianeptine","lexapro","lsa","ritalin","methamphetamine","roxy","tyrosine","xans","citalopram","lyrica","wellbutrin","aspirin","mescaline","shard","methylphenidate","valerian","speedball","calcium","grizzly","methylone","acids","methyl","oxymorphone","ecp","1p","davidson","nbome","viagra","tbd","etiz","rhodiola","subutex","buprenorphine","buspar","paxil","dck","celexa","alp","gunpowder","sativas","apap","vivitrol","kpin","firecrackers","trazadone","dilly","ghb","mxe","bupe","hcl","librium","gpc","cymbalta","creatine","lecithin","25i","hydromorphone","diphenhydramine","diazepam","mitragynine","bacopa","loperamide","adrafinil","hydros","b6","prozac","slopes","aniracetam","indicas","probiotic","tums","abilify","diclazepam","dexedrine","concerta","advil","norepinephrine","cannabidiol","goofballs","phenylpiracetam","speedballs","dph","bth","kpins","cokes","naltrexone","xan","lamotrigine","iu","clonazolam","oxycontin","memantine","strattera","propylhexedrine","etizest","baclofen","truffles","skiing","pseudoephedrine","alcar","zolpidem","tetrahydrocannabinol","kanna","lorazepam","seratonin","sertraline","whippets","sulbutiamine","dextromethorphan","mda","nmda","robitussin","valiums","uridine","amph","phenobarbital","effexor","nalt","agmatine","marihuana","neurontin","pyrazolam","curcumin","norco","epa","noids","soma","dextroamphetamine","nac","ibogaine","5htp","cubensis","focalin","iboga","flexeril","m1","flam","semax","paracetamol","flunitrazolam","lamictal","bupropion","ethylphenidate","remeron","gabaergics","cdp","gbl","wafers","ket","fpam","anxiolytics","25c","coluracetam","methoxetamine","dha","cialis","escitalopram","mephedrone","dramamine","coq10","buspirone","flubromazolam","indole","tryptamines","cyclobenzaprine","bitartrate","propylene","ephedrine","spliffs","rosea","doxylamine","silenor","oxiracetam","tuss","selegiline","phenazepam","bromantane","4acodmt","zopiclone","hbr","clonidine","agaric","xannie","tagamet","sativex","hydrochloride","deschloroketamine","fluoxetine","benzofuran","mapb","ld50","4fa","amitriptyline","moda","tryptamine","egcg","diclaz","propranolol","cyp2d6","racemic","bromazepam","teslas","naproxen","dicyclomine","oreos","6 apb","benzofurans","sfv","dpt","p21","psylociben","wb","amoxicillin","candyflipping","dhp","clon","lortabs","amt","skoal","lysergamides","flunitrazepam","bentyl","zohydro","whitey","provigil","dipt","addies","malate","simvastatin","schwag"]},"selected":{"id":"16660","type":"Selection"},"selection_policy":{"id":"16661","type":"UnionRenderers"}},"id":"16650","type":"ColumnDataSource"},{"attributes":{"callback":null,"factors":["black","white","sub","fire","e","weed","lines","glass","speed","hits","north","bowl","oil","ice","l","trees","blow","pot","marijuana","h","k","bars","acid","j","bud","tobacco","crack","heroin","subs","cigarettes","lsd","snow","purple","opiates","fish","cannabis","cheese","doc","strain","meth","thc","coke","grass","dope","xanax","nicotine","bowls","kratom","seed","shrooms","blunt","ms","adderall","cocaine","benzos","mdma","strains","rocket","gt","joints","banana","dmt","wax","cbd","mary","80s","molly","spice","crystal","hash","420","dopamine","morphine","crown","og","buds","edibles","dank","pg","dabs","liberty","stems","haze","cigs","nexus","dxm","cope","tar","hydrocodone","stamp","benzo","ssri","melatonin","oxy","suboxone","methadone","jane","crystals","mph","pots","ecstasy","fentanyl","lucy","md","serotonin","kush","indica","klonopin","phenibut","cola","d3","ketamine","oxycodone","smack","theanine","tramadol","gabapentin","blunts","lithium","vyvanse","pea","amphetamine","sodium","avb","ski","pst","valium","naloxone","xr","acetaminophen","blaze","addy","narcan","harley","kief","magnesium","tincture","bongs","tesla","powders","ala","brownie","etizolam","seroquel","salvia","salts","clonazepam","fent","codeine","zoloft","shards","psilocybin","perc","alkaloids","var","tylenol","lope","kava","coca","ambien","clam","vicodin","benzodiazepines","choline","bho","piracetam","modafinil","alprazolam","opana","borneo","gaba","percs","noopept","benadryl","dilaudid","potassium","zinc","sulfate","tianeptine","lexapro","lsa","ritalin","methamphetamine","roxy","tyrosine","xans","citalopram","lyrica","wellbutrin","aspirin","mescaline","shard","methylphenidate","valerian","speedball","calcium","grizzly","methylone","acids","methyl","oxymorphone","ecp","1p","davidson","nbome","viagra","tbd","etiz","rhodiola","subutex","buprenorphine","buspar","paxil","dck","celexa","alp","gunpowder","sativas","apap","vivitrol","kpin","firecrackers","trazadone","dilly","ghb","mxe","bupe","hcl","librium","gpc","cymbalta","creatine","lecithin","25i","hydromorphone","diphenhydramine","diazepam","mitragynine","bacopa","loperamide","adrafinil","hydros","b6","prozac","slopes","aniracetam","indicas","probiotic","tums","abilify","diclazepam","dexedrine","concerta","advil","norepinephrine","cannabidiol","goofballs","phenylpiracetam","speedballs","dph","bth","kpins","cokes","naltrexone","xan","lamotrigine","iu","clonazolam","oxycontin","memantine","strattera","propylhexedrine","etizest","baclofen","truffles","skiing","pseudoephedrine","alcar","zolpidem","tetrahydrocannabinol","kanna","lorazepam","seratonin","sertraline","whippets","sulbutiamine","dextromethorphan","mda","nmda","robitussin","valiums","uridine","amph","phenobarbital","effexor","nalt","agmatine","marihuana","neurontin","pyrazolam","curcumin","norco","epa","noids","soma","dextroamphetamine","nac","ibogaine","5htp","cubensis","focalin","iboga","flexeril","m1","flam","semax","paracetamol","flunitrazolam","lamictal","bupropion","ethylphenidate","remeron","gabaergics","cdp","gbl","wafers","ket","fpam","anxiolytics","25c","coluracetam","methoxetamine","dha","cialis","escitalopram","mephedrone","dramamine","coq10","buspirone","flubromazolam","indole","tryptamines","cyclobenzaprine","bitartrate","propylene","ephedrine","spliffs","rosea","doxylamine","silenor","oxiracetam","tuss","selegiline","phenazepam","bromantane","4acodmt","zopiclone","hbr","clonidine","agaric","xannie","tagamet","sativex","hydrochloride","deschloroketamine","fluoxetine","benzofuran","mapb","ld50","4fa","amitriptyline","moda","tryptamine","egcg","diclaz","propranolol","cyp2d6","racemic","bromazepam","teslas","naproxen","dicyclomine","oreos","6 apb","benzofurans","sfv","dpt","p21","psylociben","wb","amoxicillin","candyflipping","dhp","clon","lortabs","amt","skoal","lysergamides","flunitrazepam","bentyl","zohydro","whitey","provigil","dipt","addies","malate","simvastatin","schwag"],"range_padding":0.01},"id":"16618","type":"FactorRange"},{"attributes":{},"id":"16639","type":"ResetTool"},{"attributes":{},"id":"16638","type":"SaveTool"},{"attributes":{},"id":"16635","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"16616","subtype":"Figure","type":"Plot"},"ticker":{"id":"16631","type":"BasicTicker"}},"id":"16634","type":"Grid"},{"attributes":{"overlay":{"id":"16643","type":"BoxAnnotation"}},"id":"16637","type":"BoxZoomTool"},{"attributes":{},"id":"16636","type":"WheelZoomTool"},{"attributes":{},"id":"16631","type":"BasicTicker"},{"attributes":{"below":[{"id":"16626","type":"CategoricalAxis"}],"left":[{"id":"16630","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"16626","type":"CategoricalAxis"},{"id":"16629","type":"Grid"},{"id":"16630","type":"LinearAxis"},{"id":"16634","type":"Grid"},{"id":"16643","type":"BoxAnnotation"},{"id":"16653","type":"GlyphRenderer"}],"title":{"id":"16615","type":"Title"},"toolbar":{"id":"16641","type":"Toolbar"},"x_range":{"id":"16618","type":"FactorRange"},"x_scale":{"id":"16622","type":"CategoricalScale"},"y_range":{"id":"16620","type":"DataRange1d"},"y_scale":{"id":"16624","type":"LinearScale"}},"id":"16616","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Drug Counts"},"id":"16615","type":"Title"}],"root_ids":["16616"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('16719').textContent;
+                  var render_items = [{"docid":"f9d447e9-d7e3-4c0c-87b8-028bb803452b","roots":{"16616":"41569b83-9a93-48d5-b4f9-5d172ee4ead3"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

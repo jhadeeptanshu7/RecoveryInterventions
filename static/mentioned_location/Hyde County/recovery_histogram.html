@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="9dea8b5a-430e-449e-97ae-0dbe2c9facbe"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="223600">
+          {"e826c0f7-0dd0-4858-b2f4-f6165d51cac2":{"roots":{"references":[{"attributes":{},"id":"223542","type":"UnionRenderers"},{"attributes":{},"id":"223540","type":"BasicTickFormatter"},{"attributes":{},"id":"223541","type":"Selection"},{"attributes":{},"id":"223508","type":"CategoricalTicker"},{"attributes":{},"id":"223520","type":"ResetTool"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"223538","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"223497","subtype":"Figure","type":"Plot"},"ticker":{"id":"223508","type":"CategoricalTicker"}},"id":"223507","type":"CategoricalAxis"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"223516","type":"PanTool"},{"id":"223517","type":"WheelZoomTool"},{"id":"223518","type":"BoxZoomTool"},{"id":"223519","type":"SaveTool"},{"id":"223520","type":"ResetTool"},{"id":"223521","type":"HelpTool"}]},"id":"223522","type":"Toolbar"},{"attributes":{},"id":"223505","type":"LinearScale"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"223524","type":"BoxAnnotation"},{"attributes":{},"id":"223503","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"223501","type":"DataRange1d"},{"attributes":{"below":[{"id":"223507","type":"CategoricalAxis"}],"left":[{"id":"223511","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"223507","type":"CategoricalAxis"},{"id":"223510","type":"Grid"},{"id":"223511","type":"LinearAxis"},{"id":"223515","type":"Grid"},{"id":"223524","type":"BoxAnnotation"},{"id":"223534","type":"GlyphRenderer"}],"title":{"id":"223496","type":"Title"},"toolbar":{"id":"223522","type":"Toolbar"},"x_range":{"id":"223499","type":"FactorRange"},"x_scale":{"id":"223503","type":"CategoricalScale"},"y_range":{"id":"223501","type":"DataRange1d"},"y_scale":{"id":"223505","type":"LinearScale"}},"id":"223497","subtype":"Figure","type":"Plot"},{"attributes":{"source":{"id":"223531","type":"ColumnDataSource"}},"id":"223535","type":"CDSView"},{"attributes":{"data_source":{"id":"223531","type":"ColumnDataSource"},"glyph":{"id":"223532","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"223533","type":"VBar"},"selection_glyph":null,"view":{"id":"223535","type":"CDSView"}},"id":"223534","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"223533","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"223532","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[2,2,1,1,1,1,1,1,1,1,1],"x":["hospital","father","death","court","recovery","degree","alive","gums","application","medical","university"]},"selected":{"id":"223541","type":"Selection"},"selection_policy":{"id":"223542","type":"UnionRenderers"}},"id":"223531","type":"ColumnDataSource"},{"attributes":{},"id":"223538","type":"CategoricalTickFormatter"},{"attributes":{},"id":"223519","type":"SaveTool"},{"attributes":{"overlay":{"id":"223524","type":"BoxAnnotation"}},"id":"223518","type":"BoxZoomTool"},{"attributes":{"dimension":1,"plot":{"id":"223497","subtype":"Figure","type":"Plot"},"ticker":{"id":"223512","type":"BasicTicker"}},"id":"223515","type":"Grid"},{"attributes":{},"id":"223517","type":"WheelZoomTool"},{"attributes":{},"id":"223516","type":"PanTool"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"223540","type":"BasicTickFormatter"},"plot":{"id":"223497","subtype":"Figure","type":"Plot"},"ticker":{"id":"223512","type":"BasicTicker"}},"id":"223511","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"223497","subtype":"Figure","type":"Plot"},"ticker":{"id":"223508","type":"CategoricalTicker"}},"id":"223510","type":"Grid"},{"attributes":{},"id":"223512","type":"BasicTicker"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"223496","type":"Title"},{"attributes":{},"id":"223521","type":"HelpTool"},{"attributes":{"callback":null,"factors":["hospital","father","death","court","recovery","degree","alive","gums","application","medical","university"],"range_padding":0.01},"id":"223499","type":"FactorRange"}],"root_ids":["223497"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('223600').textContent;
+                  var render_items = [{"docid":"e826c0f7-0dd0-4858-b2f4-f6165d51cac2","roots":{"223497":"9dea8b5a-430e-449e-97ae-0dbe2c9facbe"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

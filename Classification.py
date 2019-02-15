@@ -10,7 +10,6 @@ from bson.objectid import ObjectId
 from optparse import OptionParser
 
 
-
 VISUALIZATION_FOLDER = os.path.join(os.path.dirname(__file__), 'visualizations')
 logging.basicConfig(filename='classification.log', level=logging.DEBUG)
 OUTPUT_FOLDER = os.path.dirname(__file__) + '/output'
@@ -18,8 +17,8 @@ UPLOAD_FOLDER = os.path.dirname(__file__) + '/run_uploads/'
 
 sys.path.append(os.path.dirname(__file__) + "/sentiment_analysis/")
 
-# client = pymongo.MongoClient()
-client = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256")
+client = pymongo.MongoClient()
+# client = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256")
 db = client.Recovery
 
 
@@ -32,8 +31,10 @@ class Project:
 
 
 def fileHandler(project_id):
-    
-    db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
+
+    client = pymongo.MongoClient()
+    db = client.Recovery
+    # db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
     project = db.projects.find_one({'_id': ObjectId(project_id)})
 
     if not project:
@@ -74,7 +75,10 @@ def unzip_folder(input_file):
 
 
 def insert_data_mongodb(folder, project):
-    db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi 
+    # db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
+    client = pymongo.MongoClient()
+    db = client.Recovery
+
     collection = db['drug_users']
 
     for sub_folder in os.listdir(folder):
@@ -99,7 +103,9 @@ def insert_data_mongodb(folder, project):
 
 
 def classification(project, classifier_folder):
-    db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
+    # db = pymongo.MongoClient("mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256").recoveryi
+    client = pymongo.MongoClient()
+    db = client.Recovery
     #post vectorizer  pickle
     post_vectorizer_pickle = os.path.join(os.path.dirname(__file__), 'min_df_4_posts_vect.pkl')
     # +ve ate score pickle

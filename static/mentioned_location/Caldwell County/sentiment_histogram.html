@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="27b2ffba-50ea-4bc6-a9f5-f07a26a80c4b"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="136998">
+          {"a02a4116-2bbe-4784-b756-03bc09fd4230":{"roots":{"references":[{"attributes":{"source":{"id":"136929","type":"ColumnDataSource"}},"id":"136933","type":"CDSView"},{"attributes":{"callback":null,"data":{"fill_color":["grey"],"line_color":["grey"],"top":[1],"x":["0.0"]},"selected":{"id":"136939","type":"Selection"},"selection_policy":{"id":"136940","type":"UnionRenderers"}},"id":"136929","type":"ColumnDataSource"},{"attributes":{},"id":"136901","type":"CategoricalScale"},{"attributes":{"overlay":{"id":"136922","type":"BoxAnnotation"}},"id":"136916","type":"BoxZoomTool"},{"attributes":{},"id":"136917","type":"SaveTool"},{"attributes":{"data_source":{"id":"136929","type":"ColumnDataSource"},"glyph":{"id":"136930","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"136931","type":"VBar"},"selection_glyph":null,"view":{"id":"136933","type":"CDSView"}},"id":"136932","type":"GlyphRenderer"},{"attributes":{"fill_color":{"field":"fill_color"},"line_color":{"field":"line_color"},"top":{"field":"top"},"width":{"value":1},"x":{"field":"x"}},"id":"136930","type":"VBar"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":1},"x":{"field":"x"}},"id":"136931","type":"VBar"},{"attributes":{},"id":"136914","type":"PanTool"},{"attributes":{},"id":"136915","type":"WheelZoomTool"},{"attributes":{"dimension":1,"plot":{"id":"136895","subtype":"Figure","type":"Plot"},"ticker":{"id":"136910","type":"BasicTicker"}},"id":"136913","type":"Grid"},{"attributes":{},"id":"136936","type":"CategoricalTickFormatter"},{"attributes":{},"id":"136938","type":"BasicTickFormatter"},{"attributes":{},"id":"136939","type":"Selection"},{"attributes":{},"id":"136918","type":"ResetTool"},{"attributes":{},"id":"136919","type":"HelpTool"},{"attributes":{},"id":"136903","type":"LinearScale"},{"attributes":{},"id":"136910","type":"BasicTicker"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"136922","type":"BoxAnnotation"},{"attributes":{"axis_label":"Sentiment Score","formatter":{"id":"136936","type":"CategoricalTickFormatter"},"major_label_orientation":0.7853981633974483,"plot":{"id":"136895","subtype":"Figure","type":"Plot"},"ticker":{"id":"136906","type":"CategoricalTicker"}},"id":"136905","type":"CategoricalAxis"},{"attributes":{},"id":"136906","type":"CategoricalTicker"},{"attributes":{"callback":null,"factors":["0.0"]},"id":"136897","type":"FactorRange"},{"attributes":{"below":[{"id":"136905","type":"CategoricalAxis"}],"left":[{"id":"136909","type":"LinearAxis"}],"plot_height":250,"renderers":[{"id":"136905","type":"CategoricalAxis"},{"id":"136908","type":"Grid"},{"id":"136909","type":"LinearAxis"},{"id":"136913","type":"Grid"},{"id":"136922","type":"BoxAnnotation"},{"id":"136932","type":"GlyphRenderer"}],"title":{"id":"136894","type":"Title"},"toolbar":{"id":"136920","type":"Toolbar"},"x_range":{"id":"136897","type":"FactorRange"},"x_scale":{"id":"136901","type":"CategoricalScale"},"y_range":{"id":"136899","type":"DataRange1d"},"y_scale":{"id":"136903","type":"LinearScale"}},"id":"136895","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Caldwell County - Average Sentiment Score = 0.0 and Standard Deviation = 0.0"},"id":"136894","type":"Title"},{"attributes":{},"id":"136940","type":"UnionRenderers"},{"attributes":{"callback":null,"start":0},"id":"136899","type":"DataRange1d"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"136938","type":"BasicTickFormatter"},"plot":{"id":"136895","subtype":"Figure","type":"Plot"},"ticker":{"id":"136910","type":"BasicTicker"}},"id":"136909","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"136895","subtype":"Figure","type":"Plot"},"ticker":{"id":"136906","type":"CategoricalTicker"}},"id":"136908","type":"Grid"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"136914","type":"PanTool"},{"id":"136915","type":"WheelZoomTool"},{"id":"136916","type":"BoxZoomTool"},{"id":"136917","type":"SaveTool"},{"id":"136918","type":"ResetTool"},{"id":"136919","type":"HelpTool"}]},"id":"136920","type":"Toolbar"}],"root_ids":["136895"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('136998').textContent;
+                  var render_items = [{"docid":"a02a4116-2bbe-4784-b756-03bc09fd4230","roots":{"136895":"27b2ffba-50ea-4bc6-a9f5-f07a26a80c4b"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

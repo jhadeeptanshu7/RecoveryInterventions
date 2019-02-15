@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="36e0f934-507d-448a-9a89-2defd7ae78f3"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="5435">
+          {"b1f62d63-d005-4d84-a541-c45c5538ae42":{"roots":{"references":[{"attributes":{"formatter":{"id":"5334","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"5288","subtype":"Figure","type":"Plot"},"ticker":{"id":"5299","type":"CategoricalTicker"}},"id":"5298","type":"CategoricalAxis"},{"attributes":{},"id":"5299","type":"CategoricalTicker"},{"attributes":{},"id":"5296","type":"LinearScale"},{"attributes":{},"id":"5308","type":"WheelZoomTool"},{"attributes":{},"id":"5294","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"5292","type":"DataRange1d"},{"attributes":{"callback":null,"factors":["Noord-Holland","England","\u00cele-de-France","California","D.C.","Florida","New York","Wyoming","Scotland","Texas","Arizona","JKT","Virginia","Connecticut","Massachusetts","H\u00e0 N\u1ed9i","British Columbia","Pennsylvania","Kentucky","San Pedro","GO","\u81fa\u7063\u7701","\u4e0a\u6d77\u5e02"],"range_padding":0.01},"id":"5290","type":"FactorRange"},{"attributes":{"source":{"id":"5326","type":"ColumnDataSource"}},"id":"5331","type":"CDSView"},{"attributes":{"data_source":{"id":"5326","type":"ColumnDataSource"},"glyph":{"id":"5328","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"5329","type":"VBar"},"selection_glyph":null,"view":{"id":"5331","type":"CDSView"}},"id":"5330","type":"GlyphRenderer"},{"attributes":{},"id":"5334","type":"CategoricalTickFormatter"},{"attributes":{},"id":"5336","type":"BasicTickFormatter"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"5330","type":"GlyphRenderer"}]},"id":"5339","type":"LegendItem"},{"attributes":{"items":[{"id":"5339","type":"LegendItem"},{"id":"5354","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"5288","subtype":"Figure","type":"Plot"}},"id":"5338","type":"Legend"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"5344","type":"GlyphRenderer"}]},"id":"5354","type":"LegendItem"},{"attributes":{},"id":"5352","type":"UnionRenderers"},{"attributes":{},"id":"5351","type":"Selection"},{"attributes":{"overlay":{"id":"5315","type":"BoxAnnotation"}},"id":"5309","type":"BoxZoomTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"5307","type":"PanTool"},{"id":"5308","type":"WheelZoomTool"},{"id":"5309","type":"BoxZoomTool"},{"id":"5310","type":"SaveTool"},{"id":"5311","type":"ResetTool"},{"id":"5312","type":"HelpTool"}]},"id":"5313","type":"Toolbar"},{"attributes":{},"id":"5312","type":"HelpTool"},{"attributes":{},"id":"5311","type":"ResetTool"},{"attributes":{},"id":"5310","type":"SaveTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"5315","type":"BoxAnnotation"},{"attributes":{"below":[{"id":"5298","type":"CategoricalAxis"}],"left":[{"id":"5302","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"5298","type":"CategoricalAxis"},{"id":"5301","type":"Grid"},{"id":"5302","type":"LinearAxis"},{"id":"5306","type":"Grid"},{"id":"5315","type":"BoxAnnotation"},{"id":"5338","type":"Legend"},{"id":"5330","type":"GlyphRenderer"},{"id":"5344","type":"GlyphRenderer"}],"title":{"id":"5287","type":"Title"},"toolbar":{"id":"5313","type":"Toolbar"},"x_range":{"id":"5290","type":"FactorRange"},"x_scale":{"id":"5294","type":"CategoricalScale"},"y_range":{"id":"5292","type":"DataRange1d"},"y_scale":{"id":"5296","type":"LinearScale"}},"id":"5288","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"5363","type":"UnionRenderers"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"5287","type":"Title"},{"attributes":{"callback":null,"data":{"location_terms":["Noord-Holland","England","\u00cele-de-France","California","D.C.","Florida","New York","Wyoming","Scotland","Texas","Arizona","JKT","Virginia","Connecticut","Massachusetts","H\u00e0 N\u1ed9i","British Columbia","Pennsylvania","Kentucky","San Pedro","GO","\u81fa\u7063\u7701","\u4e0a\u6d77\u5e02"],"mentioned_locations":[4,2,2,2,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,1],"primary_locations":[1,2,0,0,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0]},"selected":{"id":"5351","type":"Selection"},"selection_policy":{"id":"5352","type":"UnionRenderers"}},"id":"5326","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations"]},"id":"5324","type":"Stack"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"5325","type":"Stack"},{"attributes":{"fields":[]},"id":"5322","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"5323","type":"Stack"},{"attributes":{"bottom":{"expr":{"id":"5322","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"5323","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"5328","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"5322","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"5323","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"5329","type":"VBar"},{"attributes":{"data_source":{"id":"5340","type":"ColumnDataSource"},"glyph":{"id":"5342","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"5343","type":"VBar"},"selection_glyph":null,"view":{"id":"5345","type":"CDSView"}},"id":"5344","type":"GlyphRenderer"},{"attributes":{"source":{"id":"5340","type":"ColumnDataSource"}},"id":"5345","type":"CDSView"},{"attributes":{"callback":null,"data":{"location_terms":["Noord-Holland","England","\u00cele-de-France","California","D.C.","Florida","New York","Wyoming","Scotland","Texas","Arizona","JKT","Virginia","Connecticut","Massachusetts","H\u00e0 N\u1ed9i","British Columbia","Pennsylvania","Kentucky","San Pedro","GO","\u81fa\u7063\u7701","\u4e0a\u6d77\u5e02"],"mentioned_locations":[4,2,2,2,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,1],"primary_locations":[1,2,0,0,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0]},"selected":{"id":"5362","type":"Selection"},"selection_policy":{"id":"5363","type":"UnionRenderers"}},"id":"5340","type":"ColumnDataSource"},{"attributes":{},"id":"5362","type":"Selection"},{"attributes":{"bottom":{"expr":{"id":"5324","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"5325","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"5342","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"5324","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"5325","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"5343","type":"VBar"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"5288","subtype":"Figure","type":"Plot"},"ticker":{"id":"5299","type":"CategoricalTicker"}},"id":"5301","type":"Grid"},{"attributes":{"formatter":{"id":"5336","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"5288","subtype":"Figure","type":"Plot"},"ticker":{"id":"5303","type":"BasicTicker"}},"id":"5302","type":"LinearAxis"},{"attributes":{},"id":"5303","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"5288","subtype":"Figure","type":"Plot"},"ticker":{"id":"5303","type":"BasicTicker"}},"id":"5306","type":"Grid"},{"attributes":{},"id":"5307","type":"PanTool"}],"root_ids":["5288"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('5435').textContent;
+                  var render_items = [{"docid":"b1f62d63-d005-4d84-a541-c45c5538ae42","roots":{"5288":"36e0f934-507d-448a-9a89-2defd7ae78f3"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

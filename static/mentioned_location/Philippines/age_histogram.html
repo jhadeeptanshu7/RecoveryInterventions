@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="44c31426-2dd9-44b1-8034-d360380cd7d3"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="5909">
+          {"2bd5610d-6a3b-442e-a197-e91ddacdf32c":{"roots":{"references":[{"attributes":{},"id":"5821","type":"BasicTicker"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"5849","type":"BasicTickFormatter"},"plot":{"id":"5806","subtype":"Figure","type":"Plot"},"ticker":{"id":"5821","type":"BasicTicker"}},"id":"5820","type":"LinearAxis"},{"attributes":{},"id":"5825","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"5806","subtype":"Figure","type":"Plot"},"ticker":{"id":"5821","type":"BasicTicker"}},"id":"5824","type":"Grid"},{"attributes":{"overlay":{"id":"5833","type":"BoxAnnotation"}},"id":"5827","type":"BoxZoomTool"},{"attributes":{},"id":"5826","type":"WheelZoomTool"},{"attributes":{},"id":"5829","type":"ResetTool"},{"attributes":{},"id":"5828","type":"SaveTool"},{"attributes":{},"id":"5847","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"5840","type":"ColumnDataSource"}},"id":"5844","type":"CDSView"},{"attributes":{"data_source":{"id":"5840","type":"ColumnDataSource"},"glyph":{"id":"5841","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"5842","type":"VBar"},"selection_glyph":null,"view":{"id":"5844","type":"CDSView"}},"id":"5843","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.9},"x":{"field":"x"}},"id":"5842","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.9},"x":{"field":"x"}},"id":"5841","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[1,1,2,1,4,2,1,2,2,4,2,2],"x":["15","17","18","19","20","21","22","25","27","29","30","33"]},"selected":{"id":"5850","type":"Selection"},"selection_policy":{"id":"5851","type":"UnionRenderers"}},"id":"5840","type":"ColumnDataSource"},{"attributes":{"below":[{"id":"5816","type":"CategoricalAxis"}],"left":[{"id":"5820","type":"LinearAxis"}],"plot_height":250,"renderers":[{"id":"5816","type":"CategoricalAxis"},{"id":"5819","type":"Grid"},{"id":"5820","type":"LinearAxis"},{"id":"5824","type":"Grid"},{"id":"5833","type":"BoxAnnotation"},{"id":"5843","type":"GlyphRenderer"}],"title":{"id":"5805","type":"Title"},"toolbar":{"id":"5831","type":"Toolbar"},"x_range":{"id":"5808","type":"FactorRange"},"x_scale":{"id":"5812","type":"CategoricalScale"},"y_range":{"id":"5810","type":"DataRange1d"},"y_scale":{"id":"5814","type":"LinearScale"}},"id":"5806","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Philippines - Average Age = 24.04 and Standard Deviation = 5.27"},"id":"5805","type":"Title"},{"attributes":{"callback":null,"factors":["15","17","18","19","20","21","22","25","27","29","30","33"]},"id":"5808","type":"FactorRange"},{"attributes":{},"id":"5849","type":"BasicTickFormatter"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"5833","type":"BoxAnnotation"},{"attributes":{},"id":"5830","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"5825","type":"PanTool"},{"id":"5826","type":"WheelZoomTool"},{"id":"5827","type":"BoxZoomTool"},{"id":"5828","type":"SaveTool"},{"id":"5829","type":"ResetTool"},{"id":"5830","type":"HelpTool"}]},"id":"5831","type":"Toolbar"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"5806","subtype":"Figure","type":"Plot"},"ticker":{"id":"5817","type":"CategoricalTicker"}},"id":"5819","type":"Grid"},{"attributes":{},"id":"5850","type":"Selection"},{"attributes":{},"id":"5851","type":"UnionRenderers"},{"attributes":{"callback":null,"start":0},"id":"5810","type":"DataRange1d"},{"attributes":{},"id":"5812","type":"CategoricalScale"},{"attributes":{},"id":"5814","type":"LinearScale"},{"attributes":{"axis_label":"Age","formatter":{"id":"5847","type":"CategoricalTickFormatter"},"major_label_orientation":0.7853981633974483,"plot":{"id":"5806","subtype":"Figure","type":"Plot"},"ticker":{"id":"5817","type":"CategoricalTicker"}},"id":"5816","type":"CategoricalAxis"},{"attributes":{},"id":"5817","type":"CategoricalTicker"}],"root_ids":["5806"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('5909').textContent;
+                  var render_items = [{"docid":"2bd5610d-6a3b-442e-a197-e91ddacdf32c","roots":{"5806":"44c31426-2dd9-44b1-8034-d360380cd7d3"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="b19addae-2314-41bd-8812-023974d48662"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="132976">
+          {"18efae4e-3cba-47b3-818c-6720bd8288be":{"roots":{"references":[{"attributes":{},"id":"132881","type":"LinearScale"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"132914","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"132873","subtype":"Figure","type":"Plot"},"ticker":{"id":"132884","type":"CategoricalTicker"}},"id":"132883","type":"CategoricalAxis"},{"attributes":{},"id":"132884","type":"CategoricalTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"132873","subtype":"Figure","type":"Plot"},"ticker":{"id":"132884","type":"CategoricalTicker"}},"id":"132886","type":"Grid"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"132916","type":"BasicTickFormatter"},"plot":{"id":"132873","subtype":"Figure","type":"Plot"},"ticker":{"id":"132888","type":"BasicTicker"}},"id":"132887","type":"LinearAxis"},{"attributes":{},"id":"132888","type":"BasicTicker"},{"attributes":{"below":[{"id":"132883","type":"CategoricalAxis"}],"left":[{"id":"132887","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"132883","type":"CategoricalAxis"},{"id":"132886","type":"Grid"},{"id":"132887","type":"LinearAxis"},{"id":"132891","type":"Grid"},{"id":"132900","type":"BoxAnnotation"},{"id":"132910","type":"GlyphRenderer"}],"title":{"id":"132872","type":"Title"},"toolbar":{"id":"132898","type":"Toolbar"},"x_range":{"id":"132875","type":"FactorRange"},"x_scale":{"id":"132879","type":"CategoricalScale"},"y_range":{"id":"132877","type":"DataRange1d"},"y_scale":{"id":"132881","type":"LinearScale"}},"id":"132873","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"132872","type":"Title"},{"attributes":{"callback":null,"factors":["program","life","medication","subs","certification","exhausted","psych","disease","clinic","asleep","anger","depression","death","fellowship","binge","nc","father","application","treatment","meeting","smart","personality","wd","pain","clean","wrists","withdrawal","abuse","effects","anxiety","hungry","behavior","mother","organization","addiction","fatigued"],"range_padding":0.01},"id":"132875","type":"FactorRange"},{"attributes":{},"id":"132917","type":"Selection"},{"attributes":{},"id":"132914","type":"CategoricalTickFormatter"},{"attributes":{},"id":"132879","type":"CategoricalScale"},{"attributes":{},"id":"132918","type":"UnionRenderers"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"132892","type":"PanTool"},{"id":"132893","type":"WheelZoomTool"},{"id":"132894","type":"BoxZoomTool"},{"id":"132895","type":"SaveTool"},{"id":"132896","type":"ResetTool"},{"id":"132897","type":"HelpTool"}]},"id":"132898","type":"Toolbar"},{"attributes":{},"id":"132897","type":"HelpTool"},{"attributes":{},"id":"132896","type":"ResetTool"},{"attributes":{},"id":"132895","type":"SaveTool"},{"attributes":{"overlay":{"id":"132900","type":"BoxAnnotation"}},"id":"132894","type":"BoxZoomTool"},{"attributes":{},"id":"132893","type":"WheelZoomTool"},{"attributes":{"data_source":{"id":"132907","type":"ColumnDataSource"},"glyph":{"id":"132908","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"132909","type":"VBar"},"selection_glyph":null,"view":{"id":"132911","type":"CDSView"}},"id":"132910","type":"GlyphRenderer"},{"attributes":{"dimension":1,"plot":{"id":"132873","subtype":"Figure","type":"Plot"},"ticker":{"id":"132888","type":"BasicTicker"}},"id":"132891","type":"Grid"},{"attributes":{},"id":"132892","type":"PanTool"},{"attributes":{"source":{"id":"132907","type":"ColumnDataSource"}},"id":"132911","type":"CDSView"},{"attributes":{},"id":"132916","type":"BasicTickFormatter"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"132900","type":"BoxAnnotation"},{"attributes":{"callback":null,"start":0},"id":"132877","type":"DataRange1d"},{"attributes":{"callback":null,"data":{"top":[2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["program","life","medication","subs","certification","exhausted","psych","disease","clinic","asleep","anger","depression","death","fellowship","binge","nc","father","application","treatment","meeting","smart","personality","wd","pain","clean","wrists","withdrawal","abuse","effects","anxiety","hungry","behavior","mother","organization","addiction","fatigued"]},"selected":{"id":"132917","type":"Selection"},"selection_policy":{"id":"132918","type":"UnionRenderers"}},"id":"132907","type":"ColumnDataSource"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"132909","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"132908","type":"VBar"}],"root_ids":["132873"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('132976').textContent;
+                  var render_items = [{"docid":"18efae4e-3cba-47b3-818c-6720bd8288be","roots":{"132873":"b19addae-2314-41bd-8812-023974d48662"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

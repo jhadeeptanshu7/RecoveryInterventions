@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="2974cfd3-a598-4970-927d-78caeae0ac38"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="197602">
+          {"bff97696-b814-4632-9939-53bc71a6fdf1":{"roots":{"references":[{"attributes":{"source":{"id":"197507","type":"ColumnDataSource"}},"id":"197512","type":"CDSView"},{"attributes":{"data_source":{"id":"197507","type":"ColumnDataSource"},"glyph":{"id":"197509","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"197510","type":"VBar"},"selection_glyph":null,"view":{"id":"197512","type":"CDSView"}},"id":"197511","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"197491","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"197492","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"197510","type":"VBar"},{"attributes":{},"id":"197519","type":"UnionRenderers"},{"attributes":{},"id":"197518","type":"Selection"},{"attributes":{},"id":"197478","type":"ResetTool"},{"attributes":{},"id":"197479","type":"HelpTool"},{"attributes":{"callback":null,"start":0},"id":"197459","type":"DataRange1d"},{"attributes":{},"id":"197470","type":"BasicTicker"},{"attributes":{"callback":null,"factors":["Houston","Toronto","Tr\u00f8ndelag","\u4e1c\u57ce\u533a","NYC","Newton","Cincinnati","Montrose","Pendleton","Boulder","La Habana","\u76f8\u99ac\u90e1","ABQ","Berlin","Amsterdam","\u5b87\u90e8\u5e02","Portland","Seattle","Luverne","Paris","Tijuana"],"range_padding":0.01},"id":"197457","type":"FactorRange"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"197454","type":"Title"},{"attributes":{"below":[{"id":"197465","type":"CategoricalAxis"}],"left":[{"id":"197469","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"197465","type":"CategoricalAxis"},{"id":"197468","type":"Grid"},{"id":"197469","type":"LinearAxis"},{"id":"197473","type":"Grid"},{"id":"197482","type":"BoxAnnotation"},{"id":"197505","type":"Legend"},{"id":"197497","type":"GlyphRenderer"},{"id":"197511","type":"GlyphRenderer"}],"title":{"id":"197454","type":"Title"},"toolbar":{"id":"197480","type":"Toolbar"},"x_range":{"id":"197457","type":"FactorRange"},"x_scale":{"id":"197461","type":"CategoricalScale"},"y_range":{"id":"197459","type":"DataRange1d"},"y_scale":{"id":"197463","type":"LinearScale"}},"id":"197455","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"197474","type":"PanTool"},{"attributes":{},"id":"197475","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"197482","type":"BoxAnnotation"}},"id":"197476","type":"BoxZoomTool"},{"attributes":{},"id":"197477","type":"SaveTool"},{"attributes":{"source":{"id":"197493","type":"ColumnDataSource"}},"id":"197498","type":"CDSView"},{"attributes":{"dimension":1,"plot":{"id":"197455","subtype":"Figure","type":"Plot"},"ticker":{"id":"197470","type":"BasicTicker"}},"id":"197473","type":"Grid"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"197492","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["Houston","Toronto","Tr\u00f8ndelag","\u4e1c\u57ce\u533a","NYC","Newton","Cincinnati","Montrose","Pendleton","Boulder","La Habana","\u76f8\u99ac\u90e1","ABQ","Berlin","Amsterdam","\u5b87\u90e8\u5e02","Portland","Seattle","Luverne","Paris","Tijuana"],"mentioned_locations":[4,2,2,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,1],"primary_locations":[0,0,0,1,1,0,0,1,0,0,0,0,1,0,0,1,0,0,1,0,0]},"selected":{"id":"197518","type":"Selection"},"selection_policy":{"id":"197519","type":"UnionRenderers"}},"id":"197493","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations"]},"id":"197490","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"197491","type":"Stack"},{"attributes":{"bottom":{"expr":{"id":"197489","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"197490","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"197496","type":"VBar"},{"attributes":{"data_source":{"id":"197493","type":"ColumnDataSource"},"glyph":{"id":"197495","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"197496","type":"VBar"},"selection_glyph":null,"view":{"id":"197498","type":"CDSView"}},"id":"197497","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"197489","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"197490","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"197495","type":"VBar"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"197511","type":"GlyphRenderer"}]},"id":"197521","type":"LegendItem"},{"attributes":{},"id":"197466","type":"CategoricalTicker"},{"attributes":{"formatter":{"id":"197501","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"197455","subtype":"Figure","type":"Plot"},"ticker":{"id":"197466","type":"CategoricalTicker"}},"id":"197465","type":"CategoricalAxis"},{"attributes":{},"id":"197463","type":"LinearScale"},{"attributes":{},"id":"197461","type":"CategoricalScale"},{"attributes":{"formatter":{"id":"197503","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"197455","subtype":"Figure","type":"Plot"},"ticker":{"id":"197470","type":"BasicTicker"}},"id":"197469","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"197455","subtype":"Figure","type":"Plot"},"ticker":{"id":"197466","type":"CategoricalTicker"}},"id":"197468","type":"Grid"},{"attributes":{},"id":"197530","type":"UnionRenderers"},{"attributes":{"bottom":{"expr":{"id":"197491","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"197492","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"197509","type":"VBar"},{"attributes":{},"id":"197529","type":"Selection"},{"attributes":{},"id":"197501","type":"CategoricalTickFormatter"},{"attributes":{},"id":"197503","type":"BasicTickFormatter"},{"attributes":{"items":[{"id":"197506","type":"LegendItem"},{"id":"197521","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"197455","subtype":"Figure","type":"Plot"}},"id":"197505","type":"Legend"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"197497","type":"GlyphRenderer"}]},"id":"197506","type":"LegendItem"},{"attributes":{"callback":null,"data":{"location_terms":["Houston","Toronto","Tr\u00f8ndelag","\u4e1c\u57ce\u533a","NYC","Newton","Cincinnati","Montrose","Pendleton","Boulder","La Habana","\u76f8\u99ac\u90e1","ABQ","Berlin","Amsterdam","\u5b87\u90e8\u5e02","Portland","Seattle","Luverne","Paris","Tijuana"],"mentioned_locations":[4,2,2,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,1],"primary_locations":[0,0,0,1,1,0,0,1,0,0,0,0,1,0,0,1,0,0,1,0,0]},"selected":{"id":"197529","type":"Selection"},"selection_policy":{"id":"197530","type":"UnionRenderers"}},"id":"197507","type":"ColumnDataSource"},{"attributes":{"fields":[]},"id":"197489","type":"Stack"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"197474","type":"PanTool"},{"id":"197475","type":"WheelZoomTool"},{"id":"197476","type":"BoxZoomTool"},{"id":"197477","type":"SaveTool"},{"id":"197478","type":"ResetTool"},{"id":"197479","type":"HelpTool"}]},"id":"197480","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"197482","type":"BoxAnnotation"}],"root_ids":["197455"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('197602').textContent;
+                  var render_items = [{"docid":"bff97696-b814-4632-9939-53bc71a6fdf1","roots":{"197455":"2974cfd3-a598-4970-927d-78caeae0ac38"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

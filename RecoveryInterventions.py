@@ -18,13 +18,18 @@ q = Queue(connection=conn, default_timeout=300000)
 
 app = Flask(__name__)
 
-VISUALIZATION_FOLDER = os.path.join(app.root_path, 'visualizations')
-UPLOAD_FOLDER = os.path.join( app.root_path, 'run_uploads')
+app.environment = "DEV"
+# app.environment = "PROD"
 
-app.config['MONGODB_SETTINGS'] = {'host':"mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256"}
-# app.config['MONGODB_SETTINGS'] = {
-#     'host': 'mongodb://localhost:27017/Recovery'
-# }
+if app.environment == "DEV":
+    app.config['MONGODB_SETTINGS'] = {'host': 'mongodb://localhost:27017/Recovery'}
+else:
+    app.config['MONGODB_SETTINGS'] = {'host':"mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256"}
+
+
+VISUALIZATION_FOLDER = os.path.join(app.root_path, 'visualizations')
+UPLOAD_FOLDER = os.path.join(app.root_path, 'run_uploads')
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'deeptanshu'
 
@@ -164,7 +169,7 @@ def get_results():
 def get_visualization(project):
     recovery_intervention_file = os.path.join(VISUALIZATION_FOLDER, project)
 
-    return render_template("visualization.html", project_id=project,
+    return render_template("visualization_v2.html", project_id=project,
                            recovery_intervention=get_classification_result(recovery_intervention_file))
 
 

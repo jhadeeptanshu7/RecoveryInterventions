@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="22291f7a-297a-4738-8383-c27d113a54dd"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="315916">
+          {"9bead3d8-634a-4ae5-a84f-058522a88bcd":{"roots":{"references":[{"attributes":{"plot":null,"text":"Geolocation"},"id":"315768","type":"Title"},{"attributes":{"formatter":{"id":"315817","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"315769","subtype":"Figure","type":"Plot"},"ticker":{"id":"315784","type":"BasicTicker"}},"id":"315783","type":"LinearAxis"},{"attributes":{"callback":null,"start":0},"id":"315773","type":"DataRange1d"},{"attributes":{"callback":null,"factors":["NYC","Rockford","Houston","Baden","\u9999\u6e2f Hong Kong","Pontianak","Paris","Boston","Newton","Madrid","Santa Cruz","Berlin","\u76f8\u99ac\u90e1","Allentown","Portland","Reading","\u5927\u962a\u5e02","Tampa","Ciudad de M\u00e9xico"],"range_padding":0.01},"id":"315771","type":"FactorRange"},{"attributes":{},"id":"315777","type":"LinearScale"},{"attributes":{},"id":"315775","type":"CategoricalScale"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"315788","type":"PanTool"},{"id":"315789","type":"WheelZoomTool"},{"id":"315790","type":"BoxZoomTool"},{"id":"315791","type":"SaveTool"},{"id":"315792","type":"ResetTool"},{"id":"315793","type":"HelpTool"}]},"id":"315794","type":"Toolbar"},{"attributes":{"formatter":{"id":"315815","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"315769","subtype":"Figure","type":"Plot"},"ticker":{"id":"315780","type":"CategoricalTicker"}},"id":"315779","type":"CategoricalAxis"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"315796","type":"BoxAnnotation"},{"attributes":{},"id":"315791","type":"SaveTool"},{"attributes":{"overlay":{"id":"315796","type":"BoxAnnotation"}},"id":"315790","type":"BoxZoomTool"},{"attributes":{},"id":"315793","type":"HelpTool"},{"attributes":{},"id":"315792","type":"ResetTool"},{"attributes":{"fields":[]},"id":"315803","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"315805","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"315804","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["NYC","Rockford","Houston","Baden","\u9999\u6e2f Hong Kong","Pontianak","Paris","Boston","Newton","Madrid","Santa Cruz","Berlin","\u76f8\u99ac\u90e1","Allentown","Portland","Reading","\u5927\u962a\u5e02","Tampa","Ciudad de M\u00e9xico"],"mentioned_locations":[2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"primary_locations":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"selected":{"id":"315832","type":"Selection"},"selection_policy":{"id":"315833","type":"UnionRenderers"}},"id":"315807","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"315806","type":"Stack"},{"attributes":{"bottom":{"expr":{"id":"315803","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"315804","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"315809","type":"VBar"},{"attributes":{"callback":null,"data":{"location_terms":["NYC","Rockford","Houston","Baden","\u9999\u6e2f Hong Kong","Pontianak","Paris","Boston","Newton","Madrid","Santa Cruz","Berlin","\u76f8\u99ac\u90e1","Allentown","Portland","Reading","\u5927\u962a\u5e02","Tampa","Ciudad de M\u00e9xico"],"mentioned_locations":[2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"primary_locations":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"selected":{"id":"315843","type":"Selection"},"selection_policy":{"id":"315844","type":"UnionRenderers"}},"id":"315821","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"315811","type":"GlyphRenderer"}]},"id":"315820","type":"LegendItem"},{"attributes":{"source":{"id":"315821","type":"ColumnDataSource"}},"id":"315826","type":"CDSView"},{"attributes":{"data_source":{"id":"315821","type":"ColumnDataSource"},"glyph":{"id":"315823","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"315824","type":"VBar"},"selection_glyph":null,"view":{"id":"315826","type":"CDSView"}},"id":"315825","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"315805","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"315806","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"315824","type":"VBar"},{"attributes":{},"id":"315844","type":"UnionRenderers"},{"attributes":{},"id":"315843","type":"Selection"},{"attributes":{"bottom":{"expr":{"id":"315805","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"315806","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"315823","type":"VBar"},{"attributes":{},"id":"315788","type":"PanTool"},{"attributes":{},"id":"315789","type":"WheelZoomTool"},{"attributes":{"dimension":1,"plot":{"id":"315769","subtype":"Figure","type":"Plot"},"ticker":{"id":"315784","type":"BasicTicker"}},"id":"315787","type":"Grid"},{"attributes":{},"id":"315784","type":"BasicTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"315769","subtype":"Figure","type":"Plot"},"ticker":{"id":"315780","type":"CategoricalTicker"}},"id":"315782","type":"Grid"},{"attributes":{"below":[{"id":"315779","type":"CategoricalAxis"}],"left":[{"id":"315783","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"315779","type":"CategoricalAxis"},{"id":"315782","type":"Grid"},{"id":"315783","type":"LinearAxis"},{"id":"315787","type":"Grid"},{"id":"315796","type":"BoxAnnotation"},{"id":"315819","type":"Legend"},{"id":"315811","type":"GlyphRenderer"},{"id":"315825","type":"GlyphRenderer"}],"title":{"id":"315768","type":"Title"},"toolbar":{"id":"315794","type":"Toolbar"},"x_range":{"id":"315771","type":"FactorRange"},"x_scale":{"id":"315775","type":"CategoricalScale"},"y_range":{"id":"315773","type":"DataRange1d"},"y_scale":{"id":"315777","type":"LinearScale"}},"id":"315769","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"315780","type":"CategoricalTicker"},{"attributes":{"source":{"id":"315807","type":"ColumnDataSource"}},"id":"315812","type":"CDSView"},{"attributes":{"bottom":{"expr":{"id":"315803","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"315804","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"315810","type":"VBar"},{"attributes":{"data_source":{"id":"315807","type":"ColumnDataSource"},"glyph":{"id":"315809","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"315810","type":"VBar"},"selection_glyph":null,"view":{"id":"315812","type":"CDSView"}},"id":"315811","type":"GlyphRenderer"},{"attributes":{},"id":"315817","type":"BasicTickFormatter"},{"attributes":{},"id":"315815","type":"CategoricalTickFormatter"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"315825","type":"GlyphRenderer"}]},"id":"315835","type":"LegendItem"},{"attributes":{"items":[{"id":"315820","type":"LegendItem"},{"id":"315835","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"315769","subtype":"Figure","type":"Plot"}},"id":"315819","type":"Legend"},{"attributes":{},"id":"315832","type":"Selection"},{"attributes":{},"id":"315833","type":"UnionRenderers"}],"root_ids":["315769"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('315916').textContent;
+                  var render_items = [{"docid":"9bead3d8-634a-4ae5-a84f-058522a88bcd","roots":{"315769":"22291f7a-297a-4738-8383-c27d113a54dd"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

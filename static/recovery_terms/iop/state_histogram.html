@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="16cca9af-c860-47e8-8e22-4e21224174c9"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="135315">
+          {"6e09896d-673a-4b90-955a-90465530c87a":{"roots":{"references":[{"attributes":{"overlay":{"id":"135195","type":"BoxAnnotation"}},"id":"135189","type":"BoxZoomTool"},{"attributes":{},"id":"135232","type":"UnionRenderers"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"135195","type":"BoxAnnotation"},{"attributes":{},"id":"135231","type":"Selection"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"135187","type":"PanTool"},{"id":"135188","type":"WheelZoomTool"},{"id":"135189","type":"BoxZoomTool"},{"id":"135190","type":"SaveTool"},{"id":"135191","type":"ResetTool"},{"id":"135192","type":"HelpTool"}]},"id":"135193","type":"Toolbar"},{"attributes":{},"id":"135192","type":"HelpTool"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"135224","type":"GlyphRenderer"}]},"id":"135234","type":"LegendItem"},{"attributes":{},"id":"135190","type":"SaveTool"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"135167","type":"Title"},{"attributes":{"below":[{"id":"135178","type":"CategoricalAxis"}],"left":[{"id":"135182","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"135178","type":"CategoricalAxis"},{"id":"135181","type":"Grid"},{"id":"135182","type":"LinearAxis"},{"id":"135186","type":"Grid"},{"id":"135195","type":"BoxAnnotation"},{"id":"135218","type":"Legend"},{"id":"135210","type":"GlyphRenderer"},{"id":"135224","type":"GlyphRenderer"}],"title":{"id":"135167","type":"Title"},"toolbar":{"id":"135193","type":"Toolbar"},"x_range":{"id":"135170","type":"FactorRange"},"x_scale":{"id":"135174","type":"CategoricalScale"},"y_range":{"id":"135172","type":"DataRange1d"},"y_scale":{"id":"135176","type":"LinearScale"}},"id":"135168","subtype":"Figure","type":"Plot"},{"attributes":{"fields":["primary_locations"]},"id":"135203","type":"Stack"},{"attributes":{"fields":[]},"id":"135202","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["New Jersey","Pennsylvania","Maryland","Florida","Illinois","Texas","Oregon","California","Wisconsin","Missouri","Ohio","England","Colorado","Indiana","\u00cele-de-France","Arizona","Connecticut","Puerto Rico","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Washington","New York","Ontario","Minnesota","CCO","\u6771\u4eac\u90fd","Michigan","Kansas","Victoria","Tennessee","South Carolina","Georgia","Hawaii","Kentucky","Asturias","Alabama","\u81fa\u7063\u7701","Uttarakhand","\u092a\u0936\u094d\u091a\u093f\u092e\u093e\u091e\u094d\u091a\u0932 \u0935\u093f\u0915\u093e\u0938 \u0915\u094d\u0937\u0947\u0924\u094d\u0930","France m\u00e9tropolitaine","SC","Noord-Holland","San Pedro"],"mentioned_locations":[8,6,3,4,3,4,3,4,2,3,2,2,2,1,2,2,2,2,1,2,1,0,1,0,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1,0,1,1],"primary_locations":[2,2,2,1,1,0,1,0,1,0,1,1,1,1,0,0,0,0,1,0,1,1,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0]},"selected":{"id":"135231","type":"Selection"},"selection_policy":{"id":"135232","type":"UnionRenderers"}},"id":"135206","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"135205","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"135204","type":"Stack"},{"attributes":{"bottom":{"expr":{"id":"135202","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"135203","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"135209","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"135202","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"135203","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"135208","type":"VBar"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"135168","subtype":"Figure","type":"Plot"},"ticker":{"id":"135179","type":"CategoricalTicker"}},"id":"135181","type":"Grid"},{"attributes":{"formatter":{"id":"135216","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"135168","subtype":"Figure","type":"Plot"},"ticker":{"id":"135183","type":"BasicTicker"}},"id":"135182","type":"LinearAxis"},{"attributes":{},"id":"135183","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"135168","subtype":"Figure","type":"Plot"},"ticker":{"id":"135183","type":"BasicTicker"}},"id":"135186","type":"Grid"},{"attributes":{},"id":"135187","type":"PanTool"},{"attributes":{},"id":"135188","type":"WheelZoomTool"},{"attributes":{"callback":null,"data":{"location_terms":["New Jersey","Pennsylvania","Maryland","Florida","Illinois","Texas","Oregon","California","Wisconsin","Missouri","Ohio","England","Colorado","Indiana","\u00cele-de-France","Arizona","Connecticut","Puerto Rico","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Washington","New York","Ontario","Minnesota","CCO","\u6771\u4eac\u90fd","Michigan","Kansas","Victoria","Tennessee","South Carolina","Georgia","Hawaii","Kentucky","Asturias","Alabama","\u81fa\u7063\u7701","Uttarakhand","\u092a\u0936\u094d\u091a\u093f\u092e\u093e\u091e\u094d\u091a\u0932 \u0935\u093f\u0915\u093e\u0938 \u0915\u094d\u0937\u0947\u0924\u094d\u0930","France m\u00e9tropolitaine","SC","Noord-Holland","San Pedro"],"mentioned_locations":[8,6,3,4,3,4,3,4,2,3,2,2,2,1,2,2,2,2,1,2,1,0,1,0,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1,0,1,1],"primary_locations":[2,2,2,1,1,0,1,0,1,0,1,1,1,1,0,0,0,0,1,0,1,1,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0]},"selected":{"id":"135242","type":"Selection"},"selection_policy":{"id":"135243","type":"UnionRenderers"}},"id":"135220","type":"ColumnDataSource"},{"attributes":{"bottom":{"expr":{"id":"135204","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"135205","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"135223","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"135204","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"135205","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"135222","type":"VBar"},{"attributes":{},"id":"135243","type":"UnionRenderers"},{"attributes":{"data_source":{"id":"135220","type":"ColumnDataSource"},"glyph":{"id":"135222","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"135223","type":"VBar"},"selection_glyph":null,"view":{"id":"135225","type":"CDSView"}},"id":"135224","type":"GlyphRenderer"},{"attributes":{},"id":"135242","type":"Selection"},{"attributes":{},"id":"135191","type":"ResetTool"},{"attributes":{"source":{"id":"135220","type":"ColumnDataSource"}},"id":"135225","type":"CDSView"},{"attributes":{"callback":null,"factors":["New Jersey","Pennsylvania","Maryland","Florida","Illinois","Texas","Oregon","California","Wisconsin","Missouri","Ohio","England","Colorado","Indiana","\u00cele-de-France","Arizona","Connecticut","Puerto Rico","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Washington","New York","Ontario","Minnesota","CCO","\u6771\u4eac\u90fd","Michigan","Kansas","Victoria","Tennessee","South Carolina","Georgia","Hawaii","Kentucky","Asturias","Alabama","\u81fa\u7063\u7701","Uttarakhand","\u092a\u0936\u094d\u091a\u093f\u092e\u093e\u091e\u094d\u091a\u0932 \u0935\u093f\u0915\u093e\u0938 \u0915\u094d\u0937\u0947\u0924\u094d\u0930","France m\u00e9tropolitaine","SC","Noord-Holland","San Pedro"],"range_padding":0.01},"id":"135170","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"135172","type":"DataRange1d"},{"attributes":{},"id":"135174","type":"CategoricalScale"},{"attributes":{},"id":"135176","type":"LinearScale"},{"attributes":{},"id":"135179","type":"CategoricalTicker"},{"attributes":{"formatter":{"id":"135214","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"135168","subtype":"Figure","type":"Plot"},"ticker":{"id":"135179","type":"CategoricalTicker"}},"id":"135178","type":"CategoricalAxis"},{"attributes":{},"id":"135214","type":"CategoricalTickFormatter"},{"attributes":{},"id":"135216","type":"BasicTickFormatter"},{"attributes":{"data_source":{"id":"135206","type":"ColumnDataSource"},"glyph":{"id":"135208","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"135209","type":"VBar"},"selection_glyph":null,"view":{"id":"135211","type":"CDSView"}},"id":"135210","type":"GlyphRenderer"},{"attributes":{"source":{"id":"135206","type":"ColumnDataSource"}},"id":"135211","type":"CDSView"},{"attributes":{"items":[{"id":"135219","type":"LegendItem"},{"id":"135234","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"135168","subtype":"Figure","type":"Plot"}},"id":"135218","type":"Legend"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"135210","type":"GlyphRenderer"}]},"id":"135219","type":"LegendItem"}],"root_ids":["135168"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('135315').textContent;
+                  var render_items = [{"docid":"6e09896d-673a-4b90-955a-90465530c87a","roots":{"135168":"16cca9af-c860-47e8-8e22-4e21224174c9"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

@@ -10,11 +10,4 @@ function openTab(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
-
-  if( tabName === "document-topics" ){
-    document.getElementById("numberOfTopicForm").style.display = "flex";
-  }
-  else{
-    document.getElementById("numberOfTopicForm").style.display = "none";
-  }
 }

@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="1d06ce33-f989-4a0f-b8b2-da86c377b51e"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="245335">
+          {"dc299545-5568-498a-88f9-d3fb27ba39f9":{"roots":{"references":[{"attributes":{},"id":"245240","type":"LinearScale"},{"attributes":{},"id":"245243","type":"CategoricalTicker"},{"attributes":{"axis_label":"Drug","formatter":{"id":"245273","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"245232","subtype":"Figure","type":"Plot"},"ticker":{"id":"245243","type":"CategoricalTicker"}},"id":"245242","type":"CategoricalAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"245232","subtype":"Figure","type":"Plot"},"ticker":{"id":"245243","type":"CategoricalTicker"}},"id":"245245","type":"Grid"},{"attributes":{},"id":"245247","type":"BasicTicker"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"245275","type":"BasicTickFormatter"},"plot":{"id":"245232","subtype":"Figure","type":"Plot"},"ticker":{"id":"245247","type":"BasicTicker"}},"id":"245246","type":"LinearAxis"},{"attributes":{},"id":"245275","type":"BasicTickFormatter"},{"attributes":{},"id":"245252","type":"WheelZoomTool"},{"attributes":{},"id":"245276","type":"Selection"},{"attributes":{},"id":"245277","type":"UnionRenderers"},{"attributes":{"source":{"id":"245266","type":"ColumnDataSource"}},"id":"245270","type":"CDSView"},{"attributes":{},"id":"245273","type":"CategoricalTickFormatter"},{"attributes":{"plot":null,"text":"Drug Counts"},"id":"245231","type":"Title"},{"attributes":{"below":[{"id":"245242","type":"CategoricalAxis"}],"left":[{"id":"245246","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"245242","type":"CategoricalAxis"},{"id":"245245","type":"Grid"},{"id":"245246","type":"LinearAxis"},{"id":"245250","type":"Grid"},{"id":"245259","type":"BoxAnnotation"},{"id":"245269","type":"GlyphRenderer"}],"title":{"id":"245231","type":"Title"},"toolbar":{"id":"245257","type":"Toolbar"},"x_range":{"id":"245234","type":"FactorRange"},"x_scale":{"id":"245238","type":"CategoricalScale"},"y_range":{"id":"245236","type":"DataRange1d"},"y_scale":{"id":"245240","type":"LinearScale"}},"id":"245232","subtype":"Figure","type":"Plot"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"245259","type":"BoxAnnotation"},{"attributes":{"callback":null,"factors":["e","speed"],"range_padding":0.01},"id":"245234","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"245236","type":"DataRange1d"},{"attributes":{},"id":"245238","type":"CategoricalScale"},{"attributes":{"overlay":{"id":"245259","type":"BoxAnnotation"}},"id":"245253","type":"BoxZoomTool"},{"attributes":{"dimension":1,"plot":{"id":"245232","subtype":"Figure","type":"Plot"},"ticker":{"id":"245247","type":"BasicTicker"}},"id":"245250","type":"Grid"},{"attributes":{},"id":"245251","type":"PanTool"},{"attributes":{},"id":"245256","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"245251","type":"PanTool"},{"id":"245252","type":"WheelZoomTool"},{"id":"245253","type":"BoxZoomTool"},{"id":"245254","type":"SaveTool"},{"id":"245255","type":"ResetTool"},{"id":"245256","type":"HelpTool"}]},"id":"245257","type":"Toolbar"},{"attributes":{},"id":"245254","type":"SaveTool"},{"attributes":{},"id":"245255","type":"ResetTool"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"245267","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[1,1],"x":["e","speed"]},"selected":{"id":"245276","type":"Selection"},"selection_policy":{"id":"245277","type":"UnionRenderers"}},"id":"245266","type":"ColumnDataSource"},{"attributes":{"data_source":{"id":"245266","type":"ColumnDataSource"},"glyph":{"id":"245267","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"245268","type":"VBar"},"selection_glyph":null,"view":{"id":"245270","type":"CDSView"}},"id":"245269","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"245268","type":"VBar"}],"root_ids":["245232"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('245335').textContent;
+                  var render_items = [{"docid":"dc299545-5568-498a-88f9-d3fb27ba39f9","roots":{"245232":"1d06ce33-f989-4a0f-b8b2-da86c377b51e"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

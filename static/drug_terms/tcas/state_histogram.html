@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="7c08b7e0-7296-4af7-a463-6f48f08b4d4d"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="372071">
+          {"a2ed7dc6-68be-41a1-86b4-ab677bf7c5ea":{"roots":{"references":[{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"371980","type":"GlyphRenderer"}]},"id":"371990","type":"LegendItem"},{"attributes":{},"id":"371972","type":"BasicTickFormatter"},{"attributes":{},"id":"371999","type":"UnionRenderers"},{"attributes":{},"id":"371998","type":"Selection"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"371951","type":"BoxAnnotation"},{"attributes":{"bottom":{"expr":{"id":"371960","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"371961","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"371979","type":"VBar"},{"attributes":{"dimension":1,"plot":{"id":"371924","subtype":"Figure","type":"Plot"},"ticker":{"id":"371939","type":"BasicTicker"}},"id":"371942","type":"Grid"},{"attributes":{},"id":"371943","type":"PanTool"},{"attributes":{"formatter":{"id":"371970","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"371924","subtype":"Figure","type":"Plot"},"ticker":{"id":"371935","type":"CategoricalTicker"}},"id":"371934","type":"CategoricalAxis"},{"attributes":{},"id":"371946","type":"SaveTool"},{"attributes":{},"id":"371947","type":"ResetTool"},{"attributes":{},"id":"371944","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"371951","type":"BoxAnnotation"}},"id":"371945","type":"BoxZoomTool"},{"attributes":{"bottom":{"expr":{"id":"371958","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"371959","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"371964","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"371958","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"371959","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"371965","type":"VBar"},{"attributes":{},"id":"371948","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"371943","type":"PanTool"},{"id":"371944","type":"WheelZoomTool"},{"id":"371945","type":"BoxZoomTool"},{"id":"371946","type":"SaveTool"},{"id":"371947","type":"ResetTool"},{"id":"371948","type":"HelpTool"}]},"id":"371949","type":"Toolbar"},{"attributes":{"fields":["primary_locations"]},"id":"371960","type":"Stack"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"371961","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["\u8fd1\u757f\u5730\u65b9","\u00cele-de-France","Georgia","Florida","Utah"],"mentioned_locations":[1,1,1,1,1],"primary_locations":[0,0,0,0,0]},"selected":{"id":"371987","type":"Selection"},"selection_policy":{"id":"371988","type":"UnionRenderers"}},"id":"371962","type":"ColumnDataSource"},{"attributes":{"callback":null,"start":0},"id":"371928","type":"DataRange1d"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"371923","type":"Title"},{"attributes":{"below":[{"id":"371934","type":"CategoricalAxis"}],"left":[{"id":"371938","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"371934","type":"CategoricalAxis"},{"id":"371937","type":"Grid"},{"id":"371938","type":"LinearAxis"},{"id":"371942","type":"Grid"},{"id":"371951","type":"BoxAnnotation"},{"id":"371974","type":"Legend"},{"id":"371966","type":"GlyphRenderer"},{"id":"371980","type":"GlyphRenderer"}],"title":{"id":"371923","type":"Title"},"toolbar":{"id":"371949","type":"Toolbar"},"x_range":{"id":"371926","type":"FactorRange"},"x_scale":{"id":"371930","type":"CategoricalScale"},"y_range":{"id":"371928","type":"DataRange1d"},"y_scale":{"id":"371932","type":"LinearScale"}},"id":"371924","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"factors":["\u8fd1\u757f\u5730\u65b9","\u00cele-de-France","Georgia","Florida","Utah"],"range_padding":0.01},"id":"371926","type":"FactorRange"},{"attributes":{},"id":"371987","type":"Selection"},{"attributes":{},"id":"371970","type":"CategoricalTickFormatter"},{"attributes":{"data_source":{"id":"371976","type":"ColumnDataSource"},"glyph":{"id":"371978","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"371979","type":"VBar"},"selection_glyph":null,"view":{"id":"371981","type":"CDSView"}},"id":"371980","type":"GlyphRenderer"},{"attributes":{"source":{"id":"371976","type":"ColumnDataSource"}},"id":"371981","type":"CDSView"},{"attributes":{"data_source":{"id":"371962","type":"ColumnDataSource"},"glyph":{"id":"371964","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"371965","type":"VBar"},"selection_glyph":null,"view":{"id":"371967","type":"CDSView"}},"id":"371966","type":"GlyphRenderer"},{"attributes":{},"id":"371988","type":"UnionRenderers"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"371966","type":"GlyphRenderer"}]},"id":"371975","type":"LegendItem"},{"attributes":{"source":{"id":"371962","type":"ColumnDataSource"}},"id":"371967","type":"CDSView"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"371924","subtype":"Figure","type":"Plot"},"ticker":{"id":"371935","type":"CategoricalTicker"}},"id":"371937","type":"Grid"},{"attributes":{},"id":"371935","type":"CategoricalTicker"},{"attributes":{"bottom":{"expr":{"id":"371960","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"371961","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"371978","type":"VBar"},{"attributes":{},"id":"371932","type":"LinearScale"},{"attributes":{},"id":"371930","type":"CategoricalScale"},{"attributes":{"fields":["primary_locations"]},"id":"371959","type":"Stack"},{"attributes":{"fields":[]},"id":"371958","type":"Stack"},{"attributes":{"items":[{"id":"371975","type":"LegendItem"},{"id":"371990","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"371924","subtype":"Figure","type":"Plot"}},"id":"371974","type":"Legend"},{"attributes":{"callback":null,"data":{"location_terms":["\u8fd1\u757f\u5730\u65b9","\u00cele-de-France","Georgia","Florida","Utah"],"mentioned_locations":[1,1,1,1,1],"primary_locations":[0,0,0,0,0]},"selected":{"id":"371998","type":"Selection"},"selection_policy":{"id":"371999","type":"UnionRenderers"}},"id":"371976","type":"ColumnDataSource"},{"attributes":{},"id":"371939","type":"BasicTicker"},{"attributes":{"formatter":{"id":"371972","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"371924","subtype":"Figure","type":"Plot"},"ticker":{"id":"371939","type":"BasicTicker"}},"id":"371938","type":"LinearAxis"}],"root_ids":["371924"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('372071').textContent;
+                  var render_items = [{"docid":"a2ed7dc6-68be-41a1-86b4-ab677bf7c5ea","roots":{"371924":"7c08b7e0-7296-4af7-a463-6f48f08b4d4d"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

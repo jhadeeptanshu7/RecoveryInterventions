@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="c1eb1ea8-671e-40ca-9faf-571630f61909"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="352270">
+          {"e1c94d4f-80f7-462f-ba9f-ca1a32ab0c3a":{"roots":{"references":[{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"352150","type":"BoxAnnotation"},{"attributes":{"bottom":{"expr":{"id":"352159","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"352160","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"352178","type":"VBar"},{"attributes":{"data_source":{"id":"352175","type":"ColumnDataSource"},"glyph":{"id":"352177","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"352178","type":"VBar"},"selection_glyph":null,"view":{"id":"352180","type":"CDSView"}},"id":"352179","type":"GlyphRenderer"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"352165","type":"GlyphRenderer"}]},"id":"352174","type":"LegendItem"},{"attributes":{"callback":null,"data":{"location_terms":["Alibaba Mahallesi","Resistencia"],"mentioned_locations":[0,0],"primary_locations":[1,1]},"selected":{"id":"352197","type":"Selection"},"selection_policy":{"id":"352198","type":"UnionRenderers"}},"id":"352175","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations"]},"id":"352158","type":"Stack"},{"attributes":{"bottom":{"expr":{"id":"352159","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"352160","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"352177","type":"VBar"},{"attributes":{},"id":"352171","type":"BasicTickFormatter"},{"attributes":{"items":[{"id":"352174","type":"LegendItem"},{"id":"352189","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"352123","subtype":"Figure","type":"Plot"}},"id":"352173","type":"Legend"},{"attributes":{},"id":"352138","type":"BasicTicker"},{"attributes":{"fields":["primary_locations"]},"id":"352159","type":"Stack"},{"attributes":{},"id":"352131","type":"LinearScale"},{"attributes":{"formatter":{"id":"352169","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"352123","subtype":"Figure","type":"Plot"},"ticker":{"id":"352134","type":"CategoricalTicker"}},"id":"352133","type":"CategoricalAxis"},{"attributes":{},"id":"352134","type":"CategoricalTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"352123","subtype":"Figure","type":"Plot"},"ticker":{"id":"352134","type":"CategoricalTicker"}},"id":"352136","type":"Grid"},{"attributes":{"formatter":{"id":"352171","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"352123","subtype":"Figure","type":"Plot"},"ticker":{"id":"352138","type":"BasicTicker"}},"id":"352137","type":"LinearAxis"},{"attributes":{},"id":"352197","type":"Selection"},{"attributes":{},"id":"352129","type":"CategoricalScale"},{"attributes":{"overlay":{"id":"352150","type":"BoxAnnotation"}},"id":"352144","type":"BoxZoomTool"},{"attributes":{},"id":"352198","type":"UnionRenderers"},{"attributes":{"dimension":1,"plot":{"id":"352123","subtype":"Figure","type":"Plot"},"ticker":{"id":"352138","type":"BasicTicker"}},"id":"352141","type":"Grid"},{"attributes":{"callback":null,"factors":["Alibaba Mahallesi","Resistencia"],"range_padding":0.01},"id":"352125","type":"FactorRange"},{"attributes":{},"id":"352142","type":"PanTool"},{"attributes":{"below":[{"id":"352133","type":"CategoricalAxis"}],"left":[{"id":"352137","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"352133","type":"CategoricalAxis"},{"id":"352136","type":"Grid"},{"id":"352137","type":"LinearAxis"},{"id":"352141","type":"Grid"},{"id":"352150","type":"BoxAnnotation"},{"id":"352173","type":"Legend"},{"id":"352165","type":"GlyphRenderer"},{"id":"352179","type":"GlyphRenderer"}],"title":{"id":"352122","type":"Title"},"toolbar":{"id":"352148","type":"Toolbar"},"x_range":{"id":"352125","type":"FactorRange"},"x_scale":{"id":"352129","type":"CategoricalScale"},"y_range":{"id":"352127","type":"DataRange1d"},"y_scale":{"id":"352131","type":"LinearScale"}},"id":"352123","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"352122","type":"Title"},{"attributes":{},"id":"352147","type":"HelpTool"},{"attributes":{},"id":"352146","type":"ResetTool"},{"attributes":{"bottom":{"expr":{"id":"352157","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"352158","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"352163","type":"VBar"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"352142","type":"PanTool"},{"id":"352143","type":"WheelZoomTool"},{"id":"352144","type":"BoxZoomTool"},{"id":"352145","type":"SaveTool"},{"id":"352146","type":"ResetTool"},{"id":"352147","type":"HelpTool"}]},"id":"352148","type":"Toolbar"},{"attributes":{"callback":null,"data":{"location_terms":["Alibaba Mahallesi","Resistencia"],"mentioned_locations":[0,0],"primary_locations":[1,1]},"selected":{"id":"352186","type":"Selection"},"selection_policy":{"id":"352187","type":"UnionRenderers"}},"id":"352161","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"352160","type":"Stack"},{"attributes":{"source":{"id":"352161","type":"ColumnDataSource"}},"id":"352166","type":"CDSView"},{"attributes":{"data_source":{"id":"352161","type":"ColumnDataSource"},"glyph":{"id":"352163","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"352164","type":"VBar"},"selection_glyph":null,"view":{"id":"352166","type":"CDSView"}},"id":"352165","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"352157","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"352158","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"352164","type":"VBar"},{"attributes":{"callback":null,"start":0},"id":"352127","type":"DataRange1d"},{"attributes":{},"id":"352169","type":"CategoricalTickFormatter"},{"attributes":{},"id":"352187","type":"UnionRenderers"},{"attributes":{},"id":"352186","type":"Selection"},{"attributes":{"source":{"id":"352175","type":"ColumnDataSource"}},"id":"352180","type":"CDSView"},{"attributes":{},"id":"352143","type":"WheelZoomTool"},{"attributes":{},"id":"352145","type":"SaveTool"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"352179","type":"GlyphRenderer"}]},"id":"352189","type":"LegendItem"},{"attributes":{"fields":[]},"id":"352157","type":"Stack"}],"root_ids":["352123"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('352270').textContent;
+                  var render_items = [{"docid":"e1c94d4f-80f7-462f-ba9f-ca1a32ab0c3a","roots":{"352123":"c1eb1ea8-671e-40ca-9faf-571630f61909"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

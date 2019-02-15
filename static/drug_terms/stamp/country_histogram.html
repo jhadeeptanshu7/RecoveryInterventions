@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="f85c6fa7-cbe9-4223-9bb8-06fd1cd893e2"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="93338">
+          {"58c1d7bd-ce30-44fd-a01e-bd35944bf158":{"roots":{"references":[{"attributes":{},"id":"93239","type":"BasicTickFormatter"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"93218","type":"BoxAnnotation"},{"attributes":{"bottom":{"expr":{"id":"93225","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"93226","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"93232","type":"VBar"},{"attributes":{"data_source":{"id":"93229","type":"ColumnDataSource"},"glyph":{"id":"93231","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"93232","type":"VBar"},"selection_glyph":null,"view":{"id":"93234","type":"CDSView"}},"id":"93233","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"93225","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"93226","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"93231","type":"VBar"},{"attributes":{},"id":"93237","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"93229","type":"ColumnDataSource"}},"id":"93234","type":"CDSView"},{"attributes":{},"id":"93210","type":"PanTool"},{"attributes":{},"id":"93211","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"93218","type":"BoxAnnotation"}},"id":"93212","type":"BoxZoomTool"},{"attributes":{},"id":"93213","type":"SaveTool"},{"attributes":{},"id":"93214","type":"ResetTool"},{"attributes":{},"id":"93215","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"93210","type":"PanTool"},{"id":"93211","type":"WheelZoomTool"},{"id":"93212","type":"BoxZoomTool"},{"id":"93213","type":"SaveTool"},{"id":"93214","type":"ResetTool"},{"id":"93215","type":"HelpTool"}]},"id":"93216","type":"Toolbar"},{"attributes":{"callback":null,"factors":["USA","Canada","UK","Australia","\u4e2d\u56fd","Brasil","\u65e5\u672c","France","T\u00fcrkiye","Jamaica","\u200f\u067e\u0627\u06a9\u0633\u062a\u0627\u0646\u200e","Deutschland","M\u00e9xico","India","\u05d9\u05e9\u05e8\u05d0\u05dc","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Espa\u00f1a","Italia","\u0423\u043a\u0440\u0430\u0457\u043d\u0430","\u0645\u0635\u0631","Nederland","\u0395\u03bb\u03bb\u03ac\u03b4\u03b1","\u0420\u0424","Ireland","Magyarorsz\u00e1g","\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629","Rom\u00e2nia","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","Kalaallit Nunaat","Argentina","\u010cesko","RP","Portugal","Tchad \u062a\u0634\u0627\u062f","\u0627\u0644\u0623\u0631\u062f\u0646","\u0633\u0648\u0631\u064a\u0629","Guatemala","Chile","Sverige","Norge","Jersey","Danmark","Panam\u00e1","\u062a\u0648\u0646\u0633","\u0627\u0644\u0623\u0631\u0627\u0636\u064a \u0627\u0644\u0641\u0644\u0633\u0637\u064a\u0646\u064a\u0629","Soomaaliya \u0627\u0644\u0635\u0648\u0645\u0627\u0644","Cuba","\u0dc1\u0dca\u200d\u0dbb\u0dd3 \u0dbd\u0d82\u0d9a\u0dcf\u0dc0 \u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8","\uc870\uc120\ubbfc\uc8fc\uc8fc\uc758\uc778\ubbfc\uacf5\ud654\uad6d","Honduras","\u0627\u0644\u0639\u0631\u0627\u0642","Belgi\u00eb / Belgique / Belgien","New Zealand/Aotearoa","Colombia","South Africa","Botswana","\u12a2.\u134c.\u12f2.\u122a.","Schweiz/Suisse/Svizzera/Svizra","Nigeria","Ecuador","Ghana","Brunei","\u0633\u0648\u0631\u064a\u0627","\ub300\ud55c\ubbfc\uad6d","\u0928\u0947\u092a\u093e\u0932","Latvija","\u00cdsland","\u200f\u0627\u06cc\u0631\u0627\u0646\u200e","Hrvatska","\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","Gambia","Philippines","\u00d6sterreich","\u200f\u0642\u0637\u0631\u200e","Madagasikara","\u81fa\u7063","United States of America (Middle Hawai'ian Islands territorial waters)","Kosova","Malaysia","Vi\u1ec7t Nam","Maroc \u2d4d\u2d4e\u2d56\u2d54\u2d49\u2d31 \u0627\u0644\u0645\u063a\u0631\u0628","Paraguay","Shqip\u00ebria","Nicaragua","Slovenija"],"range_padding":0.01},"id":"93193","type":"FactorRange"},{"attributes":{},"id":"93254","type":"Selection"},{"attributes":{"below":[{"id":"93201","type":"CategoricalAxis"}],"left":[{"id":"93205","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"93201","type":"CategoricalAxis"},{"id":"93204","type":"Grid"},{"id":"93205","type":"LinearAxis"},{"id":"93209","type":"Grid"},{"id":"93218","type":"BoxAnnotation"},{"id":"93241","type":"Legend"},{"id":"93233","type":"GlyphRenderer"},{"id":"93247","type":"GlyphRenderer"}],"title":{"id":"93190","type":"Title"},"toolbar":{"id":"93216","type":"Toolbar"},"x_range":{"id":"93193","type":"FactorRange"},"x_scale":{"id":"93197","type":"CategoricalScale"},"y_range":{"id":"93195","type":"DataRange1d"},"y_scale":{"id":"93199","type":"LinearScale"}},"id":"93191","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"93190","type":"Title"},{"attributes":{},"id":"93197","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"93195","type":"DataRange1d"},{"attributes":{},"id":"93255","type":"UnionRenderers"},{"attributes":{},"id":"93199","type":"LinearScale"},{"attributes":{},"id":"93265","type":"Selection"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"93247","type":"GlyphRenderer"}]},"id":"93257","type":"LegendItem"},{"attributes":{"fields":[]},"id":"93225","type":"Stack"},{"attributes":{"dimension":1,"plot":{"id":"93191","subtype":"Figure","type":"Plot"},"ticker":{"id":"93206","type":"BasicTicker"}},"id":"93209","type":"Grid"},{"attributes":{"fields":["primary_locations"]},"id":"93227","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"93226","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["USA","Canada","UK","Australia","\u4e2d\u56fd","Brasil","\u65e5\u672c","France","T\u00fcrkiye","Jamaica","\u200f\u067e\u0627\u06a9\u0633\u062a\u0627\u0646\u200e","Deutschland","M\u00e9xico","India","\u05d9\u05e9\u05e8\u05d0\u05dc","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Espa\u00f1a","Italia","\u0423\u043a\u0440\u0430\u0457\u043d\u0430","\u0645\u0635\u0631","Nederland","\u0395\u03bb\u03bb\u03ac\u03b4\u03b1","\u0420\u0424","Ireland","Magyarorsz\u00e1g","\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629","Rom\u00e2nia","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","Kalaallit Nunaat","Argentina","\u010cesko","RP","Portugal","Tchad \u062a\u0634\u0627\u062f","\u0627\u0644\u0623\u0631\u062f\u0646","\u0633\u0648\u0631\u064a\u0629","Guatemala","Chile","Sverige","Norge","Jersey","Danmark","Panam\u00e1","\u062a\u0648\u0646\u0633","\u0627\u0644\u0623\u0631\u0627\u0636\u064a \u0627\u0644\u0641\u0644\u0633\u0637\u064a\u0646\u064a\u0629","Soomaaliya \u0627\u0644\u0635\u0648\u0645\u0627\u0644","Cuba","\u0dc1\u0dca\u200d\u0dbb\u0dd3 \u0dbd\u0d82\u0d9a\u0dcf\u0dc0 \u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8","\uc870\uc120\ubbfc\uc8fc\uc8fc\uc758\uc778\ubbfc\uacf5\ud654\uad6d","Honduras","\u0627\u0644\u0639\u0631\u0627\u0642","Belgi\u00eb / Belgique / Belgien","New Zealand/Aotearoa","Colombia","South Africa","Botswana","\u12a2.\u134c.\u12f2.\u122a.","Schweiz/Suisse/Svizzera/Svizra","Nigeria","Ecuador","Ghana","Brunei","\u0633\u0648\u0631\u064a\u0627","\ub300\ud55c\ubbfc\uad6d","\u0928\u0947\u092a\u093e\u0932","Latvija","\u00cdsland","\u200f\u0627\u06cc\u0631\u0627\u0646\u200e","Hrvatska","\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","Gambia","Philippines","\u00d6sterreich","\u200f\u0642\u0637\u0631\u200e","Madagasikara","\u81fa\u7063","United States of America (Middle Hawai'ian Islands territorial waters)","Kosova","Malaysia","Vi\u1ec7t Nam","Maroc \u2d4d\u2d4e\u2d56\u2d54\u2d49\u2d31 \u0627\u0644\u0645\u063a\u0631\u0628","Paraguay","Shqip\u00ebria","Nicaragua","Slovenija"],"mentioned_locations":[443,122,46,21,22,17,14,11,15,13,12,7,11,9,10,10,8,6,8,7,6,6,5,1,4,5,5,4,4,0,3,3,4,3,3,3,2,3,2,3,1,2,0,0,2,2,2,0,2,2,2,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1],"primary_locations":[190,24,22,8,1,1,3,4,0,1,0,5,1,2,0,0,1,2,0,0,1,1,1,4,1,0,0,1,0,4,1,1,0,0,0,0,1,0,1,0,2,1,2,2,0,0,0,2,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0]},"selected":{"id":"93254","type":"Selection"},"selection_policy":{"id":"93255","type":"UnionRenderers"}},"id":"93229","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"93228","type":"Stack"},{"attributes":{"formatter":{"id":"93239","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"93191","subtype":"Figure","type":"Plot"},"ticker":{"id":"93206","type":"BasicTicker"}},"id":"93205","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"93191","subtype":"Figure","type":"Plot"},"ticker":{"id":"93202","type":"CategoricalTicker"}},"id":"93204","type":"Grid"},{"attributes":{},"id":"93202","type":"CategoricalTicker"},{"attributes":{"formatter":{"id":"93237","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"93191","subtype":"Figure","type":"Plot"},"ticker":{"id":"93202","type":"CategoricalTicker"}},"id":"93201","type":"CategoricalAxis"},{"attributes":{"source":{"id":"93243","type":"ColumnDataSource"}},"id":"93248","type":"CDSView"},{"attributes":{},"id":"93206","type":"BasicTicker"},{"attributes":{"callback":null,"data":{"location_terms":["USA","Canada","UK","Australia","\u4e2d\u56fd","Brasil","\u65e5\u672c","France","T\u00fcrkiye","Jamaica","\u200f\u067e\u0627\u06a9\u0633\u062a\u0627\u0646\u200e","Deutschland","M\u00e9xico","India","\u05d9\u05e9\u05e8\u05d0\u05dc","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Espa\u00f1a","Italia","\u0423\u043a\u0440\u0430\u0457\u043d\u0430","\u0645\u0635\u0631","Nederland","\u0395\u03bb\u03bb\u03ac\u03b4\u03b1","\u0420\u0424","Ireland","Magyarorsz\u00e1g","\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629","Rom\u00e2nia","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","Kalaallit Nunaat","Argentina","\u010cesko","RP","Portugal","Tchad \u062a\u0634\u0627\u062f","\u0627\u0644\u0623\u0631\u062f\u0646","\u0633\u0648\u0631\u064a\u0629","Guatemala","Chile","Sverige","Norge","Jersey","Danmark","Panam\u00e1","\u062a\u0648\u0646\u0633","\u0627\u0644\u0623\u0631\u0627\u0636\u064a \u0627\u0644\u0641\u0644\u0633\u0637\u064a\u0646\u064a\u0629","Soomaaliya \u0627\u0644\u0635\u0648\u0645\u0627\u0644","Cuba","\u0dc1\u0dca\u200d\u0dbb\u0dd3 \u0dbd\u0d82\u0d9a\u0dcf\u0dc0 \u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8","\uc870\uc120\ubbfc\uc8fc\uc8fc\uc758\uc778\ubbfc\uacf5\ud654\uad6d","Honduras","\u0627\u0644\u0639\u0631\u0627\u0642","Belgi\u00eb / Belgique / Belgien","New Zealand/Aotearoa","Colombia","South Africa","Botswana","\u12a2.\u134c.\u12f2.\u122a.","Schweiz/Suisse/Svizzera/Svizra","Nigeria","Ecuador","Ghana","Brunei","\u0633\u0648\u0631\u064a\u0627","\ub300\ud55c\ubbfc\uad6d","\u0928\u0947\u092a\u093e\u0932","Latvija","\u00cdsland","\u200f\u0627\u06cc\u0631\u0627\u0646\u200e","Hrvatska","\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","Gambia","Philippines","\u00d6sterreich","\u200f\u0642\u0637\u0631\u200e","Madagasikara","\u81fa\u7063","United States of America (Middle Hawai'ian Islands territorial waters)","Kosova","Malaysia","Vi\u1ec7t Nam","Maroc \u2d4d\u2d4e\u2d56\u2d54\u2d49\u2d31 \u0627\u0644\u0645\u063a\u0631\u0628","Paraguay","Shqip\u00ebria","Nicaragua","Slovenija"],"mentioned_locations":[443,122,46,21,22,17,14,11,15,13,12,7,11,9,10,10,8,6,8,7,6,6,5,1,4,5,5,4,4,0,3,3,4,3,3,3,2,3,2,3,1,2,0,0,2,2,2,0,2,2,2,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1],"primary_locations":[190,24,22,8,1,1,3,4,0,1,0,5,1,2,0,0,1,2,0,0,1,1,1,4,1,0,0,1,0,4,1,1,0,0,0,0,1,0,1,0,2,1,2,2,0,0,0,2,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0]},"selected":{"id":"93265","type":"Selection"},"selection_policy":{"id":"93266","type":"UnionRenderers"}},"id":"93243","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"93233","type":"GlyphRenderer"}]},"id":"93242","type":"LegendItem"},{"attributes":{"items":[{"id":"93242","type":"LegendItem"},{"id":"93257","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"93191","subtype":"Figure","type":"Plot"}},"id":"93241","type":"Legend"},{"attributes":{},"id":"93266","type":"UnionRenderers"},{"attributes":{"data_source":{"id":"93243","type":"ColumnDataSource"},"glyph":{"id":"93245","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"93246","type":"VBar"},"selection_glyph":null,"view":{"id":"93248","type":"CDSView"}},"id":"93247","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"93227","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"93228","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"93246","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"93227","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"93228","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"93245","type":"VBar"}],"root_ids":["93191"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('93338').textContent;
+                  var render_items = [{"docid":"58c1d7bd-ce30-44fd-a01e-bd35944bf158","roots":{"93191":"f85c6fa7-cbe9-4223-9bb8-06fd1cd893e2"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

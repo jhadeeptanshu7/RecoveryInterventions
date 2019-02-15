@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="e5f832d1-96dc-41b3-a68a-5beec28f5abc"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="322177">
+          {"ac130d7e-90d1-469e-8208-0dc3674c6503":{"roots":{"references":[{"attributes":{},"id":"322049","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"322030","subtype":"Figure","type":"Plot"},"ticker":{"id":"322045","type":"BasicTicker"}},"id":"322048","type":"Grid"},{"attributes":{"fields":["primary_locations"]},"id":"322065","type":"Stack"},{"attributes":{"fields":[]},"id":"322064","type":"Stack"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"322067","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"322066","type":"Stack"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"322030","subtype":"Figure","type":"Plot"},"ticker":{"id":"322041","type":"CategoricalTicker"}},"id":"322043","type":"Grid"},{"attributes":{"callback":null,"data":{"location_terms":["Ontario","Wyoming","Baja California","Arizona","West Virginia","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"],"mentioned_locations":[1,1,1,0,1,1],"primary_locations":[0,0,0,1,0,0]},"selected":{"id":"322093","type":"Selection"},"selection_policy":{"id":"322094","type":"UnionRenderers"}},"id":"322068","type":"ColumnDataSource"},{"attributes":{},"id":"322041","type":"CategoricalTicker"},{"attributes":{"formatter":{"id":"322076","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"322030","subtype":"Figure","type":"Plot"},"ticker":{"id":"322041","type":"CategoricalTicker"}},"id":"322040","type":"CategoricalAxis"},{"attributes":{},"id":"322045","type":"BasicTicker"},{"attributes":{"formatter":{"id":"322078","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"322030","subtype":"Figure","type":"Plot"},"ticker":{"id":"322045","type":"BasicTicker"}},"id":"322044","type":"LinearAxis"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"322029","type":"Title"},{"attributes":{},"id":"322104","type":"Selection"},{"attributes":{},"id":"322105","type":"UnionRenderers"},{"attributes":{"source":{"id":"322082","type":"ColumnDataSource"}},"id":"322087","type":"CDSView"},{"attributes":{"data_source":{"id":"322082","type":"ColumnDataSource"},"glyph":{"id":"322084","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"322085","type":"VBar"},"selection_glyph":null,"view":{"id":"322087","type":"CDSView"}},"id":"322086","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"322066","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"322067","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"322085","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"322066","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"322067","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"322084","type":"VBar"},{"attributes":{"callback":null,"data":{"location_terms":["Ontario","Wyoming","Baja California","Arizona","West Virginia","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"],"mentioned_locations":[1,1,1,0,1,1],"primary_locations":[0,0,0,1,0,0]},"selected":{"id":"322104","type":"Selection"},"selection_policy":{"id":"322105","type":"UnionRenderers"}},"id":"322082","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"322072","type":"GlyphRenderer"}]},"id":"322081","type":"LegendItem"},{"attributes":{"items":[{"id":"322081","type":"LegendItem"},{"id":"322096","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"322030","subtype":"Figure","type":"Plot"}},"id":"322080","type":"Legend"},{"attributes":{"data_source":{"id":"322068","type":"ColumnDataSource"},"glyph":{"id":"322070","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"322071","type":"VBar"},"selection_glyph":null,"view":{"id":"322073","type":"CDSView"}},"id":"322072","type":"GlyphRenderer"},{"attributes":{"source":{"id":"322068","type":"ColumnDataSource"}},"id":"322073","type":"CDSView"},{"attributes":{"bottom":{"expr":{"id":"322064","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"322065","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"322070","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"322064","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"322065","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"322071","type":"VBar"},{"attributes":{},"id":"322076","type":"CategoricalTickFormatter"},{"attributes":{},"id":"322054","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"322049","type":"PanTool"},{"id":"322050","type":"WheelZoomTool"},{"id":"322051","type":"BoxZoomTool"},{"id":"322052","type":"SaveTool"},{"id":"322053","type":"ResetTool"},{"id":"322054","type":"HelpTool"}]},"id":"322055","type":"Toolbar"},{"attributes":{},"id":"322078","type":"BasicTickFormatter"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"322057","type":"BoxAnnotation"},{"attributes":{},"id":"322050","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"322057","type":"BoxAnnotation"}},"id":"322051","type":"BoxZoomTool"},{"attributes":{},"id":"322052","type":"SaveTool"},{"attributes":{},"id":"322053","type":"ResetTool"},{"attributes":{},"id":"322038","type":"LinearScale"},{"attributes":{},"id":"322036","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"322034","type":"DataRange1d"},{"attributes":{"callback":null,"factors":["Ontario","Wyoming","Baja California","Arizona","West Virginia","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"],"range_padding":0.01},"id":"322032","type":"FactorRange"},{"attributes":{"below":[{"id":"322040","type":"CategoricalAxis"}],"left":[{"id":"322044","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"322040","type":"CategoricalAxis"},{"id":"322043","type":"Grid"},{"id":"322044","type":"LinearAxis"},{"id":"322048","type":"Grid"},{"id":"322057","type":"BoxAnnotation"},{"id":"322080","type":"Legend"},{"id":"322072","type":"GlyphRenderer"},{"id":"322086","type":"GlyphRenderer"}],"title":{"id":"322029","type":"Title"},"toolbar":{"id":"322055","type":"Toolbar"},"x_range":{"id":"322032","type":"FactorRange"},"x_scale":{"id":"322036","type":"CategoricalScale"},"y_range":{"id":"322034","type":"DataRange1d"},"y_scale":{"id":"322038","type":"LinearScale"}},"id":"322030","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"322093","type":"Selection"},{"attributes":{},"id":"322094","type":"UnionRenderers"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"322086","type":"GlyphRenderer"}]},"id":"322096","type":"LegendItem"}],"root_ids":["322030"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('322177').textContent;
+                  var render_items = [{"docid":"ac130d7e-90d1-469e-8208-0dc3674c6503","roots":{"322030":"e5f832d1-96dc-41b3-a68a-5beec28f5abc"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

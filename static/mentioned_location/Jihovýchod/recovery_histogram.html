@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="61d640c7-13d1-4575-ad39-881809fae42a"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="132942">
+          {"e5053c05-84ad-4756-b42d-198749b4a29e":{"roots":{"references":[{"attributes":{},"id":"132880","type":"CategoricalTickFormatter"},{"attributes":{},"id":"132882","type":"BasicTickFormatter"},{"attributes":{},"id":"132883","type":"Selection"},{"attributes":{},"id":"132884","type":"UnionRenderers"},{"attributes":{"callback":null,"data":{"top":[1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["aa","life","degree","cancer","breakup","meetings","disease","project","rehab","program","sober","meeting","opiates"]},"selected":{"id":"132883","type":"Selection"},"selection_policy":{"id":"132884","type":"UnionRenderers"}},"id":"132873","type":"ColumnDataSource"},{"attributes":{},"id":"132858","type":"PanTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"132875","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"132874","type":"VBar"},{"attributes":{"source":{"id":"132873","type":"ColumnDataSource"}},"id":"132877","type":"CDSView"},{"attributes":{"data_source":{"id":"132873","type":"ColumnDataSource"},"glyph":{"id":"132874","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"132875","type":"VBar"},"selection_glyph":null,"view":{"id":"132877","type":"CDSView"}},"id":"132876","type":"GlyphRenderer"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"132882","type":"BasicTickFormatter"},"plot":{"id":"132839","subtype":"Figure","type":"Plot"},"ticker":{"id":"132854","type":"BasicTicker"}},"id":"132853","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"132839","subtype":"Figure","type":"Plot"},"ticker":{"id":"132850","type":"CategoricalTicker"}},"id":"132852","type":"Grid"},{"attributes":{},"id":"132850","type":"CategoricalTicker"},{"attributes":{"dimension":1,"plot":{"id":"132839","subtype":"Figure","type":"Plot"},"ticker":{"id":"132854","type":"BasicTicker"}},"id":"132857","type":"Grid"},{"attributes":{},"id":"132854","type":"BasicTicker"},{"attributes":{"below":[{"id":"132849","type":"CategoricalAxis"}],"left":[{"id":"132853","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"132849","type":"CategoricalAxis"},{"id":"132852","type":"Grid"},{"id":"132853","type":"LinearAxis"},{"id":"132857","type":"Grid"},{"id":"132866","type":"BoxAnnotation"},{"id":"132876","type":"GlyphRenderer"}],"title":{"id":"132838","type":"Title"},"toolbar":{"id":"132864","type":"Toolbar"},"x_range":{"id":"132841","type":"FactorRange"},"x_scale":{"id":"132845","type":"CategoricalScale"},"y_range":{"id":"132843","type":"DataRange1d"},"y_scale":{"id":"132847","type":"LinearScale"}},"id":"132839","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"132838","type":"Title"},{"attributes":{},"id":"132859","type":"WheelZoomTool"},{"attributes":{},"id":"132862","type":"ResetTool"},{"attributes":{},"id":"132863","type":"HelpTool"},{"attributes":{"overlay":{"id":"132866","type":"BoxAnnotation"}},"id":"132860","type":"BoxZoomTool"},{"attributes":{},"id":"132861","type":"SaveTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"132866","type":"BoxAnnotation"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"132880","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"132839","subtype":"Figure","type":"Plot"},"ticker":{"id":"132850","type":"CategoricalTicker"}},"id":"132849","type":"CategoricalAxis"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"132858","type":"PanTool"},{"id":"132859","type":"WheelZoomTool"},{"id":"132860","type":"BoxZoomTool"},{"id":"132861","type":"SaveTool"},{"id":"132862","type":"ResetTool"},{"id":"132863","type":"HelpTool"}]},"id":"132864","type":"Toolbar"},{"attributes":{},"id":"132845","type":"CategoricalScale"},{"attributes":{},"id":"132847","type":"LinearScale"},{"attributes":{"callback":null,"factors":["aa","life","degree","cancer","breakup","meetings","disease","project","rehab","program","sober","meeting","opiates"],"range_padding":0.01},"id":"132841","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"132843","type":"DataRange1d"}],"root_ids":["132839"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('132942').textContent;
+                  var render_items = [{"docid":"e5053c05-84ad-4756-b42d-198749b4a29e","roots":{"132839":"61d640c7-13d1-4575-ad39-881809fae42a"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

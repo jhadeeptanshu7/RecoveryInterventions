@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="6348abea-1678-4b8d-a54e-3ecdd737435c"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="365195">
+          {"59bd8846-74f7-4496-bf90-259ec874d9a9":{"roots":{"references":[{"attributes":{"plot":null,"text":"Geolocation"},"id":"365047","type":"Title"},{"attributes":{"callback":null,"factors":["Indiana","Ontario","Southern District","Connecticut","Nebraska","Texas"],"range_padding":0.01},"id":"365050","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"365052","type":"DataRange1d"},{"attributes":{},"id":"365054","type":"CategoricalScale"},{"attributes":{},"id":"365056","type":"LinearScale"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"365067","type":"PanTool"},{"id":"365068","type":"WheelZoomTool"},{"id":"365069","type":"BoxZoomTool"},{"id":"365070","type":"SaveTool"},{"id":"365071","type":"ResetTool"},{"id":"365072","type":"HelpTool"}]},"id":"365073","type":"Toolbar"},{"attributes":{"formatter":{"id":"365094","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"365048","subtype":"Figure","type":"Plot"},"ticker":{"id":"365059","type":"CategoricalTicker"}},"id":"365058","type":"CategoricalAxis"},{"attributes":{},"id":"365071","type":"ResetTool"},{"attributes":{},"id":"365070","type":"SaveTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"365075","type":"BoxAnnotation"},{"attributes":{},"id":"365111","type":"Selection"},{"attributes":{"bottom":{"expr":{"id":"365084","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"365085","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"365103","type":"VBar"},{"attributes":{},"id":"365112","type":"UnionRenderers"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"365104","type":"GlyphRenderer"}]},"id":"365114","type":"LegendItem"},{"attributes":{"overlay":{"id":"365075","type":"BoxAnnotation"}},"id":"365069","type":"BoxZoomTool"},{"attributes":{},"id":"365094","type":"CategoricalTickFormatter"},{"attributes":{},"id":"365096","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"365086","type":"ColumnDataSource"}},"id":"365091","type":"CDSView"},{"attributes":{"data_source":{"id":"365086","type":"ColumnDataSource"},"glyph":{"id":"365088","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"365089","type":"VBar"},"selection_glyph":null,"view":{"id":"365091","type":"CDSView"}},"id":"365090","type":"GlyphRenderer"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"365090","type":"GlyphRenderer"}]},"id":"365099","type":"LegendItem"},{"attributes":{"items":[{"id":"365099","type":"LegendItem"},{"id":"365114","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"365048","subtype":"Figure","type":"Plot"}},"id":"365098","type":"Legend"},{"attributes":{},"id":"365059","type":"CategoricalTicker"},{"attributes":{},"id":"365072","type":"HelpTool"},{"attributes":{"dimension":1,"plot":{"id":"365048","subtype":"Figure","type":"Plot"},"ticker":{"id":"365063","type":"BasicTicker"}},"id":"365066","type":"Grid"},{"attributes":{"source":{"id":"365100","type":"ColumnDataSource"}},"id":"365105","type":"CDSView"},{"attributes":{"data_source":{"id":"365100","type":"ColumnDataSource"},"glyph":{"id":"365102","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"365103","type":"VBar"},"selection_glyph":null,"view":{"id":"365105","type":"CDSView"}},"id":"365104","type":"GlyphRenderer"},{"attributes":{},"id":"365068","type":"WheelZoomTool"},{"attributes":{"bottom":{"expr":{"id":"365084","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"365085","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"365102","type":"VBar"},{"attributes":{"callback":null,"data":{"location_terms":["Indiana","Ontario","Southern District","Connecticut","Nebraska","Texas"],"mentioned_locations":[1,1,1,1,1,1],"primary_locations":[1,0,0,0,0,0]},"selected":{"id":"365122","type":"Selection"},"selection_policy":{"id":"365123","type":"UnionRenderers"}},"id":"365100","type":"ColumnDataSource"},{"attributes":{"below":[{"id":"365058","type":"CategoricalAxis"}],"left":[{"id":"365062","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"365058","type":"CategoricalAxis"},{"id":"365061","type":"Grid"},{"id":"365062","type":"LinearAxis"},{"id":"365066","type":"Grid"},{"id":"365075","type":"BoxAnnotation"},{"id":"365098","type":"Legend"},{"id":"365090","type":"GlyphRenderer"},{"id":"365104","type":"GlyphRenderer"}],"title":{"id":"365047","type":"Title"},"toolbar":{"id":"365073","type":"Toolbar"},"x_range":{"id":"365050","type":"FactorRange"},"x_scale":{"id":"365054","type":"CategoricalScale"},"y_range":{"id":"365052","type":"DataRange1d"},"y_scale":{"id":"365056","type":"LinearScale"}},"id":"365048","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"365067","type":"PanTool"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"365048","subtype":"Figure","type":"Plot"},"ticker":{"id":"365059","type":"CategoricalTicker"}},"id":"365061","type":"Grid"},{"attributes":{"formatter":{"id":"365096","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"365048","subtype":"Figure","type":"Plot"},"ticker":{"id":"365063","type":"BasicTicker"}},"id":"365062","type":"LinearAxis"},{"attributes":{},"id":"365063","type":"BasicTicker"},{"attributes":{},"id":"365123","type":"UnionRenderers"},{"attributes":{},"id":"365122","type":"Selection"},{"attributes":{"callback":null,"data":{"location_terms":["Indiana","Ontario","Southern District","Connecticut","Nebraska","Texas"],"mentioned_locations":[1,1,1,1,1,1],"primary_locations":[1,0,0,0,0,0]},"selected":{"id":"365111","type":"Selection"},"selection_policy":{"id":"365112","type":"UnionRenderers"}},"id":"365086","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations"]},"id":"365084","type":"Stack"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"365085","type":"Stack"},{"attributes":{"fields":[]},"id":"365082","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"365083","type":"Stack"},{"attributes":{"bottom":{"expr":{"id":"365082","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"365083","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"365088","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"365082","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"365083","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"365089","type":"VBar"}],"root_ids":["365048"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('365195').textContent;
+                  var render_items = [{"docid":"59bd8846-74f7-4496-bf90-259ec874d9a9","roots":{"365048":"6348abea-1678-4b8d-a54e-3ecdd737435c"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

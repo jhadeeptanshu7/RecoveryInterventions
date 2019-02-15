@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="c90459c2-d54c-4586-9ee7-7a0e1a3c00e9"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="157660">
+          {"6d7269d3-7b4e-40a8-870e-f3ed11224e01":{"roots":{"references":[{"attributes":{},"id":"157602","type":"UnionRenderers"},{"attributes":{},"id":"157601","type":"Selection"},{"attributes":{},"id":"157600","type":"BasicTickFormatter"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"157584","type":"BoxAnnotation"},{"attributes":{},"id":"157580","type":"ResetTool"},{"attributes":{},"id":"157581","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"157576","type":"PanTool"},{"id":"157577","type":"WheelZoomTool"},{"id":"157578","type":"BoxZoomTool"},{"id":"157579","type":"SaveTool"},{"id":"157580","type":"ResetTool"},{"id":"157581","type":"HelpTool"}]},"id":"157582","type":"Toolbar"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"157598","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"157557","subtype":"Figure","type":"Plot"},"ticker":{"id":"157568","type":"CategoricalTicker"}},"id":"157567","type":"CategoricalAxis"},{"attributes":{},"id":"157565","type":"LinearScale"},{"attributes":{},"id":"157563","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"157561","type":"DataRange1d"},{"attributes":{},"id":"157568","type":"CategoricalTicker"},{"attributes":{"below":[{"id":"157567","type":"CategoricalAxis"}],"left":[{"id":"157571","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"157567","type":"CategoricalAxis"},{"id":"157570","type":"Grid"},{"id":"157571","type":"LinearAxis"},{"id":"157575","type":"Grid"},{"id":"157584","type":"BoxAnnotation"},{"id":"157594","type":"GlyphRenderer"}],"title":{"id":"157556","type":"Title"},"toolbar":{"id":"157582","type":"Toolbar"},"x_range":{"id":"157559","type":"FactorRange"},"x_scale":{"id":"157563","type":"CategoricalScale"},"y_range":{"id":"157561","type":"DataRange1d"},"y_scale":{"id":"157565","type":"LinearScale"}},"id":"157557","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"157556","type":"Title"},{"attributes":{},"id":"157576","type":"PanTool"},{"attributes":{"callback":null,"factors":["medical","cancer","asleep","anger","death","hospital","father","symptoms","program","teens","meeting","personality","life","pain","sickness","gym","suffering","therapy","twenties","project","journey","mother","university","binge","medication","certification","hangovers","hatred","meetings","alive","na","therapist","church","paws","dbt","depression","recovery","divorce","facility","hangover","illness","exhausted","trauma","frustration","quitting","smart","adulthood","degree","behaviour","abuse","fatigued","groups","addiction","nausea","grief","masters","anxiety","programs","nostrils","discomfort","childhood","clean","awake","athletics","cheeks","opiates"],"range_padding":0.01},"id":"157559","type":"FactorRange"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"157593","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"157592","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["medical","cancer","asleep","anger","death","hospital","father","symptoms","program","teens","meeting","personality","life","pain","sickness","gym","suffering","therapy","twenties","project","journey","mother","university","binge","medication","certification","hangovers","hatred","meetings","alive","na","therapist","church","paws","dbt","depression","recovery","divorce","facility","hangover","illness","exhausted","trauma","frustration","quitting","smart","adulthood","degree","behaviour","abuse","fatigued","groups","addiction","nausea","grief","masters","anxiety","programs","nostrils","discomfort","childhood","clean","awake","athletics","cheeks","opiates"]},"selected":{"id":"157601","type":"Selection"},"selection_policy":{"id":"157602","type":"UnionRenderers"}},"id":"157591","type":"ColumnDataSource"},{"attributes":{},"id":"157579","type":"SaveTool"},{"attributes":{"overlay":{"id":"157584","type":"BoxAnnotation"}},"id":"157578","type":"BoxZoomTool"},{"attributes":{"source":{"id":"157591","type":"ColumnDataSource"}},"id":"157595","type":"CDSView"},{"attributes":{"data_source":{"id":"157591","type":"ColumnDataSource"},"glyph":{"id":"157592","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"157593","type":"VBar"},"selection_glyph":null,"view":{"id":"157595","type":"CDSView"}},"id":"157594","type":"GlyphRenderer"},{"attributes":{"dimension":1,"plot":{"id":"157557","subtype":"Figure","type":"Plot"},"ticker":{"id":"157572","type":"BasicTicker"}},"id":"157575","type":"Grid"},{"attributes":{},"id":"157577","type":"WheelZoomTool"},{"attributes":{},"id":"157598","type":"CategoricalTickFormatter"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"157600","type":"BasicTickFormatter"},"plot":{"id":"157557","subtype":"Figure","type":"Plot"},"ticker":{"id":"157572","type":"BasicTicker"}},"id":"157571","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"157557","subtype":"Figure","type":"Plot"},"ticker":{"id":"157568","type":"CategoricalTicker"}},"id":"157570","type":"Grid"},{"attributes":{},"id":"157572","type":"BasicTicker"}],"root_ids":["157557"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('157660').textContent;
+                  var render_items = [{"docid":"6d7269d3-7b4e-40a8-870e-f3ed11224e01","roots":{"157557":"c90459c2-d54c-4586-9ee7-7a0e1a3c00e9"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

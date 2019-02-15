@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="aa2e2762-8b67-41bd-a349-b897b2044487"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="261312">
+          {"421a10cf-8014-46a4-9a75-ca319fcf3b4d":{"roots":{"references":[{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"261207","type":"GlyphRenderer"}]},"id":"261216","type":"LegendItem"},{"attributes":{},"id":"261188","type":"ResetTool"},{"attributes":{},"id":"261189","type":"HelpTool"},{"attributes":{},"id":"261184","type":"PanTool"},{"attributes":{"callback":null,"data":{"location_terms":["USA","Canada","UK","\u65e5\u672c","\u4e2d\u56fd","Brasil","France","Australia","India","Deutschland","Sverige","M\u00e9xico","Italia","Argentina","\u0645\u0635\u0631","Nederland","\u05d9\u05e9\u05e8\u05d0\u05dc","\u0420\u0424","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Indonesia","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","Malaysia","Vi\u1ec7t Nam","Guin\u00e9e","Espa\u00f1a","Ireland","Per\u00fa","\u010cesko","Soomaaliya \u0627\u0644\u0635\u0648\u0645\u0627\u0644","Brunei","Venezuela","Zambia","Belgi\u00eb / Belgique / Belgien","\u0395\u03bb\u03bb\u03ac\u03b4\u03b1","Lietuva","Rom\u00e2nia","\u200f\u067e\u0627\u06a9\u0633\u062a\u0627\u0646\u200e","T\u00fcrkiye","\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","\u0627\u0644\u0623\u0631\u062f\u0646","Jamaica","New Zealand/Aotearoa","Kosova","Viti"],"mentioned_locations":[56,28,7,6,4,5,4,3,5,3,3,3,2,0,2,2,2,2,2,2,2,2,2,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1],"primary_locations":[17,5,4,1,2,1,1,2,0,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0]},"selected":{"id":"261228","type":"Selection"},"selection_policy":{"id":"261229","type":"UnionRenderers"}},"id":"261203","type":"ColumnDataSource"},{"attributes":{"overlay":{"id":"261192","type":"BoxAnnotation"}},"id":"261186","type":"BoxZoomTool"},{"attributes":{},"id":"261187","type":"SaveTool"},{"attributes":{},"id":"261180","type":"BasicTicker"},{"attributes":{},"id":"261228","type":"Selection"},{"attributes":{},"id":"261240","type":"UnionRenderers"},{"attributes":{"fields":["primary_locations"]},"id":"261200","type":"Stack"},{"attributes":{"callback":null,"factors":["USA","Canada","UK","\u65e5\u672c","\u4e2d\u56fd","Brasil","France","Australia","India","Deutschland","Sverige","M\u00e9xico","Italia","Argentina","\u0645\u0635\u0631","Nederland","\u05d9\u05e9\u05e8\u05d0\u05dc","\u0420\u0424","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Indonesia","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","Malaysia","Vi\u1ec7t Nam","Guin\u00e9e","Espa\u00f1a","Ireland","Per\u00fa","\u010cesko","Soomaaliya \u0627\u0644\u0635\u0648\u0645\u0627\u0644","Brunei","Venezuela","Zambia","Belgi\u00eb / Belgique / Belgien","\u0395\u03bb\u03bb\u03ac\u03b4\u03b1","Lietuva","Rom\u00e2nia","\u200f\u067e\u0627\u06a9\u0633\u062a\u0627\u0646\u200e","T\u00fcrkiye","\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","\u0627\u0644\u0623\u0631\u062f\u0646","Jamaica","New Zealand/Aotearoa","Kosova","Viti"],"range_padding":0.01},"id":"261167","type":"FactorRange"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"261164","type":"Title"},{"attributes":{"below":[{"id":"261175","type":"CategoricalAxis"}],"left":[{"id":"261179","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"261175","type":"CategoricalAxis"},{"id":"261178","type":"Grid"},{"id":"261179","type":"LinearAxis"},{"id":"261183","type":"Grid"},{"id":"261192","type":"BoxAnnotation"},{"id":"261215","type":"Legend"},{"id":"261207","type":"GlyphRenderer"},{"id":"261221","type":"GlyphRenderer"}],"title":{"id":"261164","type":"Title"},"toolbar":{"id":"261190","type":"Toolbar"},"x_range":{"id":"261167","type":"FactorRange"},"x_scale":{"id":"261171","type":"CategoricalScale"},"y_range":{"id":"261169","type":"DataRange1d"},"y_scale":{"id":"261173","type":"LinearScale"}},"id":"261165","subtype":"Figure","type":"Plot"},{"attributes":{"data_source":{"id":"261217","type":"ColumnDataSource"},"glyph":{"id":"261219","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"261220","type":"VBar"},"selection_glyph":null,"view":{"id":"261222","type":"CDSView"}},"id":"261221","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"261201","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"261202","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"261220","type":"VBar"},{"attributes":{"source":{"id":"261217","type":"ColumnDataSource"}},"id":"261222","type":"CDSView"},{"attributes":{"data_source":{"id":"261203","type":"ColumnDataSource"},"glyph":{"id":"261205","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"261206","type":"VBar"},"selection_glyph":null,"view":{"id":"261208","type":"CDSView"}},"id":"261207","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"261199","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"261200","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"261206","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"261199","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"261200","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"261205","type":"VBar"},{"attributes":{},"id":"261229","type":"UnionRenderers"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"261202","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"261201","type":"Stack"},{"attributes":{"callback":null,"start":0},"id":"261169","type":"DataRange1d"},{"attributes":{"source":{"id":"261203","type":"ColumnDataSource"}},"id":"261208","type":"CDSView"},{"attributes":{},"id":"261185","type":"WheelZoomTool"},{"attributes":{"fields":[]},"id":"261199","type":"Stack"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"261192","type":"BoxAnnotation"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"261184","type":"PanTool"},{"id":"261185","type":"WheelZoomTool"},{"id":"261186","type":"BoxZoomTool"},{"id":"261187","type":"SaveTool"},{"id":"261188","type":"ResetTool"},{"id":"261189","type":"HelpTool"}]},"id":"261190","type":"Toolbar"},{"attributes":{},"id":"261176","type":"CategoricalTicker"},{"attributes":{"dimension":1,"plot":{"id":"261165","subtype":"Figure","type":"Plot"},"ticker":{"id":"261180","type":"BasicTicker"}},"id":"261183","type":"Grid"},{"attributes":{"formatter":{"id":"261211","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"261165","subtype":"Figure","type":"Plot"},"ticker":{"id":"261176","type":"CategoricalTicker"}},"id":"261175","type":"CategoricalAxis"},{"attributes":{},"id":"261211","type":"CategoricalTickFormatter"},{"attributes":{},"id":"261213","type":"BasicTickFormatter"},{"attributes":{},"id":"261171","type":"CategoricalScale"},{"attributes":{"items":[{"id":"261216","type":"LegendItem"},{"id":"261231","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"261165","subtype":"Figure","type":"Plot"}},"id":"261215","type":"Legend"},{"attributes":{},"id":"261173","type":"LinearScale"},{"attributes":{"callback":null,"data":{"location_terms":["USA","Canada","UK","\u65e5\u672c","\u4e2d\u56fd","Brasil","France","Australia","India","Deutschland","Sverige","M\u00e9xico","Italia","Argentina","\u0645\u0635\u0631","Nederland","\u05d9\u05e9\u05e8\u05d0\u05dc","\u0420\u0424","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Indonesia","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","Malaysia","Vi\u1ec7t Nam","Guin\u00e9e","Espa\u00f1a","Ireland","Per\u00fa","\u010cesko","Soomaaliya \u0627\u0644\u0635\u0648\u0645\u0627\u0644","Brunei","Venezuela","Zambia","Belgi\u00eb / Belgique / Belgien","\u0395\u03bb\u03bb\u03ac\u03b4\u03b1","Lietuva","Rom\u00e2nia","\u200f\u067e\u0627\u06a9\u0633\u062a\u0627\u0646\u200e","T\u00fcrkiye","\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","\u0627\u0644\u0623\u0631\u062f\u0646","Jamaica","New Zealand/Aotearoa","Kosova","Viti"],"mentioned_locations":[56,28,7,6,4,5,4,3,5,3,3,3,2,0,2,2,2,2,2,2,2,2,2,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1],"primary_locations":[17,5,4,1,2,1,1,2,0,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0]},"selected":{"id":"261239","type":"Selection"},"selection_policy":{"id":"261240","type":"UnionRenderers"}},"id":"261217","type":"ColumnDataSource"},{"attributes":{"bottom":{"expr":{"id":"261201","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"261202","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"261219","type":"VBar"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"261221","type":"GlyphRenderer"}]},"id":"261231","type":"LegendItem"},{"attributes":{"formatter":{"id":"261213","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"261165","subtype":"Figure","type":"Plot"},"ticker":{"id":"261180","type":"BasicTicker"}},"id":"261179","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"261165","subtype":"Figure","type":"Plot"},"ticker":{"id":"261176","type":"CategoricalTicker"}},"id":"261178","type":"Grid"},{"attributes":{},"id":"261239","type":"Selection"}],"root_ids":["261165"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('261312').textContent;
+                  var render_items = [{"docid":"421a10cf-8014-46a4-9a75-ca319fcf3b4d","roots":{"261165":"aa2e2762-8b67-41bd-a349-b897b2044487"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

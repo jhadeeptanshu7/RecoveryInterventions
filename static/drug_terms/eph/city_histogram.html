@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="78f1c8b1-15dd-4c8c-878b-482c02a83fa1"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="157980">
+          {"6bdf23f9-a050-4efb-8db5-d52f9d0b2db6":{"roots":{"references":[{"attributes":{},"id":"157856","type":"ResetTool"},{"attributes":{"callback":null,"data":{"location_terms":["Toronto","Houston","Cambridge","Ciudad de M\u00e9xico","Montrose","Paris","Sunflower County","\u5c0f\u6d5c\u5e02","Plymouth","Milwaukee","Chicago","San Diego","Waterford","NYC","Kissimmee","Nice"],"mentioned_locations":[1,1,1,1,0,1,0,1,1,1,1,1,0,0,0,1],"primary_locations":[1,0,0,0,1,0,1,0,0,0,0,0,1,1,1,0]},"selected":{"id":"157896","type":"Selection"},"selection_policy":{"id":"157897","type":"UnionRenderers"}},"id":"157871","type":"ColumnDataSource"},{"attributes":{"overlay":{"id":"157860","type":"BoxAnnotation"}},"id":"157854","type":"BoxZoomTool"},{"attributes":{"bottom":{"expr":{"id":"157867","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"157868","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"157873","type":"VBar"},{"attributes":{},"id":"157852","type":"PanTool"},{"attributes":{},"id":"157853","type":"WheelZoomTool"},{"attributes":{"source":{"id":"157871","type":"ColumnDataSource"}},"id":"157876","type":"CDSView"},{"attributes":{},"id":"157857","type":"HelpTool"},{"attributes":{},"id":"157879","type":"CategoricalTickFormatter"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"157852","type":"PanTool"},{"id":"157853","type":"WheelZoomTool"},{"id":"157854","type":"BoxZoomTool"},{"id":"157855","type":"SaveTool"},{"id":"157856","type":"ResetTool"},{"id":"157857","type":"HelpTool"}]},"id":"157858","type":"Toolbar"},{"attributes":{},"id":"157855","type":"SaveTool"},{"attributes":{"bottom":{"expr":{"id":"157867","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"157868","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"157874","type":"VBar"},{"attributes":{"dimension":1,"plot":{"id":"157833","subtype":"Figure","type":"Plot"},"ticker":{"id":"157848","type":"BasicTicker"}},"id":"157851","type":"Grid"},{"attributes":{"data_source":{"id":"157871","type":"ColumnDataSource"},"glyph":{"id":"157873","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"157874","type":"VBar"},"selection_glyph":null,"view":{"id":"157876","type":"CDSView"}},"id":"157875","type":"GlyphRenderer"},{"attributes":{},"id":"157881","type":"BasicTickFormatter"},{"attributes":{"items":[{"id":"157884","type":"LegendItem"},{"id":"157899","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"157833","subtype":"Figure","type":"Plot"}},"id":"157883","type":"Legend"},{"attributes":{"callback":null,"data":{"location_terms":["Toronto","Houston","Cambridge","Ciudad de M\u00e9xico","Montrose","Paris","Sunflower County","\u5c0f\u6d5c\u5e02","Plymouth","Milwaukee","Chicago","San Diego","Waterford","NYC","Kissimmee","Nice"],"mentioned_locations":[1,1,1,1,0,1,0,1,1,1,1,1,0,0,0,1],"primary_locations":[1,0,0,0,1,0,1,0,0,0,0,0,1,1,1,0]},"selected":{"id":"157907","type":"Selection"},"selection_policy":{"id":"157908","type":"UnionRenderers"}},"id":"157885","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"157875","type":"GlyphRenderer"}]},"id":"157884","type":"LegendItem"},{"attributes":{"bottom":{"expr":{"id":"157869","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"157870","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"157887","type":"VBar"},{"attributes":{"data_source":{"id":"157885","type":"ColumnDataSource"},"glyph":{"id":"157887","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"157888","type":"VBar"},"selection_glyph":null,"view":{"id":"157890","type":"CDSView"}},"id":"157889","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"157869","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"157870","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"157888","type":"VBar"},{"attributes":{},"id":"157907","type":"Selection"},{"attributes":{"fields":[]},"id":"157867","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"157869","type":"Stack"},{"attributes":{},"id":"157844","type":"CategoricalTicker"},{"attributes":{"formatter":{"id":"157881","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"157833","subtype":"Figure","type":"Plot"},"ticker":{"id":"157848","type":"BasicTicker"}},"id":"157847","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"157833","subtype":"Figure","type":"Plot"},"ticker":{"id":"157844","type":"CategoricalTicker"}},"id":"157846","type":"Grid"},{"attributes":{},"id":"157841","type":"LinearScale"},{"attributes":{"formatter":{"id":"157879","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"157833","subtype":"Figure","type":"Plot"},"ticker":{"id":"157844","type":"CategoricalTicker"}},"id":"157843","type":"CategoricalAxis"},{"attributes":{"fields":["primary_locations"]},"id":"157868","type":"Stack"},{"attributes":{},"id":"157908","type":"UnionRenderers"},{"attributes":{},"id":"157848","type":"BasicTicker"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"157860","type":"BoxAnnotation"},{"attributes":{"source":{"id":"157885","type":"ColumnDataSource"}},"id":"157890","type":"CDSView"},{"attributes":{},"id":"157896","type":"Selection"},{"attributes":{},"id":"157897","type":"UnionRenderers"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"157889","type":"GlyphRenderer"}]},"id":"157899","type":"LegendItem"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"157870","type":"Stack"},{"attributes":{"callback":null,"factors":["Toronto","Houston","Cambridge","Ciudad de M\u00e9xico","Montrose","Paris","Sunflower County","\u5c0f\u6d5c\u5e02","Plymouth","Milwaukee","Chicago","San Diego","Waterford","NYC","Kissimmee","Nice"],"range_padding":0.01},"id":"157835","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"157837","type":"DataRange1d"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"157832","type":"Title"},{"attributes":{"below":[{"id":"157843","type":"CategoricalAxis"}],"left":[{"id":"157847","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"157843","type":"CategoricalAxis"},{"id":"157846","type":"Grid"},{"id":"157847","type":"LinearAxis"},{"id":"157851","type":"Grid"},{"id":"157860","type":"BoxAnnotation"},{"id":"157883","type":"Legend"},{"id":"157875","type":"GlyphRenderer"},{"id":"157889","type":"GlyphRenderer"}],"title":{"id":"157832","type":"Title"},"toolbar":{"id":"157858","type":"Toolbar"},"x_range":{"id":"157835","type":"FactorRange"},"x_scale":{"id":"157839","type":"CategoricalScale"},"y_range":{"id":"157837","type":"DataRange1d"},"y_scale":{"id":"157841","type":"LinearScale"}},"id":"157833","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"157839","type":"CategoricalScale"}],"root_ids":["157833"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('157980').textContent;
+                  var render_items = [{"docid":"6bdf23f9-a050-4efb-8db5-d52f9d0b2db6","roots":{"157833":"78f1c8b1-15dd-4c8c-878b-482c02a83fa1"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

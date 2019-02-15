@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="56295071-c090-45a0-b890-0fb74e6cc35c"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="357003">
+          {"33fb5ddf-ef72-43b2-827c-42ec2d780e91":{"roots":{"references":[{"attributes":{"data_source":{"id":"356908","type":"ColumnDataSource"},"glyph":{"id":"356910","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"356911","type":"VBar"},"selection_glyph":null,"view":{"id":"356913","type":"CDSView"}},"id":"356912","type":"GlyphRenderer"},{"attributes":{"formatter":{"id":"356904","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"356856","subtype":"Figure","type":"Plot"},"ticker":{"id":"356871","type":"BasicTicker"}},"id":"356870","type":"LinearAxis"},{"attributes":{"bottom":{"expr":{"id":"356892","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"356893","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"356910","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"356892","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"356893","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"356911","type":"VBar"},{"attributes":{},"id":"356875","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"356856","subtype":"Figure","type":"Plot"},"ticker":{"id":"356871","type":"BasicTicker"}},"id":"356874","type":"Grid"},{"attributes":{"overlay":{"id":"356883","type":"BoxAnnotation"}},"id":"356877","type":"BoxZoomTool"},{"attributes":{"source":{"id":"356908","type":"ColumnDataSource"}},"id":"356913","type":"CDSView"},{"attributes":{},"id":"356879","type":"ResetTool"},{"attributes":{},"id":"356878","type":"SaveTool"},{"attributes":{},"id":"356919","type":"Selection"},{"attributes":{},"id":"356930","type":"Selection"},{"attributes":{},"id":"356931","type":"UnionRenderers"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"356855","type":"Title"},{"attributes":{"callback":null,"factors":["New York","California","San Pedro","H\u00e0 N\u1ed9i"],"range_padding":0.01},"id":"356858","type":"FactorRange"},{"attributes":{},"id":"356920","type":"UnionRenderers"},{"attributes":{},"id":"356867","type":"CategoricalTicker"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"356898","type":"GlyphRenderer"}]},"id":"356907","type":"LegendItem"},{"attributes":{"source":{"id":"356894","type":"ColumnDataSource"}},"id":"356899","type":"CDSView"},{"attributes":{"data_source":{"id":"356894","type":"ColumnDataSource"},"glyph":{"id":"356896","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"356897","type":"VBar"},"selection_glyph":null,"view":{"id":"356899","type":"CDSView"}},"id":"356898","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"356890","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"356891","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"356897","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"356890","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"356891","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"356896","type":"VBar"},{"attributes":{},"id":"356876","type":"WheelZoomTool"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"356893","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"356892","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"356891","type":"Stack"},{"attributes":{"fields":[]},"id":"356890","type":"Stack"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"356912","type":"GlyphRenderer"}]},"id":"356922","type":"LegendItem"},{"attributes":{},"id":"356862","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"356860","type":"DataRange1d"},{"attributes":{},"id":"356902","type":"CategoricalTickFormatter"},{"attributes":{"formatter":{"id":"356902","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"356856","subtype":"Figure","type":"Plot"},"ticker":{"id":"356867","type":"CategoricalTicker"}},"id":"356866","type":"CategoricalAxis"},{"attributes":{},"id":"356904","type":"BasicTickFormatter"},{"attributes":{},"id":"356864","type":"LinearScale"},{"attributes":{"items":[{"id":"356907","type":"LegendItem"},{"id":"356922","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"356856","subtype":"Figure","type":"Plot"}},"id":"356906","type":"Legend"},{"attributes":{"callback":null,"data":{"location_terms":["New York","California","San Pedro","H\u00e0 N\u1ed9i"],"mentioned_locations":[1,1,1,1],"primary_locations":[0,0,0,0]},"selected":{"id":"356930","type":"Selection"},"selection_policy":{"id":"356931","type":"UnionRenderers"}},"id":"356908","type":"ColumnDataSource"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"356856","subtype":"Figure","type":"Plot"},"ticker":{"id":"356867","type":"CategoricalTicker"}},"id":"356869","type":"Grid"},{"attributes":{"callback":null,"data":{"location_terms":["New York","California","San Pedro","H\u00e0 N\u1ed9i"],"mentioned_locations":[1,1,1,1],"primary_locations":[0,0,0,0]},"selected":{"id":"356919","type":"Selection"},"selection_policy":{"id":"356920","type":"UnionRenderers"}},"id":"356894","type":"ColumnDataSource"},{"attributes":{"below":[{"id":"356866","type":"CategoricalAxis"}],"left":[{"id":"356870","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"356866","type":"CategoricalAxis"},{"id":"356869","type":"Grid"},{"id":"356870","type":"LinearAxis"},{"id":"356874","type":"Grid"},{"id":"356883","type":"BoxAnnotation"},{"id":"356906","type":"Legend"},{"id":"356898","type":"GlyphRenderer"},{"id":"356912","type":"GlyphRenderer"}],"title":{"id":"356855","type":"Title"},"toolbar":{"id":"356881","type":"Toolbar"},"x_range":{"id":"356858","type":"FactorRange"},"x_scale":{"id":"356862","type":"CategoricalScale"},"y_range":{"id":"356860","type":"DataRange1d"},"y_scale":{"id":"356864","type":"LinearScale"}},"id":"356856","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"356880","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"356875","type":"PanTool"},{"id":"356876","type":"WheelZoomTool"},{"id":"356877","type":"BoxZoomTool"},{"id":"356878","type":"SaveTool"},{"id":"356879","type":"ResetTool"},{"id":"356880","type":"HelpTool"}]},"id":"356881","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"356883","type":"BoxAnnotation"},{"attributes":{},"id":"356871","type":"BasicTicker"}],"root_ids":["356856"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('357003').textContent;
+                  var render_items = [{"docid":"33fb5ddf-ef72-43b2-827c-42ec2d780e91","roots":{"356856":"56295071-c090-45a0-b890-0fb74e6cc35c"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

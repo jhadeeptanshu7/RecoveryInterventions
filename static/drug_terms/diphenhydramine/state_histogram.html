@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="b026ab02-9a28-4d22-ba8b-0a54d56493db"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="3907">
+          {"6e831ba7-7f2a-445f-b45d-6320b1c58e14":{"roots":{"references":[{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"3760","subtype":"Figure","type":"Plot"},"ticker":{"id":"3771","type":"CategoricalTicker"}},"id":"3773","type":"Grid"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"3759","type":"Title"},{"attributes":{},"id":"3771","type":"CategoricalTicker"},{"attributes":{},"id":"3824","type":"UnionRenderers"},{"attributes":{},"id":"3823","type":"Selection"},{"attributes":{},"id":"3808","type":"BasicTickFormatter"},{"attributes":{},"id":"3775","type":"BasicTicker"},{"attributes":{"formatter":{"id":"3808","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"3760","subtype":"Figure","type":"Plot"},"ticker":{"id":"3775","type":"BasicTicker"}},"id":"3774","type":"LinearAxis"},{"attributes":{},"id":"3779","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"3760","subtype":"Figure","type":"Plot"},"ticker":{"id":"3775","type":"BasicTicker"}},"id":"3778","type":"Grid"},{"attributes":{"bottom":{"expr":{"id":"3794","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"3795","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"3801","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"3794","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"3795","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"3800","type":"VBar"},{"attributes":{"source":{"id":"3798","type":"ColumnDataSource"}},"id":"3803","type":"CDSView"},{"attributes":{"data_source":{"id":"3798","type":"ColumnDataSource"},"glyph":{"id":"3800","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"3801","type":"VBar"},"selection_glyph":null,"view":{"id":"3803","type":"CDSView"}},"id":"3802","type":"GlyphRenderer"},{"attributes":{"formatter":{"id":"3806","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"3760","subtype":"Figure","type":"Plot"},"ticker":{"id":"3771","type":"CategoricalTicker"}},"id":"3770","type":"CategoricalAxis"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"3802","type":"GlyphRenderer"}]},"id":"3811","type":"LegendItem"},{"attributes":{},"id":"3834","type":"Selection"},{"attributes":{"callback":null,"start":0},"id":"3764","type":"DataRange1d"},{"attributes":{"callback":null,"data":{"location_terms":["Texas","California","Georgia","Florida","Pennsylvania","Ohio","Colorado","Arizona","England","Alabama","Alberta","D.C.","North Carolina","Ontario","Oklahoma","Indiana","Maryland","Wisconsin","Hawaii","New Jersey","New York","Departamento de Managua","\u6771\u5317\u5730\u65b9","Bremen","Illinois","CCO","CAM","\u00cele-de-France","Newfoundland and Labrador","Michigan","Victoria","Connecticut","Tennessee","Idaho","Puerto Rico","South Carolina","RN","Massachusetts","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Wellington","Kentucky","Jalisco","Missouri","\u5317\u4eac\u5e02","Occitanie","\u4e2d\u56fd\u5730\u65b9","Washington","\u0633\u0646\u068c","LAZ","Northern Ireland","Manitoba","\u4e0a\u6d77\u5e02","Nevada"],"mentioned_locations":[8,7,5,5,5,5,3,3,3,4,3,2,1,2,2,1,1,2,2,1,2,1,1,0,1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,0,1,1,0,0,1,1],"primary_locations":[4,2,2,2,1,0,2,1,1,0,0,1,2,0,0,1,1,0,0,1,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,1,1,0,0]},"selected":{"id":"3823","type":"Selection"},"selection_policy":{"id":"3824","type":"UnionRenderers"}},"id":"3798","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations"]},"id":"3795","type":"Stack"},{"attributes":{"fields":[]},"id":"3794","type":"Stack"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"3797","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"3796","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["Texas","California","Georgia","Florida","Pennsylvania","Ohio","Colorado","Arizona","England","Alabama","Alberta","D.C.","North Carolina","Ontario","Oklahoma","Indiana","Maryland","Wisconsin","Hawaii","New Jersey","New York","Departamento de Managua","\u6771\u5317\u5730\u65b9","Bremen","Illinois","CCO","CAM","\u00cele-de-France","Newfoundland and Labrador","Michigan","Victoria","Connecticut","Tennessee","Idaho","Puerto Rico","South Carolina","RN","Massachusetts","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Wellington","Kentucky","Jalisco","Missouri","\u5317\u4eac\u5e02","Occitanie","\u4e2d\u56fd\u5730\u65b9","Washington","\u0633\u0646\u068c","LAZ","Northern Ireland","Manitoba","\u4e0a\u6d77\u5e02","Nevada"],"mentioned_locations":[8,7,5,5,5,5,3,3,3,4,3,2,1,2,2,1,1,2,2,1,2,1,1,0,1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,0,1,1,0,0,1,1],"primary_locations":[4,2,2,2,1,0,2,1,1,0,0,1,2,0,0,1,1,0,0,1,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,1,1,0,0]},"selected":{"id":"3834","type":"Selection"},"selection_policy":{"id":"3835","type":"UnionRenderers"}},"id":"3812","type":"ColumnDataSource"},{"attributes":{"below":[{"id":"3770","type":"CategoricalAxis"}],"left":[{"id":"3774","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"3770","type":"CategoricalAxis"},{"id":"3773","type":"Grid"},{"id":"3774","type":"LinearAxis"},{"id":"3778","type":"Grid"},{"id":"3787","type":"BoxAnnotation"},{"id":"3810","type":"Legend"},{"id":"3802","type":"GlyphRenderer"},{"id":"3816","type":"GlyphRenderer"}],"title":{"id":"3759","type":"Title"},"toolbar":{"id":"3785","type":"Toolbar"},"x_range":{"id":"3762","type":"FactorRange"},"x_scale":{"id":"3766","type":"CategoricalScale"},"y_range":{"id":"3764","type":"DataRange1d"},"y_scale":{"id":"3768","type":"LinearScale"}},"id":"3760","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"3835","type":"UnionRenderers"},{"attributes":{"callback":null,"factors":["Texas","California","Georgia","Florida","Pennsylvania","Ohio","Colorado","Arizona","England","Alabama","Alberta","D.C.","North Carolina","Ontario","Oklahoma","Indiana","Maryland","Wisconsin","Hawaii","New Jersey","New York","Departamento de Managua","\u6771\u5317\u5730\u65b9","Bremen","Illinois","CCO","CAM","\u00cele-de-France","Newfoundland and Labrador","Michigan","Victoria","Connecticut","Tennessee","Idaho","Puerto Rico","South Carolina","RN","Massachusetts","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Wellington","Kentucky","Jalisco","Missouri","\u5317\u4eac\u5e02","Occitanie","\u4e2d\u56fd\u5730\u65b9","Washington","\u0633\u0646\u068c","LAZ","Northern Ireland","Manitoba","\u4e0a\u6d77\u5e02","Nevada"],"range_padding":0.01},"id":"3762","type":"FactorRange"},{"attributes":{},"id":"3806","type":"CategoricalTickFormatter"},{"attributes":{"data_source":{"id":"3812","type":"ColumnDataSource"},"glyph":{"id":"3814","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"3815","type":"VBar"},"selection_glyph":null,"view":{"id":"3817","type":"CDSView"}},"id":"3816","type":"GlyphRenderer"},{"attributes":{"source":{"id":"3812","type":"ColumnDataSource"}},"id":"3817","type":"CDSView"},{"attributes":{},"id":"3766","type":"CategoricalScale"},{"attributes":{"bottom":{"expr":{"id":"3796","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"3797","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"3815","type":"VBar"},{"attributes":{},"id":"3768","type":"LinearScale"},{"attributes":{},"id":"3780","type":"WheelZoomTool"},{"attributes":{},"id":"3782","type":"SaveTool"},{"attributes":{},"id":"3783","type":"ResetTool"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"3816","type":"GlyphRenderer"}]},"id":"3826","type":"LegendItem"},{"attributes":{"overlay":{"id":"3787","type":"BoxAnnotation"}},"id":"3781","type":"BoxZoomTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"3787","type":"BoxAnnotation"},{"attributes":{},"id":"3784","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"3779","type":"PanTool"},{"id":"3780","type":"WheelZoomTool"},{"id":"3781","type":"BoxZoomTool"},{"id":"3782","type":"SaveTool"},{"id":"3783","type":"ResetTool"},{"id":"3784","type":"HelpTool"}]},"id":"3785","type":"Toolbar"},{"attributes":{"bottom":{"expr":{"id":"3796","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"3797","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"3814","type":"VBar"},{"attributes":{"items":[{"id":"3811","type":"LegendItem"},{"id":"3826","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"3760","subtype":"Figure","type":"Plot"}},"id":"3810","type":"Legend"}],"root_ids":["3760"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('3907').textContent;
+                  var render_items = [{"docid":"6e831ba7-7f2a-445f-b45d-6320b1c58e14","roots":{"3760":"b026ab02-9a28-4d22-ba8b-0a54d56493db"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

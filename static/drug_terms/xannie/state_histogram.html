@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="8d78be15-9a6a-4f57-9b51-14d46699f833"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="346307">
+          {"54785601-fbfc-4fe9-8f4f-f4573bb1b969":{"roots":{"references":[{"attributes":{},"id":"346166","type":"CategoricalScale"},{"attributes":{},"id":"346224","type":"UnionRenderers"},{"attributes":{"callback":null,"start":0},"id":"346164","type":"DataRange1d"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"346216","type":"GlyphRenderer"}]},"id":"346226","type":"LegendItem"},{"attributes":{"callback":null,"factors":["New Jersey","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf"],"range_padding":0.01},"id":"346162","type":"FactorRange"},{"attributes":{},"id":"346223","type":"Selection"},{"attributes":{},"id":"346208","type":"BasicTickFormatter"},{"attributes":{},"id":"346206","type":"CategoricalTickFormatter"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"346202","type":"GlyphRenderer"}]},"id":"346211","type":"LegendItem"},{"attributes":{"source":{"id":"346198","type":"ColumnDataSource"}},"id":"346203","type":"CDSView"},{"attributes":{},"id":"346234","type":"Selection"},{"attributes":{"bottom":{"expr":{"id":"346194","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"346195","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"346201","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"346194","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"346195","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"346200","type":"VBar"},{"attributes":{},"id":"346175","type":"BasicTicker"},{"attributes":{},"id":"346171","type":"CategoricalTicker"},{"attributes":{"bottom":{"expr":{"id":"346196","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"346197","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"346215","type":"VBar"},{"attributes":{"data_source":{"id":"346212","type":"ColumnDataSource"},"glyph":{"id":"346214","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"346215","type":"VBar"},"selection_glyph":null,"view":{"id":"346217","type":"CDSView"}},"id":"346216","type":"GlyphRenderer"},{"attributes":{"callback":null,"data":{"location_terms":["New Jersey","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf"],"mentioned_locations":[1,1],"primary_locations":[0,0]},"selected":{"id":"346223","type":"Selection"},"selection_policy":{"id":"346224","type":"UnionRenderers"}},"id":"346198","type":"ColumnDataSource"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"346159","type":"Title"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"346197","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"346196","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"346195","type":"Stack"},{"attributes":{"fields":[]},"id":"346194","type":"Stack"},{"attributes":{"below":[{"id":"346170","type":"CategoricalAxis"}],"left":[{"id":"346174","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"346170","type":"CategoricalAxis"},{"id":"346173","type":"Grid"},{"id":"346174","type":"LinearAxis"},{"id":"346178","type":"Grid"},{"id":"346187","type":"BoxAnnotation"},{"id":"346210","type":"Legend"},{"id":"346202","type":"GlyphRenderer"},{"id":"346216","type":"GlyphRenderer"}],"title":{"id":"346159","type":"Title"},"toolbar":{"id":"346185","type":"Toolbar"},"x_range":{"id":"346162","type":"FactorRange"},"x_scale":{"id":"346166","type":"CategoricalScale"},"y_range":{"id":"346164","type":"DataRange1d"},"y_scale":{"id":"346168","type":"LinearScale"}},"id":"346160","subtype":"Figure","type":"Plot"},{"attributes":{"items":[{"id":"346211","type":"LegendItem"},{"id":"346226","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"346160","subtype":"Figure","type":"Plot"}},"id":"346210","type":"Legend"},{"attributes":{"formatter":{"id":"346208","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"346160","subtype":"Figure","type":"Plot"},"ticker":{"id":"346175","type":"BasicTicker"}},"id":"346174","type":"LinearAxis"},{"attributes":{"callback":null,"data":{"location_terms":["New Jersey","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf"],"mentioned_locations":[1,1],"primary_locations":[0,0]},"selected":{"id":"346234","type":"Selection"},"selection_policy":{"id":"346235","type":"UnionRenderers"}},"id":"346212","type":"ColumnDataSource"},{"attributes":{},"id":"346235","type":"UnionRenderers"},{"attributes":{"bottom":{"expr":{"id":"346196","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"346197","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"346214","type":"VBar"},{"attributes":{"formatter":{"id":"346206","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"346160","subtype":"Figure","type":"Plot"},"ticker":{"id":"346171","type":"CategoricalTicker"}},"id":"346170","type":"CategoricalAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"346160","subtype":"Figure","type":"Plot"},"ticker":{"id":"346171","type":"CategoricalTicker"}},"id":"346173","type":"Grid"},{"attributes":{"source":{"id":"346212","type":"ColumnDataSource"}},"id":"346217","type":"CDSView"},{"attributes":{},"id":"346179","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"346160","subtype":"Figure","type":"Plot"},"ticker":{"id":"346175","type":"BasicTicker"}},"id":"346178","type":"Grid"},{"attributes":{"data_source":{"id":"346198","type":"ColumnDataSource"},"glyph":{"id":"346200","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"346201","type":"VBar"},"selection_glyph":null,"view":{"id":"346203","type":"CDSView"}},"id":"346202","type":"GlyphRenderer"},{"attributes":{},"id":"346168","type":"LinearScale"},{"attributes":{},"id":"346184","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"346179","type":"PanTool"},{"id":"346180","type":"WheelZoomTool"},{"id":"346181","type":"BoxZoomTool"},{"id":"346182","type":"SaveTool"},{"id":"346183","type":"ResetTool"},{"id":"346184","type":"HelpTool"}]},"id":"346185","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"346187","type":"BoxAnnotation"},{"attributes":{},"id":"346180","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"346187","type":"BoxAnnotation"}},"id":"346181","type":"BoxZoomTool"},{"attributes":{},"id":"346182","type":"SaveTool"},{"attributes":{},"id":"346183","type":"ResetTool"}],"root_ids":["346160"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('346307').textContent;
+                  var render_items = [{"docid":"54785601-fbfc-4fe9-8f4f-f4573bb1b969","roots":{"346160":"8d78be15-9a6a-4f57-9b51-14d46699f833"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

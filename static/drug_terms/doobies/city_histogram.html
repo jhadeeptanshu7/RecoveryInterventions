@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="564b43d2-3a0b-4cea-80b9-9ff5e5345eba"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="373450">
+          {"3acc0f7b-f070-4e74-bebb-5e1f5b6361ab":{"roots":{"references":[{"attributes":{},"id":"373351","type":"BasicTickFormatter"},{"attributes":{"fields":[]},"id":"373337","type":"Stack"},{"attributes":{"items":[{"id":"373354","type":"LegendItem"},{"id":"373369","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"373303","subtype":"Figure","type":"Plot"}},"id":"373353","type":"Legend"},{"attributes":{},"id":"373378","type":"UnionRenderers"},{"attributes":{"callback":null,"data":{"location_terms":["\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","City of Melbourne","Aurora","Philadelphia","Boise","Bethesda","Berkeley","Calgary","Seattle","Mendocino County"],"mentioned_locations":[1,1,1,0,0,1,1,1,1,1],"primary_locations":[0,0,0,1,1,0,0,0,0,0]},"selected":{"id":"373377","type":"Selection"},"selection_policy":{"id":"373378","type":"UnionRenderers"}},"id":"373355","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"373345","type":"GlyphRenderer"}]},"id":"373354","type":"LegendItem"},{"attributes":{"bottom":{"expr":{"id":"373339","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"373340","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"373357","type":"VBar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"373330","type":"BoxAnnotation"},{"attributes":{"data_source":{"id":"373355","type":"ColumnDataSource"},"glyph":{"id":"373357","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"373358","type":"VBar"},"selection_glyph":null,"view":{"id":"373360","type":"CDSView"}},"id":"373359","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"373339","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"373340","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"373358","type":"VBar"},{"attributes":{},"id":"373377","type":"Selection"},{"attributes":{"fields":["primary_locations"]},"id":"373339","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"373338","type":"Stack"},{"attributes":{},"id":"373318","type":"BasicTicker"},{"attributes":{"callback":null,"start":0},"id":"373307","type":"DataRange1d"},{"attributes":{},"id":"373314","type":"CategoricalTicker"},{"attributes":{"formatter":{"id":"373351","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"373303","subtype":"Figure","type":"Plot"},"ticker":{"id":"373318","type":"BasicTicker"}},"id":"373317","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"373303","subtype":"Figure","type":"Plot"},"ticker":{"id":"373314","type":"CategoricalTicker"}},"id":"373316","type":"Grid"},{"attributes":{},"id":"373311","type":"LinearScale"},{"attributes":{"formatter":{"id":"373349","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"373303","subtype":"Figure","type":"Plot"},"ticker":{"id":"373314","type":"CategoricalTicker"}},"id":"373313","type":"CategoricalAxis"},{"attributes":{},"id":"373323","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"373330","type":"BoxAnnotation"}},"id":"373324","type":"BoxZoomTool"},{"attributes":{},"id":"373325","type":"SaveTool"},{"attributes":{"bottom":{"expr":{"id":"373337","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"373338","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"373343","type":"VBar"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"373340","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","City of Melbourne","Aurora","Philadelphia","Boise","Bethesda","Berkeley","Calgary","Seattle","Mendocino County"],"mentioned_locations":[1,1,1,0,0,1,1,1,1,1],"primary_locations":[0,0,0,1,1,0,0,0,0,0]},"selected":{"id":"373366","type":"Selection"},"selection_policy":{"id":"373367","type":"UnionRenderers"}},"id":"373341","type":"ColumnDataSource"},{"attributes":{"source":{"id":"373341","type":"ColumnDataSource"}},"id":"373346","type":"CDSView"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"373359","type":"GlyphRenderer"}]},"id":"373369","type":"LegendItem"},{"attributes":{"bottom":{"expr":{"id":"373337","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"373338","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"373344","type":"VBar"},{"attributes":{"data_source":{"id":"373341","type":"ColumnDataSource"},"glyph":{"id":"373343","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"373344","type":"VBar"},"selection_glyph":null,"view":{"id":"373346","type":"CDSView"}},"id":"373345","type":"GlyphRenderer"},{"attributes":{},"id":"373366","type":"Selection"},{"attributes":{},"id":"373349","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"373355","type":"ColumnDataSource"}},"id":"373360","type":"CDSView"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"373322","type":"PanTool"},{"id":"373323","type":"WheelZoomTool"},{"id":"373324","type":"BoxZoomTool"},{"id":"373325","type":"SaveTool"},{"id":"373326","type":"ResetTool"},{"id":"373327","type":"HelpTool"}]},"id":"373328","type":"Toolbar"},{"attributes":{},"id":"373309","type":"CategoricalScale"},{"attributes":{"dimension":1,"plot":{"id":"373303","subtype":"Figure","type":"Plot"},"ticker":{"id":"373318","type":"BasicTicker"}},"id":"373321","type":"Grid"},{"attributes":{},"id":"373322","type":"PanTool"},{"attributes":{"callback":null,"factors":["\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","City of Melbourne","Aurora","Philadelphia","Boise","Bethesda","Berkeley","Calgary","Seattle","Mendocino County"],"range_padding":0.01},"id":"373305","type":"FactorRange"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"373302","type":"Title"},{"attributes":{"below":[{"id":"373313","type":"CategoricalAxis"}],"left":[{"id":"373317","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"373313","type":"CategoricalAxis"},{"id":"373316","type":"Grid"},{"id":"373317","type":"LinearAxis"},{"id":"373321","type":"Grid"},{"id":"373330","type":"BoxAnnotation"},{"id":"373353","type":"Legend"},{"id":"373345","type":"GlyphRenderer"},{"id":"373359","type":"GlyphRenderer"}],"title":{"id":"373302","type":"Title"},"toolbar":{"id":"373328","type":"Toolbar"},"x_range":{"id":"373305","type":"FactorRange"},"x_scale":{"id":"373309","type":"CategoricalScale"},"y_range":{"id":"373307","type":"DataRange1d"},"y_scale":{"id":"373311","type":"LinearScale"}},"id":"373303","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"373326","type":"ResetTool"},{"attributes":{},"id":"373327","type":"HelpTool"},{"attributes":{},"id":"373367","type":"UnionRenderers"}],"root_ids":["373303"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('373450').textContent;
+                  var render_items = [{"docid":"3acc0f7b-f070-4e74-bebb-5e1f5b6361ab","roots":{"373303":"564b43d2-3a0b-4cea-80b9-9ff5e5345eba"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="0d02e3e7-cec4-42fb-b8b6-4b368a543e4f"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="378120">
+          {"252d0218-c824-48f9-9846-566e6ef04b38":{"roots":{"references":[{"attributes":{},"id":"377981","type":"LinearScale"},{"attributes":{"formatter":{"id":"378019","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"377973","subtype":"Figure","type":"Plot"},"ticker":{"id":"377984","type":"CategoricalTicker"}},"id":"377983","type":"CategoricalAxis"},{"attributes":{},"id":"377984","type":"CategoricalTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"377973","subtype":"Figure","type":"Plot"},"ticker":{"id":"377984","type":"CategoricalTicker"}},"id":"377986","type":"Grid"},{"attributes":{"formatter":{"id":"378021","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"377973","subtype":"Figure","type":"Plot"},"ticker":{"id":"377988","type":"BasicTicker"}},"id":"377987","type":"LinearAxis"},{"attributes":{},"id":"377988","type":"BasicTicker"},{"attributes":{"below":[{"id":"377983","type":"CategoricalAxis"}],"left":[{"id":"377987","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"377983","type":"CategoricalAxis"},{"id":"377986","type":"Grid"},{"id":"377987","type":"LinearAxis"},{"id":"377991","type":"Grid"},{"id":"378000","type":"BoxAnnotation"},{"id":"378023","type":"Legend"},{"id":"378015","type":"GlyphRenderer"},{"id":"378029","type":"GlyphRenderer"}],"title":{"id":"377972","type":"Title"},"toolbar":{"id":"377998","type":"Toolbar"},"x_range":{"id":"377975","type":"FactorRange"},"x_scale":{"id":"377979","type":"CategoricalScale"},"y_range":{"id":"377977","type":"DataRange1d"},"y_scale":{"id":"377981","type":"LinearScale"}},"id":"377973","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"378047","type":"Selection"},{"attributes":{"callback":null,"factors":["USA","Canada","\u4e2d\u56fd","\u65e5\u672c","Brasil","Australia","United States of America (Middle Hawai'ian Islands territorial waters)","Chile","\u05d9\u05e9\u05e8\u05d0\u05dc","\u200f\u0627\u06cc\u0631\u0627\u0646\u200e","\u0423\u043a\u0440\u0430\u0457\u043d\u0430"],"range_padding":0.01},"id":"377975","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"377977","type":"DataRange1d"},{"attributes":{},"id":"377979","type":"CategoricalScale"},{"attributes":{},"id":"378048","type":"UnionRenderers"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"378000","type":"BoxAnnotation"},{"attributes":{"bottom":{"expr":{"id":"378009","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"378010","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"378027","type":"VBar"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"378015","type":"GlyphRenderer"}]},"id":"378024","type":"LegendItem"},{"attributes":{"callback":null,"data":{"location_terms":["USA","Canada","\u4e2d\u56fd","\u65e5\u672c","Brasil","Australia","United States of America (Middle Hawai'ian Islands territorial waters)","Chile","\u05d9\u05e9\u05e8\u05d0\u05dc","\u200f\u0627\u06cc\u0631\u0627\u0646\u200e","\u0423\u043a\u0440\u0430\u0457\u043d\u0430"],"mentioned_locations":[7,7,3,2,1,1,0,1,1,1,1],"primary_locations":[2,0,0,0,1,0,1,0,0,0,0]},"selected":{"id":"378047","type":"Selection"},"selection_policy":{"id":"378048","type":"UnionRenderers"}},"id":"378025","type":"ColumnDataSource"},{"attributes":{"items":[{"id":"378024","type":"LegendItem"},{"id":"378039","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"377973","subtype":"Figure","type":"Plot"}},"id":"378023","type":"Legend"},{"attributes":{"fields":[]},"id":"378007","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"378008","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"378009","type":"Stack"},{"attributes":{"bottom":{"expr":{"id":"378009","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"378010","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"378028","type":"VBar"},{"attributes":{"data_source":{"id":"378025","type":"ColumnDataSource"},"glyph":{"id":"378027","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"378028","type":"VBar"},"selection_glyph":null,"view":{"id":"378030","type":"CDSView"}},"id":"378029","type":"GlyphRenderer"},{"attributes":{"overlay":{"id":"378000","type":"BoxAnnotation"}},"id":"377994","type":"BoxZoomTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"377992","type":"PanTool"},{"id":"377993","type":"WheelZoomTool"},{"id":"377994","type":"BoxZoomTool"},{"id":"377995","type":"SaveTool"},{"id":"377996","type":"ResetTool"},{"id":"377997","type":"HelpTool"}]},"id":"377998","type":"Toolbar"},{"attributes":{},"id":"377997","type":"HelpTool"},{"attributes":{},"id":"377996","type":"ResetTool"},{"attributes":{},"id":"377995","type":"SaveTool"},{"attributes":{},"id":"378021","type":"BasicTickFormatter"},{"attributes":{},"id":"377993","type":"WheelZoomTool"},{"attributes":{},"id":"377992","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"377973","subtype":"Figure","type":"Plot"},"ticker":{"id":"377988","type":"BasicTicker"}},"id":"377991","type":"Grid"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"377972","type":"Title"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"378029","type":"GlyphRenderer"}]},"id":"378039","type":"LegendItem"},{"attributes":{},"id":"378037","type":"UnionRenderers"},{"attributes":{},"id":"378036","type":"Selection"},{"attributes":{"source":{"id":"378025","type":"ColumnDataSource"}},"id":"378030","type":"CDSView"},{"attributes":{},"id":"378019","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"378011","type":"ColumnDataSource"}},"id":"378016","type":"CDSView"},{"attributes":{"data_source":{"id":"378011","type":"ColumnDataSource"},"glyph":{"id":"378013","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"378014","type":"VBar"},"selection_glyph":null,"view":{"id":"378016","type":"CDSView"}},"id":"378015","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"378007","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"378008","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"378014","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"378007","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"378008","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"378013","type":"VBar"},{"attributes":{"callback":null,"data":{"location_terms":["USA","Canada","\u4e2d\u56fd","\u65e5\u672c","Brasil","Australia","United States of America (Middle Hawai'ian Islands territorial waters)","Chile","\u05d9\u05e9\u05e8\u05d0\u05dc","\u200f\u0627\u06cc\u0631\u0627\u0646\u200e","\u0423\u043a\u0440\u0430\u0457\u043d\u0430"],"mentioned_locations":[7,7,3,2,1,1,0,1,1,1,1],"primary_locations":[2,0,0,0,1,0,1,0,0,0,0]},"selected":{"id":"378036","type":"Selection"},"selection_policy":{"id":"378037","type":"UnionRenderers"}},"id":"378011","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"378010","type":"Stack"}],"root_ids":["377973"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('378120').textContent;
+                  var render_items = [{"docid":"252d0218-c824-48f9-9846-566e6ef04b38","roots":{"377973":"0d02e3e7-cec4-42fb-b8b6-4b368a543e4f"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

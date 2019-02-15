@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="bf01a2d1-9b64-4888-86fc-357945a2da6e"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="77760">
+          {"7e7115a0-c0ec-411a-a02b-349ebeb918ef":{"roots":{"references":[{"attributes":{"callback":null,"data":{"location_terms":["Houston","Amsterdam","Toronto","PGH","LA","San Diego","\u76f8\u99ac\u90e1","Berlin","Miami","Tr\u00f8ndelag","Ciudad de M\u00e9xico","SF","Washington","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Paris","Resistencia","\u4e1c\u57ce\u533a","Boston","San Juan","Albany","Jackson","Chicago","BL","Tara","Denver","Hannover","St. John's","NYC","Nashville-Davidson","Boulder","Georgetown","Columbus","Indianapolis","\u062f\u0628\u064a","Tuscaloosa County","University City","Delaware County","Gap","Jefferson County","Oxford","London","Morgantown","Brighton","Bedford","\u041c\u043e\u0441\u043a\u0432\u0430","Bradenton","Trenton","Orlando","Wilmington","\u0141\u00f3d\u017a","Detroit","Lexington","Managua","Tucson","Valromey-sur-S\u00e9ran","Ville de Gatineau","Toulouse","Monterey Park","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","\u8087\u5dde\u53bf","Bryan","Tijuana","St. Louis","Sarlat-la-Can\u00e9da","Alliance","Daly City","Pontianak","Cleveland Heights","City of Melbourne","\u4e0a\u6d77\u5e02","Kingsport","Eindhoven","Mobile","Cincinnati","San Luis Obispo","Mumbai","Langlade County","Huntington"],"mentioned_locations":[4,3,2,3,2,2,3,2,3,2,3,2,2,2,2,0,2,2,1,1,1,0,0,1,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,1,0,1,1,1,1,1,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,1,1,0,1],"primary_locations":[1,2,2,0,1,1,0,1,0,1,0,1,0,0,0,2,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,0,1,0,1,1,0,0,0,0,0,0,0,1,0]},"selected":{"id":"77676","type":"Selection"},"selection_policy":{"id":"77677","type":"UnionRenderers"}},"id":"77651","type":"ColumnDataSource"},{"attributes":{"source":{"id":"77665","type":"ColumnDataSource"}},"id":"77670","type":"CDSView"},{"attributes":{"callback":null,"factors":["Houston","Amsterdam","Toronto","PGH","LA","San Diego","\u76f8\u99ac\u90e1","Berlin","Miami","Tr\u00f8ndelag","Ciudad de M\u00e9xico","SF","Washington","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Paris","Resistencia","\u4e1c\u57ce\u533a","Boston","San Juan","Albany","Jackson","Chicago","BL","Tara","Denver","Hannover","St. John's","NYC","Nashville-Davidson","Boulder","Georgetown","Columbus","Indianapolis","\u062f\u0628\u064a","Tuscaloosa County","University City","Delaware County","Gap","Jefferson County","Oxford","London","Morgantown","Brighton","Bedford","\u041c\u043e\u0441\u043a\u0432\u0430","Bradenton","Trenton","Orlando","Wilmington","\u0141\u00f3d\u017a","Detroit","Lexington","Managua","Tucson","Valromey-sur-S\u00e9ran","Ville de Gatineau","Toulouse","Monterey Park","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","\u8087\u5dde\u53bf","Bryan","Tijuana","St. Louis","Sarlat-la-Can\u00e9da","Alliance","Daly City","Pontianak","Cleveland Heights","City of Melbourne","\u4e0a\u6d77\u5e02","Kingsport","Eindhoven","Mobile","Cincinnati","San Luis Obispo","Mumbai","Langlade County","Huntington"],"range_padding":0.01},"id":"77615","type":"FactorRange"},{"attributes":{},"id":"77632","type":"PanTool"},{"attributes":{},"id":"77676","type":"Selection"},{"attributes":{},"id":"77677","type":"UnionRenderers"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"77669","type":"GlyphRenderer"}]},"id":"77679","type":"LegendItem"},{"attributes":{},"id":"77633","type":"WheelZoomTool"},{"attributes":{"callback":null,"start":0},"id":"77617","type":"DataRange1d"},{"attributes":{},"id":"77659","type":"CategoricalTickFormatter"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"77612","type":"Title"},{"attributes":{"below":[{"id":"77623","type":"CategoricalAxis"}],"left":[{"id":"77627","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"77623","type":"CategoricalAxis"},{"id":"77626","type":"Grid"},{"id":"77627","type":"LinearAxis"},{"id":"77631","type":"Grid"},{"id":"77640","type":"BoxAnnotation"},{"id":"77663","type":"Legend"},{"id":"77655","type":"GlyphRenderer"},{"id":"77669","type":"GlyphRenderer"}],"title":{"id":"77612","type":"Title"},"toolbar":{"id":"77638","type":"Toolbar"},"x_range":{"id":"77615","type":"FactorRange"},"x_scale":{"id":"77619","type":"CategoricalScale"},"y_range":{"id":"77617","type":"DataRange1d"},"y_scale":{"id":"77621","type":"LinearScale"}},"id":"77613","subtype":"Figure","type":"Plot"},{"attributes":{"overlay":{"id":"77640","type":"BoxAnnotation"}},"id":"77634","type":"BoxZoomTool"},{"attributes":{"bottom":{"expr":{"id":"77647","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"77648","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"77653","type":"VBar"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"77650","type":"Stack"},{"attributes":{},"id":"77637","type":"HelpTool"},{"attributes":{"source":{"id":"77651","type":"ColumnDataSource"}},"id":"77656","type":"CDSView"},{"attributes":{"dimension":1,"plot":{"id":"77613","subtype":"Figure","type":"Plot"},"ticker":{"id":"77628","type":"BasicTicker"}},"id":"77631","type":"Grid"},{"attributes":{"bottom":{"expr":{"id":"77647","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"77648","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"77654","type":"VBar"},{"attributes":{},"id":"77619","type":"CategoricalScale"},{"attributes":{"formatter":{"id":"77659","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"77613","subtype":"Figure","type":"Plot"},"ticker":{"id":"77624","type":"CategoricalTicker"}},"id":"77623","type":"CategoricalAxis"},{"attributes":{"bottom":{"expr":{"id":"77649","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"77650","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"77667","type":"VBar"},{"attributes":{"callback":null,"data":{"location_terms":["Houston","Amsterdam","Toronto","PGH","LA","San Diego","\u76f8\u99ac\u90e1","Berlin","Miami","Tr\u00f8ndelag","Ciudad de M\u00e9xico","SF","Washington","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Paris","Resistencia","\u4e1c\u57ce\u533a","Boston","San Juan","Albany","Jackson","Chicago","BL","Tara","Denver","Hannover","St. John's","NYC","Nashville-Davidson","Boulder","Georgetown","Columbus","Indianapolis","\u062f\u0628\u064a","Tuscaloosa County","University City","Delaware County","Gap","Jefferson County","Oxford","London","Morgantown","Brighton","Bedford","\u041c\u043e\u0441\u043a\u0432\u0430","Bradenton","Trenton","Orlando","Wilmington","\u0141\u00f3d\u017a","Detroit","Lexington","Managua","Tucson","Valromey-sur-S\u00e9ran","Ville de Gatineau","Toulouse","Monterey Park","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","\u8087\u5dde\u53bf","Bryan","Tijuana","St. Louis","Sarlat-la-Can\u00e9da","Alliance","Daly City","Pontianak","Cleveland Heights","City of Melbourne","\u4e0a\u6d77\u5e02","Kingsport","Eindhoven","Mobile","Cincinnati","San Luis Obispo","Mumbai","Langlade County","Huntington"],"mentioned_locations":[4,3,2,3,2,2,3,2,3,2,3,2,2,2,2,0,2,2,1,1,1,0,0,1,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,1,0,1,1,1,1,1,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,1,1,0,1],"primary_locations":[1,2,2,0,1,1,0,1,0,1,0,1,0,0,0,2,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,0,1,0,1,1,0,0,0,0,0,0,0,1,0]},"selected":{"id":"77687","type":"Selection"},"selection_policy":{"id":"77688","type":"UnionRenderers"}},"id":"77665","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"77655","type":"GlyphRenderer"}]},"id":"77664","type":"LegendItem"},{"attributes":{"items":[{"id":"77664","type":"LegendItem"},{"id":"77679","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"77613","subtype":"Figure","type":"Plot"}},"id":"77663","type":"Legend"},{"attributes":{"data_source":{"id":"77651","type":"ColumnDataSource"},"glyph":{"id":"77653","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"77654","type":"VBar"},"selection_glyph":null,"view":{"id":"77656","type":"CDSView"}},"id":"77655","type":"GlyphRenderer"},{"attributes":{},"id":"77661","type":"BasicTickFormatter"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"77632","type":"PanTool"},{"id":"77633","type":"WheelZoomTool"},{"id":"77634","type":"BoxZoomTool"},{"id":"77635","type":"SaveTool"},{"id":"77636","type":"ResetTool"},{"id":"77637","type":"HelpTool"}]},"id":"77638","type":"Toolbar"},{"attributes":{},"id":"77687","type":"Selection"},{"attributes":{"data_source":{"id":"77665","type":"ColumnDataSource"},"glyph":{"id":"77667","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"77668","type":"VBar"},"selection_glyph":null,"view":{"id":"77670","type":"CDSView"}},"id":"77669","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"77649","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"77650","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"77668","type":"VBar"},{"attributes":{"fields":["primary_locations"]},"id":"77649","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"77648","type":"Stack"},{"attributes":{},"id":"77621","type":"LinearScale"},{"attributes":{"formatter":{"id":"77661","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"77613","subtype":"Figure","type":"Plot"},"ticker":{"id":"77628","type":"BasicTicker"}},"id":"77627","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"77613","subtype":"Figure","type":"Plot"},"ticker":{"id":"77624","type":"CategoricalTicker"}},"id":"77626","type":"Grid"},{"attributes":{},"id":"77624","type":"CategoricalTicker"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"77640","type":"BoxAnnotation"},{"attributes":{},"id":"77628","type":"BasicTicker"},{"attributes":{"fields":[]},"id":"77647","type":"Stack"},{"attributes":{},"id":"77635","type":"SaveTool"},{"attributes":{},"id":"77636","type":"ResetTool"},{"attributes":{},"id":"77688","type":"UnionRenderers"}],"root_ids":["77613"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('77760').textContent;
+                  var render_items = [{"docid":"7e7115a0-c0ec-411a-a02b-349ebeb918ef","roots":{"77613":"bf01a2d1-9b64-4888-86fc-357945a2da6e"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

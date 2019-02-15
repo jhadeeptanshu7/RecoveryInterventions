@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="f1891f9b-4707-4573-afdb-7add1aabaa54"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="324320">
+          {"405150e3-4334-484b-b171-6de9d922eb92":{"roots":{"references":[{"attributes":{"below":[{"id":"324183","type":"CategoricalAxis"}],"left":[{"id":"324187","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"324183","type":"CategoricalAxis"},{"id":"324186","type":"Grid"},{"id":"324187","type":"LinearAxis"},{"id":"324191","type":"Grid"},{"id":"324200","type":"BoxAnnotation"},{"id":"324223","type":"Legend"},{"id":"324215","type":"GlyphRenderer"},{"id":"324229","type":"GlyphRenderer"}],"title":{"id":"324172","type":"Title"},"toolbar":{"id":"324198","type":"Toolbar"},"x_range":{"id":"324175","type":"FactorRange"},"x_scale":{"id":"324179","type":"CategoricalScale"},"y_range":{"id":"324177","type":"DataRange1d"},"y_scale":{"id":"324181","type":"LinearScale"}},"id":"324173","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"324172","type":"Title"},{"attributes":{"callback":null,"factors":["Bakersfield","Ashland","Santa Barbara","San Juan","\u9999\u6e2f Hong Kong","Houston","Baden","San Jos\u00e9","\u76f8\u99ac\u90e1","San Miguel de Allende","Santa Ana","Pasadena","La Salle Parish","Roxas City","Manila","Seattle"],"range_padding":0.01},"id":"324175","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"324177","type":"DataRange1d"},{"attributes":{},"id":"324179","type":"CategoricalScale"},{"attributes":{},"id":"324236","type":"Selection"},{"attributes":{},"id":"324192","type":"PanTool"},{"attributes":{"bottom":{"expr":{"id":"324207","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"324208","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"324214","type":"VBar"},{"attributes":{"data_source":{"id":"324211","type":"ColumnDataSource"},"glyph":{"id":"324213","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"324214","type":"VBar"},"selection_glyph":null,"view":{"id":"324216","type":"CDSView"}},"id":"324215","type":"GlyphRenderer"},{"attributes":{"source":{"id":"324211","type":"ColumnDataSource"}},"id":"324216","type":"CDSView"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"324210","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["Bakersfield","Ashland","Santa Barbara","San Juan","\u9999\u6e2f Hong Kong","Houston","Baden","San Jos\u00e9","\u76f8\u99ac\u90e1","San Miguel de Allende","Santa Ana","Pasadena","La Salle Parish","Roxas City","Manila","Seattle"],"mentioned_locations":[1,1,1,1,0,1,1,1,1,1,1,0,0,1,1,1],"primary_locations":[1,1,1,0,1,0,0,0,0,0,0,1,1,0,0,0]},"selected":{"id":"324236","type":"Selection"},"selection_policy":{"id":"324237","type":"UnionRenderers"}},"id":"324211","type":"ColumnDataSource"},{"attributes":{"bottom":{"expr":{"id":"324207","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"324208","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"324213","type":"VBar"},{"attributes":{},"id":"324219","type":"CategoricalTickFormatter"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"324229","type":"GlyphRenderer"}]},"id":"324239","type":"LegendItem"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"324192","type":"PanTool"},{"id":"324193","type":"WheelZoomTool"},{"id":"324194","type":"BoxZoomTool"},{"id":"324195","type":"SaveTool"},{"id":"324196","type":"ResetTool"},{"id":"324197","type":"HelpTool"}]},"id":"324198","type":"Toolbar"},{"attributes":{},"id":"324197","type":"HelpTool"},{"attributes":{},"id":"324196","type":"ResetTool"},{"attributes":{},"id":"324195","type":"SaveTool"},{"attributes":{"overlay":{"id":"324200","type":"BoxAnnotation"}},"id":"324194","type":"BoxZoomTool"},{"attributes":{},"id":"324193","type":"WheelZoomTool"},{"attributes":{},"id":"324237","type":"UnionRenderers"},{"attributes":{"dimension":1,"plot":{"id":"324173","subtype":"Figure","type":"Plot"},"ticker":{"id":"324188","type":"BasicTicker"}},"id":"324191","type":"Grid"},{"attributes":{},"id":"324247","type":"Selection"},{"attributes":{"bottom":{"expr":{"id":"324209","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"324210","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"324228","type":"VBar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"324200","type":"BoxAnnotation"},{"attributes":{"fields":[]},"id":"324207","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"324209","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"324208","type":"Stack"},{"attributes":{"data_source":{"id":"324225","type":"ColumnDataSource"},"glyph":{"id":"324227","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"324228","type":"VBar"},"selection_glyph":null,"view":{"id":"324230","type":"CDSView"}},"id":"324229","type":"GlyphRenderer"},{"attributes":{},"id":"324181","type":"LinearScale"},{"attributes":{"formatter":{"id":"324219","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"324173","subtype":"Figure","type":"Plot"},"ticker":{"id":"324184","type":"CategoricalTicker"}},"id":"324183","type":"CategoricalAxis"},{"attributes":{},"id":"324184","type":"CategoricalTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"324173","subtype":"Figure","type":"Plot"},"ticker":{"id":"324184","type":"CategoricalTicker"}},"id":"324186","type":"Grid"},{"attributes":{},"id":"324248","type":"UnionRenderers"},{"attributes":{},"id":"324188","type":"BasicTicker"},{"attributes":{"items":[{"id":"324224","type":"LegendItem"},{"id":"324239","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"324173","subtype":"Figure","type":"Plot"}},"id":"324223","type":"Legend"},{"attributes":{"formatter":{"id":"324221","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"324173","subtype":"Figure","type":"Plot"},"ticker":{"id":"324188","type":"BasicTicker"}},"id":"324187","type":"LinearAxis"},{"attributes":{"callback":null,"data":{"location_terms":["Bakersfield","Ashland","Santa Barbara","San Juan","\u9999\u6e2f Hong Kong","Houston","Baden","San Jos\u00e9","\u76f8\u99ac\u90e1","San Miguel de Allende","Santa Ana","Pasadena","La Salle Parish","Roxas City","Manila","Seattle"],"mentioned_locations":[1,1,1,1,0,1,1,1,1,1,1,0,0,1,1,1],"primary_locations":[1,1,1,0,1,0,0,0,0,0,0,1,1,0,0,0]},"selected":{"id":"324247","type":"Selection"},"selection_policy":{"id":"324248","type":"UnionRenderers"}},"id":"324225","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"324215","type":"GlyphRenderer"}]},"id":"324224","type":"LegendItem"},{"attributes":{"bottom":{"expr":{"id":"324209","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"324210","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"324227","type":"VBar"},{"attributes":{},"id":"324221","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"324225","type":"ColumnDataSource"}},"id":"324230","type":"CDSView"}],"root_ids":["324173"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('324320').textContent;
+                  var render_items = [{"docid":"405150e3-4334-484b-b171-6de9d922eb92","roots":{"324173":"f1891f9b-4707-4573-afdb-7add1aabaa54"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

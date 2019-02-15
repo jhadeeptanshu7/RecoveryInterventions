@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="7e0d89b8-2b82-4bb3-81e6-a5afdf0ecca5"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="20151">
+          {"6114622b-b552-4396-aa49-4b4ca9e97d1a":{"roots":{"references":[{"attributes":{},"id":"20091","type":"BasicTickFormatter"},{"attributes":{},"id":"20092","type":"Selection"},{"attributes":{},"id":"20093","type":"UnionRenderers"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"20089","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"20048","subtype":"Figure","type":"Plot"},"ticker":{"id":"20059","type":"CategoricalTicker"}},"id":"20058","type":"CategoricalAxis"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"20075","type":"BoxAnnotation"},{"attributes":{},"id":"20072","type":"HelpTool"},{"attributes":{},"id":"20059","type":"CategoricalTicker"},{"attributes":{},"id":"20070","type":"SaveTool"},{"attributes":{},"id":"20071","type":"ResetTool"},{"attributes":{},"id":"20054","type":"CategoricalScale"},{"attributes":{},"id":"20056","type":"LinearScale"},{"attributes":{"callback":null,"factors":["life","pain","effects","clean","anxiety","death","program","degree","symptoms","depression","smart","meeting","project","mother","medical","father","university","medication","addiction","asleep","sober","gym","alive","journey","court","treatment","awake","programs","recovery","abuse","groups","suffering","withdrawal","quitting","hospital","withdrawals","opiates","application","personality","subs","anger","meditation","organization","behavior","hungry","nausea","cancer","exhausted","disease","therapy","benzos","psychological","jail","er","venture","binge","childhood","na","therapist","masters","meetings","church","headaches","withdraw","illness","prison","hungover","frustration","struggles","certification","facility","insomnia","hatred","hangover","benzo","comedown","denial","fatigue","clinic","ptsd","wd","flu","rehab","aa","diagnosis","relapse","psych","dependence","sobriety","nc","treatments","detox","tendencies","twenties","teens","sexuality","cravings","constipation","nofap","addictions","psychosis","suboxone","undergrad","urges","territory","antibiotics","phd","discomfort","methadone","ocd","jealousy","groggy","evaluation","rls","counseling","relapsing","hangovers","acute","40s","trauma","sedated","grief","paws","diarrhea","sickness","wilderness","seizure","resentment","seizures","pmo","hydrated","apathy","migraines","behaviour","gums","cbt","behavioral","transformed","scalp","divorce","chills","breakup","transform","anxieties","stimulated","wds","psychiatry","descent","dependency","soreness","dehydration","sponsor","incorporated","withdraws","upbringing","spouse","transitioning","precipitated","intoxicated","secular","psychiatric","dt","adulthood","lethargy","dementia","insecurities","rehabilitation","withdrawl","fatigued","alcoholism","bupe","irritation","mmt","anon","2000s","withdrawls","cheeks","inpatient","unhappiness","parkinson","remission","delving","bpd","outreach","fellowship","avoidance","iop","athletics","abstinence","foray","outpatient","selfishness","alzheimer","chemo","lumped","wrists","betrayal","nostrils","dbt","tailspin","comedowns","infidelity","counselling","vasoconstriction","headfirst"],"range_padding":0.01},"id":"20050","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"20052","type":"DataRange1d"},{"attributes":{},"id":"20089","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"20082","type":"ColumnDataSource"}},"id":"20086","type":"CDSView"},{"attributes":{"data_source":{"id":"20082","type":"ColumnDataSource"},"glyph":{"id":"20083","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"20084","type":"VBar"},"selection_glyph":null,"view":{"id":"20086","type":"CDSView"}},"id":"20085","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"20084","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"20083","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[177,127,122,120,97,94,90,88,84,81,80,75,74,74,73,71,70,69,66,64,59,59,58,56,56,55,55,55,54,54,52,50,50,50,50,48,48,47,46,45,43,42,40,39,39,38,38,37,37,35,35,34,34,32,32,32,32,30,29,28,27,27,27,27,26,25,25,25,24,22,22,21,20,20,19,19,19,19,18,18,18,18,18,18,18,18,17,17,17,17,17,17,17,16,16,16,16,15,15,15,15,15,14,14,14,14,14,14,14,13,13,12,12,12,12,12,11,11,11,11,11,11,11,11,11,10,10,10,10,10,10,10,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,7,7,7,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,1,1,1,1,1,1,1],"x":["life","pain","effects","clean","anxiety","death","program","degree","symptoms","depression","smart","meeting","project","mother","medical","father","university","medication","addiction","asleep","sober","gym","alive","journey","court","treatment","awake","programs","recovery","abuse","groups","suffering","withdrawal","quitting","hospital","withdrawals","opiates","application","personality","subs","anger","meditation","organization","behavior","hungry","nausea","cancer","exhausted","disease","therapy","benzos","psychological","jail","er","venture","binge","childhood","na","therapist","masters","meetings","church","headaches","withdraw","illness","prison","hungover","frustration","struggles","certification","facility","insomnia","hatred","hangover","benzo","comedown","denial","fatigue","clinic","ptsd","wd","flu","rehab","aa","diagnosis","relapse","psych","dependence","sobriety","nc","treatments","detox","tendencies","twenties","teens","sexuality","cravings","constipation","nofap","addictions","psychosis","suboxone","undergrad","urges","territory","antibiotics","phd","discomfort","methadone","ocd","jealousy","groggy","evaluation","rls","counseling","relapsing","hangovers","acute","40s","trauma","sedated","grief","paws","diarrhea","sickness","wilderness","seizure","resentment","seizures","pmo","hydrated","apathy","migraines","behaviour","gums","cbt","behavioral","transformed","scalp","divorce","chills","breakup","transform","anxieties","stimulated","wds","psychiatry","descent","dependency","soreness","dehydration","sponsor","incorporated","withdraws","upbringing","spouse","transitioning","precipitated","intoxicated","secular","psychiatric","dt","adulthood","lethargy","dementia","insecurities","rehabilitation","withdrawl","fatigued","alcoholism","bupe","irritation","mmt","anon","2000s","withdrawls","cheeks","inpatient","unhappiness","parkinson","remission","delving","bpd","outreach","fellowship","avoidance","iop","athletics","abstinence","foray","outpatient","selfishness","alzheimer","chemo","lumped","wrists","betrayal","nostrils","dbt","tailspin","comedowns","infidelity","counselling","vasoconstriction","headfirst"]},"selected":{"id":"20092","type":"Selection"},"selection_policy":{"id":"20093","type":"UnionRenderers"}},"id":"20082","type":"ColumnDataSource"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"20048","subtype":"Figure","type":"Plot"},"ticker":{"id":"20059","type":"CategoricalTicker"}},"id":"20061","type":"Grid"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"20067","type":"PanTool"},{"id":"20068","type":"WheelZoomTool"},{"id":"20069","type":"BoxZoomTool"},{"id":"20070","type":"SaveTool"},{"id":"20071","type":"ResetTool"},{"id":"20072","type":"HelpTool"}]},"id":"20073","type":"Toolbar"},{"attributes":{},"id":"20067","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"20048","subtype":"Figure","type":"Plot"},"ticker":{"id":"20063","type":"BasicTicker"}},"id":"20066","type":"Grid"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"20047","type":"Title"},{"attributes":{},"id":"20063","type":"BasicTicker"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"20091","type":"BasicTickFormatter"},"plot":{"id":"20048","subtype":"Figure","type":"Plot"},"ticker":{"id":"20063","type":"BasicTicker"}},"id":"20062","type":"LinearAxis"},{"attributes":{"below":[{"id":"20058","type":"CategoricalAxis"}],"left":[{"id":"20062","type":"LinearAxis"}],"plot_height":300,"plot_width":3500,"renderers":[{"id":"20058","type":"CategoricalAxis"},{"id":"20061","type":"Grid"},{"id":"20062","type":"LinearAxis"},{"id":"20066","type":"Grid"},{"id":"20075","type":"BoxAnnotation"},{"id":"20085","type":"GlyphRenderer"}],"title":{"id":"20047","type":"Title"},"toolbar":{"id":"20073","type":"Toolbar"},"x_range":{"id":"20050","type":"FactorRange"},"x_scale":{"id":"20054","type":"CategoricalScale"},"y_range":{"id":"20052","type":"DataRange1d"},"y_scale":{"id":"20056","type":"LinearScale"}},"id":"20048","subtype":"Figure","type":"Plot"},{"attributes":{"overlay":{"id":"20075","type":"BoxAnnotation"}},"id":"20069","type":"BoxZoomTool"},{"attributes":{},"id":"20068","type":"WheelZoomTool"}],"root_ids":["20048"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('20151').textContent;
+                  var render_items = [{"docid":"6114622b-b552-4396-aa49-4b4ca9e97d1a","roots":{"20048":"7e0d89b8-2b82-4bb3-81e6-a5afdf0ecca5"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

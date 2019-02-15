@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="c2424ee5-c82d-424c-8ff2-cdaae62702f2"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="120650">
+          {"97101d4b-0a8d-46ab-ae29-76b299da18d6":{"roots":{"references":[{"attributes":{"source":{"id":"120541","type":"ColumnDataSource"}},"id":"120546","type":"CDSView"},{"attributes":{"source":{"id":"120555","type":"ColumnDataSource"}},"id":"120560","type":"CDSView"},{"attributes":{"bottom":{"expr":{"id":"120537","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"120538","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"120544","type":"VBar"},{"attributes":{"data_source":{"id":"120541","type":"ColumnDataSource"},"glyph":{"id":"120543","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"120544","type":"VBar"},"selection_glyph":null,"view":{"id":"120546","type":"CDSView"}},"id":"120545","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"120537","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"120538","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"120543","type":"VBar"},{"attributes":{},"id":"120566","type":"Selection"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"120545","type":"GlyphRenderer"}]},"id":"120554","type":"LegendItem"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"120502","type":"Title"},{"attributes":{"below":[{"id":"120513","type":"CategoricalAxis"}],"left":[{"id":"120517","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"120513","type":"CategoricalAxis"},{"id":"120516","type":"Grid"},{"id":"120517","type":"LinearAxis"},{"id":"120521","type":"Grid"},{"id":"120530","type":"BoxAnnotation"},{"id":"120553","type":"Legend"},{"id":"120545","type":"GlyphRenderer"},{"id":"120559","type":"GlyphRenderer"}],"title":{"id":"120502","type":"Title"},"toolbar":{"id":"120528","type":"Toolbar"},"x_range":{"id":"120505","type":"FactorRange"},"x_scale":{"id":"120509","type":"CategoricalScale"},"y_range":{"id":"120507","type":"DataRange1d"},"y_scale":{"id":"120511","type":"LinearScale"}},"id":"120503","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"start":0},"id":"120507","type":"DataRange1d"},{"attributes":{},"id":"120549","type":"CategoricalTickFormatter"},{"attributes":{},"id":"120509","type":"CategoricalScale"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"120540","type":"Stack"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"120503","subtype":"Figure","type":"Plot"},"ticker":{"id":"120514","type":"CategoricalTicker"}},"id":"120516","type":"Grid"},{"attributes":{"callback":null,"data":{"location_terms":["Houston","Paris","Ciudad de M\u00e9xico","Chicago","London","Denver","Toronto","Roma","Charlotte","Boston","Columbus","City of Melbourne","Newton","Washington","Nashville-Davidson","Tr\u00f8ndelag","Cambridge","Bryan","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","LA","St. Louis","\u76f8\u99ac\u90e1","Tampa","Miami","Alliance","Resistencia","Cupertino","Greenville","Orlando","Kalamazoo","Kendall County","Vancouver","PGH","Detroit","Glendale","Kingston","Amsterdam","Oakland","Flintshire","Sermersooq","Newark","NYC","Lombard","Liverpool","Sacramento","\u4eac\u90fd\u5e02","Madrid","Atlanta","Flagstaff","San Jos\u00e9","Lexington","Chico","Thompson-Nicola Regional District","Cincinnati","Brisbane","Minneapolis","Savannah","\u062a\u0647\u0631\u0627\u0646","Bucks","Seattle","Santa Barbara","Gretna","Hohe B\u00f6rde","Burlington","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Reading","Casablanca \u2d5c\u2d30\u2d37\u2d37\u2d30\u2d54\u2d5c \u2d5c\u2d53\u2d4e\u2d4d\u2d49\u2d4d\u2d5c \u0627\u0644\u062f\u0627\u0631 \u0627\u0644\u0628\u064a\u0636\u0627\u0621","Langlade County","San Diego","Berlin","San Antonio","\u9999\u6e2f Hong Kong","Eden","Lemon Grove","Salzburg","Tucson","\u4e2d\u897f\u5340 Central and Western District","Sunnyvale","\u062d\u0644\u0628","Daly City","Asbury Park","Lenoir","Providence","St. John's","Waterford","Calgary","Nice","Boulder","Delaware County","\u9d28\u5ddd\u5e02","Asheville","Hobart","Roane County","Sussex County","\u041a\u0438\u0457\u0432","\u0645\u0643\u0629","Wellington","Ottawa","Portsmouth","Guadalajara","Adrian","Stockport","Austin","Worcester","Salem","\u4e1c\u57ce\u533a","Oklahoma City","SF","Lancaster","Kanye","Lubbock","Philadelphia","Dresden","Phoenix","East London","Oxford","Joliet","Gastonia","\u4e09\u5cf6\u5e02","Compton","Frederick","Coffee County","Wakefield","Milwaukee","Galveston","Kreis Kleve","Elmira","North Lanarkshire","\u5b87\u90e8\u5e02","Portland"],"mentioned_locations":[11,7,4,4,3,0,3,4,3,3,4,4,3,1,1,3,3,3,3,2,2,2,0,1,2,0,2,1,2,2,2,0,2,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,0,0,0,1,0,0,1,1,1,0,1,1,0,1,1,0,1,0,0,1,1,0,1,0,1,1,0,1,1,1,0,1,1,1,0,0,1,1,0,0,1,0,1,1,1,0,1,1,0,1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,0,1,0,0,1],"primary_locations":[1,0,3,2,2,5,2,0,1,1,0,0,0,2,2,0,0,0,0,1,0,0,2,1,0,2,0,1,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,0,1,0,0,1,0,0,1,0,1,1,0,0,1,0,1,0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,1,0,1,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,1,0,1,1,0]},"selected":{"id":"120566","type":"Selection"},"selection_policy":{"id":"120567","type":"UnionRenderers"}},"id":"120541","type":"ColumnDataSource"},{"attributes":{},"id":"120577","type":"Selection"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"120530","type":"BoxAnnotation"},{"attributes":{"fields":[]},"id":"120537","type":"Stack"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"120559","type":"GlyphRenderer"}]},"id":"120569","type":"LegendItem"},{"attributes":{"fields":["primary_locations"]},"id":"120539","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"120538","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["Houston","Paris","Ciudad de M\u00e9xico","Chicago","London","Denver","Toronto","Roma","Charlotte","Boston","Columbus","City of Melbourne","Newton","Washington","Nashville-Davidson","Tr\u00f8ndelag","Cambridge","Bryan","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","LA","St. Louis","\u76f8\u99ac\u90e1","Tampa","Miami","Alliance","Resistencia","Cupertino","Greenville","Orlando","Kalamazoo","Kendall County","Vancouver","PGH","Detroit","Glendale","Kingston","Amsterdam","Oakland","Flintshire","Sermersooq","Newark","NYC","Lombard","Liverpool","Sacramento","\u4eac\u90fd\u5e02","Madrid","Atlanta","Flagstaff","San Jos\u00e9","Lexington","Chico","Thompson-Nicola Regional District","Cincinnati","Brisbane","Minneapolis","Savannah","\u062a\u0647\u0631\u0627\u0646","Bucks","Seattle","Santa Barbara","Gretna","Hohe B\u00f6rde","Burlington","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Reading","Casablanca \u2d5c\u2d30\u2d37\u2d37\u2d30\u2d54\u2d5c \u2d5c\u2d53\u2d4e\u2d4d\u2d49\u2d4d\u2d5c \u0627\u0644\u062f\u0627\u0631 \u0627\u0644\u0628\u064a\u0636\u0627\u0621","Langlade County","San Diego","Berlin","San Antonio","\u9999\u6e2f Hong Kong","Eden","Lemon Grove","Salzburg","Tucson","\u4e2d\u897f\u5340 Central and Western District","Sunnyvale","\u062d\u0644\u0628","Daly City","Asbury Park","Lenoir","Providence","St. John's","Waterford","Calgary","Nice","Boulder","Delaware County","\u9d28\u5ddd\u5e02","Asheville","Hobart","Roane County","Sussex County","\u041a\u0438\u0457\u0432","\u0645\u0643\u0629","Wellington","Ottawa","Portsmouth","Guadalajara","Adrian","Stockport","Austin","Worcester","Salem","\u4e1c\u57ce\u533a","Oklahoma City","SF","Lancaster","Kanye","Lubbock","Philadelphia","Dresden","Phoenix","East London","Oxford","Joliet","Gastonia","\u4e09\u5cf6\u5e02","Compton","Frederick","Coffee County","Wakefield","Milwaukee","Galveston","Kreis Kleve","Elmira","North Lanarkshire","\u5b87\u90e8\u5e02","Portland"],"mentioned_locations":[11,7,4,4,3,0,3,4,3,3,4,4,3,1,1,3,3,3,3,2,2,2,0,1,2,0,2,1,2,2,2,0,2,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,0,0,0,1,0,0,1,1,1,0,1,1,0,1,1,0,1,0,0,1,1,0,1,0,1,1,0,1,1,1,0,1,1,1,0,0,1,1,0,0,1,0,1,1,1,0,1,1,0,1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,0,1,0,0,1],"primary_locations":[1,0,3,2,2,5,2,0,1,1,0,0,0,2,2,0,0,0,0,1,0,0,2,1,0,2,0,1,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,0,1,0,0,1,0,0,1,0,1,1,0,0,1,0,1,0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,1,0,1,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,1,0,1,1,0]},"selected":{"id":"120577","type":"Selection"},"selection_policy":{"id":"120578","type":"UnionRenderers"}},"id":"120555","type":"ColumnDataSource"},{"attributes":{},"id":"120518","type":"BasicTicker"},{"attributes":{"bottom":{"expr":{"id":"120539","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"120540","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"120557","type":"VBar"},{"attributes":{},"id":"120551","type":"BasicTickFormatter"},{"attributes":{"items":[{"id":"120554","type":"LegendItem"},{"id":"120569","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"120503","subtype":"Figure","type":"Plot"}},"id":"120553","type":"Legend"},{"attributes":{},"id":"120578","type":"UnionRenderers"},{"attributes":{},"id":"120511","type":"LinearScale"},{"attributes":{"formatter":{"id":"120549","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"120503","subtype":"Figure","type":"Plot"},"ticker":{"id":"120514","type":"CategoricalTicker"}},"id":"120513","type":"CategoricalAxis"},{"attributes":{"data_source":{"id":"120555","type":"ColumnDataSource"},"glyph":{"id":"120557","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"120558","type":"VBar"},"selection_glyph":null,"view":{"id":"120560","type":"CDSView"}},"id":"120559","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"120539","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"120540","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"120558","type":"VBar"},{"attributes":{"formatter":{"id":"120551","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"120503","subtype":"Figure","type":"Plot"},"ticker":{"id":"120518","type":"BasicTicker"}},"id":"120517","type":"LinearAxis"},{"attributes":{},"id":"120514","type":"CategoricalTicker"},{"attributes":{},"id":"120567","type":"UnionRenderers"},{"attributes":{"callback":null,"factors":["Houston","Paris","Ciudad de M\u00e9xico","Chicago","London","Denver","Toronto","Roma","Charlotte","Boston","Columbus","City of Melbourne","Newton","Washington","Nashville-Davidson","Tr\u00f8ndelag","Cambridge","Bryan","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","LA","St. Louis","\u76f8\u99ac\u90e1","Tampa","Miami","Alliance","Resistencia","Cupertino","Greenville","Orlando","Kalamazoo","Kendall County","Vancouver","PGH","Detroit","Glendale","Kingston","Amsterdam","Oakland","Flintshire","Sermersooq","Newark","NYC","Lombard","Liverpool","Sacramento","\u4eac\u90fd\u5e02","Madrid","Atlanta","Flagstaff","San Jos\u00e9","Lexington","Chico","Thompson-Nicola Regional District","Cincinnati","Brisbane","Minneapolis","Savannah","\u062a\u0647\u0631\u0627\u0646","Bucks","Seattle","Santa Barbara","Gretna","Hohe B\u00f6rde","Burlington","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Reading","Casablanca \u2d5c\u2d30\u2d37\u2d37\u2d30\u2d54\u2d5c \u2d5c\u2d53\u2d4e\u2d4d\u2d49\u2d4d\u2d5c \u0627\u0644\u062f\u0627\u0631 \u0627\u0644\u0628\u064a\u0636\u0627\u0621","Langlade County","San Diego","Berlin","San Antonio","\u9999\u6e2f Hong Kong","Eden","Lemon Grove","Salzburg","Tucson","\u4e2d\u897f\u5340 Central and Western District","Sunnyvale","\u062d\u0644\u0628","Daly City","Asbury Park","Lenoir","Providence","St. John's","Waterford","Calgary","Nice","Boulder","Delaware County","\u9d28\u5ddd\u5e02","Asheville","Hobart","Roane County","Sussex County","\u041a\u0438\u0457\u0432","\u0645\u0643\u0629","Wellington","Ottawa","Portsmouth","Guadalajara","Adrian","Stockport","Austin","Worcester","Salem","\u4e1c\u57ce\u533a","Oklahoma City","SF","Lancaster","Kanye","Lubbock","Philadelphia","Dresden","Phoenix","East London","Oxford","Joliet","Gastonia","\u4e09\u5cf6\u5e02","Compton","Frederick","Coffee County","Wakefield","Milwaukee","Galveston","Kreis Kleve","Elmira","North Lanarkshire","\u5b87\u90e8\u5e02","Portland"],"range_padding":0.01},"id":"120505","type":"FactorRange"},{"attributes":{"overlay":{"id":"120530","type":"BoxAnnotation"}},"id":"120524","type":"BoxZoomTool"},{"attributes":{},"id":"120525","type":"SaveTool"},{"attributes":{},"id":"120526","type":"ResetTool"},{"attributes":{},"id":"120527","type":"HelpTool"},{"attributes":{"dimension":1,"plot":{"id":"120503","subtype":"Figure","type":"Plot"},"ticker":{"id":"120518","type":"BasicTicker"}},"id":"120521","type":"Grid"},{"attributes":{},"id":"120522","type":"PanTool"},{"attributes":{},"id":"120523","type":"WheelZoomTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"120522","type":"PanTool"},{"id":"120523","type":"WheelZoomTool"},{"id":"120524","type":"BoxZoomTool"},{"id":"120525","type":"SaveTool"},{"id":"120526","type":"ResetTool"},{"id":"120527","type":"HelpTool"}]},"id":"120528","type":"Toolbar"}],"root_ids":["120503"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('120650').textContent;
+                  var render_items = [{"docid":"97101d4b-0a8d-46ab-ae29-76b299da18d6","roots":{"120503":"c2424ee5-c82d-424c-8ff2-cdaae62702f2"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

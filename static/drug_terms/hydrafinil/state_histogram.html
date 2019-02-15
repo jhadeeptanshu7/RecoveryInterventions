@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="f0987c5f-51a5-4eec-af50-38117d86359f"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="375127">
+          {"6ada9a0e-0052-4c74-acdb-920f59ca7538":{"roots":{"references":[{"attributes":{},"id":"375028","type":"BasicTickFormatter"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"374979","type":"Title"},{"attributes":{"bottom":{"expr":{"id":"375014","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"375015","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"375021","type":"VBar"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"375036","type":"GlyphRenderer"}]},"id":"375046","type":"LegendItem"},{"attributes":{"source":{"id":"375018","type":"ColumnDataSource"}},"id":"375023","type":"CDSView"},{"attributes":{},"id":"375044","type":"UnionRenderers"},{"attributes":{},"id":"375043","type":"Selection"},{"attributes":{},"id":"375026","type":"CategoricalTickFormatter"},{"attributes":{"formatter":{"id":"375028","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"374980","subtype":"Figure","type":"Plot"},"ticker":{"id":"374995","type":"BasicTicker"}},"id":"374994","type":"LinearAxis"},{"attributes":{},"id":"374995","type":"BasicTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"374980","subtype":"Figure","type":"Plot"},"ticker":{"id":"374991","type":"CategoricalTicker"}},"id":"374993","type":"Grid"},{"attributes":{"formatter":{"id":"375026","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"374980","subtype":"Figure","type":"Plot"},"ticker":{"id":"374991","type":"CategoricalTicker"}},"id":"374990","type":"CategoricalAxis"},{"attributes":{},"id":"374991","type":"CategoricalTicker"},{"attributes":{"dimension":1,"plot":{"id":"374980","subtype":"Figure","type":"Plot"},"ticker":{"id":"374995","type":"BasicTicker"}},"id":"374998","type":"Grid"},{"attributes":{},"id":"374999","type":"PanTool"},{"attributes":{"fields":[]},"id":"375014","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"375015","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"375016","type":"Stack"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"375017","type":"Stack"},{"attributes":{"bottom":{"expr":{"id":"375014","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"375015","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"375020","type":"VBar"},{"attributes":{"callback":null,"data":{"location_terms":["Wisconsin","\u0130\u00e7 Anadolu B\u00f6lgesi","Nebraska","PA","Massachusetts","Missouri","South Carolina","\u00cele-de-France"],"mentioned_locations":[1,0,1,1,1,1,0,1],"primary_locations":[1,1,0,0,0,0,1,0]},"selected":{"id":"375043","type":"Selection"},"selection_policy":{"id":"375044","type":"UnionRenderers"}},"id":"375018","type":"ColumnDataSource"},{"attributes":{"data_source":{"id":"375018","type":"ColumnDataSource"},"glyph":{"id":"375020","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"375021","type":"VBar"},"selection_glyph":null,"view":{"id":"375023","type":"CDSView"}},"id":"375022","type":"GlyphRenderer"},{"attributes":{},"id":"375054","type":"Selection"},{"attributes":{},"id":"375055","type":"UnionRenderers"},{"attributes":{"callback":null,"data":{"location_terms":["Wisconsin","\u0130\u00e7 Anadolu B\u00f6lgesi","Nebraska","PA","Massachusetts","Missouri","South Carolina","\u00cele-de-France"],"mentioned_locations":[1,0,1,1,1,1,0,1],"primary_locations":[1,1,0,0,0,0,1,0]},"selected":{"id":"375054","type":"Selection"},"selection_policy":{"id":"375055","type":"UnionRenderers"}},"id":"375032","type":"ColumnDataSource"},{"attributes":{"items":[{"id":"375031","type":"LegendItem"},{"id":"375046","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"374980","subtype":"Figure","type":"Plot"}},"id":"375030","type":"Legend"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"375022","type":"GlyphRenderer"}]},"id":"375031","type":"LegendItem"},{"attributes":{"data_source":{"id":"375032","type":"ColumnDataSource"},"glyph":{"id":"375034","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"375035","type":"VBar"},"selection_glyph":null,"view":{"id":"375037","type":"CDSView"}},"id":"375036","type":"GlyphRenderer"},{"attributes":{"source":{"id":"375032","type":"ColumnDataSource"}},"id":"375037","type":"CDSView"},{"attributes":{"bottom":{"expr":{"id":"375016","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"375017","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"375034","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"375016","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"375017","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"375035","type":"VBar"},{"attributes":{"callback":null,"start":0},"id":"374984","type":"DataRange1d"},{"attributes":{},"id":"374986","type":"CategoricalScale"},{"attributes":{"below":[{"id":"374990","type":"CategoricalAxis"}],"left":[{"id":"374994","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"374990","type":"CategoricalAxis"},{"id":"374993","type":"Grid"},{"id":"374994","type":"LinearAxis"},{"id":"374998","type":"Grid"},{"id":"375007","type":"BoxAnnotation"},{"id":"375030","type":"Legend"},{"id":"375022","type":"GlyphRenderer"},{"id":"375036","type":"GlyphRenderer"}],"title":{"id":"374979","type":"Title"},"toolbar":{"id":"375005","type":"Toolbar"},"x_range":{"id":"374982","type":"FactorRange"},"x_scale":{"id":"374986","type":"CategoricalScale"},"y_range":{"id":"374984","type":"DataRange1d"},"y_scale":{"id":"374988","type":"LinearScale"}},"id":"374980","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"factors":["Wisconsin","\u0130\u00e7 Anadolu B\u00f6lgesi","Nebraska","PA","Massachusetts","Missouri","South Carolina","\u00cele-de-France"],"range_padding":0.01},"id":"374982","type":"FactorRange"},{"attributes":{},"id":"374988","type":"LinearScale"},{"attributes":{},"id":"375003","type":"ResetTool"},{"attributes":{},"id":"375002","type":"SaveTool"},{"attributes":{"overlay":{"id":"375007","type":"BoxAnnotation"}},"id":"375001","type":"BoxZoomTool"},{"attributes":{},"id":"375000","type":"WheelZoomTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"375007","type":"BoxAnnotation"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"374999","type":"PanTool"},{"id":"375000","type":"WheelZoomTool"},{"id":"375001","type":"BoxZoomTool"},{"id":"375002","type":"SaveTool"},{"id":"375003","type":"ResetTool"},{"id":"375004","type":"HelpTool"}]},"id":"375005","type":"Toolbar"},{"attributes":{},"id":"375004","type":"HelpTool"}],"root_ids":["374980"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('375127').textContent;
+                  var render_items = [{"docid":"6ada9a0e-0052-4c74-acdb-920f59ca7538","roots":{"374980":"f0987c5f-51a5-4eec-af50-38117d86359f"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

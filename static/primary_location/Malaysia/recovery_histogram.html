@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="e3b447f7-5492-4384-b79d-292a97a943c1"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="358418">
+          {"ff76edc3-5f16-45a7-bbfd-87769ca2e452":{"roots":{"references":[{"attributes":{},"id":"358323","type":"LinearScale"},{"attributes":{},"id":"358321","type":"CategoricalScale"},{"attributes":{},"id":"358326","type":"CategoricalTicker"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"358356","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"358315","subtype":"Figure","type":"Plot"},"ticker":{"id":"358326","type":"CategoricalTicker"}},"id":"358325","type":"CategoricalAxis"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"358358","type":"BasicTickFormatter"},"plot":{"id":"358315","subtype":"Figure","type":"Plot"},"ticker":{"id":"358330","type":"BasicTicker"}},"id":"358329","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"358315","subtype":"Figure","type":"Plot"},"ticker":{"id":"358326","type":"CategoricalTicker"}},"id":"358328","type":"Grid"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"358334","type":"PanTool"},{"id":"358335","type":"WheelZoomTool"},{"id":"358336","type":"BoxZoomTool"},{"id":"358337","type":"SaveTool"},{"id":"358338","type":"ResetTool"},{"id":"358339","type":"HelpTool"}]},"id":"358340","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"358342","type":"BoxAnnotation"},{"attributes":{"callback":null,"data":{"top":[5,4,4,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["life","behavior","clean","clinic","asleep","death","smart","pain","anxiety","project","court","ocd","application","program","quitting","insomnia","effects","medical","aa","medication","lethargy","cancer","facility","withdraw","meetings","relapsing","seizure","church","anger","migraines","alive","er","seizures","relapse","na","binge","father","symptoms","treatment","prison","hydrated","personality","hospital","degree","gym","upbringing","antibiotics","groups","rls","programs","hungry","ptsd","jail","cravings","mother","organization","bloodstream","university"]},"selected":{"id":"358359","type":"Selection"},"selection_policy":{"id":"358360","type":"UnionRenderers"}},"id":"358349","type":"ColumnDataSource"},{"attributes":{},"id":"358360","type":"UnionRenderers"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"358314","type":"Title"},{"attributes":{},"id":"358359","type":"Selection"},{"attributes":{},"id":"358334","type":"PanTool"},{"attributes":{},"id":"358335","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"358342","type":"BoxAnnotation"}},"id":"358336","type":"BoxZoomTool"},{"attributes":{},"id":"358337","type":"SaveTool"},{"attributes":{},"id":"358330","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"358315","subtype":"Figure","type":"Plot"},"ticker":{"id":"358330","type":"BasicTicker"}},"id":"358333","type":"Grid"},{"attributes":{},"id":"358338","type":"ResetTool"},{"attributes":{},"id":"358339","type":"HelpTool"},{"attributes":{},"id":"358356","type":"CategoricalTickFormatter"},{"attributes":{"callback":null,"start":0},"id":"358319","type":"DataRange1d"},{"attributes":{"data_source":{"id":"358349","type":"ColumnDataSource"},"glyph":{"id":"358350","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"358351","type":"VBar"},"selection_glyph":null,"view":{"id":"358353","type":"CDSView"}},"id":"358352","type":"GlyphRenderer"},{"attributes":{"source":{"id":"358349","type":"ColumnDataSource"}},"id":"358353","type":"CDSView"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"358350","type":"VBar"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"358351","type":"VBar"},{"attributes":{"callback":null,"factors":["life","behavior","clean","clinic","asleep","death","smart","pain","anxiety","project","court","ocd","application","program","quitting","insomnia","effects","medical","aa","medication","lethargy","cancer","facility","withdraw","meetings","relapsing","seizure","church","anger","migraines","alive","er","seizures","relapse","na","binge","father","symptoms","treatment","prison","hydrated","personality","hospital","degree","gym","upbringing","antibiotics","groups","rls","programs","hungry","ptsd","jail","cravings","mother","organization","bloodstream","university"],"range_padding":0.01},"id":"358317","type":"FactorRange"},{"attributes":{},"id":"358358","type":"BasicTickFormatter"},{"attributes":{"below":[{"id":"358325","type":"CategoricalAxis"}],"left":[{"id":"358329","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"358325","type":"CategoricalAxis"},{"id":"358328","type":"Grid"},{"id":"358329","type":"LinearAxis"},{"id":"358333","type":"Grid"},{"id":"358342","type":"BoxAnnotation"},{"id":"358352","type":"GlyphRenderer"}],"title":{"id":"358314","type":"Title"},"toolbar":{"id":"358340","type":"Toolbar"},"x_range":{"id":"358317","type":"FactorRange"},"x_scale":{"id":"358321","type":"CategoricalScale"},"y_range":{"id":"358319","type":"DataRange1d"},"y_scale":{"id":"358323","type":"LinearScale"}},"id":"358315","subtype":"Figure","type":"Plot"}],"root_ids":["358315"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('358418').textContent;
+                  var render_items = [{"docid":"ff76edc3-5f16-45a7-bbfd-87769ca2e452","roots":{"358315":"e3b447f7-5492-4384-b79d-292a97a943c1"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="509edeef-5d6c-4a3c-8a87-a6236c1d0dcb"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="220522">
+          {"f350b93f-e29c-4381-b8da-94f4758c3bcf":{"roots":{"references":[{"attributes":{"bottom":{"expr":{"id":"220409","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"220410","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"220415","type":"VBar"},{"attributes":{"data_source":{"id":"220413","type":"ColumnDataSource"},"glyph":{"id":"220415","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"220416","type":"VBar"},"selection_glyph":null,"view":{"id":"220418","type":"CDSView"}},"id":"220417","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"220409","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"220410","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"220416","type":"VBar"},{"attributes":{"fields":["primary_locations"]},"id":"220411","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"220410","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["San Juan","Bedford","Hannover","Cincinnati","Pontianak","Houston","Madrid","LA","Toronto","Resistencia","Amsterdam","San Miguel County","Fort Lauderdale","Nice"],"mentioned_locations":[1,1,1,1,1,1,1,1,1,0,1,1,1,1],"primary_locations":[0,0,0,0,0,0,0,0,0,1,0,0,0,0]},"selected":{"id":"220438","type":"Selection"},"selection_policy":{"id":"220439","type":"UnionRenderers"}},"id":"220413","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"220412","type":"Stack"},{"attributes":{},"id":"220450","type":"UnionRenderers"},{"attributes":{"source":{"id":"220413","type":"ColumnDataSource"}},"id":"220418","type":"CDSView"},{"attributes":{"data_source":{"id":"220427","type":"ColumnDataSource"},"glyph":{"id":"220429","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"220430","type":"VBar"},"selection_glyph":null,"view":{"id":"220432","type":"CDSView"}},"id":"220431","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"220411","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"220412","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"220430","type":"VBar"},{"attributes":{"dimension":1,"plot":{"id":"220375","subtype":"Figure","type":"Plot"},"ticker":{"id":"220390","type":"BasicTicker"}},"id":"220393","type":"Grid"},{"attributes":{},"id":"220390","type":"BasicTicker"},{"attributes":{},"id":"220449","type":"Selection"},{"attributes":{"overlay":{"id":"220402","type":"BoxAnnotation"}},"id":"220396","type":"BoxZoomTool"},{"attributes":{},"id":"220397","type":"SaveTool"},{"attributes":{},"id":"220394","type":"PanTool"},{"attributes":{},"id":"220395","type":"WheelZoomTool"},{"attributes":{},"id":"220398","type":"ResetTool"},{"attributes":{},"id":"220399","type":"HelpTool"},{"attributes":{},"id":"220439","type":"UnionRenderers"},{"attributes":{},"id":"220438","type":"Selection"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"220417","type":"GlyphRenderer"}]},"id":"220426","type":"LegendItem"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"220374","type":"Title"},{"attributes":{"below":[{"id":"220385","type":"CategoricalAxis"}],"left":[{"id":"220389","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"220385","type":"CategoricalAxis"},{"id":"220388","type":"Grid"},{"id":"220389","type":"LinearAxis"},{"id":"220393","type":"Grid"},{"id":"220402","type":"BoxAnnotation"},{"id":"220425","type":"Legend"},{"id":"220417","type":"GlyphRenderer"},{"id":"220431","type":"GlyphRenderer"}],"title":{"id":"220374","type":"Title"},"toolbar":{"id":"220400","type":"Toolbar"},"x_range":{"id":"220377","type":"FactorRange"},"x_scale":{"id":"220381","type":"CategoricalScale"},"y_range":{"id":"220379","type":"DataRange1d"},"y_scale":{"id":"220383","type":"LinearScale"}},"id":"220375","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"factors":["San Juan","Bedford","Hannover","Cincinnati","Pontianak","Houston","Madrid","LA","Toronto","Resistencia","Amsterdam","San Miguel County","Fort Lauderdale","Nice"],"range_padding":0.01},"id":"220377","type":"FactorRange"},{"attributes":{"callback":null,"start":0},"id":"220379","type":"DataRange1d"},{"attributes":{},"id":"220421","type":"CategoricalTickFormatter"},{"attributes":{},"id":"220423","type":"BasicTickFormatter"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"220402","type":"BoxAnnotation"},{"attributes":{"items":[{"id":"220426","type":"LegendItem"},{"id":"220441","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"220375","subtype":"Figure","type":"Plot"}},"id":"220425","type":"Legend"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"220394","type":"PanTool"},{"id":"220395","type":"WheelZoomTool"},{"id":"220396","type":"BoxZoomTool"},{"id":"220397","type":"SaveTool"},{"id":"220398","type":"ResetTool"},{"id":"220399","type":"HelpTool"}]},"id":"220400","type":"Toolbar"},{"attributes":{"callback":null,"data":{"location_terms":["San Juan","Bedford","Hannover","Cincinnati","Pontianak","Houston","Madrid","LA","Toronto","Resistencia","Amsterdam","San Miguel County","Fort Lauderdale","Nice"],"mentioned_locations":[1,1,1,1,1,1,1,1,1,0,1,1,1,1],"primary_locations":[0,0,0,0,0,0,0,0,0,1,0,0,0,0]},"selected":{"id":"220449","type":"Selection"},"selection_policy":{"id":"220450","type":"UnionRenderers"}},"id":"220427","type":"ColumnDataSource"},{"attributes":{"bottom":{"expr":{"id":"220411","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"220412","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"220429","type":"VBar"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"220431","type":"GlyphRenderer"}]},"id":"220441","type":"LegendItem"},{"attributes":{"source":{"id":"220427","type":"ColumnDataSource"}},"id":"220432","type":"CDSView"},{"attributes":{},"id":"220381","type":"CategoricalScale"},{"attributes":{},"id":"220383","type":"LinearScale"},{"attributes":{"formatter":{"id":"220421","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"220375","subtype":"Figure","type":"Plot"},"ticker":{"id":"220386","type":"CategoricalTicker"}},"id":"220385","type":"CategoricalAxis"},{"attributes":{},"id":"220386","type":"CategoricalTicker"},{"attributes":{"formatter":{"id":"220423","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"220375","subtype":"Figure","type":"Plot"},"ticker":{"id":"220390","type":"BasicTicker"}},"id":"220389","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"220375","subtype":"Figure","type":"Plot"},"ticker":{"id":"220386","type":"CategoricalTicker"}},"id":"220388","type":"Grid"},{"attributes":{"fields":[]},"id":"220409","type":"Stack"}],"root_ids":["220375"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('220522').textContent;
+                  var render_items = [{"docid":"f350b93f-e29c-4381-b8da-94f4758c3bcf","roots":{"220375":"509edeef-5d6c-4a3c-8a87-a6236c1d0dcb"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

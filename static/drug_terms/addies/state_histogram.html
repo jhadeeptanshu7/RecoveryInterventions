@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="63ab9f19-7b0f-4f53-a972-8f8cabb55210"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="334189">
+          {"28074c0e-6238-44f4-883f-2739d62bca4e":{"roots":{"references":[{"attributes":{},"id":"334062","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"334069","type":"BoxAnnotation"}},"id":"334063","type":"BoxZoomTool"},{"attributes":{"dimension":1,"plot":{"id":"334042","subtype":"Figure","type":"Plot"},"ticker":{"id":"334057","type":"BasicTicker"}},"id":"334060","type":"Grid"},{"attributes":{},"id":"334061","type":"PanTool"},{"attributes":{},"id":"334066","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"334061","type":"PanTool"},{"id":"334062","type":"WheelZoomTool"},{"id":"334063","type":"BoxZoomTool"},{"id":"334064","type":"SaveTool"},{"id":"334065","type":"ResetTool"},{"id":"334066","type":"HelpTool"}]},"id":"334067","type":"Toolbar"},{"attributes":{},"id":"334064","type":"SaveTool"},{"attributes":{},"id":"334065","type":"ResetTool"},{"attributes":{"callback":null,"factors":["Ontario","Wisconsin","Kentucky","Massachusetts","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Pennsylvania","Hawaii","Ohio","England","Texas"],"range_padding":0.01},"id":"334044","type":"FactorRange"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"334098","type":"GlyphRenderer"}]},"id":"334108","type":"LegendItem"},{"attributes":{"callback":null,"start":0},"id":"334046","type":"DataRange1d"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"334069","type":"BoxAnnotation"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"334041","type":"Title"},{"attributes":{"below":[{"id":"334052","type":"CategoricalAxis"}],"left":[{"id":"334056","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"334052","type":"CategoricalAxis"},{"id":"334055","type":"Grid"},{"id":"334056","type":"LinearAxis"},{"id":"334060","type":"Grid"},{"id":"334069","type":"BoxAnnotation"},{"id":"334092","type":"Legend"},{"id":"334084","type":"GlyphRenderer"},{"id":"334098","type":"GlyphRenderer"}],"title":{"id":"334041","type":"Title"},"toolbar":{"id":"334067","type":"Toolbar"},"x_range":{"id":"334044","type":"FactorRange"},"x_scale":{"id":"334048","type":"CategoricalScale"},"y_range":{"id":"334046","type":"DataRange1d"},"y_scale":{"id":"334050","type":"LinearScale"}},"id":"334042","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"334048","type":"CategoricalScale"},{"attributes":{"callback":null,"data":{"location_terms":["Ontario","Wisconsin","Kentucky","Massachusetts","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Pennsylvania","Hawaii","Ohio","England","Texas"],"mentioned_locations":[1,1,1,2,1,1,1,1,1,1],"primary_locations":[1,1,1,0,0,0,0,0,0,0]},"selected":{"id":"334105","type":"Selection"},"selection_policy":{"id":"334106","type":"UnionRenderers"}},"id":"334080","type":"ColumnDataSource"},{"attributes":{"bottom":{"expr":{"id":"334076","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"334077","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"334082","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"334076","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"334077","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"334083","type":"VBar"},{"attributes":{"data_source":{"id":"334080","type":"ColumnDataSource"},"glyph":{"id":"334082","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"334083","type":"VBar"},"selection_glyph":null,"view":{"id":"334085","type":"CDSView"}},"id":"334084","type":"GlyphRenderer"},{"attributes":{"source":{"id":"334080","type":"ColumnDataSource"}},"id":"334085","type":"CDSView"},{"attributes":{},"id":"334088","type":"CategoricalTickFormatter"},{"attributes":{},"id":"334106","type":"UnionRenderers"},{"attributes":{},"id":"334105","type":"Selection"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"334079","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"334078","type":"Stack"},{"attributes":{},"id":"334116","type":"Selection"},{"attributes":{},"id":"334117","type":"UnionRenderers"},{"attributes":{"fields":["primary_locations"]},"id":"334077","type":"Stack"},{"attributes":{"fields":[]},"id":"334076","type":"Stack"},{"attributes":{},"id":"334053","type":"CategoricalTicker"},{"attributes":{"formatter":{"id":"334088","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"334042","subtype":"Figure","type":"Plot"},"ticker":{"id":"334053","type":"CategoricalTicker"}},"id":"334052","type":"CategoricalAxis"},{"attributes":{},"id":"334050","type":"LinearScale"},{"attributes":{},"id":"334057","type":"BasicTicker"},{"attributes":{"formatter":{"id":"334090","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"334042","subtype":"Figure","type":"Plot"},"ticker":{"id":"334057","type":"BasicTicker"}},"id":"334056","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"334042","subtype":"Figure","type":"Plot"},"ticker":{"id":"334053","type":"CategoricalTicker"}},"id":"334055","type":"Grid"},{"attributes":{"source":{"id":"334094","type":"ColumnDataSource"}},"id":"334099","type":"CDSView"},{"attributes":{"data_source":{"id":"334094","type":"ColumnDataSource"},"glyph":{"id":"334096","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"334097","type":"VBar"},"selection_glyph":null,"view":{"id":"334099","type":"CDSView"}},"id":"334098","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"334078","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"334079","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"334097","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"334078","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"334079","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"334096","type":"VBar"},{"attributes":{"callback":null,"data":{"location_terms":["Ontario","Wisconsin","Kentucky","Massachusetts","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Pennsylvania","Hawaii","Ohio","England","Texas"],"mentioned_locations":[1,1,1,2,1,1,1,1,1,1],"primary_locations":[1,1,1,0,0,0,0,0,0,0]},"selected":{"id":"334116","type":"Selection"},"selection_policy":{"id":"334117","type":"UnionRenderers"}},"id":"334094","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"334084","type":"GlyphRenderer"}]},"id":"334093","type":"LegendItem"},{"attributes":{"items":[{"id":"334093","type":"LegendItem"},{"id":"334108","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"334042","subtype":"Figure","type":"Plot"}},"id":"334092","type":"Legend"},{"attributes":{},"id":"334090","type":"BasicTickFormatter"}],"root_ids":["334042"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('334189').textContent;
+                  var render_items = [{"docid":"28074c0e-6238-44f4-883f-2739d62bca4e","roots":{"334042":"63ab9f19-7b0f-4f53-a972-8f8cabb55210"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="686ac2d6-28ab-4bf4-88f0-03a2ef3a69cd"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="249514">
+          {"2367ece7-9abc-47d7-946d-2c7d03d3d410":{"roots":{"references":[{"attributes":{},"id":"249435","type":"HelpTool"},{"attributes":{},"id":"249433","type":"SaveTool"},{"attributes":{"source":{"id":"249445","type":"ColumnDataSource"}},"id":"249449","type":"CDSView"},{"attributes":{"data_source":{"id":"249445","type":"ColumnDataSource"},"glyph":{"id":"249446","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"249447","type":"VBar"},"selection_glyph":null,"view":{"id":"249449","type":"CDSView"}},"id":"249448","type":"GlyphRenderer"},{"attributes":{},"id":"249417","type":"CategoricalScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"249447","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"249446","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[1,1,1,1,1,1,1,1],"x":["life","pain","opiates","groggy","ptsd","meditation","medical","er"]},"selected":{"id":"249455","type":"Selection"},"selection_policy":{"id":"249456","type":"UnionRenderers"}},"id":"249445","type":"ColumnDataSource"},{"attributes":{"dimension":1,"plot":{"id":"249411","subtype":"Figure","type":"Plot"},"ticker":{"id":"249426","type":"BasicTicker"}},"id":"249429","type":"Grid"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"249454","type":"BasicTickFormatter"},"plot":{"id":"249411","subtype":"Figure","type":"Plot"},"ticker":{"id":"249426","type":"BasicTicker"}},"id":"249425","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"249411","subtype":"Figure","type":"Plot"},"ticker":{"id":"249422","type":"CategoricalTicker"}},"id":"249424","type":"Grid"},{"attributes":{},"id":"249426","type":"BasicTicker"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"249452","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"249411","subtype":"Figure","type":"Plot"},"ticker":{"id":"249422","type":"CategoricalTicker"}},"id":"249421","type":"CategoricalAxis"},{"attributes":{},"id":"249422","type":"CategoricalTicker"},{"attributes":{},"id":"249454","type":"BasicTickFormatter"},{"attributes":{},"id":"249455","type":"Selection"},{"attributes":{},"id":"249456","type":"UnionRenderers"},{"attributes":{},"id":"249452","type":"CategoricalTickFormatter"},{"attributes":{},"id":"249419","type":"LinearScale"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"249438","type":"BoxAnnotation"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"249430","type":"PanTool"},{"id":"249431","type":"WheelZoomTool"},{"id":"249432","type":"BoxZoomTool"},{"id":"249433","type":"SaveTool"},{"id":"249434","type":"ResetTool"},{"id":"249435","type":"HelpTool"}]},"id":"249436","type":"Toolbar"},{"attributes":{"below":[{"id":"249421","type":"CategoricalAxis"}],"left":[{"id":"249425","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"249421","type":"CategoricalAxis"},{"id":"249424","type":"Grid"},{"id":"249425","type":"LinearAxis"},{"id":"249429","type":"Grid"},{"id":"249438","type":"BoxAnnotation"},{"id":"249448","type":"GlyphRenderer"}],"title":{"id":"249410","type":"Title"},"toolbar":{"id":"249436","type":"Toolbar"},"x_range":{"id":"249413","type":"FactorRange"},"x_scale":{"id":"249417","type":"CategoricalScale"},"y_range":{"id":"249415","type":"DataRange1d"},"y_scale":{"id":"249419","type":"LinearScale"}},"id":"249411","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"249434","type":"ResetTool"},{"attributes":{"callback":null,"factors":["life","pain","opiates","groggy","ptsd","meditation","medical","er"],"range_padding":0.01},"id":"249413","type":"FactorRange"},{"attributes":{"overlay":{"id":"249438","type":"BoxAnnotation"}},"id":"249432","type":"BoxZoomTool"},{"attributes":{"callback":null,"start":0},"id":"249415","type":"DataRange1d"},{"attributes":{},"id":"249430","type":"PanTool"},{"attributes":{},"id":"249431","type":"WheelZoomTool"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"249410","type":"Title"}],"root_ids":["249411"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('249514').textContent;
+                  var render_items = [{"docid":"2367ece7-9abc-47d7-946d-2c7d03d3d410","roots":{"249411":"686ac2d6-28ab-4bf4-88f0-03a2ef3a69cd"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

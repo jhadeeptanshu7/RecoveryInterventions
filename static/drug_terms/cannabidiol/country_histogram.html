@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="02529c3f-5be3-4006-8976-8830edde6184"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="379648">
+          {"6e5af5e7-577b-41b2-a1a2-822714480333":{"roots":{"references":[{"attributes":{},"id":"379512","type":"CategoricalTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"379501","subtype":"Figure","type":"Plot"},"ticker":{"id":"379512","type":"CategoricalTicker"}},"id":"379514","type":"Grid"},{"attributes":{},"id":"379524","type":"ResetTool"},{"attributes":{},"id":"379525","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"379520","type":"PanTool"},{"id":"379521","type":"WheelZoomTool"},{"id":"379522","type":"BoxZoomTool"},{"id":"379523","type":"SaveTool"},{"id":"379524","type":"ResetTool"},{"id":"379525","type":"HelpTool"}]},"id":"379526","type":"Toolbar"},{"attributes":{},"id":"379520","type":"PanTool"},{"attributes":{},"id":"379521","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"379528","type":"BoxAnnotation"}},"id":"379522","type":"BoxZoomTool"},{"attributes":{},"id":"379523","type":"SaveTool"},{"attributes":{"callback":null,"start":0},"id":"379505","type":"DataRange1d"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"379528","type":"BoxAnnotation"},{"attributes":{},"id":"379547","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"379539","type":"ColumnDataSource"}},"id":"379544","type":"CDSView"},{"attributes":{},"id":"379509","type":"LinearScale"},{"attributes":{"bottom":{"expr":{"id":"379535","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"379536","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"379542","type":"VBar"},{"attributes":{"data_source":{"id":"379539","type":"ColumnDataSource"},"glyph":{"id":"379541","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"379542","type":"VBar"},"selection_glyph":null,"view":{"id":"379544","type":"CDSView"}},"id":"379543","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"379535","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"379536","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"379541","type":"VBar"},{"attributes":{"callback":null,"factors":["USA","Canada","\u05d9\u05e9\u05e8\u05d0\u05dc","UK","M\u00e9xico","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","United States of America (Middle Hawai'ian Islands territorial waters)","Guin\u00e9e","France","Italia","Vanuatu","Nederland","\u4e2d\u56fd","\u65e5\u672c","T\u00fcrkiye","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Norge","\u81fa\u7063","Jamaica","Portugal","India","Mo\u00e7ambique"],"range_padding":0.01},"id":"379503","type":"FactorRange"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"379500","type":"Title"},{"attributes":{"below":[{"id":"379511","type":"CategoricalAxis"}],"left":[{"id":"379515","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"379511","type":"CategoricalAxis"},{"id":"379514","type":"Grid"},{"id":"379515","type":"LinearAxis"},{"id":"379519","type":"Grid"},{"id":"379528","type":"BoxAnnotation"},{"id":"379551","type":"Legend"},{"id":"379543","type":"GlyphRenderer"},{"id":"379557","type":"GlyphRenderer"}],"title":{"id":"379500","type":"Title"},"toolbar":{"id":"379526","type":"Toolbar"},"x_range":{"id":"379503","type":"FactorRange"},"x_scale":{"id":"379507","type":"CategoricalScale"},"y_range":{"id":"379505","type":"DataRange1d"},"y_scale":{"id":"379509","type":"LinearScale"}},"id":"379501","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"379507","type":"CategoricalScale"},{"attributes":{},"id":"379549","type":"BasicTickFormatter"},{"attributes":{"bottom":{"expr":{"id":"379537","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"379538","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"379555","type":"VBar"},{"attributes":{"fields":["primary_locations"]},"id":"379537","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"379536","type":"Stack"},{"attributes":{"fields":[]},"id":"379535","type":"Stack"},{"attributes":{},"id":"379564","type":"Selection"},{"attributes":{"callback":null,"data":{"location_terms":["USA","Canada","\u05d9\u05e9\u05e8\u05d0\u05dc","UK","M\u00e9xico","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","United States of America (Middle Hawai'ian Islands territorial waters)","Guin\u00e9e","France","Italia","Vanuatu","Nederland","\u4e2d\u56fd","\u65e5\u672c","T\u00fcrkiye","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Norge","\u81fa\u7063","Jamaica","Portugal","India","Mo\u00e7ambique"],"mentioned_locations":[31,14,3,3,2,2,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0],"primary_locations":[9,3,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1]},"selected":{"id":"379564","type":"Selection"},"selection_policy":{"id":"379565","type":"UnionRenderers"}},"id":"379539","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"379538","type":"Stack"},{"attributes":{},"id":"379565","type":"UnionRenderers"},{"attributes":{"dimension":1,"plot":{"id":"379501","subtype":"Figure","type":"Plot"},"ticker":{"id":"379516","type":"BasicTicker"}},"id":"379519","type":"Grid"},{"attributes":{"data_source":{"id":"379553","type":"ColumnDataSource"},"glyph":{"id":"379555","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"379556","type":"VBar"},"selection_glyph":null,"view":{"id":"379558","type":"CDSView"}},"id":"379557","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"379537","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"379538","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"379556","type":"VBar"},{"attributes":{"items":[{"id":"379552","type":"LegendItem"},{"id":"379567","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"379501","subtype":"Figure","type":"Plot"}},"id":"379551","type":"Legend"},{"attributes":{"callback":null,"data":{"location_terms":["USA","Canada","\u05d9\u05e9\u05e8\u05d0\u05dc","UK","M\u00e9xico","\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22","United States of America (Middle Hawai'ian Islands territorial waters)","Guin\u00e9e","France","Italia","Vanuatu","Nederland","\u4e2d\u56fd","\u65e5\u672c","T\u00fcrkiye","\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646","Norge","\u81fa\u7063","Jamaica","Portugal","India","Mo\u00e7ambique"],"mentioned_locations":[31,14,3,3,2,2,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0],"primary_locations":[9,3,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1]},"selected":{"id":"379575","type":"Selection"},"selection_policy":{"id":"379576","type":"UnionRenderers"}},"id":"379553","type":"ColumnDataSource"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"379543","type":"GlyphRenderer"}]},"id":"379552","type":"LegendItem"},{"attributes":{"formatter":{"id":"379547","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"379501","subtype":"Figure","type":"Plot"},"ticker":{"id":"379512","type":"CategoricalTicker"}},"id":"379511","type":"CategoricalAxis"},{"attributes":{},"id":"379576","type":"UnionRenderers"},{"attributes":{},"id":"379575","type":"Selection"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"379557","type":"GlyphRenderer"}]},"id":"379567","type":"LegendItem"},{"attributes":{"formatter":{"id":"379549","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"379501","subtype":"Figure","type":"Plot"},"ticker":{"id":"379516","type":"BasicTicker"}},"id":"379515","type":"LinearAxis"},{"attributes":{"source":{"id":"379553","type":"ColumnDataSource"}},"id":"379558","type":"CDSView"},{"attributes":{},"id":"379516","type":"BasicTicker"}],"root_ids":["379501"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('379648').textContent;
+                  var render_items = [{"docid":"6e5af5e7-577b-41b2-a1a2-822714480333","roots":{"379501":"02529c3f-5be3-4006-8976-8830edde6184"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

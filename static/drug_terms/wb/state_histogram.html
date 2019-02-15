@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="1e28eaad-4bb2-483b-8c13-1d6ed517ec8f"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="359953">
+          {"2f09c383-f137-4e47-944d-69397eee8fb3":{"roots":{"references":[{"attributes":{"bottom":{"expr":{"id":"359842","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"359843","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"359860","type":"VBar"},{"attributes":{},"id":"359881","type":"UnionRenderers"},{"attributes":{},"id":"359880","type":"Selection"},{"attributes":{},"id":"359869","type":"Selection"},{"attributes":{},"id":"359812","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"359810","type":"DataRange1d"},{"attributes":{"formatter":{"id":"359852","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"359806","subtype":"Figure","type":"Plot"},"ticker":{"id":"359817","type":"CategoricalTicker"}},"id":"359816","type":"CategoricalAxis"},{"attributes":{},"id":"359817","type":"CategoricalTicker"},{"attributes":{},"id":"359814","type":"LinearScale"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"359806","subtype":"Figure","type":"Plot"},"ticker":{"id":"359817","type":"CategoricalTicker"}},"id":"359819","type":"Grid"},{"attributes":{},"id":"359830","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"359825","type":"PanTool"},{"id":"359826","type":"WheelZoomTool"},{"id":"359827","type":"BoxZoomTool"},{"id":"359828","type":"SaveTool"},{"id":"359829","type":"ResetTool"},{"id":"359830","type":"HelpTool"}]},"id":"359831","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"359833","type":"BoxAnnotation"},{"attributes":{"callback":null,"data":{"location_terms":["Texas","England","Florida","Ontario","Massachusetts","New York","Illinois","California","Alberta","Michigan","Kentucky","Ohio","Colorado","Nederland","Pennsylvania","Mississippi","\u6771\u4eac\u90fd","\u00cele-de-France","Wisconsin","\u5317\u4eac\u5e02","Washington","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","Maryland","Arizona","Utah","Bayern","VEN","New Jersey","North Carolina","Noord-Holland","New Mexico","Wyoming","Minnesota","LAZ","CCO","Estado de M\u00e9xico","Dalarna","\u05de\u05d7\u05d5\u05d6 \u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd","Indiana","North Dakota","\u062f\u0628\u064a\u200e","Virginia","Oregon","Victoria","\u0645\u062d\u0627\u0641\u0638\u0629 \u0627\u0644\u0642\u0627\u0647\u0631\u0629","\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23","Manab\u00ed","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Vermont","Georgia","Distrito Capital","D.C.","Illes Balears","Hawaii","Missouri","Alabama","Koinadugu District","Southern District","\u81fa\u7063\u7701","V\u00e4stra G\u00f6talands l\u00e4n"],"mentioned_locations":[18,8,8,4,5,4,5,5,3,4,3,5,5,3,3,2,3,3,2,3,2,3,2,2,2,1,2,2,1,2,2,1,0,1,0,0,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,1,1,1,1,0],"primary_locations":[4,6,4,4,3,4,2,2,2,1,2,0,0,1,1,1,0,0,1,0,1,0,0,0,0,1,0,0,1,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,1]},"selected":{"id":"359880","type":"Selection"},"selection_policy":{"id":"359881","type":"UnionRenderers"}},"id":"359858","type":"ColumnDataSource"},{"attributes":{"items":[{"id":"359857","type":"LegendItem"},{"id":"359872","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"359806","subtype":"Figure","type":"Plot"}},"id":"359856","type":"Legend"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"359848","type":"GlyphRenderer"}]},"id":"359857","type":"LegendItem"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"359862","type":"GlyphRenderer"}]},"id":"359872","type":"LegendItem"},{"attributes":{},"id":"359852","type":"CategoricalTickFormatter"},{"attributes":{},"id":"359870","type":"UnionRenderers"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"359805","type":"Title"},{"attributes":{},"id":"359854","type":"BasicTickFormatter"},{"attributes":{},"id":"359829","type":"ResetTool"},{"attributes":{},"id":"359828","type":"SaveTool"},{"attributes":{"source":{"id":"359858","type":"ColumnDataSource"}},"id":"359863","type":"CDSView"},{"attributes":{"data_source":{"id":"359858","type":"ColumnDataSource"},"glyph":{"id":"359860","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"359861","type":"VBar"},"selection_glyph":null,"view":{"id":"359863","type":"CDSView"}},"id":"359862","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"359842","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"359843","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"359861","type":"VBar"},{"attributes":{"below":[{"id":"359816","type":"CategoricalAxis"}],"left":[{"id":"359820","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"359816","type":"CategoricalAxis"},{"id":"359819","type":"Grid"},{"id":"359820","type":"LinearAxis"},{"id":"359824","type":"Grid"},{"id":"359833","type":"BoxAnnotation"},{"id":"359856","type":"Legend"},{"id":"359848","type":"GlyphRenderer"},{"id":"359862","type":"GlyphRenderer"}],"title":{"id":"359805","type":"Title"},"toolbar":{"id":"359831","type":"Toolbar"},"x_range":{"id":"359808","type":"FactorRange"},"x_scale":{"id":"359812","type":"CategoricalScale"},"y_range":{"id":"359810","type":"DataRange1d"},"y_scale":{"id":"359814","type":"LinearScale"}},"id":"359806","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"factors":["Texas","England","Florida","Ontario","Massachusetts","New York","Illinois","California","Alberta","Michigan","Kentucky","Ohio","Colorado","Nederland","Pennsylvania","Mississippi","\u6771\u4eac\u90fd","\u00cele-de-France","Wisconsin","\u5317\u4eac\u5e02","Washington","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","Maryland","Arizona","Utah","Bayern","VEN","New Jersey","North Carolina","Noord-Holland","New Mexico","Wyoming","Minnesota","LAZ","CCO","Estado de M\u00e9xico","Dalarna","\u05de\u05d7\u05d5\u05d6 \u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd","Indiana","North Dakota","\u062f\u0628\u064a\u200e","Virginia","Oregon","Victoria","\u0645\u062d\u0627\u0641\u0638\u0629 \u0627\u0644\u0642\u0627\u0647\u0631\u0629","\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23","Manab\u00ed","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Vermont","Georgia","Distrito Capital","D.C.","Illes Balears","Hawaii","Missouri","Alabama","Koinadugu District","Southern District","\u81fa\u7063\u7701","V\u00e4stra G\u00f6talands l\u00e4n"],"range_padding":0.01},"id":"359808","type":"FactorRange"},{"attributes":{},"id":"359821","type":"BasicTicker"},{"attributes":{"formatter":{"id":"359854","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"359806","subtype":"Figure","type":"Plot"},"ticker":{"id":"359821","type":"BasicTicker"}},"id":"359820","type":"LinearAxis"},{"attributes":{"overlay":{"id":"359833","type":"BoxAnnotation"}},"id":"359827","type":"BoxZoomTool"},{"attributes":{},"id":"359826","type":"WheelZoomTool"},{"attributes":{},"id":"359825","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"359806","subtype":"Figure","type":"Plot"},"ticker":{"id":"359821","type":"BasicTicker"}},"id":"359824","type":"Grid"},{"attributes":{"source":{"id":"359844","type":"ColumnDataSource"}},"id":"359849","type":"CDSView"},{"attributes":{"data_source":{"id":"359844","type":"ColumnDataSource"},"glyph":{"id":"359846","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"359847","type":"VBar"},"selection_glyph":null,"view":{"id":"359849","type":"CDSView"}},"id":"359848","type":"GlyphRenderer"},{"attributes":{"callback":null,"data":{"location_terms":["Texas","England","Florida","Ontario","Massachusetts","New York","Illinois","California","Alberta","Michigan","Kentucky","Ohio","Colorado","Nederland","Pennsylvania","Mississippi","\u6771\u4eac\u90fd","\u00cele-de-France","Wisconsin","\u5317\u4eac\u5e02","Washington","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","Maryland","Arizona","Utah","Bayern","VEN","New Jersey","North Carolina","Noord-Holland","New Mexico","Wyoming","Minnesota","LAZ","CCO","Estado de M\u00e9xico","Dalarna","\u05de\u05d7\u05d5\u05d6 \u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd","Indiana","North Dakota","\u062f\u0628\u064a\u200e","Virginia","Oregon","Victoria","\u0645\u062d\u0627\u0641\u0638\u0629 \u0627\u0644\u0642\u0627\u0647\u0631\u0629","\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23","Manab\u00ed","\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2, \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1 \u03ba\u03b1\u03b9 \u0399\u03cc\u03bd\u03b9\u03bf","Vermont","Georgia","Distrito Capital","D.C.","Illes Balears","Hawaii","Missouri","Alabama","Koinadugu District","Southern District","\u81fa\u7063\u7701","V\u00e4stra G\u00f6talands l\u00e4n"],"mentioned_locations":[18,8,8,4,5,4,5,5,3,4,3,5,5,3,3,2,3,3,2,3,2,3,2,2,2,1,2,2,1,2,2,1,0,1,0,0,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,1,1,1,1,0],"primary_locations":[4,6,4,4,3,4,2,2,2,1,2,0,0,1,1,1,0,0,1,0,1,0,0,0,0,1,0,0,1,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,1]},"selected":{"id":"359869","type":"Selection"},"selection_policy":{"id":"359870","type":"UnionRenderers"}},"id":"359844","type":"ColumnDataSource"},{"attributes":{"bottom":{"expr":{"id":"359840","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"359841","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"359847","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"359840","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"359841","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"359846","type":"VBar"},{"attributes":{"fields":["primary_locations"]},"id":"359841","type":"Stack"},{"attributes":{"fields":[]},"id":"359840","type":"Stack"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"359843","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"359842","type":"Stack"}],"root_ids":["359806"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('359953').textContent;
+                  var render_items = [{"docid":"2f09c383-f137-4e47-944d-69397eee8fb3","roots":{"359806":"1e28eaad-4bb2-483b-8c13-1d6ed517ec8f"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

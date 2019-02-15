@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="0d3960aa-1fea-4e2f-bb61-6046933edfee"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="8342">
+          {"cd38edb9-c856-4059-9ec8-cce0901cc9a8":{"roots":{"references":[{"attributes":{},"id":"8219","type":"HelpTool"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"8232","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"8231","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"8230","type":"Stack"},{"attributes":{"data_source":{"id":"8247","type":"ColumnDataSource"},"glyph":{"id":"8249","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"8250","type":"VBar"},"selection_glyph":null,"view":{"id":"8252","type":"CDSView"}},"id":"8251","type":"GlyphRenderer"},{"attributes":{"bottom":{"expr":{"id":"8229","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"8230","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"8236","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"8229","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"8230","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"8235","type":"VBar"},{"attributes":{"source":{"id":"8247","type":"ColumnDataSource"}},"id":"8252","type":"CDSView"},{"attributes":{},"id":"8210","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"8195","subtype":"Figure","type":"Plot"},"ticker":{"id":"8210","type":"BasicTicker"}},"id":"8213","type":"Grid"},{"attributes":{"source":{"id":"8233","type":"ColumnDataSource"}},"id":"8238","type":"CDSView"},{"attributes":{},"id":"8215","type":"WheelZoomTool"},{"attributes":{},"id":"8214","type":"PanTool"},{"attributes":{},"id":"8217","type":"SaveTool"},{"attributes":{"overlay":{"id":"8222","type":"BoxAnnotation"}},"id":"8216","type":"BoxZoomTool"},{"attributes":{"data_source":{"id":"8233","type":"ColumnDataSource"},"glyph":{"id":"8235","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"8236","type":"VBar"},"selection_glyph":null,"view":{"id":"8238","type":"CDSView"}},"id":"8237","type":"GlyphRenderer"},{"attributes":{},"id":"8270","type":"UnionRenderers"},{"attributes":{"callback":null,"factors":["Paris","Houston","Boston","NYC","Ciudad de M\u00e9xico","Boulder","SF","LA","Atlanta","Oakland","Newark","Miami","Langlade County","Resistencia","Columbus","Indianapolis","Philadelphia","Amsterdam","Cincinnati","Denver","Dallas","Fort Lauderdale","Trenton","Chicago","PGH","Portland","Newton","Washington","M\u00fcnchen","San Juan","Towson","Knoxville","Buffalo","Cambridge","Mure\u0219","Las Vegas","\u76f8\u99ac\u90e1","Toronto","Orlando","Calabasas","Lancaster","Mobile","Vancouver","ABQ","Baltimore","City of Melbourne","Albany","Ypsilanti","Appalachia","Bielsko-Bia\u0142a","Fremont","\u0627\u0644\u0642\u0627\u0647\u0631\u0629","El Paso","Logan County","Berkeley","Cheshire West and Chester","Luverne","Mid-Coast","Bedford","Bradenton","Lexington","Roma","Cherokee County","Charlotte","Camden","Seattle","Hohe B\u00f6rde","Jefferson County","Allentown","\u5343\u4ee3\u7530\u533a","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Reading","Murfreesboro","Everett","San Diego","Nashville-Davidson","London","Colorado Springs","Tr\u00f8ndelag","Tucson","Ballarat","Oviedo","Kingsport","Daly City","Huntington","County Tyrone","\u0421\u043e\u0444\u0438\u044f","Middletown","Providence","St. John's","Sarasota","\u81fa\u4e2d\u5e02","\u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd","\u041a\u0440\u0430\u0441\u043d\u043e\u0433\u0432\u0430\u0440\u0434\u0435\u0439\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d","Akron","Memphis","Salt Lake City","Lincoln","Detroit","County Dublin","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","Austin","Lawrenceville","New Orleans","Cleveland","Somerville","Bradford","Maricopa County","Annapolis","Gulbenes novads","Pemberton Township","Beaverton","\u041c\u043e\u0441\u043a\u0432\u0430","Gastonia","Wilmington","\u0645\u0643\u0629","Milwaukee","Glendale","Oak Park","\u753a\u7530\u5e02","Tijuana","\u0413\u0430\u0439\u0441\u043a\u0438\u0439 \u0433\u043e\u0440\u043e\u0434\u0441\u043a\u043e\u0439 \u043e\u043a\u0440\u0443\u0433","Cleveland Heights","Keller","University City"],"range_padding":0.01},"id":"8197","type":"FactorRange"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"8194","type":"Title"},{"attributes":{"below":[{"id":"8205","type":"CategoricalAxis"}],"left":[{"id":"8209","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"8205","type":"CategoricalAxis"},{"id":"8208","type":"Grid"},{"id":"8209","type":"LinearAxis"},{"id":"8213","type":"Grid"},{"id":"8222","type":"BoxAnnotation"},{"id":"8245","type":"Legend"},{"id":"8237","type":"GlyphRenderer"},{"id":"8251","type":"GlyphRenderer"}],"title":{"id":"8194","type":"Title"},"toolbar":{"id":"8220","type":"Toolbar"},"x_range":{"id":"8197","type":"FactorRange"},"x_scale":{"id":"8201","type":"CategoricalScale"},"y_range":{"id":"8199","type":"DataRange1d"},"y_scale":{"id":"8203","type":"LinearScale"}},"id":"8195","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"start":0},"id":"8199","type":"DataRange1d"},{"attributes":{},"id":"8258","type":"Selection"},{"attributes":{"callback":null,"data":{"location_terms":["Paris","Houston","Boston","NYC","Ciudad de M\u00e9xico","Boulder","SF","LA","Atlanta","Oakland","Newark","Miami","Langlade County","Resistencia","Columbus","Indianapolis","Philadelphia","Amsterdam","Cincinnati","Denver","Dallas","Fort Lauderdale","Trenton","Chicago","PGH","Portland","Newton","Washington","M\u00fcnchen","San Juan","Towson","Knoxville","Buffalo","Cambridge","Mure\u0219","Las Vegas","\u76f8\u99ac\u90e1","Toronto","Orlando","Calabasas","Lancaster","Mobile","Vancouver","ABQ","Baltimore","City of Melbourne","Albany","Ypsilanti","Appalachia","Bielsko-Bia\u0142a","Fremont","\u0627\u0644\u0642\u0627\u0647\u0631\u0629","El Paso","Logan County","Berkeley","Cheshire West and Chester","Luverne","Mid-Coast","Bedford","Bradenton","Lexington","Roma","Cherokee County","Charlotte","Camden","Seattle","Hohe B\u00f6rde","Jefferson County","Allentown","\u5343\u4ee3\u7530\u533a","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Reading","Murfreesboro","Everett","San Diego","Nashville-Davidson","London","Colorado Springs","Tr\u00f8ndelag","Tucson","Ballarat","Oviedo","Kingsport","Daly City","Huntington","County Tyrone","\u0421\u043e\u0444\u0438\u044f","Middletown","Providence","St. John's","Sarasota","\u81fa\u4e2d\u5e02","\u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd","\u041a\u0440\u0430\u0441\u043d\u043e\u0433\u0432\u0430\u0440\u0434\u0435\u0439\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d","Akron","Memphis","Salt Lake City","Lincoln","Detroit","County Dublin","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","Austin","Lawrenceville","New Orleans","Cleveland","Somerville","Bradford","Maricopa County","Annapolis","Gulbenes novads","Pemberton Township","Beaverton","\u041c\u043e\u0441\u043a\u0432\u0430","Gastonia","Wilmington","\u0645\u0643\u0629","Milwaukee","Glendale","Oak Park","\u753a\u7530\u5e02","Tijuana","\u0413\u0430\u0439\u0441\u043a\u0438\u0439 \u0433\u043e\u0440\u043e\u0434\u0441\u043a\u043e\u0439 \u043e\u043a\u0440\u0443\u0433","Cleveland Heights","Keller","University City"],"mentioned_locations":[15,13,10,5,6,6,5,5,4,5,4,4,0,0,4,1,2,4,2,1,2,3,3,2,3,3,2,2,1,2,1,2,2,2,2,1,2,2,2,1,2,2,1,1,2,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,0,0,1],"primary_locations":[0,1,0,1,0,0,1,1,1,0,0,0,4,4,0,3,2,0,1,2,1,0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,1,0]},"selected":{"id":"8269","type":"Selection"},"selection_policy":{"id":"8270","type":"UnionRenderers"}},"id":"8247","type":"ColumnDataSource"},{"attributes":{},"id":"8259","type":"UnionRenderers"},{"attributes":{"bottom":{"expr":{"id":"8231","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"8232","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"8250","type":"VBar"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"8214","type":"PanTool"},{"id":"8215","type":"WheelZoomTool"},{"id":"8216","type":"BoxZoomTool"},{"id":"8217","type":"SaveTool"},{"id":"8218","type":"ResetTool"},{"id":"8219","type":"HelpTool"}]},"id":"8220","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"8222","type":"BoxAnnotation"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"8195","subtype":"Figure","type":"Plot"},"ticker":{"id":"8206","type":"CategoricalTicker"}},"id":"8208","type":"Grid"},{"attributes":{"formatter":{"id":"8243","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"8195","subtype":"Figure","type":"Plot"},"ticker":{"id":"8210","type":"BasicTicker"}},"id":"8209","type":"LinearAxis"},{"attributes":{},"id":"8206","type":"CategoricalTicker"},{"attributes":{"fields":[]},"id":"8229","type":"Stack"},{"attributes":{"callback":null,"data":{"location_terms":["Paris","Houston","Boston","NYC","Ciudad de M\u00e9xico","Boulder","SF","LA","Atlanta","Oakland","Newark","Miami","Langlade County","Resistencia","Columbus","Indianapolis","Philadelphia","Amsterdam","Cincinnati","Denver","Dallas","Fort Lauderdale","Trenton","Chicago","PGH","Portland","Newton","Washington","M\u00fcnchen","San Juan","Towson","Knoxville","Buffalo","Cambridge","Mure\u0219","Las Vegas","\u76f8\u99ac\u90e1","Toronto","Orlando","Calabasas","Lancaster","Mobile","Vancouver","ABQ","Baltimore","City of Melbourne","Albany","Ypsilanti","Appalachia","Bielsko-Bia\u0142a","Fremont","\u0627\u0644\u0642\u0627\u0647\u0631\u0629","El Paso","Logan County","Berkeley","Cheshire West and Chester","Luverne","Mid-Coast","Bedford","Bradenton","Lexington","Roma","Cherokee County","Charlotte","Camden","Seattle","Hohe B\u00f6rde","Jefferson County","Allentown","\u5343\u4ee3\u7530\u533a","\u0394\u03ae\u03bc\u03bf\u03c2 \u0391\u03c1\u03c7\u03b1\u03af\u03b1\u03c2 \u039f\u03bb\u03c5\u03bc\u03c0\u03af\u03b1\u03c2","Reading","Murfreesboro","Everett","San Diego","Nashville-Davidson","London","Colorado Springs","Tr\u00f8ndelag","Tucson","Ballarat","Oviedo","Kingsport","Daly City","Huntington","County Tyrone","\u0421\u043e\u0444\u0438\u044f","Middletown","Providence","St. John's","Sarasota","\u81fa\u4e2d\u5e02","\u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd","\u041a\u0440\u0430\u0441\u043d\u043e\u0433\u0432\u0430\u0440\u0434\u0435\u0439\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d","Akron","Memphis","Salt Lake City","Lincoln","Detroit","County Dublin","\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629","Austin","Lawrenceville","New Orleans","Cleveland","Somerville","Bradford","Maricopa County","Annapolis","Gulbenes novads","Pemberton Township","Beaverton","\u041c\u043e\u0441\u043a\u0432\u0430","Gastonia","Wilmington","\u0645\u0643\u0629","Milwaukee","Glendale","Oak Park","\u753a\u7530\u5e02","Tijuana","\u0413\u0430\u0439\u0441\u043a\u0438\u0439 \u0433\u043e\u0440\u043e\u0434\u0441\u043a\u043e\u0439 \u043e\u043a\u0440\u0443\u0433","Cleveland Heights","Keller","University City"],"mentioned_locations":[15,13,10,5,6,6,5,5,4,5,4,4,0,0,4,1,2,4,2,1,2,3,3,2,3,3,2,2,1,2,1,2,2,2,2,1,2,2,2,1,2,2,1,1,2,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,0,0,1],"primary_locations":[0,1,0,1,0,0,1,1,1,0,0,0,4,4,0,3,2,0,1,2,1,0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,1,0]},"selected":{"id":"8258","type":"Selection"},"selection_policy":{"id":"8259","type":"UnionRenderers"}},"id":"8233","type":"ColumnDataSource"},{"attributes":{"formatter":{"id":"8241","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"8195","subtype":"Figure","type":"Plot"},"ticker":{"id":"8206","type":"CategoricalTicker"}},"id":"8205","type":"CategoricalAxis"},{"attributes":{},"id":"8203","type":"LinearScale"},{"attributes":{},"id":"8201","type":"CategoricalScale"},{"attributes":{"bottom":{"expr":{"id":"8231","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"8232","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"8249","type":"VBar"},{"attributes":{},"id":"8269","type":"Selection"},{"attributes":{},"id":"8243","type":"BasicTickFormatter"},{"attributes":{},"id":"8241","type":"CategoricalTickFormatter"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"8237","type":"GlyphRenderer"}]},"id":"8246","type":"LegendItem"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"8251","type":"GlyphRenderer"}]},"id":"8261","type":"LegendItem"},{"attributes":{"items":[{"id":"8246","type":"LegendItem"},{"id":"8261","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"8195","subtype":"Figure","type":"Plot"}},"id":"8245","type":"Legend"},{"attributes":{},"id":"8218","type":"ResetTool"}],"root_ids":["8195"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('8342').textContent;
+                  var render_items = [{"docid":"cd38edb9-c856-4059-9ec8-cce0901cc9a8","roots":{"8195":"0d3960aa-1fea-4e2f-bb61-6046933edfee"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

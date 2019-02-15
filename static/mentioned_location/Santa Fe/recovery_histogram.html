@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="a66a3ef1-26ce-4e48-8d6c-7e752816a8e7"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="115030">
+          {"a1b259d6-4c5a-41f9-ad61-7e340279e54c":{"roots":{"references":[{"attributes":{},"id":"114938","type":"CategoricalTicker"},{"attributes":{},"id":"114935","type":"LinearScale"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"114968","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"114927","subtype":"Figure","type":"Plot"},"ticker":{"id":"114938","type":"CategoricalTicker"}},"id":"114937","type":"CategoricalAxis"},{"attributes":{"callback":null,"start":0},"id":"114931","type":"DataRange1d"},{"attributes":{},"id":"114933","type":"CategoricalScale"},{"attributes":{},"id":"114970","type":"BasicTickFormatter"},{"attributes":{},"id":"114971","type":"Selection"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"114954","type":"BoxAnnotation"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"114946","type":"PanTool"},{"id":"114947","type":"WheelZoomTool"},{"id":"114948","type":"BoxZoomTool"},{"id":"114949","type":"SaveTool"},{"id":"114950","type":"ResetTool"},{"id":"114951","type":"HelpTool"}]},"id":"114952","type":"Toolbar"},{"attributes":{},"id":"114950","type":"ResetTool"},{"attributes":{},"id":"114951","type":"HelpTool"},{"attributes":{"source":{"id":"114961","type":"ColumnDataSource"}},"id":"114965","type":"CDSView"},{"attributes":{},"id":"114972","type":"UnionRenderers"},{"attributes":{"callback":null,"factors":["death","treatment","effects","life","pain","clean","medical","program","depression","degree","groups","hospital","journey","meeting","anxiety","abuse","mother","clinic","father","smart","suffering","therapy","asleep","quitting","withdrawals","facility","sober","sobriety","gym","exhausted","disease","relapse","struggles","addiction","meetings","therapist","cancer","symptoms","personality","recovery","withdrawal","ptsd","alive","diagnosis","benzos","breakup","church","awake","project","rehab","aa","illness","court","na","application","opiates","sickness","treatments","programs","benzo","prison","alcoholism","nausea","withdrawls","university","er","trauma","scalp","headaches","wd","urges","subs","psychological","seizures","divorce","binge","cheeks","grief","flu","behavior","anger","intoxicated","diarrhea","suboxone","discomfort","detox","hungry","childhood","jail","methadone","organization","fatigued","meditation","certification","transformed","secular","insomnia","acute","masters","40s","lethargy","constipation","sponsor","selfishness","venture","hungover","alzheimer","addictions","abstinence","dependence","gums","dependency","anon","hatred","chills","paws","wilderness","parkinson","medication","2000s","withdrawl","infidelity","sedated","territory","antibiotics","anxieties","psychosis","cravings","rehabilitation","precipitated","withdraw","inpatient","counseling","dementia","denial","nc","hangover","wrists","behavioral","descent","nostrils","apathy"],"range_padding":0.01},"id":"114929","type":"FactorRange"},{"attributes":{"data_source":{"id":"114961","type":"ColumnDataSource"},"glyph":{"id":"114962","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"114963","type":"VBar"},"selection_glyph":null,"view":{"id":"114965","type":"CDSView"}},"id":"114964","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"114963","type":"VBar"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"114962","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["death","treatment","effects","life","pain","clean","medical","program","depression","degree","groups","hospital","journey","meeting","anxiety","abuse","mother","clinic","father","smart","suffering","therapy","asleep","quitting","withdrawals","facility","sober","sobriety","gym","exhausted","disease","relapse","struggles","addiction","meetings","therapist","cancer","symptoms","personality","recovery","withdrawal","ptsd","alive","diagnosis","benzos","breakup","church","awake","project","rehab","aa","illness","court","na","application","opiates","sickness","treatments","programs","benzo","prison","alcoholism","nausea","withdrawls","university","er","trauma","scalp","headaches","wd","urges","subs","psychological","seizures","divorce","binge","cheeks","grief","flu","behavior","anger","intoxicated","diarrhea","suboxone","discomfort","detox","hungry","childhood","jail","methadone","organization","fatigued","meditation","certification","transformed","secular","insomnia","acute","masters","40s","lethargy","constipation","sponsor","selfishness","venture","hungover","alzheimer","addictions","abstinence","dependence","gums","dependency","anon","hatred","chills","paws","wilderness","parkinson","medication","2000s","withdrawl","infidelity","sedated","territory","antibiotics","anxieties","psychosis","cravings","rehabilitation","precipitated","withdraw","inpatient","counseling","dementia","denial","nc","hangover","wrists","behavioral","descent","nostrils","apathy"]},"selected":{"id":"114971","type":"Selection"},"selection_policy":{"id":"114972","type":"UnionRenderers"}},"id":"114961","type":"ColumnDataSource"},{"attributes":{"below":[{"id":"114937","type":"CategoricalAxis"}],"left":[{"id":"114941","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"114937","type":"CategoricalAxis"},{"id":"114940","type":"Grid"},{"id":"114941","type":"LinearAxis"},{"id":"114945","type":"Grid"},{"id":"114954","type":"BoxAnnotation"},{"id":"114964","type":"GlyphRenderer"}],"title":{"id":"114926","type":"Title"},"toolbar":{"id":"114952","type":"Toolbar"},"x_range":{"id":"114929","type":"FactorRange"},"x_scale":{"id":"114933","type":"CategoricalScale"},"y_range":{"id":"114931","type":"DataRange1d"},"y_scale":{"id":"114935","type":"LinearScale"}},"id":"114927","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"114926","type":"Title"},{"attributes":{},"id":"114968","type":"CategoricalTickFormatter"},{"attributes":{},"id":"114949","type":"SaveTool"},{"attributes":{"overlay":{"id":"114954","type":"BoxAnnotation"}},"id":"114948","type":"BoxZoomTool"},{"attributes":{"dimension":1,"plot":{"id":"114927","subtype":"Figure","type":"Plot"},"ticker":{"id":"114942","type":"BasicTicker"}},"id":"114945","type":"Grid"},{"attributes":{},"id":"114947","type":"WheelZoomTool"},{"attributes":{},"id":"114946","type":"PanTool"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"114970","type":"BasicTickFormatter"},"plot":{"id":"114927","subtype":"Figure","type":"Plot"},"ticker":{"id":"114942","type":"BasicTicker"}},"id":"114941","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"114927","subtype":"Figure","type":"Plot"},"ticker":{"id":"114938","type":"CategoricalTicker"}},"id":"114940","type":"Grid"},{"attributes":{},"id":"114942","type":"BasicTicker"}],"root_ids":["114927"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('115030').textContent;
+                  var render_items = [{"docid":"a1b259d6-4c5a-41f9-ad61-7e340279e54c","roots":{"114927":"a66a3ef1-26ce-4e48-8d6c-7e752816a8e7"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

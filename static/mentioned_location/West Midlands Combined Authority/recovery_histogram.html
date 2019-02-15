@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="69be7709-9772-4f46-91b2-b07487de8a82"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="85420">
+          {"25f930c1-8566-4441-b66f-3f7f482bbc66":{"roots":{"references":[{"attributes":{},"id":"85328","type":"CategoricalTicker"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"85358","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"85317","subtype":"Figure","type":"Plot"},"ticker":{"id":"85328","type":"CategoricalTicker"}},"id":"85327","type":"CategoricalAxis"},{"attributes":{},"id":"85325","type":"LinearScale"},{"attributes":{},"id":"85323","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"85321","type":"DataRange1d"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"85344","type":"BoxAnnotation"},{"attributes":{},"id":"85361","type":"Selection"},{"attributes":{},"id":"85360","type":"BasicTickFormatter"},{"attributes":{},"id":"85341","type":"HelpTool"},{"attributes":{},"id":"85340","type":"ResetTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"85336","type":"PanTool"},{"id":"85337","type":"WheelZoomTool"},{"id":"85338","type":"BoxZoomTool"},{"id":"85339","type":"SaveTool"},{"id":"85340","type":"ResetTool"},{"id":"85341","type":"HelpTool"}]},"id":"85342","type":"Toolbar"},{"attributes":{},"id":"85362","type":"UnionRenderers"},{"attributes":{"overlay":{"id":"85344","type":"BoxAnnotation"}},"id":"85338","type":"BoxZoomTool"},{"attributes":{},"id":"85339","type":"SaveTool"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"85316","type":"Title"},{"attributes":{"below":[{"id":"85327","type":"CategoricalAxis"}],"left":[{"id":"85331","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"85327","type":"CategoricalAxis"},{"id":"85330","type":"Grid"},{"id":"85331","type":"LinearAxis"},{"id":"85335","type":"Grid"},{"id":"85344","type":"BoxAnnotation"},{"id":"85354","type":"GlyphRenderer"}],"title":{"id":"85316","type":"Title"},"toolbar":{"id":"85342","type":"Toolbar"},"x_range":{"id":"85319","type":"FactorRange"},"x_scale":{"id":"85323","type":"CategoricalScale"},"y_range":{"id":"85321","type":"DataRange1d"},"y_scale":{"id":"85325","type":"LinearScale"}},"id":"85317","subtype":"Figure","type":"Plot"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"85317","subtype":"Figure","type":"Plot"},"ticker":{"id":"85328","type":"CategoricalTicker"}},"id":"85330","type":"Grid"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"85360","type":"BasicTickFormatter"},"plot":{"id":"85317","subtype":"Figure","type":"Plot"},"ticker":{"id":"85332","type":"BasicTicker"}},"id":"85331","type":"LinearAxis"},{"attributes":{},"id":"85332","type":"BasicTicker"},{"attributes":{"callback":null,"factors":["life","death","subs","journey","meetings","quitting","suffering","illness","treatment","clean","dt","meeting","rehabilitation","smart","personality"],"range_padding":0.01},"id":"85319","type":"FactorRange"},{"attributes":{"dimension":1,"plot":{"id":"85317","subtype":"Figure","type":"Plot"},"ticker":{"id":"85332","type":"BasicTicker"}},"id":"85335","type":"Grid"},{"attributes":{},"id":"85336","type":"PanTool"},{"attributes":{},"id":"85337","type":"WheelZoomTool"},{"attributes":{},"id":"85358","type":"CategoricalTickFormatter"},{"attributes":{"data_source":{"id":"85351","type":"ColumnDataSource"},"glyph":{"id":"85352","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"85353","type":"VBar"},"selection_glyph":null,"view":{"id":"85355","type":"CDSView"}},"id":"85354","type":"GlyphRenderer"},{"attributes":{"source":{"id":"85351","type":"ColumnDataSource"}},"id":"85355","type":"CDSView"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"85352","type":"VBar"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"85353","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["life","death","subs","journey","meetings","quitting","suffering","illness","treatment","clean","dt","meeting","rehabilitation","smart","personality"]},"selected":{"id":"85361","type":"Selection"},"selection_policy":{"id":"85362","type":"UnionRenderers"}},"id":"85351","type":"ColumnDataSource"}],"root_ids":["85317"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('85420').textContent;
+                  var render_items = [{"docid":"25f930c1-8566-4441-b66f-3f7f482bbc66","roots":{"85317":"69be7709-9772-4f46-91b2-b07487de8a82"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

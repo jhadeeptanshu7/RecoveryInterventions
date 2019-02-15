@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="24c20aa6-eef8-4964-834d-df8f6fdd788f"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="206905">
+          {"f3d1c573-aaa0-45dd-a72a-1c67c90aa666":{"roots":{"references":[{"attributes":{},"id":"206846","type":"Selection"},{"attributes":{},"id":"206847","type":"UnionRenderers"},{"attributes":{},"id":"206845","type":"BasicTickFormatter"},{"attributes":{},"id":"206843","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"206836","type":"ColumnDataSource"}},"id":"206840","type":"CDSView"},{"attributes":{},"id":"206813","type":"CategoricalTicker"},{"attributes":{},"id":"206810","type":"LinearScale"},{"attributes":{"data_source":{"id":"206836","type":"ColumnDataSource"},"glyph":{"id":"206837","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"206838","type":"VBar"},"selection_glyph":null,"view":{"id":"206840","type":"CDSView"}},"id":"206839","type":"GlyphRenderer"},{"attributes":{"axis_label":"Drug","formatter":{"id":"206843","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"206802","subtype":"Figure","type":"Plot"},"ticker":{"id":"206813","type":"CategoricalTicker"}},"id":"206812","type":"CategoricalAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"206802","subtype":"Figure","type":"Plot"},"ticker":{"id":"206813","type":"CategoricalTicker"}},"id":"206815","type":"Grid"},{"attributes":{},"id":"206817","type":"BasicTicker"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"206845","type":"BasicTickFormatter"},"plot":{"id":"206802","subtype":"Figure","type":"Plot"},"ticker":{"id":"206817","type":"BasicTicker"}},"id":"206816","type":"LinearAxis"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"206837","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["pot","sub","black","white","fire","e","cheese","bars","subs","blow","snow","ice","crack","north","trees","glass","smack","k","lines","nicotine","tesla","joints","crown","cigs","melatonin","strain","gt","percs","cocaine","speed","meth","bowl","purple","pots","80s","blunt","mary","buds","oil","banana","cope","coke","brownie","powders","heroin","stems","bud","spice","hits","tobacco","ski","j","l","pea","cigarettes","benzos","dank","ms","h","grass","crystal"]},"selected":{"id":"206846","type":"Selection"},"selection_policy":{"id":"206847","type":"UnionRenderers"}},"id":"206836","type":"ColumnDataSource"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"206838","type":"VBar"},{"attributes":{},"id":"206826","type":"HelpTool"},{"attributes":{"below":[{"id":"206812","type":"CategoricalAxis"}],"left":[{"id":"206816","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"206812","type":"CategoricalAxis"},{"id":"206815","type":"Grid"},{"id":"206816","type":"LinearAxis"},{"id":"206820","type":"Grid"},{"id":"206829","type":"BoxAnnotation"},{"id":"206839","type":"GlyphRenderer"}],"title":{"id":"206801","type":"Title"},"toolbar":{"id":"206827","type":"Toolbar"},"x_range":{"id":"206804","type":"FactorRange"},"x_scale":{"id":"206808","type":"CategoricalScale"},"y_range":{"id":"206806","type":"DataRange1d"},"y_scale":{"id":"206810","type":"LinearScale"}},"id":"206802","subtype":"Figure","type":"Plot"},{"attributes":{"plot":null,"text":"Drug Counts"},"id":"206801","type":"Title"},{"attributes":{"callback":null,"start":0},"id":"206806","type":"DataRange1d"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"206829","type":"BoxAnnotation"},{"attributes":{"callback":null,"factors":["pot","sub","black","white","fire","e","cheese","bars","subs","blow","snow","ice","crack","north","trees","glass","smack","k","lines","nicotine","tesla","joints","crown","cigs","melatonin","strain","gt","percs","cocaine","speed","meth","bowl","purple","pots","80s","blunt","mary","buds","oil","banana","cope","coke","brownie","powders","heroin","stems","bud","spice","hits","tobacco","ski","j","l","pea","cigarettes","benzos","dank","ms","h","grass","crystal"],"range_padding":0.01},"id":"206804","type":"FactorRange"},{"attributes":{},"id":"206824","type":"SaveTool"},{"attributes":{},"id":"206825","type":"ResetTool"},{"attributes":{},"id":"206808","type":"CategoricalScale"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"206821","type":"PanTool"},{"id":"206822","type":"WheelZoomTool"},{"id":"206823","type":"BoxZoomTool"},{"id":"206824","type":"SaveTool"},{"id":"206825","type":"ResetTool"},{"id":"206826","type":"HelpTool"}]},"id":"206827","type":"Toolbar"},{"attributes":{"dimension":1,"plot":{"id":"206802","subtype":"Figure","type":"Plot"},"ticker":{"id":"206817","type":"BasicTicker"}},"id":"206820","type":"Grid"},{"attributes":{},"id":"206821","type":"PanTool"},{"attributes":{},"id":"206822","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"206829","type":"BoxAnnotation"}},"id":"206823","type":"BoxZoomTool"}],"root_ids":["206802"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('206905').textContent;
+                  var render_items = [{"docid":"f3d1c573-aaa0-45dd-a72a-1c67c90aa666","roots":{"206802":"24c20aa6-eef8-4964-834d-df8f6fdd788f"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

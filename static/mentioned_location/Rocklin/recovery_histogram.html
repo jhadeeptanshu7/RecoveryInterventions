@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="9125bd6c-3360-4ce3-aba1-4d2e7f1c55bc"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="108520">
+          {"c112466b-1079-4efc-a735-70f1caa3552a":{"roots":{"references":[{"attributes":{"dimension":1,"plot":{"id":"108417","subtype":"Figure","type":"Plot"},"ticker":{"id":"108432","type":"BasicTicker"}},"id":"108435","type":"Grid"},{"attributes":{},"id":"108436","type":"PanTool"},{"attributes":{},"id":"108437","type":"WheelZoomTool"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"108417","subtype":"Figure","type":"Plot"},"ticker":{"id":"108428","type":"CategoricalTicker"}},"id":"108430","type":"Grid"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"108460","type":"BasicTickFormatter"},"plot":{"id":"108417","subtype":"Figure","type":"Plot"},"ticker":{"id":"108432","type":"BasicTicker"}},"id":"108431","type":"LinearAxis"},{"attributes":{},"id":"108432","type":"BasicTicker"},{"attributes":{"overlay":{"id":"108444","type":"BoxAnnotation"}},"id":"108438","type":"BoxZoomTool"},{"attributes":{},"id":"108439","type":"SaveTool"},{"attributes":{"data_source":{"id":"108451","type":"ColumnDataSource"},"glyph":{"id":"108452","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"108453","type":"VBar"},"selection_glyph":null,"view":{"id":"108455","type":"CDSView"}},"id":"108454","type":"GlyphRenderer"},{"attributes":{"callback":null,"factors":["aa","therapy","medication","subs","cancer","certification","alive","hungry","clinic","therapist","asleep","anger","meditation","migraines","depression","er","headfirst","death","recovery","hospital","diarrhea","symptoms","application","program","treatment","delving","headaches","meeting","quitting","smart","personality","life","pain","withdraw","degree","insecurities","insomnia","dehydration","suffering","journey","fatigue","effects","groups","addictions","anxiety","programs","soreness","medical","disease","project","clean","awake","addiction","childhood"],"range_padding":0.01},"id":"108419","type":"FactorRange"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"108452","type":"VBar"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"108453","type":"VBar"},{"attributes":{"callback":null,"data":{"top":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["aa","therapy","medication","subs","cancer","certification","alive","hungry","clinic","therapist","asleep","anger","meditation","migraines","depression","er","headfirst","death","recovery","hospital","diarrhea","symptoms","application","program","treatment","delving","headaches","meeting","quitting","smart","personality","life","pain","withdraw","degree","insecurities","insomnia","dehydration","suffering","journey","fatigue","effects","groups","addictions","anxiety","programs","soreness","medical","disease","project","clean","awake","addiction","childhood"]},"selected":{"id":"108461","type":"Selection"},"selection_policy":{"id":"108462","type":"UnionRenderers"}},"id":"108451","type":"ColumnDataSource"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"108416","type":"Title"},{"attributes":{"below":[{"id":"108427","type":"CategoricalAxis"}],"left":[{"id":"108431","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"108427","type":"CategoricalAxis"},{"id":"108430","type":"Grid"},{"id":"108431","type":"LinearAxis"},{"id":"108435","type":"Grid"},{"id":"108444","type":"BoxAnnotation"},{"id":"108454","type":"GlyphRenderer"}],"title":{"id":"108416","type":"Title"},"toolbar":{"id":"108442","type":"Toolbar"},"x_range":{"id":"108419","type":"FactorRange"},"x_scale":{"id":"108423","type":"CategoricalScale"},"y_range":{"id":"108421","type":"DataRange1d"},"y_scale":{"id":"108425","type":"LinearScale"}},"id":"108417","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"108458","type":"CategoricalTickFormatter"},{"attributes":{},"id":"108423","type":"CategoricalScale"},{"attributes":{"callback":null,"start":0},"id":"108421","type":"DataRange1d"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"108458","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"108417","subtype":"Figure","type":"Plot"},"ticker":{"id":"108428","type":"CategoricalTicker"}},"id":"108427","type":"CategoricalAxis"},{"attributes":{},"id":"108425","type":"LinearScale"},{"attributes":{},"id":"108428","type":"CategoricalTicker"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"108444","type":"BoxAnnotation"},{"attributes":{},"id":"108441","type":"HelpTool"},{"attributes":{},"id":"108440","type":"ResetTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"108436","type":"PanTool"},{"id":"108437","type":"WheelZoomTool"},{"id":"108438","type":"BoxZoomTool"},{"id":"108439","type":"SaveTool"},{"id":"108440","type":"ResetTool"},{"id":"108441","type":"HelpTool"}]},"id":"108442","type":"Toolbar"},{"attributes":{},"id":"108462","type":"UnionRenderers"},{"attributes":{},"id":"108461","type":"Selection"},{"attributes":{},"id":"108460","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"108451","type":"ColumnDataSource"}},"id":"108455","type":"CDSView"}],"root_ids":["108417"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('108520').textContent;
+                  var render_items = [{"docid":"c112466b-1079-4efc-a735-70f1caa3552a","roots":{"108417":"9125bd6c-3360-4ce3-aba1-4d2e7f1c55bc"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

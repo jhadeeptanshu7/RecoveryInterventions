@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="d1100a22-d7f5-4241-82ab-8b6b053ba949"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="81552">
+          {"26351ffc-c941-4f70-9589-cb55d3846d35":{"roots":{"references":[{"attributes":{},"id":"81464","type":"BasicTicker"},{"attributes":{"dimension":1,"plot":{"id":"81449","subtype":"Figure","type":"Plot"},"ticker":{"id":"81464","type":"BasicTicker"}},"id":"81467","type":"Grid"},{"attributes":{},"id":"81460","type":"CategoricalTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"81449","subtype":"Figure","type":"Plot"},"ticker":{"id":"81460","type":"CategoricalTicker"}},"id":"81462","type":"Grid"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"81492","type":"BasicTickFormatter"},"plot":{"id":"81449","subtype":"Figure","type":"Plot"},"ticker":{"id":"81464","type":"BasicTicker"}},"id":"81463","type":"LinearAxis"},{"attributes":{},"id":"81457","type":"LinearScale"},{"attributes":{},"id":"81468","type":"PanTool"},{"attributes":{},"id":"81469","type":"WheelZoomTool"},{"attributes":{"plot":null,"text":"Recovery Term Counts"},"id":"81448","type":"Title"},{"attributes":{"below":[{"id":"81459","type":"CategoricalAxis"}],"left":[{"id":"81463","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"81459","type":"CategoricalAxis"},{"id":"81462","type":"Grid"},{"id":"81463","type":"LinearAxis"},{"id":"81467","type":"Grid"},{"id":"81476","type":"BoxAnnotation"},{"id":"81486","type":"GlyphRenderer"}],"title":{"id":"81448","type":"Title"},"toolbar":{"id":"81474","type":"Toolbar"},"x_range":{"id":"81451","type":"FactorRange"},"x_scale":{"id":"81455","type":"CategoricalScale"},"y_range":{"id":"81453","type":"DataRange1d"},"y_scale":{"id":"81457","type":"LinearScale"}},"id":"81449","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"data":{"top":[1,1,1,1,1,1,1,1,1,1,1],"x":["life","anxiety","gym","hangover","medication","program","therapy","effects","clean","meeting","depression"]},"selected":{"id":"81493","type":"Selection"},"selection_policy":{"id":"81494","type":"UnionRenderers"}},"id":"81483","type":"ColumnDataSource"},{"attributes":{"data_source":{"id":"81483","type":"ColumnDataSource"},"glyph":{"id":"81484","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"81485","type":"VBar"},"selection_glyph":null,"view":{"id":"81487","type":"CDSView"}},"id":"81486","type":"GlyphRenderer"},{"attributes":{"source":{"id":"81483","type":"ColumnDataSource"}},"id":"81487","type":"CDSView"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"81484","type":"VBar"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"81485","type":"VBar"},{"attributes":{"axis_label":"Recovery Terms","formatter":{"id":"81490","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"81449","subtype":"Figure","type":"Plot"},"ticker":{"id":"81460","type":"CategoricalTicker"}},"id":"81459","type":"CategoricalAxis"},{"attributes":{},"id":"81473","type":"HelpTool"},{"attributes":{},"id":"81472","type":"ResetTool"},{"attributes":{},"id":"81471","type":"SaveTool"},{"attributes":{"overlay":{"id":"81476","type":"BoxAnnotation"}},"id":"81470","type":"BoxZoomTool"},{"attributes":{"callback":null,"factors":["life","anxiety","gym","hangover","medication","program","therapy","effects","clean","meeting","depression"],"range_padding":0.01},"id":"81451","type":"FactorRange"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"81476","type":"BoxAnnotation"},{"attributes":{"callback":null,"start":0},"id":"81453","type":"DataRange1d"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"81468","type":"PanTool"},{"id":"81469","type":"WheelZoomTool"},{"id":"81470","type":"BoxZoomTool"},{"id":"81471","type":"SaveTool"},{"id":"81472","type":"ResetTool"},{"id":"81473","type":"HelpTool"}]},"id":"81474","type":"Toolbar"},{"attributes":{},"id":"81455","type":"CategoricalScale"},{"attributes":{},"id":"81490","type":"CategoricalTickFormatter"},{"attributes":{},"id":"81493","type":"Selection"},{"attributes":{},"id":"81492","type":"BasicTickFormatter"},{"attributes":{},"id":"81494","type":"UnionRenderers"}],"root_ids":["81449"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('81552').textContent;
+                  var render_items = [{"docid":"26351ffc-c941-4f70-9589-cb55d3846d35","roots":{"81449":"d1100a22-d7f5-4241-82ab-8b6b053ba949"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

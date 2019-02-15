@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="15d5cda8-7dd1-4cb8-afd0-f62fa1a748b5"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="58493">
+          {"beb1843b-df02-46e6-9d57-c447c5107d7a":{"roots":{"references":[{"attributes":{"plot":null,"text":"Drug Counts"},"id":"58389","type":"Title"},{"attributes":{},"id":"58433","type":"BasicTickFormatter"},{"attributes":{},"id":"58413","type":"ResetTool"},{"attributes":{},"id":"58412","type":"SaveTool"},{"attributes":{"overlay":{"id":"58417","type":"BoxAnnotation"}},"id":"58411","type":"BoxZoomTool"},{"attributes":{},"id":"58410","type":"WheelZoomTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"58417","type":"BoxAnnotation"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"58409","type":"PanTool"},{"id":"58410","type":"WheelZoomTool"},{"id":"58411","type":"BoxZoomTool"},{"id":"58412","type":"SaveTool"},{"id":"58413","type":"ResetTool"},{"id":"58414","type":"HelpTool"}]},"id":"58415","type":"Toolbar"},{"attributes":{},"id":"58414","type":"HelpTool"},{"attributes":{"callback":null,"start":0},"id":"58394","type":"DataRange1d"},{"attributes":{},"id":"58396","type":"CategoricalScale"},{"attributes":{"below":[{"id":"58400","type":"CategoricalAxis"}],"left":[{"id":"58404","type":"LinearAxis"}],"plot_height":300,"plot_width":2000,"renderers":[{"id":"58400","type":"CategoricalAxis"},{"id":"58403","type":"Grid"},{"id":"58404","type":"LinearAxis"},{"id":"58408","type":"Grid"},{"id":"58417","type":"BoxAnnotation"},{"id":"58427","type":"GlyphRenderer"}],"title":{"id":"58389","type":"Title"},"toolbar":{"id":"58415","type":"Toolbar"},"x_range":{"id":"58392","type":"FactorRange"},"x_scale":{"id":"58396","type":"CategoricalScale"},"y_range":{"id":"58394","type":"DataRange1d"},"y_scale":{"id":"58398","type":"LinearScale"}},"id":"58390","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"factors":["black","fire","e","white","weed","sub","glass","ice","lines","h","speed","blow","k","north","trees","hits","subs","bowl","rocket","l","bowls","bud","shrooms","acid","bongs","ms","thc","bars","nicotine","fish","dmt","cheese","cope","seed","snow","oil","lsd","gt","crack","tobacco","cannabis","molly","heroin","pg","marijuana","stems","j","crystal","joints","blunt","benzo","skiing","yohimbine","viagra","ambien","smack","grizzly","crown","etiz","etizolam","edibles","purple","haze","blunts","mdma","indica","pot","wax","banana","coke","spice","mary","dank","cigs","tesla","shard","crystals","lithium","xanax","lunesta","cigarettes","liberty","fentanyl","fent","blaze","ski","mxe","amt","clam","oxy","dabs","soma","lucy","codeine","pea","og","strains","benzos","klonopin","buds","stamp","m1","jane","narcan","propylene","psilocybin","spliffs","nzt","cbd","strain","truffles","doc","harley"],"range_padding":0.01},"id":"58392","type":"FactorRange"},{"attributes":{},"id":"58398","type":"LinearScale"},{"attributes":{},"id":"58435","type":"UnionRenderers"},{"attributes":{},"id":"58434","type":"Selection"},{"attributes":{},"id":"58431","type":"CategoricalTickFormatter"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"58426","type":"VBar"},{"attributes":{"data_source":{"id":"58424","type":"ColumnDataSource"},"glyph":{"id":"58425","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"58426","type":"VBar"},"selection_glyph":null,"view":{"id":"58428","type":"CDSView"}},"id":"58427","type":"GlyphRenderer"},{"attributes":{"callback":null,"data":{"top":[16,14,14,13,13,12,12,11,11,10,9,9,9,9,8,8,7,7,6,6,6,6,5,5,5,5,5,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"x":["black","fire","e","white","weed","sub","glass","ice","lines","h","speed","blow","k","north","trees","hits","subs","bowl","rocket","l","bowls","bud","shrooms","acid","bongs","ms","thc","bars","nicotine","fish","dmt","cheese","cope","seed","snow","oil","lsd","gt","crack","tobacco","cannabis","molly","heroin","pg","marijuana","stems","j","crystal","joints","blunt","benzo","skiing","yohimbine","viagra","ambien","smack","grizzly","crown","etiz","etizolam","edibles","purple","haze","blunts","mdma","indica","pot","wax","banana","coke","spice","mary","dank","cigs","tesla","shard","crystals","lithium","xanax","lunesta","cigarettes","liberty","fentanyl","fent","blaze","ski","mxe","amt","clam","oxy","dabs","soma","lucy","codeine","pea","og","strains","benzos","klonopin","buds","stamp","m1","jane","narcan","propylene","psilocybin","spliffs","nzt","cbd","strain","truffles","doc","harley"]},"selected":{"id":"58434","type":"Selection"},"selection_policy":{"id":"58435","type":"UnionRenderers"}},"id":"58424","type":"ColumnDataSource"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"58425","type":"VBar"},{"attributes":{"dimension":1,"plot":{"id":"58390","subtype":"Figure","type":"Plot"},"ticker":{"id":"58405","type":"BasicTicker"}},"id":"58408","type":"Grid"},{"attributes":{},"id":"58409","type":"PanTool"},{"attributes":{"axis_label":"Number of Drug Users","formatter":{"id":"58433","type":"BasicTickFormatter"},"plot":{"id":"58390","subtype":"Figure","type":"Plot"},"ticker":{"id":"58405","type":"BasicTicker"}},"id":"58404","type":"LinearAxis"},{"attributes":{},"id":"58405","type":"BasicTicker"},{"attributes":{"axis_label":"Drug","formatter":{"id":"58431","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","plot":{"id":"58390","subtype":"Figure","type":"Plot"},"ticker":{"id":"58401","type":"CategoricalTicker"}},"id":"58400","type":"CategoricalAxis"},{"attributes":{},"id":"58401","type":"CategoricalTicker"},{"attributes":{"source":{"id":"58424","type":"ColumnDataSource"}},"id":"58428","type":"CDSView"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"58390","subtype":"Figure","type":"Plot"},"ticker":{"id":"58401","type":"CategoricalTicker"}},"id":"58403","type":"Grid"}],"root_ids":["58390"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('58493').textContent;
+                  var render_items = [{"docid":"beb1843b-df02-46e6-9d57-c447c5107d7a","roots":{"58390":"15d5cda8-7dd1-4cb8-afd0-f62fa1a748b5"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

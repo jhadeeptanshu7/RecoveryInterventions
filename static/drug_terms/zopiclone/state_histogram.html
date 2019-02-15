@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="2f3430af-74f5-463e-918a-52028dc58379"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="173303">
+          {"c8f8c44e-9666-4dba-9288-4db2298a4d7f":{"roots":{"references":[{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"173183","type":"BoxAnnotation"},{"attributes":{},"id":"173180","type":"HelpTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"173175","type":"PanTool"},{"id":"173176","type":"WheelZoomTool"},{"id":"173177","type":"BoxZoomTool"},{"id":"173178","type":"SaveTool"},{"id":"173179","type":"ResetTool"},{"id":"173180","type":"HelpTool"}]},"id":"173181","type":"Toolbar"},{"attributes":{},"id":"173204","type":"BasicTickFormatter"},{"attributes":{"label":{"value":"primary_locations"},"renderers":[{"id":"173198","type":"GlyphRenderer"}]},"id":"173207","type":"LegendItem"},{"attributes":{"fields":[]},"id":"173190","type":"Stack"},{"attributes":{"label":{"value":"mentioned_locations"},"renderers":[{"id":"173212","type":"GlyphRenderer"}]},"id":"173222","type":"LegendItem"},{"attributes":{},"id":"173220","type":"UnionRenderers"},{"attributes":{"fields":["primary_locations","mentioned_locations"]},"id":"173193","type":"Stack"},{"attributes":{},"id":"173202","type":"CategoricalTickFormatter"},{"attributes":{"callback":null,"start":0},"id":"173160","type":"DataRange1d"},{"attributes":{},"id":"173162","type":"CategoricalScale"},{"attributes":{},"id":"173164","type":"LinearScale"},{"attributes":{"formatter":{"id":"173202","type":"CategoricalTickFormatter"},"major_label_orientation":"vertical","minor_tick_line_color":{"value":null},"plot":{"id":"173156","subtype":"Figure","type":"Plot"},"ticker":{"id":"173167","type":"CategoricalTicker"}},"id":"173166","type":"CategoricalAxis"},{"attributes":{},"id":"173167","type":"CategoricalTicker"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"173156","subtype":"Figure","type":"Plot"},"ticker":{"id":"173167","type":"CategoricalTicker"}},"id":"173169","type":"Grid"},{"attributes":{"items":[{"id":"173207","type":"LegendItem"},{"id":"173222","type":"LegendItem"}],"location":"top_center","orientation":"horizontal","plot":{"id":"173156","subtype":"Figure","type":"Plot"}},"id":"173206","type":"Legend"},{"attributes":{"callback":null,"data":{"location_terms":["England","\u00cele-de-France","Saskatchewan","Noord-Holland","Ontario","\u6771\u5317\u5730\u65b9","\u6771\u4eac\u90fd","Departamento de Managua","Alberta","Kalimantan Barat","\u062f\u0628\u064a\u200e","Nederland","Victoria","Connecticut","Massachusetts","Puerto Rico","\u5317\u4eac\u5e02","\u0623\u0631\u064a\u0627\u0646\u0629","D.C.","Pennsylvania","San Pedro","North Carolina"],"mentioned_locations":[6,2,1,2,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0],"primary_locations":[1,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1]},"selected":{"id":"173230","type":"Selection"},"selection_policy":{"id":"173231","type":"UnionRenderers"}},"id":"173208","type":"ColumnDataSource"},{"attributes":{"fields":["primary_locations"]},"id":"173192","type":"Stack"},{"attributes":{"fields":["primary_locations"]},"id":"173191","type":"Stack"},{"attributes":{"source":{"id":"173208","type":"ColumnDataSource"}},"id":"173213","type":"CDSView"},{"attributes":{"bottom":{"expr":{"id":"173192","type":"Stack"}},"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"top":{"expr":{"id":"173193","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"173210","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"173192","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"173193","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"173211","type":"VBar"},{"attributes":{"callback":null,"data":{"location_terms":["England","\u00cele-de-France","Saskatchewan","Noord-Holland","Ontario","\u6771\u5317\u5730\u65b9","\u6771\u4eac\u90fd","Departamento de Managua","Alberta","Kalimantan Barat","\u062f\u0628\u064a\u200e","Nederland","Victoria","Connecticut","Massachusetts","Puerto Rico","\u5317\u4eac\u5e02","\u0623\u0631\u064a\u0627\u0646\u0629","D.C.","Pennsylvania","San Pedro","North Carolina"],"mentioned_locations":[6,2,1,2,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0],"primary_locations":[1,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1]},"selected":{"id":"173219","type":"Selection"},"selection_policy":{"id":"173220","type":"UnionRenderers"}},"id":"173194","type":"ColumnDataSource"},{"attributes":{"bottom":{"expr":{"id":"173190","type":"Stack"}},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"expr":{"id":"173191","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"173197","type":"VBar"},{"attributes":{"bottom":{"expr":{"id":"173190","type":"Stack"}},"fill_color":{"value":"red"},"line_color":{"value":"red"},"top":{"expr":{"id":"173191","type":"Stack"}},"width":{"value":0.3},"x":{"field":"location_terms"}},"id":"173196","type":"VBar"},{"attributes":{"source":{"id":"173194","type":"ColumnDataSource"}},"id":"173199","type":"CDSView"},{"attributes":{"data_source":{"id":"173194","type":"ColumnDataSource"},"glyph":{"id":"173196","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"primary_locations","nonselection_glyph":{"id":"173197","type":"VBar"},"selection_glyph":null,"view":{"id":"173199","type":"CDSView"}},"id":"173198","type":"GlyphRenderer"},{"attributes":{},"id":"173219","type":"Selection"},{"attributes":{},"id":"173230","type":"Selection"},{"attributes":{},"id":"173231","type":"UnionRenderers"},{"attributes":{"plot":null,"text":"Geolocation"},"id":"173155","type":"Title"},{"attributes":{"below":[{"id":"173166","type":"CategoricalAxis"}],"left":[{"id":"173170","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":615,"plot_width":1500,"renderers":[{"id":"173166","type":"CategoricalAxis"},{"id":"173169","type":"Grid"},{"id":"173170","type":"LinearAxis"},{"id":"173174","type":"Grid"},{"id":"173183","type":"BoxAnnotation"},{"id":"173206","type":"Legend"},{"id":"173198","type":"GlyphRenderer"},{"id":"173212","type":"GlyphRenderer"}],"title":{"id":"173155","type":"Title"},"toolbar":{"id":"173181","type":"Toolbar"},"x_range":{"id":"173158","type":"FactorRange"},"x_scale":{"id":"173162","type":"CategoricalScale"},"y_range":{"id":"173160","type":"DataRange1d"},"y_scale":{"id":"173164","type":"LinearScale"}},"id":"173156","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"173179","type":"ResetTool"},{"attributes":{},"id":"173178","type":"SaveTool"},{"attributes":{"overlay":{"id":"173183","type":"BoxAnnotation"}},"id":"173177","type":"BoxZoomTool"},{"attributes":{},"id":"173176","type":"WheelZoomTool"},{"attributes":{},"id":"173175","type":"PanTool"},{"attributes":{"dimension":1,"plot":{"id":"173156","subtype":"Figure","type":"Plot"},"ticker":{"id":"173171","type":"BasicTicker"}},"id":"173174","type":"Grid"},{"attributes":{"callback":null,"factors":["England","\u00cele-de-France","Saskatchewan","Noord-Holland","Ontario","\u6771\u5317\u5730\u65b9","\u6771\u4eac\u90fd","Departamento de Managua","Alberta","Kalimantan Barat","\u062f\u0628\u064a\u200e","Nederland","Victoria","Connecticut","Massachusetts","Puerto Rico","\u5317\u4eac\u5e02","\u0623\u0631\u064a\u0627\u0646\u0629","D.C.","Pennsylvania","San Pedro","North Carolina"],"range_padding":0.01},"id":"173158","type":"FactorRange"},{"attributes":{},"id":"173171","type":"BasicTicker"},{"attributes":{"formatter":{"id":"173204","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"plot":{"id":"173156","subtype":"Figure","type":"Plot"},"ticker":{"id":"173171","type":"BasicTicker"}},"id":"173170","type":"LinearAxis"},{"attributes":{"data_source":{"id":"173208","type":"ColumnDataSource"},"glyph":{"id":"173210","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"mentioned_locations","nonselection_glyph":{"id":"173211","type":"VBar"},"selection_glyph":null,"view":{"id":"173213","type":"CDSView"}},"id":"173212","type":"GlyphRenderer"}],"root_ids":["173156"]},"title":"Bokeh Application","version":"1.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('173303').textContent;
+                  var render_items = [{"docid":"c8f8c44e-9666-4dba-9288-4db2298a4d7f","roots":{"173156":"2f3430af-74f5-463e-918a-52028dc58379"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
