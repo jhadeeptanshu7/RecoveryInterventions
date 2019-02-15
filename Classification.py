@@ -24,10 +24,10 @@ environment = "DEV"
 def get_db():
     if environment == "DEV":
         client = pymongo.MongoClient('mongodb://localhost:27017/Recovery')
-        db = client.recoveryi
+        db = client.Recovery
     else:
         client = pymongo.MongoClient('mongodb://recovery:interventions@localhost:27017/recoveryi?authMechanism=SCRAM-SHA-256')
-        db = client.Recovery
+        db = client.recoveryi
     return db
 
 
