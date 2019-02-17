@@ -1,4 +1,5 @@
 import sys
+import os
 sys.path.append('./../')
 sys.path.append(os.path.dirname(__file__))
 
@@ -13,7 +14,7 @@ import stopwords
 import re
 import pyLDAvis
 import pyLDAvis.sklearn
-import os
+
 from sklearn.externals import joblib
 from bokeh.plotting import figure, output_file, save
 from bokeh.models import ColumnDataSource
