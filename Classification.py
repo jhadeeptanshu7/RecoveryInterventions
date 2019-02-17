@@ -264,10 +264,25 @@ def write_classification_result_file(classification_result, output_folder):
             fp.flush()
 
 
-def get_classification_result(input_file):
-
-    with open(os.path.join(input_file, "recovery_intervention_result.txt")) as fp:
+def get_classification_result(folder):
+    with open(os.path.join(folder, "recovery_intervention_result.txt")) as fp:
         return fp.readline().strip().split(" ")
+
+
+def get_user_location(folder):
+    filename = os.path.join(folder, "user_location.txt")
+    return read_file_content(filename)
+
+
+def get_user_age(folder):
+    filename = os.path.join(folder, "user_age.txt")
+    return read_file_content(filename)
+
+
+def read_file_content(filename):
+    if os.path.exists(filename):
+        with open(filename) as fp:
+            return " | ".join([line.strip() for line in fp.readlines()])
 
 
 def modify_number_of_topics_helper(project_id, n):

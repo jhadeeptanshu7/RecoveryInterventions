@@ -28,6 +28,8 @@ import sys
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 geolocator = Nominatim(user_agent="project-geolocation-1")
+from Classification import get_db
+import nltk
 
 sys.path.append(os.path.dirname(__file__))
 
@@ -897,30 +899,226 @@ def state_lat_long(state, country, country_short_name,lat_long_city_df,loc_df):
 
 
 
-def map_visualization(location_matrix, output_folder):
+
+
+def modify_number_of_topics(input_folder, output_folder, n):
+    print 'Number of topics', n
+    post_dic = create_post_dic(input_folder)
+    user_posts_topic_modeling(post_dic, n, output_folder)
+
+
+def primary_location(post_dic):
+    posts = post_dic.values()
+    pattern1 = "(\s|\.|^|\W)(i|we) live (in|at)"
+    pattern2 = "(\s|\.|^|\W)(I am|I'm|we are|we're|(\s|\.|^|\W)Im) living (in|at)"
+    pattern3 = "(\s|\.|^|\W)(I|we) have been living (in|at)"
+    patterns = [pattern1,pattern2,pattern3]
+
+
+
+    db = get_db()
+    collection = db.location_term_to_raw_address
+
+    location_dictionary ={}
+    for p in posts:
+        locations_in_posts=[]
+        sentence_split = nltk.sent_tokenize(p)
+        for s in sentence_split:
+            if bool(re.search("|".join(patterns),s,re.IGNORECASE)):
+                post_unicode = unicode(s, "utf-8")
+                # post_unicode = s
+                doc = nlp(post_unicode)
+                valid_ner = ['GPE']
+                locations_in_posts = []
+                for X in doc.ents:
+                    if X.label_ in valid_ner:
+                        try:
+                            loc = str(X.text.encode("utf-8"))
+                            print loc
+                            print s
+                            print "KJNEFNJKRENJKEWNJKENKJNCQKJNKQWE"
+                            loc_lower = loc.lower()
+                            print "loc_lower", loc_lower
+
+                            loc_info = collection.find_one({"location":str(loc_lower)})
+
+                            print "BSJHBDHJBHJDSBBJC"
+
+                            print "loc_info ",loc_info, "JNKNKJNKJNKJN"
+
+                            if loc_info == None:
+                                print "INSIDE NONE"
+                                try:
+                                    location = geolocator.geocode(loc_lower,addressdetails=True, timeout=10)
+                                    if location==None:
+                                        continue
+                                    print location.raw['address']
+                                    if location==None:
+                                        continue
+                                    locations_in_posts.append(location.raw['address'])
+                                    collection.insert({"location":loc_lower,"address":location.raw['address']})
+                                except Exception as e:
+                                    print e
+                            else:
+                                locations_in_posts.append(loc_info['address'])
+                        except Exception as e:
+                            print e
+
+                            # continue
+        if len(locations_in_posts) > 0:
+            print len(locations_in_posts)
+            loc_idx= -1
+            loc_len = 0
+            for c,l in enumerate(locations_in_posts):
+                loc_len_temp = len(l)
+                if loc_len_temp > loc_len:
+                    loc_len = loc_len_temp
+                    loc_idx = c
+            location_dictionary[c] = locations_in_posts[loc_idx]
+            print location_dictionary
+    if len(location_dictionary)>1:
+        loc_dic_key = 0
+        loc_dic_key_len = 0
+        for ld in location_dictionary:
+            print location_dictionary[ld]
+            ld_len = len(location_dictionary[ld])
+
+            if ld_len > loc_dic_key_len:
+                loc_dic_key_len = ld_len
+                loc_dic_key = ld
+        user_primary_location = location_dictionary[loc_dic_key]
+    elif len(location_dictionary)==0:
+        return None
+    else:
+        print "location_dictionary", len(location_dictionary)
+        print location_dictionary
+        user_primary_location = location_dictionary[location_dictionary.keys()[0]]
+
+    return user_primary_location
+
+def user_age(post_dic):
+        #I a,/'m/im 21 years/year old.
+    pattern1 = "(I am|I'm|(\s|\.|^|\W)Im) (\d+) (years|year) old"
+
+    #I am/'m/im male, 21 years/year old.
+    #I am/'m/im a 21 years/year old guy.
+    pattern2 = "(I am|I'm|(\s|\.|^|\W)Im) (([a-z]*)|([a-z]*)[^a-zA-Z\d\s]) (\d+) (years|year) old"
+
+    #I 'll be/ will be/ ill be turning 21.
+    pattern3 = "(i'll be|i will be|(\s|\.|^|\W)ill be) turning \d+"
+
+    #I 'll / will/ ill turn 21.
+    pattern4 = "(i'll turn|i will turn|(\s|\.|^|\W)ill turn) \d+"
+
+
+    # I am a baseball player and am 21 years old.
+    pattern5 = "(((?<!I))(\s|\.|^|\W)am) (([a-z]*)|([a-z]*)[^a-zA-Z\d\s]) (\d+) (years|year) old"
+
+    patterns_years_old = [pattern1,pattern2]
+    patterns_turning = [pattern3,pattern4]
+    patterns_am = pattern5
+    posts = post_dic.values()
+    ages =[]
+
+    for p in posts:
+        sentence_split = nltk.sent_tokenize(p.lower())
+        for s in sentence_split:
+            if bool(re.search("|".join(patterns_years_old),s,re.IGNORECASE)):
+                print s
+                token_split = s.split()
+                indexes = [i for i,x in enumerate(token_split) if x == 'years']
+                if len(indexes) >0:
+                    for idx in indexes:
+                        if re.sub(r'\W+', '', token_split[idx+1].lower()) == "old":
+                            age = token_split[idx-1]
+                            try:
+                                age = int(re.sub(r'\W+', '', age))
+                            except:
+                                continue
+                            print age
+                            ages.append(age)
+                            print ages
+                else:
+                    indexes = [i for i,x in enumerate(token_split) if x == 'year']
+                    if len(indexes) > 0:
+                        for idx in indexes:
+                            if re.sub(r'\W+', '', token_split[idx+1].lower()) == "old":
+                                age = token_split[idx-1]
+                                try:
+                                    age = int(re.sub(r'\W+', '', age))
+                                except:
+                                    continue
+                                print age
+                                ages.append(age)
+                                print ages
+
+
+            elif bool(re.search("|".join(patterns_turning),s,re.IGNORECASE)):
+                print s
+                token_split = s.split()
+                indexes = [i for i,x in enumerate(token_split) if x == 'turning']
+                if len(indexes)>0:
+                    for idx in indexes:
+                        age = token_split[idx+1]
+                        age = int(re.sub(r'\W+', '', age))
+                        print age
+                        ages.append(age)
+                        print ages
+
+
+                else:
+                    indexes = [i for i,x in enumerate(token_split) if x == 'turn']
+                    for idx in indexes:
+                        age = token_split[idx+1]
+                        age = int(re.sub(r'\W+', '', age))
+                        print age
+                        ages.append(age)
+                        print ages
+
+            elif bool(re.search(patterns_am,s,re.IGNORECASE)):
+                print s
+                token_split = s.split()
+                indexes = [i for i,x in enumerate(token_split) if x == 'years']
+                if len(indexes) >0:
+                    for idx in indexes:
+                        if re.sub(r'\W+', '', token_split[idx+1].lower()) == "old":
+                            age = token_split[idx-1]
+                            age = int(re.sub(r'\W+', '', age))
+                            print age
+                            ages.append(age)
+                            print ages
+                else:
+                    indexes = [i for i,x in enumerate(token_split) if x == 'year']
+                    if len(indexes) >0:
+                        for idx in indexes:
+                            if re.sub(r'\W+', '', token_split[idx+1].lower()) == "old":
+                                age = token_split[idx-1]
+                                age = int(re.sub(r'\W+', '', age))
+                                print age
+                                ages.append(age)
+                                print ages
+    if len(ages)>0:
+        user_age_identified = max(ages)
+        if user_age_identified < 13:
+            user_age_identified = None
+        if len(ages)>1:
+            print ages
+            print user_age_identified
+            print True
+    else:
+        user_age_identified = None
+
+    return user_age_identified
+
+
+def map_visualization(location_matrix,output_folder):
     # loc_df = pd.DataFrame(location_matrix)
     # ['location','sentiment_score','drug_terms','recovery_terms','lat','long']
-    loc_df_1 = joblib.load("loc_df.pkl")
-    folium_map = folium.Map(tiles="CartoDB dark_matter")
-
-    for row in loc_df_1.values.tolist():
-        # print row
-        color = 'grey'
-        if row[1]>0:
-            color='green'
-        elif row[1]<0:
-            color='red'
-        # folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
-        #               + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
-        folium.CircleMarker(fill=True,location=[row[4], row[5]], color=color, radius= float(len((dict(row[2]))))/float(2)     ).add_to(folium_map)
-
-
-
-    loc_df = pd.DataFrame.from_records(location_matrix,columns=['location','sentiment_score','drug_terms','recovery_terms','lat','long'])
+    loc_df = pd.DataFrame.from_records(location_matrix,columns=['location','sentiment_score','drug_terms','recovery_terms','lat','long','primary_location'])
     # loc_df.loc[ (loc_df.sentiment_score < 0), 'color'] = 'red'
     # loc_df.loc[ (loc_df.sentiment_score > 0),'color'] = 'green'
 
-    # folium_map = folium.Map(tiles="CartoDB dark_matter")
+    folium_map = folium.Map(tiles="CartoDB dark_matter")
 
     for row in loc_df.values.tolist():
         # print row
@@ -929,229 +1127,48 @@ def map_visualization(location_matrix, output_folder):
             color='green'
         elif row[1]<0:
             color='red'
-        folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
+
+        if row[6]==1:
+            folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
+                      + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(icon='home',color=color)).add_to(folium_map)
+        else:
+            folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
                       + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
 
-    folium_map.save(os.path.join(output_folder, "my_map.html"))
-    #
-    # # loc_df = pd.DataFrame(location_matrix)
-    # # ['location','sentiment_score','drug_terms','recovery_terms','lat','long']
-    # loc_df = pd.DataFrame.from_records(location_matrix,columns=['location','sentiment_score','drug_terms','recovery_terms','lat','long'])
-    # loc_df.loc[ (loc_df.sentiment_score < 0), 'color'] = 'red'
-    # loc_df.loc[ (loc_df.sentiment_score > 0),'color'] = 'green'
-    #
-    # folium_map = folium.Map(tiles="CartoDB dark_matter")
-    #
-    # for row in loc_df.values.tolist():
-    #     print row
-    #     color = 'grey'
-    #     if row[1]>0:
-    #         color='green'
-    #     elif row[1]<0:
-    #         color='red'
-    #     folium.Marker(location=[row[4], row[5]],popup= row[0] + "\n" + "sentiment score =" + str(row[1]) + "\n"
-    #                   + "drug_terms: " + str(dict(row[2])) + "\n" +"recovery_terms: " + str(dict(row[3])), icon=folium.Icon(color=color)).add_to(folium_map)
-    #
-    # folium_map.save(os.path.join(output_folder, "my_map.html"))
+    # folium_map.save("my_map.html")
+    #  output_file(os.path.join(output_folder, "temporal_recovery_count.html"))
+    folium_map.save(os.path.join(output_folder,"my_map.html"))
 
 
 
-def plot_geo_data(country_post_dic,state_post_dic,city_post_dic,location_sentiment_values, location_drug_recovery_values, output_folder):
+def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,user_primary_location,output_folder):
+    db = get_db()
 
+    pl_dic={}
+    print "user PRIMARY LOCATION", user_primary_location
+    if 'city' in user_primary_location:
+        user_pl = user_primary_location['city']
+        pl_dic['city'] = user_pl
+    elif 'state' in user_primary_location:
+        user_pl = user_primary_location['state']
+        pl_dic['state'] = user_pl
+    elif 'country' in user_primary_location:
+        user_pl = user_primary_location['country']
+        pl_dic['country'] = user_pl
 
-    countries_count = defaultdict(int)
-    countries = country_post_dic.keys()
-    for c in countries:
-        countries_count[c] = len(country_post_dic[c])
+    print "PL DIC", pl_dic
 
-    states = state_post_dic.keys()
-    cities = city_post_dic.keys()
-    loc_df = pd.read_csv('world-cities_csv.csv')
+    city_collection = db.cities
+    cities = city_collection.distinct("city")
+    print cities
 
-    for s in states:
-        for country in loc_df.loc[loc_df['subcountry'] == s]['country'].unique().tolist():
-            countries_count[country] +=1
-    for c in cities:
-        for country in loc_df.loc[loc_df['name'] == c]['country'].unique().tolist():
-            countries_count[country] +=1
+    state_collection = db.states
+    states = state_collection.distinct("state")
+    print states
 
-    #import lat long files
-    lat_long_city_df = pd.read_csv('worldcitiespop.txt', sep=",")
-    # lat_long_city_df = lat_long_city_df[np.isfinite(lat_long_city_df['Population'])]
-    # print lat_long_city_df.head()
-    country_names_df = pd.read_csv('countrynames.csv')
-    country_names_df.columns = ["short_country","country"]
-    country_names_df.country = country_names_df['country'].apply(lambda x: x.strip())
-    # country_names_df = country_names_df[country_names_df['Population']]
-
-    country_position_df = pd.read_csv('countrypositions.csv')
-    country_position_df.columns = ["country","Latitude","Longitude"]
-
-
-    city_lat_long = {}
-    city_state_dic= {}
-    city_country_dic = {}
-    for c in cities:
-        city_countries = loc_df.loc[loc_df['name'] == c]['country'].unique().tolist()
-        country_list = []
-        country_list_count = []
-        for cs in city_countries:
-            country_list.append(cs)
-            country_list_count.append(countries_count[cs])
-        idx = np.argsort(country_list_count)[::-1]
-        # print country_list[idx[0]]
-        # print country_names_df.head()
-        country_short_name = country_names_df.loc[country_names_df['country'] == country_list[idx[0]]]['short_country'].tolist()[0].lower()
-        # print country_short_name
-        city_row = lat_long_city_df.loc[(lat_long_city_df['City'] == c.lower()) & (lat_long_city_df['Country'] == country_short_name) ]
-        city_row = city_row.loc[city_row['Population'].idxmax()]
-        # print city_row
-        city_lat_long[c] = [city_row['Latitude'],city_row['Latitude']]
-        city_state = loc_df.loc[(loc_df['name']==c) & (loc_df['country']==country_list[idx[0]])]['subcountry'].unique().tolist()[0]
-        city_state_dic[c] = city_state
-        city_country_dic[c] = country_list[idx[0]]
-
-    # print city_lat_long
-    # print city_state_dic
-    # print city_country_dic
-
-    #STATE
-    # print len(states), states
-    states = list(set(states).union(city_state_dic.values()))
-    # print len(states), states
-    state_location_dic = {}
-    for s in states:
-        state_countries = loc_df.loc[loc_df['subcountry'] == s]['country'].unique().tolist()
-        country_list = []
-        country_list_count = []
-        for cs in state_countries:
-            country_list.append(cs)
-            country_list_count.append(countries_count[cs])
-        idx = np.argsort(country_list_count)[::-1]
-        # print country_list[idx[0]]
-        # print country_names_df.head()
-        country_short_name = country_names_df.loc[country_names_df['country'] == country_list[idx[0]]]['short_country'].tolist()[0].lower()
-        # print country_short_name
-        state_coordinates = state_lat_long(s,country_list[idx[0]],country_short_name, lat_long_city_df,loc_df)
-        state_location_dic[s]= state_coordinates
-    # print state_location_dic
-
-
-
-
-
-    #COUNTRIES
-    countries = list(set(countries).union(city_country_dic.values()))
-    country_location_dic = {}
-    for c in countries:
-        # print c
-        country_short_name = country_names_df.loc[country_names_df['country'] == c]['short_country'].tolist()[0]
-        # print country_short_name
-        lat = country_position_df.loc[country_position_df['country']==country_short_name]['Latitude'].tolist()[0]
-        long = country_position_df.loc[country_position_df['country']==country_short_name]['Longitude'].tolist()[0]
-        country_location_dic[c]= [lat, long]
-
-    # print country_location_dic
-
-    #creating loc dataframe
-
-    country_sentiment_scores_dic = location_sentiment_values[0]
-    state_sentiment_scores_dic = location_sentiment_values[1]
-    city_sentiment_scores_dic = location_sentiment_values[2]
-
-    country_drug_terms = location_drug_recovery_values[0]
-    country_recovery_terms = location_drug_recovery_values[1]
-    state_drug_terms = location_drug_recovery_values[2]
-    state_recovery_terms = location_drug_recovery_values[3]
-    city_drug_terms = location_drug_recovery_values[4]
-    city_recovery_terms = location_drug_recovery_values[5]
-
-    # print country_sentiment_scores_dic
-    # print country_recovery_terms
-    # print country_drug_terms
-
-    location_matrix=[]
-    for city in city_sentiment_scores_dic:
-        # print city
-        row =[]
-        row.append(city)
-        row.append(float(city_sentiment_scores_dic[city][1])/float(city_sentiment_scores_dic[city][0]))
-        row.append(city_drug_terms[city])
-        row.append(city_recovery_terms[city])
-        row.append(city_lat_long[city][0])
-        row.append(city_lat_long[city][1])
-        location_matrix.append(row)
-
-        if city_country_dic[city] in country_sentiment_scores_dic:
-            country_sentiment_scores_dic[city_country_dic[city]][0] += city_sentiment_scores_dic[city][0]
-            country_sentiment_scores_dic[city_country_dic[city]][1] += city_sentiment_scores_dic[city][1]
-
-            for dt in city_drug_terms[city]:
-                if dt in country_drug_terms[city_country_dic[city]]:
-                    country_drug_terms[city_country_dic[city]][dt] += city_drug_terms[city][dt]
-                else:
-                    country_drug_terms[city_country_dic[city]] = city_drug_terms[city][dt]
-
-            for rt in city_recovery_terms[city]:
-                if rt in country_recovery_terms[city_country_dic[city]]:
-                    country_recovery_terms[city_country_dic[city]][rt] += city_recovery_terms[city][rt]
-                else:
-                    country_recovery_terms[city_country_dic[city]][rt] = city_recovery_terms[city][rt]
-
-
-        else:
-            country_sentiment_scores_dic[city_country_dic[city]] = city_sentiment_scores_dic[city]
-            country_drug_terms[city_country_dic[city]] = city_drug_terms[city]
-            country_recovery_terms[city_country_dic[city]] = city_recovery_terms[city]
-
-
-
-        if city_state_dic[city] in state_sentiment_scores_dic:
-            state_sentiment_scores_dic[city_state_dic[city]][0] += city_sentiment_scores_dic[city][0]
-            state_sentiment_scores_dic[city_state_dic[city]][1] += city_sentiment_scores_dic[city][1]
-
-            for dt in city_drug_terms[city]:
-                if dt in state_drug_terms[city_state_dic[city]]:
-                    state_drug_terms[city_state_dic[city]][dt] += city_drug_terms[city][dt]
-                else:
-                    state_drug_terms[city_state_dic[city]] = city_drug_terms[city][dt]
-
-            for rt in city_recovery_terms[city]:
-                if rt in state_recovery_terms[city_state_dic[city]]:
-                    state_recovery_terms[city_state_dic[city]][rt] += city_recovery_terms[city][rt]
-                else:
-                    state_recovery_terms[city_state_dic[city]][rt] = city_recovery_terms[city][rt]
-
-
-        else:
-            state_sentiment_scores_dic[city_state_dic[city]] = city_sentiment_scores_dic[city]
-            state_drug_terms[city_state_dic[city]] = city_drug_terms[city]
-            state_recovery_terms[city_state_dic[city]] = city_recovery_terms[city]
-
-    for state in state_sentiment_scores_dic:
-        # print state
-        row =[]
-        row.append(state)
-        row.append(float(state_sentiment_scores_dic[state][1])/float(state_sentiment_scores_dic[state][0]))
-        row.append(state_drug_terms[state])
-        row.append(state_recovery_terms[state])
-        row.append(state_location_dic[state][0])
-        row.append(state_location_dic[state][1])
-        location_matrix.append(row)
-
-    for country in country_sentiment_scores_dic:
-        # print country
-        row =[]
-        row.append(country)
-        row.append(float(country_sentiment_scores_dic[country][1])/float(country_sentiment_scores_dic[country][0]))
-        row.append(country_drug_terms[country])
-        row.append(country_recovery_terms[country])
-        row.append(country_location_dic[country][0])
-        row.append(country_location_dic[country][1])
-        location_matrix.append(row)
-    map_visualization(location_matrix, output_folder)
-
-def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,output_folder):
+    country_collection = db.countries
+    countries = country_collection.distinct("country")
+    print countries
     # print country_post_dic
     # print state_post_dic
     # print city_post_dic
@@ -1159,33 +1176,89 @@ def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sent
     # print location_drug_values
     # print location_recovery_values
 
+
     locations = country_post_dic.keys() + state_post_dic.keys() + city_post_dic.keys()
     location_matrix=[]
+
     for l in locations:
-        try:
-            lat_long = geolocator.geocode(l,exactly_one=True)
-            if lat_long ==None:
+        primary_loc_exists = False
+        print "here", l
+
+        if l in cities:
+            print "city found", l
+            city_info = city_collection.find_one({"city":l})
+            lat = city_info['latitude']
+            long = city_info['longitude']
+
+            if 'city' in pl_dic:
+                if pl_dic['city']==l:
+                    print "PRIMARY LOCATION ", primary_loc_exists
+                    primary_loc_exists = True
+                    print "PRIMARY LOCATION ", primary_loc_exists
+
+
+        elif l in states:
+            print "state found", l
+            state_info = state_collection.find_one({"state":l})
+            lat = state_info['latitude']
+            long = state_info['longitude']
+            if 'state' in pl_dic:
+                if pl_dic['state']==l:
+                    primary_loc_exists= True
+
+        elif l in countries:
+            print "country found", l
+            country_info = country_collection.find_one({"country":l})
+            lat = country_info['latitude']
+            long = country_info['longitude']
+            if 'country' in pl_dic:
+                if pl_dic['country']==l:
+                    primary_loc_exists= True
+        else:
+            print "geopy"
+            try:
+                location = geolocator.geocode(l,addressdetails=True, timeout=10)
+                if location==None:
+                                continue
+                print location.raw['address']
+                if location==None:
+                    continue
+                raw_address = location.raw['address']
+                print raw_address
+                if 'city' in raw_address:
+                    if pl_dic['city']== raw_address['city']:
+                        primary_loc_exists = True
+                elif 'state' in raw_address:
+                    if pl_dic['state']==raw_address['state']:
+                        primary_loc_exists =True
+                elif 'country' in raw_address:
+                    if pl_dic['country'] == raw_address['country']:
+                        primary_loc_exists = True
+                lat_long = geolocator.geocode(l,exactly_one=True)
+                if lat_long ==None:
+                    continue
+                else:
+                    lat = lat_long.latitude
+                    long = lat_long.longitude
+            except:
                 continue
-            row=[]
-            row.append(l)
-            row.append(location_sentiment_values[l])
-            row.append(location_drug_values[l])
-            row.append(location_recovery_values[l])
-            row.append(lat_long.latitude)
-            row.append(lat_long.longitude)
-            location_matrix.append(row)
-        except GeocoderTimedOut as e:
-            print e.message
-            print "sleeping"
-            sleep(900)
+
+        row=[]
+        row.append(l)
+        row.append(location_sentiment_values[l])
+        row.append(location_drug_values[l])
+        row.append(location_recovery_values[l])
+        row.append(lat)
+        row.append(long)
+
+        if primary_loc_exists:
+            row.append(1)
+            print "MIL GYI LOCATION BKL"
+        else:
+            row.append(0)
+        location_matrix.append(row)
 
     map_visualization(location_matrix,output_folder)
-
-
-def modify_number_of_topics(input_folder, output_folder, n):
-    print 'Number of topics', n
-    post_dic = create_post_dic(input_folder)
-    user_posts_topic_modeling(post_dic, n, output_folder)
 
 
 def main(folder, output_folder, classifier_folder):
@@ -1221,19 +1294,46 @@ def main(folder, output_folder, classifier_folder):
 
 
     # Geolocation Visualization
-    # entity_extraction(post_dic)
-#     country_post_dic,state_post_dic, city_post_dic = find_location_terms_in_text(post_dic)
-#     country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic = location_sentiment_score(country_post_dic,state_post_dic,city_post_dic)
-#     country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic = location_drug_recovery_terms(country_post_dic,state_post_dic,city_post_dic)
-#     location_sentiment_values = [country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic]
-#     location_sentiment_values = dict(country_sentiment_scores_dic,**state_sentiment_scores_dic)
-#     location_sentiment_values = dict(location_sentiment_values,**city_sentiment_scores_dic)
-#     location_drug_recovery_values = [country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic]
-#     location_drug_values = dict(country_drug_terms_dic,**state_drug_terms_dic)
-#     location_drug_values = dict(location_drug_values,**city_drug_terms_dic)
-#     location_recovery_values = dict(country_recovery_terms_dic,**state_recovery_terms_dic)
-#     location_recovery_values = dict(location_recovery_values,**city_recovery_terms_dic)
-#     plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,output_folder)
+    user_primary_location = primary_location(post_dic)
+    print "USER PRIMARY LOCATION IS ", user_primary_location
+
+    if user_primary_location is not None:
+        filename = os.path.join(output_folder,"user_location.txt")
+        with open(filename,"w") as fp:
+            if "city" in user_primary_location:
+                fp.write("City : "+ user_primary_location['city'])
+                fp.write('\n')
+            if "state" in user_primary_location:
+                fp.write("State : "+ user_primary_location['state'])
+                fp.write('\n')
+            if "country" in user_primary_location:
+                fp.write("Country : "+ user_primary_location['country'])
+                fp.write('\n')
+
+
+
+    country_post_dic,state_post_dic, city_post_dic = find_location_terms_in_text(post_dic)
+    country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic = location_sentiment_score(country_post_dic,state_post_dic,city_post_dic)
+    country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic = location_drug_recovery_terms(country_post_dic,state_post_dic,city_post_dic)
+    location_sentiment_values = [country_sentiment_scores_dic, state_sentiment_scores_dic, city_sentiment_scores_dic]
+    location_sentiment_values = dict(country_sentiment_scores_dic,**state_sentiment_scores_dic)
+    location_sentiment_values = dict(location_sentiment_values,**city_sentiment_scores_dic)
+    location_drug_recovery_values = [country_drug_terms_dic,country_recovery_terms_dic, state_drug_terms_dic,state_recovery_terms_dic, city_drug_terms_dic, city_recovery_terms_dic]
+    location_drug_values = dict(country_drug_terms_dic,**state_drug_terms_dic)
+    location_drug_values = dict(location_drug_values,**city_drug_terms_dic)
+    location_recovery_values = dict(country_recovery_terms_dic,**state_recovery_terms_dic)
+    location_recovery_values = dict(location_recovery_values,**city_recovery_terms_dic)
+    plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sentiment_values, location_drug_values,location_recovery_values,user_primary_location,output_folder)
+
+    #age identification
+    drug_user_age = user_age(post_dic)
+    print "USER AGE IS ", drug_user_age
+    if user_age is not None and (drug_user_age>=13) and (drug_user_age <=80):
+        filename = os.path.join(output_folder,"user_age.txt")
+        with open(filename,"w") as fp:
+                fp.write(str(drug_user_age))
+                fp.write('\n')
+
 
 
 def run():

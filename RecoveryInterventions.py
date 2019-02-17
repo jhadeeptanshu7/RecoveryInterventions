@@ -9,7 +9,8 @@ from flask_mongoengine import MongoEngine
 
 from rq import Queue
 from worker import conn
-from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER, get_classification_result, modify_number_of_topics_helper
+from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER, \
+    get_classification_result, modify_number_of_topics_helper, get_user_age, get_user_location
 
 
 CLASSIFY = 'CLASSIFY'
@@ -167,10 +168,12 @@ def get_results():
 
 @app.route('/results/<project>')
 def get_visualization(project):
-    recovery_intervention_file = os.path.join(VISUALIZATION_FOLDER, project)
+    root_visualization_folder = os.path.join(VISUALIZATION_FOLDER, project)
 
     return render_template("visualization_v2.html", project_id=project,
-                           recovery_intervention=get_classification_result(recovery_intervention_file))
+                           recovery_intervention=get_classification_result(root_visualization_folder),
+                           user_location=get_user_location(root_visualization_folder),
+                           user_age=get_user_age(root_visualization_folder))
 
 
 @app.route('/results', methods=['POST'])
