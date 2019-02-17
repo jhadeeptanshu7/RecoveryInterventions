@@ -922,11 +922,11 @@ def primary_location(post_dic):
     location_dictionary ={}
     for p in posts:
         locations_in_posts=[]
-        sentence_split = nltk.sent_tokenize(p)
+        sentence_split = nltk.sent_tokenize(p.decode('utf-8'))
         for s in sentence_split:
             if bool(re.search("|".join(patterns),s,re.IGNORECASE)):
-                post_unicode = unicode(s, "utf-8")
-                # post_unicode = s
+                # post_unicode = unicode(s, "utf-8")
+                post_unicode = s
                 doc = nlp(post_unicode)
                 valid_ner = ['GPE']
                 locations_in_posts = []
@@ -1021,7 +1021,7 @@ def user_age(post_dic):
     ages =[]
 
     for p in posts:
-        sentence_split = nltk.sent_tokenize(p.lower())
+        sentence_split = nltk.sent_tokenize(p.lower().decode('utf-8'))
         for s in sentence_split:
             if bool(re.search("|".join(patterns_years_old),s,re.IGNORECASE)):
                 print s
@@ -1146,15 +1146,16 @@ def plot_geo_data_2(country_post_dic,state_post_dic,city_post_dic, location_sent
 
     pl_dic={}
     print "user PRIMARY LOCATION", user_primary_location
-    if 'city' in user_primary_location:
-        user_pl = user_primary_location['city']
-        pl_dic['city'] = user_pl
-    elif 'state' in user_primary_location:
-        user_pl = user_primary_location['state']
-        pl_dic['state'] = user_pl
-    elif 'country' in user_primary_location:
-        user_pl = user_primary_location['country']
-        pl_dic['country'] = user_pl
+    if user_primary_location is not None:
+        if 'city' in user_primary_location:
+            user_pl = user_primary_location['city']
+            pl_dic['city'] = user_pl
+        elif 'state' in user_primary_location:
+            user_pl = user_primary_location['state']
+            pl_dic['state'] = user_pl
+        elif 'country' in user_primary_location:
+            user_pl = user_primary_location['country']
+            pl_dic['country'] = user_pl
 
     print "PL DIC", pl_dic
 
@@ -1296,18 +1297,20 @@ def main(folder, output_folder, classifier_folder):
     # Geolocation Visualization
     user_primary_location = primary_location(post_dic)
     print "USER PRIMARY LOCATION IS ", user_primary_location
+    print output_folder
 
     if user_primary_location is not None:
+        print "entering none if not none"
         filename = os.path.join(output_folder,"user_location.txt")
         with open(filename,"w") as fp:
             if "city" in user_primary_location:
-                fp.write("City : "+ user_primary_location['city'])
+                fp.write("City : "+ user_primary_location['city'].encode('utf-8'))
                 fp.write('\n')
             if "state" in user_primary_location:
-                fp.write("State : "+ user_primary_location['state'])
+                fp.write("State : "+ user_primary_location['state'].encode('utf-8'))
                 fp.write('\n')
             if "country" in user_primary_location:
-                fp.write("Country : "+ user_primary_location['country'])
+                fp.write("Country : " + user_primary_location['country'].encode('utf-8'))
                 fp.write('\n')
 
 
