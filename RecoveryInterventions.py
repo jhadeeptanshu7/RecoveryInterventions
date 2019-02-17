@@ -59,19 +59,56 @@ def hello_world():
     return render_template("sample.html")
 
 
-# GET Single existing
-@app.route('/run-single')
-def run_single():
+@app.route('/run-single-reddit')
+def run_reddit_single():
     return render_template("run_pretrained_single.html")
 
 
-@app.route('/run-single', methods=['POST'])
-def run_single_user_classifier():
+@app.route('/run-single-reddit', methods=['POST'])
+def run_single_user_reddit_classifier():
     # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
     file_name = request.form.get("filename")
 
     classifier_name = request.form.get("classifierName")
-    classifier_folder = "na"
+    classifier_folder = os.path.join(app.root_path, "reddit_classifier")
+
+    if classifier_name:
+        zip_ref = zipfile.ZipFile(os.path.join(UPLOAD_FOLDER, classifier_name), 'r')
+        extracted = zip_ref.namelist()
+        zip_ref.extractall(os.path.join(OUTPUT_FOLDER, classifier_name.replace(".zip", "")))
+        zip_ref.close()
+
+        classifier_folder = os.path.join(OUTPUT_FOLDER, classifier_name).replace(".zip", "")
+
+    project = Project(file_name, "-1", CLASSIFY, "-1", classifier_folder).save()
+
+    file_path = os.path.join(UPLOAD_FOLDER, file_name)
+    unzipped_folder_name = unzip_folder(file_path)
+    input_folder = os.path.join(OUTPUT_FOLDER, file_name).replace(".zip", "")
+    os.rename(os.path.join(OUTPUT_FOLDER, unzipped_folder_name), input_folder)
+
+    output_folder = os.path.join(VISUALIZATION_FOLDER, str(project['id']))
+
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    run_single_classification(input_folder, output_folder, project)
+
+    return render_template("run_pretrained_single.html", project_id=project.id)
+
+
+@app.route('/run-single-twitter')
+def run_twitter_single():
+    return render_template("run_pretrained_single.html")
+
+
+@app.route('/run-single-twitter', methods=['POST'])
+def run_single_user_twitter_classifier():
+    # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
+    file_name = request.form.get("filename")
+
+    classifier_name = request.form.get("classifierName")
+    classifier_folder = os.path.join(app.root_path, "twitter_classifier")
 
     if classifier_name:
         zip_ref = zipfile.ZipFile(os.path.join(UPLOAD_FOLDER, classifier_name), 'r')
@@ -99,17 +136,49 @@ def run_single_user_classifier():
 
 
 # GET Batch existing
-@app.route('/run-batch')
-def run_batch():
+@app.route('/run-batch-reddit')
+def run_reddit_batch():
     return render_template("run_pretrained_batch.html")
 
 
-@app.route('/run-batch', methods=['POST'])
-def classifier_job():
+@app.route('/run-batch-reddit', methods=['POST'])
+def reddit_classifier_job():
     # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
     filename = request.form.get("filename")
     classifier_name = request.form.get("classifierName")
-    classifier_folder = ""
+    classifier_folder = os.path.join(app.root_path, "reddit_classifier")
+    if classifier_name:
+        zip_ref = zipfile.ZipFile(os.path.join(UPLOAD_FOLDER, classifier_name), 'r')
+        zip_ref.extractall(os.path.join(OUTPUT_FOLDER, classifier_name.replace(".zip", "")))
+        zip_ref.close()
+
+        classifier_folder = os.path.join(OUTPUT_FOLDER, classifier_name).replace(".zip", "")
+
+    project = Project(filename, '-1', CLASSIFY, "-1", classifier_folder).save()
+
+    job = q.enqueue_call(func=fileHandler, args=(project.id,), result_ttl=5000, timeout=300000)
+    job_id = str(job.get_id())
+
+    Project.objects(id=project.id).update_one(set__job_id=job_id)
+
+    return render_template("run_pretrained_batch.html",
+                           submission_successful=True,
+                           project_id=project.id,
+                           job_id=job_id)
+
+
+# GET Batch existing
+@app.route('/run-batch-twitter')
+def run_twitter_batch():
+    return render_template("run_pretrained_batch.html")
+
+
+@app.route('/run-batch-twitter', methods=['POST'])
+def twitter_classifier_job():
+    # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
+    filename = request.form.get("filename")
+    classifier_name = request.form.get("classifierName")
+    classifier_folder = os.path.join(app.root_path, "twitter_classifier")
     if classifier_name:
         zip_ref = zipfile.ZipFile(os.path.join(UPLOAD_FOLDER, classifier_name), 'r')
         zip_ref.extractall(os.path.join(OUTPUT_FOLDER, classifier_name.replace(".zip", "")))
