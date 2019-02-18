@@ -370,9 +370,12 @@ def modify_number_of_topics(project):
     if number_of_topics > 0:
         modify_number_of_topics_helper(project, number_of_topics)
 
-    recovery_intervention_file = os.path.join(VISUALIZATION_FOLDER, project)
-    return render_template("visualization.html", project_id=project,
-                           recovery_intervention=get_classification_result(recovery_intervention_file))
+    root_visualization_folder = os.path.join(VISUALIZATION_FOLDER, project)
+
+    return render_template("visualization_v2.html", project_id=project,
+                           recovery_intervention=get_classification_result(root_visualization_folder),
+                           user_location=get_user_location(root_visualization_folder),
+                           user_age=get_user_age(root_visualization_folder))
 
 
 if __name__ == '__main__':
