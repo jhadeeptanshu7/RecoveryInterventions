@@ -95,7 +95,7 @@ def run_single_user_reddit_classifier():
 
     run_single_classification(input_folder, output_folder, project)
 
-    return json.dumps(project.id)
+    return json.dumps(str(project.id))
 
 
 @app.route('/run-single-twitter')
@@ -133,7 +133,7 @@ def run_single_user_twitter_classifier():
 
     run_single_classification(input_folder, output_folder, project)
 
-    return json.dumps(project.id)
+    return json.dumps(str(project.id))
 
 
 
