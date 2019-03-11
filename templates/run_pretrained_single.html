@@ -188,7 +188,8 @@
                                     },
                                     complete: function(response) {
                                             $.unblockUI();
-                                            $('#result').attr("href", "/results/" + response.responseText)
+                                            $('#result').attr("href", "/results/" +
+                                                    response.responseText.substring(1,response.responseText.length - 1))
                                             $('#result').css("display", "block");
                                         }
                                     });
