@@ -133,6 +133,7 @@
     <script src="../static/helper.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 {% endblock head %}
 
 
@@ -171,9 +172,11 @@
                                     <input type="hidden" name="classifierName" id="classifierName">
                                     <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
                             </form>
-                            <script>
-                                $("#submitForm").submit(function() {
-                                    $.blockUI({ css: {
+                            <script type="text/javascript">
+                                (function() {
+                                    $('#submitForm').ajaxForm({
+                                        beforeSend: function() {
+                                          $.blockUI({ css: {
                                         border: 'none',
                                         padding: '15px',
                                         backgroundColor: '#000',
@@ -182,8 +185,12 @@
                                         opacity: .5,
                                         color: '#fff'
                                     }});
-                                });
-
+                                    },
+                                    complete: function() {
+                                            $.unblockUI();
+                                        }
+                                    });
+                            })();
                             </script>
                         </div>
                         </div>
