@@ -1,3 +1,4 @@
+import json
 import os
 import shutil
 
@@ -94,7 +95,7 @@ def run_single_user_reddit_classifier():
 
     run_single_classification(input_folder, output_folder, project)
 
-    return render_template("run_pretrained_single.html", project_id=project.id)
+    return json.dumps(project.id)
 
 
 @app.route('/run-single-twitter')
@@ -132,7 +133,8 @@ def run_single_user_twitter_classifier():
 
     run_single_classification(input_folder, output_folder, project)
 
-    return render_template("run_pretrained_single.html", project_id=project.id)
+    return json.dumps(project.id)
+
 
 
 # GET Batch existing
