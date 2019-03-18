@@ -150,6 +150,7 @@
 
                             <div class="col-sm-6" >
                                 <label for="data">Upload user data zip file:</label>
+                                <button id="remove-data" style="display: none">Remove Data</button>
                                 <form method="POST" action='/upload-data' class="dropzone dz-clickable"
                                     id="data" enctype="multipart/form-data">
                                 </form>
@@ -158,6 +159,7 @@
                             </div>
                             <div class="col-sm-6" >
                                 <label for="classifier">Upload your classifier zip file (optional):</label>
+                                <button id="remove-classifier" style="display: none">Remove Classifier</button>
                                 <form method="POST" class="dropzone dz-clickable" action="/upload-classifier"
                                     id="classifier" enctype="multipart/form-data">
                                 </form>
@@ -191,6 +193,8 @@
                                             $('#result').attr("href", "/results/" +
                                                     response.responseText.substring(1,response.responseText.length - 1))
                                             $('#result').css("display", "block");
+                                            $('#remove-data').click();
+                                            $('#remove-classifier').click();
                                         }
                                     });
                             })();
@@ -222,6 +226,8 @@
             chunkSize: 100000000, // bytes
             maxFiles: 1,
             init: function () {
+            dropzone_data = this;
+            $("#remove-data").click(function(){dropzone_data.removeAllFiles(true);})
             this.on("complete", function (file) {
               if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
                   document.getElementById('filename').value = file.xhr.responseText;
@@ -240,6 +246,8 @@
             chunkSize: 100000000, // bytes
             maxFiles: 1,
             init: function () {
+            dropzone_classifier = this;
+            $("#remove-classifier").click(function(){dropzone_classifier.removeAllFiles(true);})
             this.on("complete", function (file) {
               if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
                   document.getElementById('classifierName').value = file.xhr.responseText;
