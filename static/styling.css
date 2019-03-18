@@ -28,3 +28,30 @@
 .active {
     background-color: #616161;
 }
+
+.tablinks {
+  outline:0;
+  font-size:1em;
+  background:#fff;
+  border:none;
+  padding:2px 4px;
+  transition:all .5s ease-out;
+  box-shadow:inset 0 0 0 0 rgba(0,0,0,.2),
+    1px 1px 0 0 #000000,
+    2px 2px 0 0 #000000,
+    3px 3px 0 0 #000000
+}
+
+.tablinks:hover{
+  color:#000;
+}
+
+.tablinks:active{
+  color:#000;
+  box-shadow:inset 0 -4px 0 0 rgba(0,0,0,.2),
+    1px 1px 0 0 #000000,
+    2px 2px 0 0 #000000,
+    3px 3px 0 0 #000000,
+    4px 4px 0 0 #000000,
+    5px 5px 0 0 #000000;
+}
