@@ -11,7 +11,8 @@ from flask_mongoengine import MongoEngine
 from rq import Queue
 from worker import conn
 from Classification import fileHandler, unzip_folder, run_single_classification, OUTPUT_FOLDER, \
-    get_classification_result, modify_number_of_topics_helper, get_user_age, get_user_location
+    get_classification_result, modify_number_of_topics_helper, get_user_age, get_user_location, \
+    run_single_classification_activity, parse_single_user_activity_result
 
 
 CLASSIFY = 'CLASSIFY'
@@ -136,8 +137,6 @@ def run_single_user_twitter_classifier():
     return json.dumps(str(project.id))
 
 
-
-# GET Batch existing
 @app.route('/run-batch-reddit')
 def run_reddit_batch():
     return render_template("run_pretrained_batch.html")
@@ -267,6 +266,11 @@ def visualization_file(project, filename):
     return send_from_directory(os.path.join(VISUALIZATION_FOLDER, project), filename, cache_timeout=0)
 
 
+@app.route('/visualizations/<project>/<username>/<filename>')
+def visualization_file_activity(project, username, filename):
+    return send_from_directory(os.path.join(VISUALIZATION_FOLDER, project, username), filename, cache_timeout=0)
+
+
 @app.route('/upload-data', methods=['POST'])
 def upload():
     file = request.files['file']
@@ -378,6 +382,52 @@ def modify_number_of_topics(project):
                            recovery_intervention=get_classification_result(root_visualization_folder),
                            user_location=get_user_location(root_visualization_folder),
                            user_age=get_user_age(root_visualization_folder))
+
+
+@app.route('/run-single-reddit-activity')
+def run_reddit_single_activity():
+    return render_template("run_pretrained_single_activity.html")
+
+
+@app.route('/run-single-reddit-activity', methods=['POST'])
+def run_single_user_reddit_classifier_activity():
+    # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
+    file_name = request.form.get("filename")
+
+    classifier_name = request.form.get("classifierName")
+    classifier_folder = os.path.join(app.root_path, "reddit_classifier_activity")
+
+    if classifier_name:
+        zip_ref = zipfile.ZipFile(os.path.join(UPLOAD_FOLDER, classifier_name), 'r')
+        extracted = zip_ref.namelist()
+        zip_ref.extractall(os.path.join(OUTPUT_FOLDER, classifier_name.replace(".zip", "")))
+        zip_ref.close()
+
+        classifier_folder = os.path.join(OUTPUT_FOLDER, classifier_name).replace(".zip", "")
+
+    project = Project(file_name, "-1", CLASSIFY, "-1", classifier_folder).save()
+
+    file_path = os.path.join(UPLOAD_FOLDER, file_name)
+    unzipped_folder_name = unzip_folder(file_path)
+    input_folder = os.path.join(OUTPUT_FOLDER, file_name).replace(".zip", "")
+    os.rename(os.path.join(OUTPUT_FOLDER, unzipped_folder_name), input_folder)
+
+    output_folder = os.path.join(VISUALIZATION_FOLDER, str(project['id']))
+
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    run_single_classification_activity(input_folder, output_folder, project)
+
+    user_name, result = parse_single_user_activity_result(str(project.id))
+
+    return render_template("visualization_activity.html", classification_result=result, user_name=user_name,
+                           project_id=str(project.id))
+
+
+@app.route('/run-batch-reddit-activity')
+def run_reddit_batch_activity():
+    return render_template("run_pretrained_batch.html")
 
 
 if __name__ == '__main__':

@@ -1,0 +1,257 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css"/>
+
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/basic.min.css"/>
+
+    <script type="application/javascript"
+     src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.js">
+    </script>
+    <style>
+        body {font-family: Arial;}
+
+        /* Style the tab */
+        .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+            margin: 2px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: inherit;
+          float: left;
+          outline: none;
+          cursor: pointer;
+{#          padding: 14px 16px;#}
+            padding: 10px 10px;
+          transition: 0.3s;
+{#          font-size: 17px;#}
+          border: 1px solid black;
+          font-size: small;
+            margin: 1px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #loader {
+            display: block;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #9370DB;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+        #loader:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #BA55D3;
+            -webkit-animation: spin 3s linear infinite;
+            animation: spin 3s linear infinite;
+        }
+        #loader:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #FF00FF;
+            -webkit-animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;
+        }
+        @-webkit-keyframes spin {
+            0%   {
+                -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes spin {
+            0%   {
+                -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+
+    </style>
+    <script src="../static/helper.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container-fluid" style="padding: 2px; margin-top: 5%;" align="center">
+        <div class="row">
+            <div class="col-sm-2" ></div>
+            <div class="col-sm-8">
+                <div class="jumbotron" id="mainForm" align="center" style="border: 1px solid black;">
+                    <div class="container-fluid">
+                        <h1 class="display-3">Run Single User</h1>
+                        <hr class="my-2">
+                        <div class="row">
+
+                            <div class="col-sm-6" >
+                                <label for="data">Upload user data zip file:</label>
+                                <button id="remove-data" style="display: none">Remove Data</button>
+                                <form method="POST" action='/upload-data' class="dropzone dz-clickable"
+                                    id="data" enctype="multipart/form-data">
+                                </form>
+
+
+                            </div>
+                            <div class="col-sm-6" >
+                                <label for="classifier">Upload your classifier zip file (optional):</label>
+                                <button id="remove-classifier" style="display: none">Remove Classifier</button>
+                                <form method="POST" class="dropzone dz-clickable" action="/upload-classifier"
+                                    id="classifier" enctype="multipart/form-data">
+                                </form>
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12" style="text-align: center;" >
+                            <form method="post" class="form" id="submitForm">
+                                    <input type="hidden" name="filename" id="filename">
+                                    <input type="hidden" name="classifierName" id="classifierName">
+                                    <button type="submit" class="btn btn-primary" id="submit_project" disabled>Submit</button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-2" ></div>
+        </div>
+    </div>
+
+    <script type="application/javascript">
+        Dropzone.options.data = {
+            paramName: 'file',
+            chunking: true,
+            forceChunking: true,
+            url: '/upload-data',
+            maxFilesize: 5000, // megabytes
+            chunkSize: 100000000, // bytes
+            maxFiles: 1,
+            init: function () {
+            dropzone_data = this;
+            $("#remove-data").click(function(){dropzone_data.removeAllFiles(true);})
+            this.on("complete", function (file) {
+              if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                  document.getElementById('filename').value = file.xhr.responseText;
+                  document.getElementById("submit_project").disabled = false;
+              }
+            });
+          }
+        };
+
+        Dropzone.options.classifier = {
+            paramName: 'file',
+            chunking: true,
+            forceChunking: true,
+            url: '/upload-classifier',
+            maxFilesize: 5000, // megabytes
+            chunkSize: 100000000, // bytes
+            maxFiles: 1,
+            init: function () {
+            dropzone_classifier = this;
+            $("#remove-classifier").click(function(){dropzone_classifier.removeAllFiles(true);})
+            this.on("complete", function (file) {
+              if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                  document.getElementById('classifierName').value = file.xhr.responseText;
+              }
+            });
+          }
+        };
+
+    </script>
+
+  <!-- Modal -->
+ {% if submission_successful %}
+    <div class="modal fade in" id="projectModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Project</h4>
+            </div>
+            <div class="modal-body">
+              <p>Your project id: {{ project_id }}</p>
+              <p>Your job id: {{ job_id }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+     <script type="application/javascript">
+        $('#projectModal').modal('show');
+     </script>
+ {% endif %}
+
+{% endblock content %}

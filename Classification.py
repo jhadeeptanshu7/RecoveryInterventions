@@ -1,3 +1,4 @@
+import sys
 import logging
 import zipfile
 import os
@@ -16,6 +17,7 @@ OUTPUT_FOLDER = os.path.dirname(__file__) + '/output'
 UPLOAD_FOLDER = os.path.dirname(__file__) + '/run_uploads/'
 
 sys.path.append(os.path.dirname(__file__) + "/sentiment_analysis/")
+sys.path.append(os.path.dirname(__file__))
 
 environment = "DEV"
 # environment = "PROD"
@@ -189,19 +191,9 @@ def classification(project, classifier_folder):
 
 
 def run_batch_classification(folder, project):
-    # if not os.path.exists(VISUALIZATION_FOLDER + "/" + project.id + "/system_level"):
-    #     os.makedirs(VISUALIZATION_FOLDER + "/" + project.id + "/system_level")
     insert_data_mongodb(folder, project)
 
-    # gets all_redditors, y_pred
     classification_results = classification(project, project.classifier)
-
-    # visualizations.recovery_non_recovery_donut([sum(classification_results[1]),
-    #                                             len(classification_results[1])-sum(classification_results[1])],
-    #                                             project)
-    # visualizations.recovery_lda_and_word_cloud(project)
-    # visualizations.non_recovery_lda_and_word_cloud(project)
-    # user_level_visualization.user_visualization(project)
 
     base_input_folder = folder
     base_output_folder = os.path.join(VISUALIZATION_FOLDER, str(project.id))
@@ -228,17 +220,7 @@ def run_batch_classification(folder, project):
 
 
 def run_sentiment_analysis(input_folder, output_folder, project):
-    # print project.classifier
     sentiment_analysis_folder = os.path.join(os.path.dirname(__file__), "sentiment_analysis")
-    # insert_data_mongodb(input_folder, project)
-
-    # for user_folder in os.listdir(input_folder):
-    #     if user_folder[0] != ".":
-    #         input_folder = os.path.join(input_folder, user_folder)
-    #         break
-
-    # classification_results = classification(project, project.classifier)
-
     os.system("cd %s && python sentiment_analysis.py -i %s -o %s -c %s, -n %d" %
               (sentiment_analysis_folder, input_folder, output_folder, project.classifier, -1))
 
@@ -299,6 +281,23 @@ def modify_number_of_topics_helper(project_id, n):
 
     os.system("cd %s && python sentiment_analysis.py -i %s -o %s -n %d" %
               (sentiment_analysis_folder, input_folder, output_folder, n))
+
+
+def run_single_classification_activity(input_folder, output_folder, project):
+    os.system("python SingleUserActivityClassification.py -i %s -o %s -c %s" %
+              (input_folder, output_folder, project.classifier))
+
+
+def parse_single_user_activity_result(project_id):
+    user_name = None
+
+    for folder in os.listdir(os.path.join(VISUALIZATION_FOLDER, project_id)):
+        if folder[0] != ".":
+            user_name = folder
+            break
+
+    result = read_file_content(os.path.join(VISUALIZATION_FOLDER, project_id, user_name, "prediction.txt"))
+    return user_name, result
 
 
 def main():
