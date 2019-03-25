@@ -17,6 +17,8 @@ from Classification import fileHandler, unzip_folder, run_single_classification,
 
 CLASSIFY = 'CLASSIFY'
 TRAIN = 'TRAIN'
+ACTIVITY = 'ACTIVITY'
+
 q = Queue(connection=conn, default_timeout=300000)
 
 app = Flask(__name__)
@@ -405,7 +407,7 @@ def run_single_user_reddit_classifier_activity():
 
         classifier_folder = os.path.join(OUTPUT_FOLDER, classifier_name).replace(".zip", "")
 
-    project = Project(file_name, "-1", CLASSIFY, "-1", classifier_folder).save()
+    project = Project(file_name, "-1", ACTIVITY, "-1", classifier_folder).save()
 
     file_path = os.path.join(UPLOAD_FOLDER, file_name)
     unzipped_folder_name = unzip_folder(file_path)
@@ -428,6 +430,32 @@ def run_single_user_reddit_classifier_activity():
 @app.route('/run-batch-reddit-activity')
 def run_reddit_batch_activity():
     return render_template("run_pretrained_batch.html")
+
+
+@app.route('/run-batch-reddit-activity', methods=['POST'])
+def reddit_classifier_job_activity():
+    # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
+    filename = request.form.get("filename")
+    classifier_name = request.form.get("classifierName")
+    classifier_folder = os.path.join(app.root_path, "reddit_classifier_activity")
+    if classifier_name:
+        zip_ref = zipfile.ZipFile(os.path.join(UPLOAD_FOLDER, classifier_name), 'r')
+        zip_ref.extractall(os.path.join(OUTPUT_FOLDER, classifier_name.replace(".zip", "")))
+        zip_ref.close()
+
+        classifier_folder = os.path.join(OUTPUT_FOLDER, classifier_name).replace(".zip", "")
+
+    project = Project(filename, '-1', ACTIVITY, "-1", classifier_folder).save()
+
+    job = q.enqueue_call(func=fileHandler, args=(project.id,), result_ttl=5000, timeout=300000)
+    job_id = str(job.get_id())
+
+    Project.objects(id=project.id).update_one(set__job_id=job_id)
+
+    return render_template("run_pretrained_batch.html",
+                           submission_successful=True,
+                           project_id=project.id,
+                           job_id=job_id)
 
 
 if __name__ == '__main__':

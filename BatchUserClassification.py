@@ -3,6 +3,7 @@ import os
 import reddit_forum_categories
 from bokeh.models import ColumnDataSource
 from bokeh.plotting import figure, output_file, save
+from optparse import OptionParser
 
 recovery_subreddits = reddit_forum_categories.recovery_subreddits
 drug_subreddits = reddit_forum_categories.drug_subreddits
@@ -28,9 +29,10 @@ def get_user_subreddit_activity(input_folder):
                 subreddit_activity.append(p.strip())
     return subreddit_activity
 
-def load_pickles():
-    subreddit_activity_dic = joblib.load("bibm_subreddit_dic.pkl")
-    rf_classifier = joblib.load('subreddit_activity_classifier.pkl')
+
+def load_pickles(folder):
+    subreddit_activity_dic = joblib.load(os.path.join(folder, "bibm_subreddit_dic.pkl"))
+    rf_classifier = joblib.load(os.path.join(folder, 'subreddit_activity_classifier.pkl'))
     return subreddit_activity_dic, rf_classifier
 
 
@@ -62,11 +64,18 @@ def write_result(op_folder,user,classification_result):
     except:
         print "folder exists"
     file_path = os.path.join(user_op_folder,"prediction.txt")
+    summary_file = os.path.join(op_folder, "recovery_propensity_predictions.txt")
     file = open(file_path,'w')
+    summary_fp = open(summary_file, 'a')
+
     if classification_result ==1:
         file.write(user + " is open to a drug addiction recovery intervention.")
+        summary_fp.write(user + " is open to a drug addiction recovery intervention.\n")
+
     else:
         file.write(user + " is not open to a drug addiction recovery intervention.")
+        summary_fp.write(user + " is not open to a drug addiction recovery intervention.\n")
+
 
 def find_width(sub_terms):
     # print len(sub_terms)
@@ -85,7 +94,12 @@ def find_width(sub_terms):
     return width
 
 def subreddit_histogram(subreddit_activity,user,op_folder):
+    print op_folder
     user_op_folder = os.path.join(op_folder,user)
+    try:
+        os.mkdir(user_op_folder)
+    except:
+        print "folder exists"
 
 
     subreddit_count_dic = {}
@@ -132,8 +146,20 @@ def subreddit_histogram(subreddit_activity,user,op_folder):
     save(p)
 
 
+
 def main():
-    input_folder = load_input_folder()
+    parser = OptionParser()
+    parser.add_option('-i', '--input', dest='input_folder', help="input folder", type=str)
+    parser.add_option('-o', '--output', dest='output_folder', help="output folder", type=str)
+    parser.add_option('-c', '--classifier', dest='classifier', help="classifier folder", type=str)
+
+    (options, args) = parser.parse_args()
+
+    input_folder = options.input_folder
+    op_folder = options.output_folder
+
+    subreddit_dic, rf_clf = load_pickles(options.classifier)
+
     for sub_folder in os.listdir(input_folder):
         if sub_folder[0]==".":
             continue
@@ -141,11 +167,12 @@ def main():
         user = sub_folder
         subreddit_activity = get_user_subreddit_activity(os.path.join(input_folder,sub_folder))
         print user, subreddit_activity
-        subreddit_dic, rf_clf = load_pickles()
+
         classification_result = run_single_user_classification(subreddit_activity,subreddit_dic,rf_clf)
-        op_folder = load_output_folder()
+
         write_result(op_folder,user,classification_result)
         subreddit_histogram(subreddit_activity,user,op_folder)
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()

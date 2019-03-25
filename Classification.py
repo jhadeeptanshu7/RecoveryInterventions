@@ -69,6 +69,14 @@ def fileHandler(project_id):
     elif project.job_type == "TRAIN":
         print "TRAIN"
         os.system("python TrainClassifier.py -f " + input_folder + " -p " + str(project_id) + " -t " + project.job_type)
+
+    elif project.job_type == "ACTIVITY":
+        print "ACTIVITY"
+        output_folder = os.path.join(VISUALIZATION_FOLDER, str(project_id))
+        if not os.path.exists(output_folder):
+            os.mkdir(output_folder)
+        os.system("python BatchUserClassification.py -i %s -o %s -c %s" %
+              (input_folder, output_folder, project.classifier))
     
     db['projects'].find_one_and_update({"project_id": project_id},
                                  {"$set": {"job_status": "1"}})
