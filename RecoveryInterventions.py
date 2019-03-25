@@ -18,6 +18,7 @@ from Classification import fileHandler, unzip_folder, run_single_classification,
 CLASSIFY = 'CLASSIFY'
 TRAIN = 'TRAIN'
 ACTIVITY = 'ACTIVITY'
+ACTIVITY_TRAIN = 'ACTIVITY_TRAIN'
 
 q = Queue(connection=conn, default_timeout=300000)
 
@@ -457,6 +458,28 @@ def reddit_classifier_job_activity():
                            project_id=project.id,
                            job_id=job_id)
 
+
+@app.route('/train-activity')
+def train_classifier_activity():
+    return render_template("train_classifier.html")
+
+
+@app.route('/train-activity', methods=['POST'])
+def train_classifier_job_activity():
+    # filename = os.path.join(app.config['UPLOAD_FOLDER'], request.form.get("filename"))
+    filename = request.form.get("filename")
+    classifier_folder = ""
+    project = Project(filename, '-1', ACTIVITY_TRAIN, "-1", classifier_folder).save()
+
+    job = q.enqueue_call(func=fileHandler, args=(project.id,), result_ttl=5000)
+    job_id = str(job.get_id())
+
+    Project.objects(id=project.id).update_one(set__job_id=job_id)
+
+    return render_template("train_classifier.html",
+                           submission_successful=True,
+                           project_id=project.id,
+                           job_id=job_id)
 
 if __name__ == '__main__':
     app.run(threaded=True, debug=True)
