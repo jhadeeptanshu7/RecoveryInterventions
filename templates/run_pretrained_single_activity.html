@@ -144,7 +144,7 @@
             <div class="col-sm-8">
                 <div class="jumbotron" id="mainForm" align="center" style="border: 1px solid black;">
                     <div class="container-fluid">
-                        <h1 class="display-3">Run Single User</h1>
+                        <h1 class="display-3">Single User Analysis</h1>
                         <hr class="my-2">
                         <div class="row">
 
@@ -153,6 +153,7 @@
                                 <button id="remove-data" style="display: none">Remove Data</button>
                                 <form method="POST" action='/upload-data' class="dropzone dz-clickable"
                                     id="data" enctype="multipart/form-data">
+                                    <div class="dz-message" data-dz-message><span>Browse/drop files here to upload</span></div>
                                 </form>
 
 
@@ -162,6 +163,7 @@
                                 <button id="remove-classifier" style="display: none">Remove Classifier</button>
                                 <form method="POST" class="dropzone dz-clickable" action="/upload-classifier"
                                     id="classifier" enctype="multipart/form-data">
+                                    <div class="dz-message" data-dz-message><span>Browse/drop files here to upload</span></div>
                                 </form>
 
 

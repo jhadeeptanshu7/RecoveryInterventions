@@ -31,29 +31,80 @@
                aria-expanded="false">
               Upload Data and Run Pre-trained Classifier
             </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li class="nav-item dropdown">
-                      Single Reddit
-                      <ul>
-                          <li><a class="dropdown-item" href="/run-single-reddit">Text Based</a></li>
-                          <li><a class="dropdown-item" href="/run-single-reddit-activity">Activity Based</a></li>
+              <ul class="dropdown-menu">
+                  <li class="nav-item dropdown dropdown-submenu">
+                     <a class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                        style="color: black">
+                      Single Reddit User
+                    </a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/run-single-reddit">Text Based Analysis</a></li>
+                          <li><a class="dropdown-item" href="/run-single-reddit-activity">Activity Based Analysis</a></li>
+                      </ul>
+
+                  </li >
+                  <li class="nav-item dropdown dropdown-submenu">
+                      <a class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                        style="color: black">
+                      Batch of Reddit Users
+                    </a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/run-batch-reddit">Text Based Analysis</a></li>
+                          <li><a class="dropdown-item" href="/run-batch-reddit-activity">Activity Based Analysis</a></li>
                       </ul>
 
                   </li>
-                  <li class="nav-item dropdown">
-                      Batch Reddit
-                      <ul>
-                          <li><a class="dropdown-item" href="/run-batch-reddit">Text Based</a></li>
-                          <li><a class="dropdown-item" href="/run-batch-reddit-activity">Activity Based</a></li>
+                  <li class="nav-item dropdown dropdown-submenu">
+                      <a class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                        style="color: black">
+                      Single Twitter User
+                    </a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/run-single-twitter">Text Based Analysis</a></li>
                       </ul>
-
                   </li>
-                  <li><a class="dropdown-item" href="/run-single-twitter">Single Twitter User</a></li>
-                  <li><a class="dropdown-item" href="/run-batch-twitter">Batch Twitter Users</a></li>
+                  <li class="nav-item dropdown dropdown-submenu">
+                      <a class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                        style="color: black">
+                      Batch of Twitter Users
+                    </a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/run-batch-twittert">Text Based Analysis</a></li>
+                      </ul>
+                  </li>
+
               </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/train">Upload Data and Train New Classifier</a>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"
+               href="#" id="navbarDropdownMenuLink"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">
+              Upload Data and Train New Classifier
+                </a>
+
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/train">Text Based Classifier</a></li>
+                  <li><a class="dropdown-item" href="/train-activity">Activity Based Classifier</a></li>
+              </ul>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/results">Download Results</a>
@@ -61,6 +112,7 @@
           <li class="nav-item" style="position: absolute; margin-left: 70%">
             <a class="nav-link" href="/tutorial">Tutorial</a>
           </li>
+
         </ul>
       </div>
     </nav>
@@ -93,6 +145,9 @@
               <div style="float: left; margin: 5px">
                   <a href="/contact">Contact</a>
               </div>
+                <div style="float: left; margin: 5px; color: white; font-size: small">
+                <small>Development of SMARTS was funded in part by the National Science Foundation (NSF) under grant XX.</small>
+                </div>
               <div style="float: right;">
                   <span class="col-sm-3" style="color:white">Project under</span>
                   <a class="col-sm-5" href="http://tintin.sfsu.edu/index.html" target="_blank">

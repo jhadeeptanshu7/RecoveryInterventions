@@ -244,7 +244,7 @@ def get_visualization(project):
     root_visualization_folder = os.path.join(VISUALIZATION_FOLDER, project)
 
     return render_template("visualization_v2.html", project_id=project,
-                           recovery_intervention=get_classification_result(root_visualization_folder),
+                           recovery_intervention_result=get_classification_result(root_visualization_folder),
                            user_location=get_user_location(root_visualization_folder),
                            user_age=get_user_age(root_visualization_folder))
 
@@ -382,7 +382,7 @@ def modify_number_of_topics(project):
     root_visualization_folder = os.path.join(VISUALIZATION_FOLDER, project)
 
     return render_template("visualization_v2.html", project_id=project,
-                           recovery_intervention=get_classification_result(root_visualization_folder),
+                           recovery_intervention_result=get_classification_result(root_visualization_folder),
                            user_location=get_user_location(root_visualization_folder),
                            user_age=get_user_age(root_visualization_folder))
 

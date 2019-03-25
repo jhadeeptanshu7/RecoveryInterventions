@@ -16,6 +16,14 @@
   margin-right: .1rem;
 }
 
+.dropdown-menu{
+  min-width: 12rem;
+}
+.dropdown-item{
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -54,4 +62,8 @@
     3px 3px 0 0 #000000,
     4px 4px 0 0 #000000,
     5px 5px 0 0 #000000;
+}
+
+.tablinks:focus{
+    outline: 5px solid black;
 }

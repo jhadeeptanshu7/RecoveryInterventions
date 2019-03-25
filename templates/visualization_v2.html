@@ -47,11 +47,7 @@
                     </div>
 
                     <div class="col-sm-12">
-                        {% if recovery_intervention[1] == '1' %}
-                            <p>{{ recovery_intervention[0] }} is open to a drug addiction recovery intervention.</p>
-                        {% else %}
-                            <p>{{ recovery_intervention[0] }} is not open to a drug addiction recovery intervention.</p>
-                        {% endif %}
+                        <p>{{ recovery_intervention_result }}</p>
                     </div>
                 </div>
 
@@ -75,7 +71,7 @@
                     </div>
 
                     <div class="col-sm-12">
-                            <p>{{ recovery_intervention[0] }} is {{ user_age }} years old.</p>
+                            <p>{{ recovery_intervention_result.split(" ")[0] }} is {{ user_age }} years old.</p>
                     </div>
                 </div>
             {% endif %}

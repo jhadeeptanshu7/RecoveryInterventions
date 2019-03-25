@@ -257,13 +257,18 @@ def run_single_classification(input_folder, output_folder, project):
 def write_classification_result_file(classification_result, output_folder):
     with open(os.path.join(output_folder, 'recovery_intervention_result.txt'), 'a') as fp:
         for i in range(len(classification_result[0])):
-            fp.write(str(classification_result[0][i]) + " " + str(classification_result[1][i]) + "\n")
+            result = "open"
+            if str(classification_result[1][i]) == "0":
+                result = "not open"
+            statement = "{0} {1} to a drug addiction recovery intervention.".format(str(classification_result[0][i]), result)
+
+            fp.write(statement + "\n")
             fp.flush()
 
 
 def get_classification_result(folder):
     with open(os.path.join(folder, "recovery_intervention_result.txt")) as fp:
-        return fp.readline().strip().split(" ")
+        return fp.readline().strip()
 
 
 def get_user_location(folder):
