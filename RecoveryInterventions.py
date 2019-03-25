@@ -481,5 +481,15 @@ def train_classifier_job_activity():
                            project_id=project.id,
                            job_id=job_id)
 
+
+@app.route('/results/v2/<project>')
+def get_visualization_activity(project):
+    user_name, result = parse_single_user_activity_result(str(project))
+
+    return render_template("visualization_activity.html", classification_result=result, user_name=user_name,
+                           project_id=str(project))
+
+
+
 if __name__ == '__main__':
     app.run(threaded=True, debug=True)
