@@ -21,6 +21,12 @@
           border-top: none;
         }
     </style>
+
+    <script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 {% endblock head %}
 
 {% block content %}
@@ -78,7 +84,7 @@
 
                 <div class="row container-fluid" style="border: 1px solid black; border-radius: 4px;">
                     <div class="col-sm-12" style="background:#33333333;">
-                        <p>Document Topics</p>
+                        <p data-toggle="tooltip" data-placement="top" title="Hooray!">Document Topics</p>
                     </div>
                     <div class="col-sm-12">
                         <iframe src="/visualizations/{{ project_id }}/document_topics.html" style="width:100%;

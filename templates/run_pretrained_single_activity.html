@@ -1,5 +1,9 @@
 {% extends 'layout.html' %}
-
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 {% block head %}
 
     <link rel="stylesheet"
@@ -144,7 +148,7 @@
             <div class="col-sm-8">
                 <div class="jumbotron" id="mainForm" align="center" style="border: 1px solid black;">
                     <div class="container-fluid">
-                        <h1 class="display-3">Single User Analysis</h1>
+                        <h1 class="display-3" data-toggle="tooltip" data-placement="top" title="Upload subreddit activity of a Reddit user to learn their recovery propensity.">Single User Analysis</h1>
                         <hr class="my-2">
                         <div class="row">
 

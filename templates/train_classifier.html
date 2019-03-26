@@ -11,7 +11,11 @@
     <script type="application/javascript"
      src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.js">
     </script>
-
+    <script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 {% endblock head %}
 
 
@@ -21,7 +25,7 @@
         <div class="col-sm-3" ></div>
         <div class="col-sm-6" >
             <div class="jumbotron" align="center" style="border: 1px solid black;">
-                <h1 class="display-3">Train Classifier</h1>
+                <h1 class="display-3" >Train Classifier</h1>
                 <hr class="my-2">
                 <p class="lead">Refer <a href="/tutorial">Tutorial</a>  for details of upload format</p>
 

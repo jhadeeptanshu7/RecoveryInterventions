@@ -134,6 +134,11 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+    <script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 {% endblock head %}
 
 
@@ -144,7 +149,7 @@
             <div class="col-sm-8">
                 <div class="jumbotron" id="mainForm" align="center" style="border: 1px solid black;">
                     <div class="container-fluid">
-                        <h1 class="display-3">Single User Analysis</h1>
+                        <h1 data-toggle="tooltip" data-placement="top" title="{{ info }}" class="display-3">Single User Analysis</h1>
                         <hr class="my-2">
                         <div class="row">
 

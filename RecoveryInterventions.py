@@ -66,7 +66,7 @@ def hello_world():
 
 @app.route('/run-single-reddit')
 def run_reddit_single():
-    return render_template("run_pretrained_single.html")
+    return render_template("run_pretrained_single.html", info="Upload Reddit posts of a user to learn their recovery propensity and other contextual information.")
 
 
 @app.route('/run-single-reddit', methods=['POST'])
@@ -104,7 +104,7 @@ def run_single_user_reddit_classifier():
 
 @app.route('/run-single-twitter')
 def run_twitter_single():
-    return render_template("run_pretrained_single.html")
+    return render_template("run_pretrained_single.html", info="Upload tweets of a user to learn their recovery propensity and other contextual information.")
 
 
 @app.route('/run-single-twitter', methods=['POST'])
@@ -142,7 +142,7 @@ def run_single_user_twitter_classifier():
 
 @app.route('/run-batch-reddit')
 def run_reddit_batch():
-    return render_template("run_pretrained_batch.html")
+    return render_template("run_pretrained_batch.html", info="Upload Reddit posts of multiple users to learn their recovery propensity and other contextual information.")
 
 
 @app.route('/run-batch-reddit', methods=['POST'])
@@ -168,13 +168,13 @@ def reddit_classifier_job():
     return render_template("run_pretrained_batch.html",
                            submission_successful=True,
                            project_id=project.id,
-                           job_id=job_id)
+                           job_id=job_id, info="Upload Reddit posts of multiple users to learn their recovery propensity and other contextual information.")
 
 
 # GET Batch existing
 @app.route('/run-batch-twitter')
 def run_twitter_batch():
-    return render_template("run_pretrained_batch.html")
+    return render_template("run_pretrained_batch.html", info="Upload tweets of multiple users to learn their recovery propensity and other contextual information.")
 
 
 @app.route('/run-batch-twitter', methods=['POST'])
@@ -200,7 +200,7 @@ def twitter_classifier_job():
     return render_template("run_pretrained_batch.html",
                            submission_successful=True,
                            project_id=project.id,
-                           job_id=job_id)
+                           job_id=job_id, info="Upload tweets of multiple users to learn their recovery propensity and other contextual information.")
 
 
 @app.route('/train')
@@ -430,7 +430,7 @@ def run_single_user_reddit_classifier_activity():
 
 @app.route('/run-batch-reddit-activity')
 def run_reddit_batch_activity():
-    return render_template("run_pretrained_batch.html")
+    return render_template("run_pretrained_batch.html", info="Upload subreddit activity of multiple Reddit users to learn their recovery propensity and their subreddit post frequency.")
 
 
 @app.route('/run-batch-reddit-activity', methods=['POST'])
@@ -456,7 +456,7 @@ def reddit_classifier_job_activity():
     return render_template("run_pretrained_batch.html",
                            submission_successful=True,
                            project_id=project.id,
-                           job_id=job_id)
+                           job_id=job_id, info="Upload subreddit activity of multiple Reddit users to learn their recovery propensity and their subreddit post frequency.")
 
 
 @app.route('/train-activity')
