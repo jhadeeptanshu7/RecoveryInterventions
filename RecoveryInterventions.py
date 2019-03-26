@@ -482,7 +482,7 @@ def train_classifier_job_activity():
                            job_id=job_id)
 
 
-@app.route('/results/v2/<project>')
+@app.route('/results-activity/<project>')
 def get_visualization_activity(project):
     user_name, result = parse_single_user_activity_result(str(project))
 

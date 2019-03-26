@@ -69,12 +69,12 @@ def write_result(op_folder,user,classification_result):
     summary_fp = open(summary_file, 'a')
 
     if classification_result ==1:
-        file.write(user + " is open to a drug addiction recovery intervention.")
-        summary_fp.write(user + " is open to a drug addiction recovery intervention.\n")
+        file.write(user + " is open to addiction recovery interventions.")
+        summary_fp.write(user + " is open to addiction recovery interventions.\n")
 
     else:
-        file.write(user + " is not open to a drug addiction recovery intervention.")
-        summary_fp.write(user + " is not open to a drug addiction recovery intervention.\n")
+        file.write(user + " is not open to addiction recovery intervention.")
+        summary_fp.write(user + " is not open to addiction recovery intervention.\n")
 
 
 def find_width(sub_terms):

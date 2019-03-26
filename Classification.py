@@ -260,7 +260,7 @@ def write_classification_result_file(classification_result, output_folder):
             result = "open"
             if str(classification_result[1][i]) == "0":
                 result = "not open"
-            statement = "{0} {1} to a drug addiction recovery intervention.".format(str(classification_result[0][i]), result)
+            statement = "{0} is {1} to addiction recovery interventions.".format(str(classification_result[0][i]), result)
 
             fp.write(statement + "\n")
             fp.flush()

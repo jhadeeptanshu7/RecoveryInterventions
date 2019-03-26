@@ -71,9 +71,9 @@ def write_result(op_folder,user,classification_result):
     file_path = os.path.join(user_op_folder,"prediction.txt")
     file = open(file_path,'w')
     if classification_result ==1:
-        file.write(user + " is open to a drug addiction recovery intervention.")
+        file.write(user + " is open to addiction recovery interventions.")
     else:
-        file.write(user + " is not open to a drug addiction recovery intervention.")
+        file.write(user + " is not open to addiction recovery interventions.")
 
 def find_width(sub_terms):
     # print len(sub_terms)
