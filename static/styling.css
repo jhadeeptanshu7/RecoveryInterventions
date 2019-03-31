@@ -6,7 +6,7 @@
   transform: rotate(-90deg);
   position: absolute;
   right: 6px;
-  top: .8em;
+  top: 1.1em;
 }
 
 .dropdown-submenu .dropdown-menu {
@@ -33,8 +33,10 @@
 
 }
 
-.active {
-    background-color: #616161;
+.tablinks.active {
+    /* background-color: #616161; */
+  border: 2px solid black;
+
 }
 
 .tablinks {
@@ -54,7 +56,7 @@
   color:#000;
 }
 
-.tablinks:active{
+/*.tablinks:active{
   color:#000;
   box-shadow:inset 0 -4px 0 0 rgba(0,0,0,.2),
     1px 1px 0 0 #000000,
@@ -62,8 +64,8 @@
     3px 3px 0 0 #000000,
     4px 4px 0 0 #000000,
     5px 5px 0 0 #000000;
-}
+}*/
 
 .tablinks:focus{
-    outline: 5px solid black;
+    outline: none;
 }
