@@ -205,6 +205,22 @@ def classification(project, classifier_folder):
     return [all_redditors,y_pred]
 
 
+def batch_classification_result(classification_result, output_folder):
+    with open(os.path.join(output_folder, 'users_open_to_addiction_recovery_interventions.txt'), 'a') as fp_open,\
+            open(os.path.join(output_folder, 'users_not_open_to_addiction_recovery_interventions.txt'), 'a') as fp_not_open:
+        for i in range(len(classification_result[0])):
+            result = "open"
+            if str(classification_result[1][i]) == "0":
+                result = "not open"
+                statement = "{0} is {1} to addiction recovery interventions.".format(str(classification_result[0][i]), result)
+                fp_not_open.write(statement + "\n")
+                fp_not_open.flush()
+            else:
+                statement = "{0} is {1} to addiction recovery interventions.".format(str(classification_result[0][i]), result)
+                fp_open.write(statement + "\n")
+                fp_open.flush()
+
+
 def run_batch_classification(folder, project):
     insert_data_mongodb(folder, project)
 
@@ -217,6 +233,7 @@ def run_batch_classification(folder, project):
         os.mkdir(base_output_folder)
 
     write_classification_result_file(classification_results, base_output_folder)
+    batch_classification_result(classification_results, base_output_folder)
 
     for c,user_folder in enumerate(os.listdir(folder)):
         print c, "****************************************"
@@ -232,6 +249,8 @@ def run_batch_classification(folder, project):
         output_folder = os.path.join(os.path.abspath("RecoveryIntervention.py").replace("RecoveryIntervention.py", ""),
                                      output_folder)
         run_sentiment_analysis(input_folder, output_folder, project)
+
+
 
 
 def run_sentiment_analysis(input_folder, output_folder, project):
