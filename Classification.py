@@ -85,7 +85,7 @@ def fileHandler(project_id):
             os.mkdir(output_folder)
         os.system("python TrainActivityClassifier.py -i %s -o %s" % (input_folder, output_folder))
     
-    db['projects'].find_one_and_update({"project_id": project_id},
+    db['projects'].find_one_and_update({"_id": ObjectId(project_id)},
                                  {"$set": {"job_status": "1"}})
 
 
@@ -249,8 +249,6 @@ def run_batch_classification(folder, project):
         output_folder = os.path.join(os.path.abspath("RecoveryIntervention.py").replace("RecoveryIntervention.py", ""),
                                      output_folder)
         run_sentiment_analysis(input_folder, output_folder, project)
-
-
 
 
 def run_sentiment_analysis(input_folder, output_folder, project):

@@ -22,7 +22,9 @@
         </form>
             <br/>
             <br/>
-            {% if project_id %}
+            {% if error and project_id%}
+                <p>The project id: {{ project_id }} doesn't seem to be correct. Please double check</p>
+            {% elif project_id %}
                 <p>Results for project id: {{ project_id }} have not yet been generated</p>
             {% endif %}
         </div>
