@@ -51,6 +51,7 @@ def run_single_user_classification(subreddit_activity,subreddit_dic,rf_clf):
     prediction = rf_clf.predict(redditor_row)
     return prediction
 
+
 def load_output_folder():
     op_folder = '/Users/jhadeeptanshu/plos_one_classifications/activity/batch_op_folder'
     return op_folder
@@ -65,16 +66,23 @@ def write_result(op_folder,user,classification_result):
         print "folder exists"
     file_path = os.path.join(user_op_folder,"prediction.txt")
     summary_file = os.path.join(op_folder, "recovery_propensity_predictions.txt")
+    summary_file_open = os.path.join(op_folder, "users_open_to_addiction_recovery_interventions.txt")
+    summary_file_not_open = os.path.join(op_folder, "users_not_open_to_addiction_recovery_interventions.txt")
+
     file = open(file_path,'w')
     summary_fp = open(summary_file, 'a')
+    summary_file_open_fp = open(summary_file_open, 'a')
+    summary_file_not_open_fp = open(summary_file_not_open, 'a')
 
     if classification_result ==1:
         file.write(user + " is open to addiction recovery interventions.")
         summary_fp.write(user + " is open to addiction recovery interventions.\n")
+        summary_file_open_fp.write(user + " is open to addiction recovery interventions.\n")
 
     else:
         file.write(user + " is not open to addiction recovery intervention.")
         summary_fp.write(user + " is not open to addiction recovery intervention.\n")
+        summary_file_not_open_fp.write(user + " is not open to addiction recovery intervention.\n")
 
 
 def find_width(sub_terms):
