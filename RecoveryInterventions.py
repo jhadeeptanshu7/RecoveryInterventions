@@ -387,6 +387,17 @@ def get_tutorial():
 @app.route('/results/<project>', methods=['POST'])
 def modify_number_of_topics(project):
     number_of_topics = int(request.form.get('numberOfTopic'))
+
+    if project=='sample_result_text':
+        project = "5cb555937632253160691c64"
+        modify_number_of_topics_helper(project, number_of_topics)
+        root_visualization_folder = os.path.join(VISUALIZATION_FOLDER, project)
+
+        return render_template("visualization_v2.html", project_id=project,
+                               recovery_intervention_result=get_classification_result(root_visualization_folder),
+                               user_location=get_user_location(root_visualization_folder),
+                               user_age=get_user_age(root_visualization_folder))
+
     if number_of_topics > 0:
         modify_number_of_topics_helper(project, number_of_topics)
 
