@@ -940,15 +940,15 @@ def primary_location(post_dic):
                             loc = str(X.text.encode("utf-8"))
                             print loc
                             print s
-                            print "KJNEFNJKRENJKEWNJKENKJNCQKJNKQWE"
+
                             loc_lower = loc.lower()
                             print "loc_lower", loc_lower
 
                             loc_info = collection.find_one({"location": str(loc_lower)})
 
-                            print "BSJHBDHJBHJDSBBJC"
 
-                            print "loc_info ", loc_info, "JNKNKJNKJNKJN"
+
+
 
                             if loc_info == None:
                                 print "INSIDE NONE"
@@ -1264,7 +1264,7 @@ def plot_geo_data_2(country_post_dic, state_post_dic, city_post_dic, location_se
 
         if primary_loc_exists:
             row.append(1)
-            print "MIL GYI LOCATION BKL"
+
         else:
             row.append(0)
         location_matrix.append(row)

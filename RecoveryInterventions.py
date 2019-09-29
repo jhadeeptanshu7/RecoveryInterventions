@@ -60,8 +60,8 @@ class Project(db.Document):
 
 
 @app.route('/')
-def hello_world():
-    return render_template("sample.html")
+def render_home():
+    return render_template("home.html")
 
 
 @app.route('/run-single-reddit')
@@ -271,8 +271,6 @@ def post_results():
 
     except:
         return render_template('download.html', project_id=project_id, error=True)
-
-
 
 
 @app.route('/visualizations/<project>/<filename>')
